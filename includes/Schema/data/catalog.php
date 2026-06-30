@@ -206,6 +206,100 @@ return array (
         'type' => 'text',
         'comment' => 'A description of the item.',
       ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
       'disambiguatingDescription' => 
       array (
         'label' => 'Disambiguating Description',
@@ -689,6 +783,100 @@ return array (
         'type' => 'text',
         'comment' => 'A description of the item.',
       ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
       'disambiguatingDescription' => 
       array (
         'label' => 'Disambiguating Description',
@@ -1082,6 +1270,45 @@ return array (
         'type' => 'text',
         'comment' => 'The edition of the book.',
       ),
+      'bookFormat' => 
+      array (
+        'label' => 'Book Format',
+        'type' => 'enum',
+        'comment' => 'The format of the book.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AudiobookFormat',
+            'label' => 'AudiobookFormat',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EBook',
+            'label' => 'EBook',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/GraphicNovel',
+            'label' => 'GraphicNovel',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/Hardcover',
+            'label' => 'Hardcover',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/Pamphlet',
+            'label' => 'Pamphlet',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/Paperback',
+            'label' => 'Paperback',
+          ),
+        ),
+      ),
       'citation' => 
       array (
         'label' => 'Citation',
@@ -1165,6 +1392,100 @@ return array (
         'label' => 'Description',
         'type' => 'text',
         'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
       ),
       'disambiguatingDescription' => 
       array (
@@ -1624,6 +1945,100 @@ return array (
         'label' => 'Description',
         'type' => 'text',
         'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
       ),
       'disambiguatingDescription' => 
       array (
@@ -2120,6 +2535,100 @@ return array (
         'type' => 'text',
         'comment' => 'A description of the item.',
       ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
       'disambiguatingDescription' => 
       array (
         'label' => 'Disambiguating Description',
@@ -2615,6 +3124,100 @@ return array (
         'type' => 'text',
         'comment' => 'A description of the item.',
       ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
       'disambiguatingDescription' => 
       array (
         'label' => 'Disambiguating Description',
@@ -3092,6 +3695,100 @@ return array (
         'type' => 'text',
         'comment' => 'A description of the item.',
       ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
       'disambiguatingDescription' => 
       array (
         'label' => 'Disambiguating Description',
@@ -3424,6 +4121,64 @@ return array (
         'label' => 'End Date',
         'type' => 'date',
         'comment' => 'The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'eventAttendanceMode' => 
+      array (
+        'label' => 'Event Attendance Mode',
+        'type' => 'enum',
+        'comment' => 'The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/MixedEventAttendanceMode',
+            'label' => 'MixedEventAttendanceMode',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OfflineEventAttendanceMode',
+            'label' => 'OfflineEventAttendanceMode',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/OnlineEventAttendanceMode',
+            'label' => 'OnlineEventAttendanceMode',
+          ),
+        ),
+      ),
+      'eventStatus' => 
+      array (
+        'label' => 'Event Status',
+        'type' => 'enum',
+        'comment' => 'An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/EventCancelled',
+            'label' => 'EventCancelled',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EventMovedOnline',
+            'label' => 'EventMovedOnline',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/EventPostponed',
+            'label' => 'EventPostponed',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/EventRescheduled',
+            'label' => 'EventRescheduled',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/EventScheduled',
+            'label' => 'EventScheduled',
+          ),
+        ),
       ),
       'identifier' => 
       array (
@@ -4007,6 +4762,65 @@ return array (
         'type' => 'text',
         'comment' => 'The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
       ),
+      'hasAdultConsideration' => 
+      array (
+        'label' => 'Has Adult Consideration',
+        'type' => 'enum',
+        'comment' => 'Used to tag an item to be intended or suitable for consumption or use by adults only.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlcoholConsideration',
+            'label' => 'AlcoholConsideration',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/DangerousGoodConsideration',
+            'label' => 'DangerousGoodConsideration',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/HealthcareConsideration',
+            'label' => 'HealthcareConsideration',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/NarcoticConsideration',
+            'label' => 'NarcoticConsideration',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReducedRelevanceForChildrenConsideration',
+            'label' => 'ReducedRelevanceForChildrenConsideration',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/SexualContentConsideration',
+            'label' => 'SexualContentConsideration',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/TobaccoNicotineConsideration',
+            'label' => 'TobaccoNicotineConsideration',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/UnclassifiedAdultConsideration',
+            'label' => 'UnclassifiedAdultConsideration',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/ViolenceConsideration',
+            'label' => 'ViolenceConsideration',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/WeaponConsideration',
+            'label' => 'WeaponConsideration',
+          ),
+        ),
+      ),
       'hasGS1DigitalLink' => 
       array (
         'label' => 'Has G S1 Digital Link',
@@ -4036,6 +4850,35 @@ return array (
         'label' => 'Is Family Friendly',
         'type' => 'boolean',
         'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
       ),
       'keywords' => 
       array (
@@ -4777,6 +5620,2843 @@ return array (
         'label' => 'Vat I D',
         'type' => 'text',
         'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
+      ),
+    ),
+  ),
+  'enums' => 
+  array (
+    'actionPlatform' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AndroidPlatform',
+        'label' => 'AndroidPlatform',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/DesktopWebPlatform',
+        'label' => 'DesktopWebPlatform',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/GenericWebPlatform',
+        'label' => 'GenericWebPlatform',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/IOSPlatform',
+        'label' => 'IOSPlatform',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/MobileWebPlatform',
+        'label' => 'MobileWebPlatform',
+      ),
+    ),
+    'actionStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ActiveActionStatus',
+        'label' => 'ActiveActionStatus',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/CompletedActionStatus',
+        'label' => 'CompletedActionStatus',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/FailedActionStatus',
+        'label' => 'FailedActionStatus',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/PotentialActionStatus',
+        'label' => 'PotentialActionStatus',
+      ),
+    ),
+    'albumProductionType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CompilationAlbum',
+        'label' => 'CompilationAlbum',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/DJMixAlbum',
+        'label' => 'DJMixAlbum',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/DemoAlbum',
+        'label' => 'DemoAlbum',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/LiveAlbum',
+        'label' => 'LiveAlbum',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/MixtapeAlbum',
+        'label' => 'MixtapeAlbum',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/RemixAlbum',
+        'label' => 'RemixAlbum',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/SoundtrackAlbum',
+        'label' => 'SoundtrackAlbum',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/SpokenWordAlbum',
+        'label' => 'SpokenWordAlbum',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/StudioAlbum',
+        'label' => 'StudioAlbum',
+      ),
+    ),
+    'albumReleaseType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AlbumRelease',
+        'label' => 'AlbumRelease',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/BroadcastRelease',
+        'label' => 'BroadcastRelease',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EPRelease',
+        'label' => 'EPRelease',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/SingleRelease',
+        'label' => 'SingleRelease',
+      ),
+    ),
+    'appliesToDeliveryMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/LockerDelivery',
+        'label' => 'LockerDelivery',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OnSitePickup',
+        'label' => 'OnSitePickup',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ParcelService',
+        'label' => 'ParcelService',
+      ),
+    ),
+    'availability' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/BackOrder',
+        'label' => 'BackOrder',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Discontinued',
+        'label' => 'Discontinued',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/InStock',
+        'label' => 'InStock',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/InStoreOnly',
+        'label' => 'InStoreOnly',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/LimitedAvailability',
+        'label' => 'LimitedAvailability',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/MadeToOrder',
+        'label' => 'MadeToOrder',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/OnlineOnly',
+        'label' => 'OnlineOnly',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/OutOfStock',
+        'label' => 'OutOfStock',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/PreOrder',
+        'label' => 'PreOrder',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/PreSale',
+        'label' => 'PreSale',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/Reserved',
+        'label' => 'Reserved',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/SoldOut',
+        'label' => 'SoldOut',
+      ),
+    ),
+    'availableDeliveryMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/LockerDelivery',
+        'label' => 'LockerDelivery',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OnSitePickup',
+        'label' => 'OnSitePickup',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ParcelService',
+        'label' => 'ParcelService',
+      ),
+    ),
+    'boardingPolicy' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/GroupBoardingPolicy',
+        'label' => 'GroupBoardingPolicy',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ZoneBoardingPolicy',
+        'label' => 'ZoneBoardingPolicy',
+      ),
+    ),
+    'bookFormat' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AudiobookFormat',
+        'label' => 'AudiobookFormat',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EBook',
+        'label' => 'EBook',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/GraphicNovel',
+        'label' => 'GraphicNovel',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Hardcover',
+        'label' => 'Hardcover',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Pamphlet',
+        'label' => 'Pamphlet',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Paperback',
+        'label' => 'Paperback',
+      ),
+    ),
+    'businessDays' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Friday',
+        'label' => 'Friday',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Monday',
+        'label' => 'Monday',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PublicHolidays',
+        'label' => 'PublicHolidays',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Saturday',
+        'label' => 'Saturday',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Sunday',
+        'label' => 'Sunday',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Thursday',
+        'label' => 'Thursday',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/Tuesday',
+        'label' => 'Tuesday',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Wednesday',
+        'label' => 'Wednesday',
+      ),
+    ),
+    'byDay' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Friday',
+        'label' => 'Friday',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Monday',
+        'label' => 'Monday',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PublicHolidays',
+        'label' => 'PublicHolidays',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Saturday',
+        'label' => 'Saturday',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Sunday',
+        'label' => 'Sunday',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Thursday',
+        'label' => 'Thursday',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/Tuesday',
+        'label' => 'Tuesday',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Wednesday',
+        'label' => 'Wednesday',
+      ),
+    ),
+    'category' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AerobicActivity',
+        'label' => 'AerobicActivity',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/AnaerobicActivity',
+        'label' => 'AnaerobicActivity',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/Balance',
+        'label' => 'Balance',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Flexibility',
+        'label' => 'Flexibility',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/LeisureTimeActivity',
+        'label' => 'LeisureTimeActivity',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/OccupationalActivity',
+        'label' => 'OccupationalActivity',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/StrengthTraining',
+        'label' => 'StrengthTraining',
+      ),
+    ),
+    'certificationStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CertificationActive',
+        'label' => 'CertificationActive',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/CertificationInactive',
+        'label' => 'CertificationInactive',
+      ),
+    ),
+    'contactOption' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/HearingImpairedSupported',
+        'label' => 'HearingImpairedSupported',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/TollFree',
+        'label' => 'TollFree',
+      ),
+    ),
+    'costCategory' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ReimbursementCap',
+        'label' => 'ReimbursementCap',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Retail',
+        'label' => 'Retail',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/Wholesale',
+        'label' => 'Wholesale',
+      ),
+    ),
+    'customerRemorseReturnFees' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/FreeReturn',
+        'label' => 'FreeReturn',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OriginalShippingFees',
+        'label' => 'OriginalShippingFees',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/RestockingFees',
+        'label' => 'RestockingFees',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+        'label' => 'ReturnFeesCustomerResponsibility',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/ReturnShippingFees',
+        'label' => 'ReturnShippingFees',
+      ),
+    ),
+    'customerRemorseReturnLabelSource' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+        'label' => 'ReturnLabelCustomerResponsibility',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+        'label' => 'ReturnLabelDownloadAndPrint',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelInBox',
+        'label' => 'ReturnLabelInBox',
+      ),
+    ),
+    'dayOfWeek' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Friday',
+        'label' => 'Friday',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Monday',
+        'label' => 'Monday',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PublicHolidays',
+        'label' => 'PublicHolidays',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Saturday',
+        'label' => 'Saturday',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Sunday',
+        'label' => 'Sunday',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Thursday',
+        'label' => 'Thursday',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/Tuesday',
+        'label' => 'Tuesday',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Wednesday',
+        'label' => 'Wednesday',
+      ),
+    ),
+    'deliveryMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/LockerDelivery',
+        'label' => 'LockerDelivery',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OnSitePickup',
+        'label' => 'OnSitePickup',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ParcelService',
+        'label' => 'ParcelService',
+      ),
+    ),
+    'digitalSourceType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+        'label' => 'AlgorithmicMediaDigitalSource',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+        'label' => 'AlgorithmicallyEnhancedDigitalSource',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+        'label' => 'CompositeCaptureDigitalSource',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/CompositeDigitalSource',
+        'label' => 'CompositeDigitalSource',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+        'label' => 'CompositeSyntheticDigitalSource',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+        'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+        'label' => 'DataDrivenMediaDigitalSource',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/DigitalArtDigitalSource',
+        'label' => 'DigitalArtDigitalSource',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+        'label' => 'DigitalCaptureDigitalSource',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+        'label' => 'MinorHumanEditsDigitalSource',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+        'label' => 'MultiFrameComputationalCaptureDigitalSource',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/NegativeFilmDigitalSource',
+        'label' => 'NegativeFilmDigitalSource',
+      ),
+      12 => 
+      array (
+        'value' => 'https://schema.org/PositiveFilmDigitalSource',
+        'label' => 'PositiveFilmDigitalSource',
+      ),
+      13 => 
+      array (
+        'value' => 'https://schema.org/PrintDigitalSource',
+        'label' => 'PrintDigitalSource',
+      ),
+      14 => 
+      array (
+        'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+        'label' => 'ScreenCaptureDigitalSource',
+      ),
+      15 => 
+      array (
+        'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+        'label' => 'TrainedAlgorithmicMediaDigitalSource',
+      ),
+      16 => 
+      array (
+        'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+        'label' => 'VirtualRecordingDigitalSource',
+      ),
+    ),
+    'driveWheelConfiguration' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AllWheelDriveConfiguration',
+        'label' => 'AllWheelDriveConfiguration',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/FourWheelDriveConfiguration',
+        'label' => 'FourWheelDriveConfiguration',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/FrontWheelDriveConfiguration',
+        'label' => 'FrontWheelDriveConfiguration',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/RearWheelDriveConfiguration',
+        'label' => 'RearWheelDriveConfiguration',
+      ),
+    ),
+    'energyEfficiencyScaleMax' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA',
+        'label' => 'EUEnergyEfficiencyCategoryA',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA1Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA1Plus',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA2Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA2Plus',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA3Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA3Plus',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryB',
+        'label' => 'EUEnergyEfficiencyCategoryB',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryC',
+        'label' => 'EUEnergyEfficiencyCategoryC',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryD',
+        'label' => 'EUEnergyEfficiencyCategoryD',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryE',
+        'label' => 'EUEnergyEfficiencyCategoryE',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryF',
+        'label' => 'EUEnergyEfficiencyCategoryF',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryG',
+        'label' => 'EUEnergyEfficiencyCategoryG',
+      ),
+    ),
+    'energyEfficiencyScaleMin' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA',
+        'label' => 'EUEnergyEfficiencyCategoryA',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA1Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA1Plus',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA2Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA2Plus',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA3Plus',
+        'label' => 'EUEnergyEfficiencyCategoryA3Plus',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryB',
+        'label' => 'EUEnergyEfficiencyCategoryB',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryC',
+        'label' => 'EUEnergyEfficiencyCategoryC',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryD',
+        'label' => 'EUEnergyEfficiencyCategoryD',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryE',
+        'label' => 'EUEnergyEfficiencyCategoryE',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryF',
+        'label' => 'EUEnergyEfficiencyCategoryF',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/EUEnergyEfficiencyCategoryG',
+        'label' => 'EUEnergyEfficiencyCategoryG',
+      ),
+    ),
+    'eventAttendanceMode' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/MixedEventAttendanceMode',
+        'label' => 'MixedEventAttendanceMode',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OfflineEventAttendanceMode',
+        'label' => 'OfflineEventAttendanceMode',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/OnlineEventAttendanceMode',
+        'label' => 'OnlineEventAttendanceMode',
+      ),
+    ),
+    'eventStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/EventCancelled',
+        'label' => 'EventCancelled',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EventMovedOnline',
+        'label' => 'EventMovedOnline',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EventPostponed',
+        'label' => 'EventPostponed',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/EventRescheduled',
+        'label' => 'EventRescheduled',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/EventScheduled',
+        'label' => 'EventScheduled',
+      ),
+    ),
+    'evidenceLevel' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/EvidenceLevelA',
+        'label' => 'EvidenceLevelA',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EvidenceLevelB',
+        'label' => 'EvidenceLevelB',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EvidenceLevelC',
+        'label' => 'EvidenceLevelC',
+      ),
+    ),
+    'fulfillmentType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/FulfillmentTypeCollectionPoint',
+        'label' => 'FulfillmentTypeCollectionPoint',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/FulfillmentTypeDelivery',
+        'label' => 'FulfillmentTypeDelivery',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/FulfillmentTypePickupDropoff',
+        'label' => 'FulfillmentTypePickupDropoff',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/FulfillmentTypePickupInStore',
+        'label' => 'FulfillmentTypePickupInStore',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/FulfillmentTypeScheduledDelivery',
+        'label' => 'FulfillmentTypeScheduledDelivery',
+      ),
+    ),
+    'gameAvailabilityType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DemoGameAvailability',
+        'label' => 'DemoGameAvailability',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/FullGameAvailability',
+        'label' => 'FullGameAvailability',
+      ),
+    ),
+    'gender' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Female',
+        'label' => 'Female',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Male',
+        'label' => 'Male',
+      ),
+    ),
+    'hasAdultConsideration' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AlcoholConsideration',
+        'label' => 'AlcoholConsideration',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/DangerousGoodConsideration',
+        'label' => 'DangerousGoodConsideration',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/HealthcareConsideration',
+        'label' => 'HealthcareConsideration',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/NarcoticConsideration',
+        'label' => 'NarcoticConsideration',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/ReducedRelevanceForChildrenConsideration',
+        'label' => 'ReducedRelevanceForChildrenConsideration',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/SexualContentConsideration',
+        'label' => 'SexualContentConsideration',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/TobaccoNicotineConsideration',
+        'label' => 'TobaccoNicotineConsideration',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/UnclassifiedAdultConsideration',
+        'label' => 'UnclassifiedAdultConsideration',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/ViolenceConsideration',
+        'label' => 'ViolenceConsideration',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/WeaponConsideration',
+        'label' => 'WeaponConsideration',
+      ),
+    ),
+    'hasDeliveryMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/LockerDelivery',
+        'label' => 'LockerDelivery',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OnSitePickup',
+        'label' => 'OnSitePickup',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ParcelService',
+        'label' => 'ParcelService',
+      ),
+    ),
+    'hasHealthAspect' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AllergiesHealthAspect',
+        'label' => 'AllergiesHealthAspect',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/BenefitsHealthAspect',
+        'label' => 'BenefitsHealthAspect',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CausesHealthAspect',
+        'label' => 'CausesHealthAspect',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ContagiousnessHealthAspect',
+        'label' => 'ContagiousnessHealthAspect',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/EffectivenessHealthAspect',
+        'label' => 'EffectivenessHealthAspect',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/GettingAccessHealthAspect',
+        'label' => 'GettingAccessHealthAspect',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/HowItWorksHealthAspect',
+        'label' => 'HowItWorksHealthAspect',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/HowOrWhereHealthAspect',
+        'label' => 'HowOrWhereHealthAspect',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/IngredientsHealthAspect',
+        'label' => 'IngredientsHealthAspect',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/LivingWithHealthAspect',
+        'label' => 'LivingWithHealthAspect',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/MayTreatHealthAspect',
+        'label' => 'MayTreatHealthAspect',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/MisconceptionsHealthAspect',
+        'label' => 'MisconceptionsHealthAspect',
+      ),
+      12 => 
+      array (
+        'value' => 'https://schema.org/OverviewHealthAspect',
+        'label' => 'OverviewHealthAspect',
+      ),
+      13 => 
+      array (
+        'value' => 'https://schema.org/PatientExperienceHealthAspect',
+        'label' => 'PatientExperienceHealthAspect',
+      ),
+      14 => 
+      array (
+        'value' => 'https://schema.org/PregnancyHealthAspect',
+        'label' => 'PregnancyHealthAspect',
+      ),
+      15 => 
+      array (
+        'value' => 'https://schema.org/PreventionHealthAspect',
+        'label' => 'PreventionHealthAspect',
+      ),
+      16 => 
+      array (
+        'value' => 'https://schema.org/PrognosisHealthAspect',
+        'label' => 'PrognosisHealthAspect',
+      ),
+      17 => 
+      array (
+        'value' => 'https://schema.org/RelatedTopicsHealthAspect',
+        'label' => 'RelatedTopicsHealthAspect',
+      ),
+      18 => 
+      array (
+        'value' => 'https://schema.org/RisksOrComplicationsHealthAspect',
+        'label' => 'RisksOrComplicationsHealthAspect',
+      ),
+      19 => 
+      array (
+        'value' => 'https://schema.org/SafetyHealthAspect',
+        'label' => 'SafetyHealthAspect',
+      ),
+      20 => 
+      array (
+        'value' => 'https://schema.org/ScreeningHealthAspect',
+        'label' => 'ScreeningHealthAspect',
+      ),
+      21 => 
+      array (
+        'value' => 'https://schema.org/SeeDoctorHealthAspect',
+        'label' => 'SeeDoctorHealthAspect',
+      ),
+      22 => 
+      array (
+        'value' => 'https://schema.org/SelfCareHealthAspect',
+        'label' => 'SelfCareHealthAspect',
+      ),
+      23 => 
+      array (
+        'value' => 'https://schema.org/SideEffectsHealthAspect',
+        'label' => 'SideEffectsHealthAspect',
+      ),
+      24 => 
+      array (
+        'value' => 'https://schema.org/StagesHealthAspect',
+        'label' => 'StagesHealthAspect',
+      ),
+      25 => 
+      array (
+        'value' => 'https://schema.org/SymptomsHealthAspect',
+        'label' => 'SymptomsHealthAspect',
+      ),
+      26 => 
+      array (
+        'value' => 'https://schema.org/TreatmentsHealthAspect',
+        'label' => 'TreatmentsHealthAspect',
+      ),
+      27 => 
+      array (
+        'value' => 'https://schema.org/TypesHealthAspect',
+        'label' => 'TypesHealthAspect',
+      ),
+      28 => 
+      array (
+        'value' => 'https://schema.org/UsageOrScheduleHealthAspect',
+        'label' => 'UsageOrScheduleHealthAspect',
+      ),
+    ),
+    'hasTierBenefit' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/TierBenefitLoyaltyPoints',
+        'label' => 'TierBenefitLoyaltyPoints',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/TierBenefitLoyaltyPrice',
+        'label' => 'TierBenefitLoyaltyPrice',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/TierBenefitLoyaltyReturns',
+        'label' => 'TierBenefitLoyaltyReturns',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/TierBenefitLoyaltyShipping',
+        'label' => 'TierBenefitLoyaltyShipping',
+      ),
+    ),
+    'identifyingExam' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Abdomen',
+        'label' => 'Abdomen',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Appearance',
+        'label' => 'Appearance',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CardiovascularExam',
+        'label' => 'CardiovascularExam',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Ear',
+        'label' => 'Ear',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Eye',
+        'label' => 'Eye',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Genitourinary',
+        'label' => 'Genitourinary',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/Head',
+        'label' => 'Head',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Lung',
+        'label' => 'Lung',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/MusculoskeletalExam',
+        'label' => 'MusculoskeletalExam',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/Neck',
+        'label' => 'Neck',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/Neuro',
+        'label' => 'Neuro',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/Nose',
+        'label' => 'Nose',
+      ),
+      12 => 
+      array (
+        'value' => 'https://schema.org/Skin',
+        'label' => 'Skin',
+      ),
+      13 => 
+      array (
+        'value' => 'https://schema.org/Throat',
+        'label' => 'Throat',
+      ),
+    ),
+    'imagingTechnique' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CT',
+        'label' => 'CT',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/MRI',
+        'label' => 'MRI',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PET',
+        'label' => 'PET',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Radiography',
+        'label' => 'Radiography',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Ultrasound',
+        'label' => 'Ultrasound',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/XRay',
+        'label' => 'XRay',
+      ),
+    ),
+    'incentiveStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/IncentiveStatusActive',
+        'label' => 'IncentiveStatusActive',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/IncentiveStatusInDevelopment',
+        'label' => 'IncentiveStatusInDevelopment',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/IncentiveStatusOnHold',
+        'label' => 'IncentiveStatusOnHold',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/IncentiveStatusRetired',
+        'label' => 'IncentiveStatusRetired',
+      ),
+    ),
+    'incentiveType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/IncentiveTypeLoan',
+        'label' => 'IncentiveTypeLoan',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/IncentiveTypeRebateOrSubsidy',
+        'label' => 'IncentiveTypeRebateOrSubsidy',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/IncentiveTypeTaxCredit',
+        'label' => 'IncentiveTypeTaxCredit',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/IncentiveTypeTaxDeduction',
+        'label' => 'IncentiveTypeTaxDeduction',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/IncentiveTypeTaxWaiver',
+        'label' => 'IncentiveTypeTaxWaiver',
+      ),
+    ),
+    'infectiousAgentClass' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Bacteria',
+        'label' => 'Bacteria',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Fungus',
+        'label' => 'Fungus',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/MulticellularParasite',
+        'label' => 'MulticellularParasite',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Prion',
+        'label' => 'Prion',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Protozoa',
+        'label' => 'Protozoa',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Virus',
+        'label' => 'Virus',
+      ),
+    ),
+    'itemCondition' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DamagedCondition',
+        'label' => 'DamagedCondition',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/NewCondition',
+        'label' => 'NewCondition',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/RefurbishedCondition',
+        'label' => 'RefurbishedCondition',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/UsedCondition',
+        'label' => 'UsedCondition',
+      ),
+    ),
+    'itemDefectReturnFees' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/FreeReturn',
+        'label' => 'FreeReturn',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OriginalShippingFees',
+        'label' => 'OriginalShippingFees',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/RestockingFees',
+        'label' => 'RestockingFees',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+        'label' => 'ReturnFeesCustomerResponsibility',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/ReturnShippingFees',
+        'label' => 'ReturnShippingFees',
+      ),
+    ),
+    'itemDefectReturnLabelSource' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+        'label' => 'ReturnLabelCustomerResponsibility',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+        'label' => 'ReturnLabelDownloadAndPrint',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelInBox',
+        'label' => 'ReturnLabelInBox',
+      ),
+    ),
+    'itemListOrder' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ItemListOrderAscending',
+        'label' => 'ItemListOrderAscending',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ItemListOrderDescending',
+        'label' => 'ItemListOrderDescending',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ItemListUnordered',
+        'label' => 'ItemListUnordered',
+      ),
+    ),
+    'legislationLegalForce' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/InForce',
+        'label' => 'InForce',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/NotInForce',
+        'label' => 'NotInForce',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PartiallyInForce',
+        'label' => 'PartiallyInForce',
+      ),
+    ),
+    'legislationLegalValue' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/AuthoritativeLegalValue',
+        'label' => 'AuthoritativeLegalValue',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/DefinitiveLegalValue',
+        'label' => 'DefinitiveLegalValue',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/OfficialLegalValue',
+        'label' => 'OfficialLegalValue',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/UnofficialLegalValue',
+        'label' => 'UnofficialLegalValue',
+      ),
+    ),
+    'mapType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ParkingMap',
+        'label' => 'ParkingMap',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/SeatingMap',
+        'label' => 'SeatingMap',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/TransitMap',
+        'label' => 'TransitMap',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/VenueMap',
+        'label' => 'VenueMap',
+      ),
+    ),
+    'measurementMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ExampleMeasurementMethodEnum',
+        'label' => 'ExampleMeasurementMethodEnum',
+      ),
+    ),
+    'measurementTechnique' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ExampleMeasurementMethodEnum',
+        'label' => 'ExampleMeasurementMethodEnum',
+      ),
+    ),
+    'mediaAuthenticityCategory' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DecontextualizedContent',
+        'label' => 'DecontextualizedContent',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EditedOrCroppedContent',
+        'label' => 'EditedOrCroppedContent',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/OriginalMediaContent',
+        'label' => 'OriginalMediaContent',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/SatireOrParodyContent',
+        'label' => 'SatireOrParodyContent',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/StagedContent',
+        'label' => 'StagedContent',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/TransformedContent',
+        'label' => 'TransformedContent',
+      ),
+    ),
+    'medicalAudience' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Clinician',
+        'label' => 'Clinician',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/MedicalResearcher',
+        'label' => 'MedicalResearcher',
+      ),
+    ),
+    'medicalSpecialty' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Anesthesia',
+        'label' => 'Anesthesia',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Cardiovascular',
+        'label' => 'Cardiovascular',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CommunityHealth',
+        'label' => 'CommunityHealth',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Dentistry',
+        'label' => 'Dentistry',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Dermatologic',
+        'label' => 'Dermatologic',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Dermatology',
+        'label' => 'Dermatology',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/DietNutrition',
+        'label' => 'DietNutrition',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Emergency',
+        'label' => 'Emergency',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/Endocrine',
+        'label' => 'Endocrine',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/Gastroenterologic',
+        'label' => 'Gastroenterologic',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/Genetic',
+        'label' => 'Genetic',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/Geriatric',
+        'label' => 'Geriatric',
+      ),
+      12 => 
+      array (
+        'value' => 'https://schema.org/Gynecologic',
+        'label' => 'Gynecologic',
+      ),
+      13 => 
+      array (
+        'value' => 'https://schema.org/Hematologic',
+        'label' => 'Hematologic',
+      ),
+      14 => 
+      array (
+        'value' => 'https://schema.org/Infectious',
+        'label' => 'Infectious',
+      ),
+      15 => 
+      array (
+        'value' => 'https://schema.org/LaboratoryScience',
+        'label' => 'LaboratoryScience',
+      ),
+      16 => 
+      array (
+        'value' => 'https://schema.org/Midwifery',
+        'label' => 'Midwifery',
+      ),
+      17 => 
+      array (
+        'value' => 'https://schema.org/Musculoskeletal',
+        'label' => 'Musculoskeletal',
+      ),
+      18 => 
+      array (
+        'value' => 'https://schema.org/Neurologic',
+        'label' => 'Neurologic',
+      ),
+      19 => 
+      array (
+        'value' => 'https://schema.org/Nursing',
+        'label' => 'Nursing',
+      ),
+      20 => 
+      array (
+        'value' => 'https://schema.org/Obstetric',
+        'label' => 'Obstetric',
+      ),
+      21 => 
+      array (
+        'value' => 'https://schema.org/Oncologic',
+        'label' => 'Oncologic',
+      ),
+      22 => 
+      array (
+        'value' => 'https://schema.org/Optometric',
+        'label' => 'Optometric',
+      ),
+      23 => 
+      array (
+        'value' => 'https://schema.org/Otolaryngologic',
+        'label' => 'Otolaryngologic',
+      ),
+      24 => 
+      array (
+        'value' => 'https://schema.org/Pathology',
+        'label' => 'Pathology',
+      ),
+      25 => 
+      array (
+        'value' => 'https://schema.org/Pediatric',
+        'label' => 'Pediatric',
+      ),
+      26 => 
+      array (
+        'value' => 'https://schema.org/PharmacySpecialty',
+        'label' => 'PharmacySpecialty',
+      ),
+      27 => 
+      array (
+        'value' => 'https://schema.org/Physiotherapy',
+        'label' => 'Physiotherapy',
+      ),
+      28 => 
+      array (
+        'value' => 'https://schema.org/PlasticSurgery',
+        'label' => 'PlasticSurgery',
+      ),
+      29 => 
+      array (
+        'value' => 'https://schema.org/Podiatric',
+        'label' => 'Podiatric',
+      ),
+      30 => 
+      array (
+        'value' => 'https://schema.org/PrimaryCare',
+        'label' => 'PrimaryCare',
+      ),
+      31 => 
+      array (
+        'value' => 'https://schema.org/Psychiatric',
+        'label' => 'Psychiatric',
+      ),
+      32 => 
+      array (
+        'value' => 'https://schema.org/PublicHealth',
+        'label' => 'PublicHealth',
+      ),
+      33 => 
+      array (
+        'value' => 'https://schema.org/Pulmonary',
+        'label' => 'Pulmonary',
+      ),
+      34 => 
+      array (
+        'value' => 'https://schema.org/Radiography',
+        'label' => 'Radiography',
+      ),
+      35 => 
+      array (
+        'value' => 'https://schema.org/Renal',
+        'label' => 'Renal',
+      ),
+      36 => 
+      array (
+        'value' => 'https://schema.org/RespiratoryTherapy',
+        'label' => 'RespiratoryTherapy',
+      ),
+      37 => 
+      array (
+        'value' => 'https://schema.org/Rheumatologic',
+        'label' => 'Rheumatologic',
+      ),
+      38 => 
+      array (
+        'value' => 'https://schema.org/SpeechPathology',
+        'label' => 'SpeechPathology',
+      ),
+      39 => 
+      array (
+        'value' => 'https://schema.org/Surgical',
+        'label' => 'Surgical',
+      ),
+      40 => 
+      array (
+        'value' => 'https://schema.org/Toxicologic',
+        'label' => 'Toxicologic',
+      ),
+      41 => 
+      array (
+        'value' => 'https://schema.org/Urologic',
+        'label' => 'Urologic',
+      ),
+    ),
+    'medicineSystem' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Ayurvedic',
+        'label' => 'Ayurvedic',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Chiropractic',
+        'label' => 'Chiropractic',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/Homeopathic',
+        'label' => 'Homeopathic',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Osteopathic',
+        'label' => 'Osteopathic',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/TraditionalChinese',
+        'label' => 'TraditionalChinese',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/WesternConventional',
+        'label' => 'WesternConventional',
+      ),
+    ),
+    'musicReleaseFormat' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CDFormat',
+        'label' => 'CDFormat',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/CassetteFormat',
+        'label' => 'CassetteFormat',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/DVDFormat',
+        'label' => 'DVDFormat',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/DigitalAudioTapeFormat',
+        'label' => 'DigitalAudioTapeFormat',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/DigitalFormat',
+        'label' => 'DigitalFormat',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/LaserDiscFormat',
+        'label' => 'LaserDiscFormat',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/VinylFormat',
+        'label' => 'VinylFormat',
+      ),
+    ),
+    'orderItemStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/OrderCancelled',
+        'label' => 'OrderCancelled',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OrderDelivered',
+        'label' => 'OrderDelivered',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/OrderInTransit',
+        'label' => 'OrderInTransit',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/OrderPaymentDue',
+        'label' => 'OrderPaymentDue',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/OrderPickupAvailable',
+        'label' => 'OrderPickupAvailable',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/OrderProblem',
+        'label' => 'OrderProblem',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/OrderProcessing',
+        'label' => 'OrderProcessing',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/OrderReturned',
+        'label' => 'OrderReturned',
+      ),
+    ),
+    'orderStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/OrderCancelled',
+        'label' => 'OrderCancelled',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OrderDelivered',
+        'label' => 'OrderDelivered',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/OrderInTransit',
+        'label' => 'OrderInTransit',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/OrderPaymentDue',
+        'label' => 'OrderPaymentDue',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/OrderPickupAvailable',
+        'label' => 'OrderPickupAvailable',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/OrderProblem',
+        'label' => 'OrderProblem',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/OrderProcessing',
+        'label' => 'OrderProcessing',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/OrderReturned',
+        'label' => 'OrderReturned',
+      ),
+    ),
+    'paymentMethodType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ByBankTransferInAdvance',
+        'label' => 'ByBankTransferInAdvance',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ByInvoice',
+        'label' => 'ByInvoice',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/COD',
+        'label' => 'COD',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Cash',
+        'label' => 'Cash',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/CheckInAdvance',
+        'label' => 'CheckInAdvance',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/DirectDebit',
+        'label' => 'DirectDebit',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/InStorePrepay',
+        'label' => 'InStorePrepay',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/PhoneCarrierPayment',
+        'label' => 'PhoneCarrierPayment',
+      ),
+    ),
+    'paymentStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/PaymentAutomaticallyApplied',
+        'label' => 'PaymentAutomaticallyApplied',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/PaymentComplete',
+        'label' => 'PaymentComplete',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PaymentDeclined',
+        'label' => 'PaymentDeclined',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/PaymentDue',
+        'label' => 'PaymentDue',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/PaymentPastDue',
+        'label' => 'PaymentPastDue',
+      ),
+    ),
+    'permissionType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CommentPermission',
+        'label' => 'CommentPermission',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReadPermission',
+        'label' => 'ReadPermission',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/WritePermission',
+        'label' => 'WritePermission',
+      ),
+    ),
+    'playMode' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CoOp',
+        'label' => 'CoOp',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/MultiPlayer',
+        'label' => 'MultiPlayer',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/SinglePlayer',
+        'label' => 'SinglePlayer',
+      ),
+    ),
+    'pregnancyCategory' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/FDAcategoryA',
+        'label' => 'FDAcategoryA',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/FDAcategoryB',
+        'label' => 'FDAcategoryB',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/FDAcategoryC',
+        'label' => 'FDAcategoryC',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/FDAcategoryD',
+        'label' => 'FDAcategoryD',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/FDAcategoryX',
+        'label' => 'FDAcategoryX',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/FDAnotEvaluated',
+        'label' => 'FDAnotEvaluated',
+      ),
+    ),
+    'prescriptionStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/OTC',
+        'label' => 'OTC',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/PrescriptionOnly',
+        'label' => 'PrescriptionOnly',
+      ),
+    ),
+    'priceComponentType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ActivationFee',
+        'label' => 'ActivationFee',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/CleaningFee',
+        'label' => 'CleaningFee',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/DistanceFee',
+        'label' => 'DistanceFee',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Downpayment',
+        'label' => 'Downpayment',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Installment',
+        'label' => 'Installment',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Subscription',
+        'label' => 'Subscription',
+      ),
+    ),
+    'priceType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/InvoicePrice',
+        'label' => 'InvoicePrice',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ListPrice',
+        'label' => 'ListPrice',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/MSRP',
+        'label' => 'MSRP',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/MinimumAdvertisedPrice',
+        'label' => 'MinimumAdvertisedPrice',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/RegularPrice',
+        'label' => 'RegularPrice',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/SRP',
+        'label' => 'SRP',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/SalePrice',
+        'label' => 'SalePrice',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/StrikethroughPrice',
+        'label' => 'StrikethroughPrice',
+      ),
+    ),
+    'procedureType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/NoninvasiveProcedure',
+        'label' => 'NoninvasiveProcedure',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/PercutaneousProcedure',
+        'label' => 'PercutaneousProcedure',
+      ),
+    ),
+    'purchaseType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/PurchaseTypeLease',
+        'label' => 'PurchaseTypeLease',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/PurchaseTypeNewPurchase',
+        'label' => 'PurchaseTypeNewPurchase',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/PurchaseTypeTradeIn',
+        'label' => 'PurchaseTypeTradeIn',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/PurchaseTypeUsedPurchase',
+        'label' => 'PurchaseTypeUsedPurchase',
+      ),
+    ),
+    'qualifiedExpense' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/IncentiveQualifiedExpenseTypeGoodsOnly',
+        'label' => 'IncentiveQualifiedExpenseTypeGoodsOnly',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/IncentiveQualifiedExpenseTypeGoodsOrServices',
+        'label' => 'IncentiveQualifiedExpenseTypeGoodsOrServices',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/IncentiveQualifiedExpenseTypeServicesOnly',
+        'label' => 'IncentiveQualifiedExpenseTypeServicesOnly',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/IncentiveQualifiedExpenseTypeUtilityBill',
+        'label' => 'IncentiveQualifiedExpenseTypeUtilityBill',
+      ),
+    ),
+    'refundType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ExchangeRefund',
+        'label' => 'ExchangeRefund',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/FullRefund',
+        'label' => 'FullRefund',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/StoreCreditRefund',
+        'label' => 'StoreCreditRefund',
+      ),
+    ),
+    'relevantSpecialty' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Anesthesia',
+        'label' => 'Anesthesia',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Cardiovascular',
+        'label' => 'Cardiovascular',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CommunityHealth',
+        'label' => 'CommunityHealth',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Dentistry',
+        'label' => 'Dentistry',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Dermatologic',
+        'label' => 'Dermatologic',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Dermatology',
+        'label' => 'Dermatology',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/DietNutrition',
+        'label' => 'DietNutrition',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/Emergency',
+        'label' => 'Emergency',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/Endocrine',
+        'label' => 'Endocrine',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/Gastroenterologic',
+        'label' => 'Gastroenterologic',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/Genetic',
+        'label' => 'Genetic',
+      ),
+      11 => 
+      array (
+        'value' => 'https://schema.org/Geriatric',
+        'label' => 'Geriatric',
+      ),
+      12 => 
+      array (
+        'value' => 'https://schema.org/Gynecologic',
+        'label' => 'Gynecologic',
+      ),
+      13 => 
+      array (
+        'value' => 'https://schema.org/Hematologic',
+        'label' => 'Hematologic',
+      ),
+      14 => 
+      array (
+        'value' => 'https://schema.org/Infectious',
+        'label' => 'Infectious',
+      ),
+      15 => 
+      array (
+        'value' => 'https://schema.org/LaboratoryScience',
+        'label' => 'LaboratoryScience',
+      ),
+      16 => 
+      array (
+        'value' => 'https://schema.org/Midwifery',
+        'label' => 'Midwifery',
+      ),
+      17 => 
+      array (
+        'value' => 'https://schema.org/Musculoskeletal',
+        'label' => 'Musculoskeletal',
+      ),
+      18 => 
+      array (
+        'value' => 'https://schema.org/Neurologic',
+        'label' => 'Neurologic',
+      ),
+      19 => 
+      array (
+        'value' => 'https://schema.org/Nursing',
+        'label' => 'Nursing',
+      ),
+      20 => 
+      array (
+        'value' => 'https://schema.org/Obstetric',
+        'label' => 'Obstetric',
+      ),
+      21 => 
+      array (
+        'value' => 'https://schema.org/Oncologic',
+        'label' => 'Oncologic',
+      ),
+      22 => 
+      array (
+        'value' => 'https://schema.org/Optometric',
+        'label' => 'Optometric',
+      ),
+      23 => 
+      array (
+        'value' => 'https://schema.org/Otolaryngologic',
+        'label' => 'Otolaryngologic',
+      ),
+      24 => 
+      array (
+        'value' => 'https://schema.org/Pathology',
+        'label' => 'Pathology',
+      ),
+      25 => 
+      array (
+        'value' => 'https://schema.org/Pediatric',
+        'label' => 'Pediatric',
+      ),
+      26 => 
+      array (
+        'value' => 'https://schema.org/PharmacySpecialty',
+        'label' => 'PharmacySpecialty',
+      ),
+      27 => 
+      array (
+        'value' => 'https://schema.org/Physiotherapy',
+        'label' => 'Physiotherapy',
+      ),
+      28 => 
+      array (
+        'value' => 'https://schema.org/PlasticSurgery',
+        'label' => 'PlasticSurgery',
+      ),
+      29 => 
+      array (
+        'value' => 'https://schema.org/Podiatric',
+        'label' => 'Podiatric',
+      ),
+      30 => 
+      array (
+        'value' => 'https://schema.org/PrimaryCare',
+        'label' => 'PrimaryCare',
+      ),
+      31 => 
+      array (
+        'value' => 'https://schema.org/Psychiatric',
+        'label' => 'Psychiatric',
+      ),
+      32 => 
+      array (
+        'value' => 'https://schema.org/PublicHealth',
+        'label' => 'PublicHealth',
+      ),
+      33 => 
+      array (
+        'value' => 'https://schema.org/Pulmonary',
+        'label' => 'Pulmonary',
+      ),
+      34 => 
+      array (
+        'value' => 'https://schema.org/Radiography',
+        'label' => 'Radiography',
+      ),
+      35 => 
+      array (
+        'value' => 'https://schema.org/Renal',
+        'label' => 'Renal',
+      ),
+      36 => 
+      array (
+        'value' => 'https://schema.org/RespiratoryTherapy',
+        'label' => 'RespiratoryTherapy',
+      ),
+      37 => 
+      array (
+        'value' => 'https://schema.org/Rheumatologic',
+        'label' => 'Rheumatologic',
+      ),
+      38 => 
+      array (
+        'value' => 'https://schema.org/SpeechPathology',
+        'label' => 'SpeechPathology',
+      ),
+      39 => 
+      array (
+        'value' => 'https://schema.org/Surgical',
+        'label' => 'Surgical',
+      ),
+      40 => 
+      array (
+        'value' => 'https://schema.org/Toxicologic',
+        'label' => 'Toxicologic',
+      ),
+      41 => 
+      array (
+        'value' => 'https://schema.org/Urologic',
+        'label' => 'Urologic',
+      ),
+    ),
+    'reservationStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ReservationCancelled',
+        'label' => 'ReservationCancelled',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReservationConfirmed',
+        'label' => 'ReservationConfirmed',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ReservationHold',
+        'label' => 'ReservationHold',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ReservationPending',
+        'label' => 'ReservationPending',
+      ),
+    ),
+    'returnFees' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/FreeReturn',
+        'label' => 'FreeReturn',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OriginalShippingFees',
+        'label' => 'OriginalShippingFees',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/RestockingFees',
+        'label' => 'RestockingFees',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+        'label' => 'ReturnFeesCustomerResponsibility',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/ReturnShippingFees',
+        'label' => 'ReturnShippingFees',
+      ),
+    ),
+    'returnLabelSource' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+        'label' => 'ReturnLabelCustomerResponsibility',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+        'label' => 'ReturnLabelDownloadAndPrint',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ReturnLabelInBox',
+        'label' => 'ReturnLabelInBox',
+      ),
+    ),
+    'returnMethod' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/KeepProduct',
+        'label' => 'KeepProduct',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/ReturnAtKiosk',
+        'label' => 'ReturnAtKiosk',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/ReturnByMail',
+        'label' => 'ReturnByMail',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/ReturnInStore',
+        'label' => 'ReturnInStore',
+      ),
+    ),
+    'returnPolicyCategory' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        'label' => 'MerchantReturnFiniteReturnWindow',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/MerchantReturnNotPermitted',
+        'label' => 'MerchantReturnNotPermitted',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/MerchantReturnUnlimitedWindow',
+        'label' => 'MerchantReturnUnlimitedWindow',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/MerchantReturnUnspecified',
+        'label' => 'MerchantReturnUnspecified',
+      ),
+    ),
+    'rsvpResponse' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/RsvpResponseMaybe',
+        'label' => 'RsvpResponseMaybe',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/RsvpResponseNo',
+        'label' => 'RsvpResponseNo',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/RsvpResponseYes',
+        'label' => 'RsvpResponseYes',
+      ),
+    ),
+    'serverStatus' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/OfflinePermanently',
+        'label' => 'OfflinePermanently',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/OfflineTemporarily',
+        'label' => 'OfflineTemporarily',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/Online',
+        'label' => 'Online',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/OnlineFull',
+        'label' => 'OnlineFull',
+      ),
+    ),
+    'serviceType' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/BasicIncome',
+        'label' => 'BasicIncome',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/BusinessSupport',
+        'label' => 'BusinessSupport',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/DisabilitySupport',
+        'label' => 'DisabilitySupport',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/HealthCare',
+        'label' => 'HealthCare',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/OneTimePayments',
+        'label' => 'OneTimePayments',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/PaidLeave',
+        'label' => 'PaidLeave',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/ParentalSupport',
+        'label' => 'ParentalSupport',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/UnemploymentSupport',
+        'label' => 'UnemploymentSupport',
+      ),
+    ),
+    'sizeSystem' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/SizeSystemImperial',
+        'label' => 'SizeSystemImperial',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/SizeSystemMetric',
+        'label' => 'SizeSystemMetric',
+      ),
+    ),
+    'status' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/EventCancelled',
+        'label' => 'EventCancelled',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/EventMovedOnline',
+        'label' => 'EventMovedOnline',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/EventPostponed',
+        'label' => 'EventPostponed',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/EventRescheduled',
+        'label' => 'EventRescheduled',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/EventScheduled',
+        'label' => 'EventScheduled',
+      ),
+    ),
+    'steeringPosition' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/LeftHandDriving',
+        'label' => 'LeftHandDriving',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/RightHandDriving',
+        'label' => 'RightHandDriving',
+      ),
+    ),
+    'studyDesign' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/CaseSeries',
+        'label' => 'CaseSeries',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/CohortStudy',
+        'label' => 'CohortStudy',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/CrossSectional',
+        'label' => 'CrossSectional',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/Longitudinal',
+        'label' => 'Longitudinal',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/Observational',
+        'label' => 'Observational',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/Registry',
+        'label' => 'Registry',
+      ),
+    ),
+    'suggestedGender' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/Female',
+        'label' => 'Female',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/Male',
+        'label' => 'Male',
+      ),
+    ),
+    'suitableForDiet' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DiabeticDiet',
+        'label' => 'DiabeticDiet',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/GlutenFreeDiet',
+        'label' => 'GlutenFreeDiet',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/HalalDiet',
+        'label' => 'HalalDiet',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/HinduDiet',
+        'label' => 'HinduDiet',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/KosherDiet',
+        'label' => 'KosherDiet',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/LowCalorieDiet',
+        'label' => 'LowCalorieDiet',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/LowFatDiet',
+        'label' => 'LowFatDiet',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/LowLactoseDiet',
+        'label' => 'LowLactoseDiet',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/LowSaltDiet',
+        'label' => 'LowSaltDiet',
+      ),
+      9 => 
+      array (
+        'value' => 'https://schema.org/VeganDiet',
+        'label' => 'VeganDiet',
+      ),
+      10 => 
+      array (
+        'value' => 'https://schema.org/VegetarianDiet',
+        'label' => 'VegetarianDiet',
+      ),
+    ),
+    'trialDesign' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DoubleBlindedTrial',
+        'label' => 'DoubleBlindedTrial',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/InternationalTrial',
+        'label' => 'InternationalTrial',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/MultiCenterTrial',
+        'label' => 'MultiCenterTrial',
+      ),
+      3 => 
+      array (
+        'value' => 'https://schema.org/OpenTrial',
+        'label' => 'OpenTrial',
+      ),
+      4 => 
+      array (
+        'value' => 'https://schema.org/PlaceboControlledTrial',
+        'label' => 'PlaceboControlledTrial',
+      ),
+      5 => 
+      array (
+        'value' => 'https://schema.org/RandomizedTrial',
+        'label' => 'RandomizedTrial',
+      ),
+      6 => 
+      array (
+        'value' => 'https://schema.org/SingleBlindedTrial',
+        'label' => 'SingleBlindedTrial',
+      ),
+      7 => 
+      array (
+        'value' => 'https://schema.org/SingleCenterTrial',
+        'label' => 'SingleCenterTrial',
+      ),
+      8 => 
+      array (
+        'value' => 'https://schema.org/TripleBlindedTrial',
+        'label' => 'TripleBlindedTrial',
+      ),
+    ),
+    'vehicleSpecialUsage' => 
+    array (
+      0 => 
+      array (
+        'value' => 'https://schema.org/DrivingSchoolVehicleUsage',
+        'label' => 'DrivingSchoolVehicleUsage',
+      ),
+      1 => 
+      array (
+        'value' => 'https://schema.org/RentalVehicleUsage',
+        'label' => 'RentalVehicleUsage',
+      ),
+      2 => 
+      array (
+        'value' => 'https://schema.org/TaxiVehicleUsage',
+        'label' => 'TaxiVehicleUsage',
       ),
     ),
   ),

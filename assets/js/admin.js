@@ -161,6 +161,10 @@
 			$desc.text( ( d && d.comment ) ? d.comment : '' );
 		}
 
+		function renderValue( current ) {
+			renderValueControl( $value, base, $source.val(), current || '', $prop.val() );
+		}
+
 		$prop.on( 'change', function () {
 			if ( '__all__' === $( this ).val() ) {
 				fillPropertySelect( $prop, '', true );
@@ -169,6 +173,7 @@
 				return;
 			}
 			updateDesc();
+			renderValue( '' ); // The value control depends on the chosen property (enums).
 		} );
 
 		var $source = $( '<select class="hgsd-source" />' ).attr( 'name', base + '[source]' );
@@ -190,21 +195,41 @@
 			$desc
 		);
 
-		renderValueControl( $value, base, data.source || 'wp', data.value || '' );
+		renderValueControl( $value, base, data.source || 'wp', data.value || '', data.property || '' );
 		updateDesc();
 
 		$source.on( 'change', function () {
-			renderValueControl( $value, base, $( this ).val(), '' );
+			renderValue( '' );
 		} );
 
 		return $row;
 	}
 
-	function renderValueControl( $value, base, source, current ) {
+	function renderValueControl( $value, base, source, current, propKey ) {
 		$value.empty();
 		var name = base + '[value]';
+		var def = currentProps[ propKey ] || {};
 
 		if ( 'custom' === source ) {
+			// Fixed list of allowed values for enumeration properties.
+			if ( def.enum && def.enum.length ) {
+				var $e = $( '<select />' ).attr( 'name', name );
+				$e.append( opt( '', HGSD.i18n.selectValue, ! current ) );
+				$.each( def.enum, function ( i, o ) {
+					$e.append( opt( o.value, o.label, o.value === current ) );
+				} );
+				$value.append( $e );
+				return;
+			}
+			// True/false for boolean properties.
+			if ( 'boolean' === def.type ) {
+				var $b = $( '<select />' ).attr( 'name', name );
+				$b.append( opt( '', HGSD.i18n.selectValue, ! current ) );
+				$b.append( opt( 'true', 'true', 'true' === current ) );
+				$b.append( opt( 'false', 'false', 'false' === current ) );
+				$value.append( $b );
+				return;
+			}
 			$value.append(
 				$( '<input type="text" class="widefat" />' )
 					.attr( 'name', name )
@@ -332,20 +357,39 @@
 		return $s;
 	}
 
-	function searchSelect( name, object, arg, savedValue ) {
+	function searchSelect( name, object, arg, savedValue, onSelect ) {
 		var $box = $( '<span class="hgsd-search" />' );
-		var $input = $( '<input type="text" class="hgsd-search-input" />' ).attr( 'placeholder', HGSD.i18n.searchPosts );
-		var $sel = $( '<select class="hgsd-search-select" />' ).attr( 'name', name );
+		var $input = $( '<input type="text" class="hgsd-search-input" autocomplete="off" />' ).attr( 'placeholder', HGSD.i18n.searchPosts );
+		var $hidden = $( '<input type="hidden" />' ).attr( 'name', name ).val( savedValue || '' );
+		var $list = $( '<ul class="hgsd-search-results" />' ).hide();
 
-		if ( savedValue ) {
-			$sel.append( opt( savedValue, '#' + savedValue, true ) );
-		} else {
-			$sel.append( opt( '', HGSD.i18n.selectValue, false ) );
+		$box.append( $input, $hidden, $list );
+
+		function choose( id, text ) {
+			$hidden.val( id );
+			$input.val( text );
+			$list.hide().empty();
+			$hidden.trigger( 'change' );
+			if ( typeof onSelect === 'function' ) {
+				onSelect( id, text );
+			}
+		}
+
+		function render( items ) {
+			$list.empty();
+			if ( ! items || ! items.length ) {
+				$list.hide();
+				return;
+			}
+			$.each( items, function ( i, item ) {
+				$( '<li />' ).text( item.text ).attr( 'data-id', item.id ).appendTo( $list );
+			} );
+			$list.show();
 		}
 
 		var timer = null;
-		$input.on( 'keyup', function () {
-			var term = $( this ).val();
+		function search() {
+			var term = $input.val();
 			clearTimeout( timer );
 			timer = setTimeout( function () {
 				$.getJSON( HGSD.ajaxUrl, {
@@ -355,18 +399,34 @@
 					arg: arg,
 					search: term
 				} ).done( function ( res ) {
-					var keep = $sel.val();
-					$sel.empty().append( opt( '', HGSD.i18n.selectValue, false ) );
-					if ( res && res.success ) {
-						$.each( res.data, function ( i, item ) {
-							$sel.append( opt( item.id, item.text, String( item.id ) === String( keep ) ) );
-						} );
-					}
+					render( ( res && res.success ) ? res.data : [] );
 				} );
-			}, 300 );
+			}, 250 );
+		}
+
+		$input.on( 'input focus', search );
+		$list.on( 'click', 'li', function () {
+			choose( $( this ).attr( 'data-id' ), $( this ).text() );
+		} );
+		$( document ).on( 'click', function ( e ) {
+			if ( $box[0] && ! $.contains( $box[0], e.target ) && e.target !== $box[0] ) {
+				$list.hide();
+			}
 		} );
 
-		$box.append( $input, $sel );
+		// Resolve the label for a pre-saved id so the field isn't blank on load.
+		if ( savedValue ) {
+			$.getJSON( HGSD.ajaxUrl, {
+				action: 'hgsd_search_content',
+				nonce: HGSD.nonce,
+				object: object,
+				arg: arg,
+				id: savedValue
+			} ).done( function ( res ) {
+				$input.val( ( res && res.success && res.data.length ) ? res.data[0].text : '#' + savedValue );
+			} );
+		}
+
 		return $box;
 	}
 
@@ -578,12 +638,10 @@
 			return;
 		}
 		$c.data( 'built', true );
-		var $box = searchSelect( '', 'post', 'any', '' );
-		$c.append( $box );
-		$box.find( 'select' ).on( 'change', function () {
-			previewPostId = $( this ).val();
+		$c.append( searchSelect( '', 'post', 'any', '', function ( id ) {
+			previewPostId = id;
 			refreshPreview();
-		} );
+		} ) );
 	}
 
 	/* ----------------------------------------------------------------- rehydrate */

@@ -149,6 +149,53 @@ function wp_strip_tags_fallback( string $s ): string {
 	return trim( strip_tags( $s ) );
 }
 
+// Classes that are (transitively) schema:Enumeration — their instances are the
+// fixed set of allowed values for properties ranged at them.
+$enum_classes = [];
+foreach ( $classes as $cid => $class_node ) {
+	$short = substr( $cid, strlen( 'schema:' ) );
+	if ( isset( $ancestors( $short )['schema:Enumeration'] ) ) {
+		$enum_classes[ $cid ] = true;
+	}
+}
+
+// Collect the members of every enumeration class.
+$enum_members = [];
+foreach ( $graph as $node ) {
+	$raw = $node['@type'] ?? null;
+	if ( ! $raw ) {
+		continue;
+	}
+	$types = is_array( $raw ) ? $raw : [ $raw ];
+	foreach ( $types as $type_id ) {
+		if ( ! is_string( $type_id ) || ! isset( $enum_classes[ $type_id ] ) ) {
+			continue;
+		}
+		$member_id = $node['@id'] ?? '';
+		if ( ! is_string( $member_id ) || 0 !== strpos( $member_id, 'schema:' ) ) {
+			continue;
+		}
+		$member_short                 = substr( $member_id, strlen( 'schema:' ) );
+		$enum_members[ $type_id ][]   = [
+			'value' => 'https://schema.org/' . $member_short,
+			'label' => $member_short,
+		];
+	}
+}
+
+// Allowed values for every enumeration-valued property, across the whole
+// vocabulary (so curated nested props like offers.availability find them too).
+$global_enums = [];
+foreach ( $properties as $pid => $prop ) {
+	$name = substr( $pid, strlen( 'schema:' ) );
+	foreach ( $ids( $prop['schema:rangeIncludes'] ?? null ) as $rid ) {
+		if ( isset( $enum_members[ $rid ] ) ) {
+			$global_enums[ $name ] = array_slice( $enum_members[ $rid ], 0, 60 );
+			break;
+		}
+	}
+}
+
 $catalog = [];
 
 foreach ( $targets as $key => $class ) {
@@ -161,10 +208,23 @@ foreach ( $targets as $key => $class ) {
 			continue;
 		}
 
-		$ranges   = array_map( static fn( $r ) => substr( $r, strlen( 'schema:' ) ), $ids( $prop['schema:rangeIncludes'] ?? null ) );
-		$datatype = $classify( $ranges );
+		$range_ids = $ids( $prop['schema:rangeIncludes'] ?? null );
+		$ranges    = array_map( static fn( $r ) => substr( $r, strlen( 'schema:' ) ), $range_ids );
+		$datatype  = $classify( $ranges );
+
+		// Enumeration-valued properties become a fixed list of allowed values.
+		$members = [];
 		if ( null === $datatype ) {
-			continue; // Skip object-only properties.
+			foreach ( $range_ids as $rid ) {
+				if ( isset( $enum_members[ $rid ] ) ) {
+					$members = $enum_members[ $rid ];
+					break;
+				}
+			}
+			if ( empty( $members ) ) {
+				continue; // Object-only property.
+			}
+			$datatype = 'enum';
 		}
 
 		$name = substr( $pid, strlen( 'schema:' ) );
@@ -174,16 +234,23 @@ foreach ( $targets as $key => $class ) {
 			'type'    => $datatype,
 			'comment' => $clean( $prop['rdfs:comment'] ?? '' ),
 		];
+
+		if ( 'enum' === $datatype && isset( $global_enums[ $name ] ) ) {
+			$entry[ $name ]['enum'] = $global_enums[ $name ];
+		}
 	}
 
 	ksort( $entry );
 	$catalog[ $key ] = $entry;
 }
 
+ksort( $global_enums );
+
 $export = var_export(
 	[
 		'version' => $version,
 		'types'   => $catalog,
+		'enums'   => $global_enums,
 	],
 	true
 );

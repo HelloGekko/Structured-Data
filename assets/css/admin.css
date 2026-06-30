@@ -119,15 +119,43 @@
 
 .hgsd-search {
 	display: block;
+	position: relative;
 }
 
 .hgsd-search-input {
 	width: 100%;
-	margin-bottom: 4px;
 }
 
-.hgsd-search-select {
-	width: 100%;
+.hgsd-search-results {
+	position: absolute;
+	z-index: 1000;
+	left: 0;
+	right: 0;
+	margin: 2px 0 0;
+	padding: 0;
+	max-height: 220px;
+	overflow-y: auto;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
+.hgsd-search-results li {
+	margin: 0;
+	padding: 7px 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.hgsd-search-results li:last-child {
+	border-bottom: 0;
+}
+
+.hgsd-search-results li:hover {
+	background: #f0f6fc;
+	color: #2271b1;
 }
 
 .hgsd-remove {

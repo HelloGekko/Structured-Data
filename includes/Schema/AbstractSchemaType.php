@@ -92,6 +92,22 @@ abstract class AbstractSchemaType {
 			$out[ $key ]        = $def;
 		}
 
+		// Attach enumeration values by the property's leaf name so both flat and
+		// nested keys (e.g. offers.availability) offer a fixed value list.
+		$catalog_obj = SchemaCatalog::instance();
+		foreach ( $out as $key => &$def ) {
+			if ( ! empty( $def['enum'] ) ) {
+				continue;
+			}
+			$leaf = false !== strpos( $key, '.' ) ? substr( $key, strrpos( $key, '.' ) + 1 ) : $key;
+			$enum = $catalog_obj->enum( $leaf );
+			if ( $enum ) {
+				$def['enum'] = $enum;
+				$def['type'] = 'enum';
+			}
+		}
+		unset( $def );
+
 		return $out;
 	}
 

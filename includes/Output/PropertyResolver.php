@@ -78,10 +78,24 @@ final class PropertyResolver {
 				return $img ? (string) $img : '';
 			case 'word_count':
 				return $post_id ? (string) str_word_count( wp_strip_all_tags( (string) get_post_field( 'post_content', $post_id ) ) ) : '';
+			case 'comment_count':
+				return $post_id ? (string) get_comments_number( $post_id ) : '';
+			case 'post_type':
+				return $post_id ? (string) get_post_type( $post_id ) : '';
+			case 'post_categories':
+				return $post_id ? $this->term_names( $post_id, 'category' ) : '';
+			case 'post_tags':
+				return $post_id ? $this->term_names( $post_id, 'post_tag' ) : '';
 			case 'author_name':
 				return $author_id ? get_the_author_meta( 'display_name', $author_id ) : '';
+			case 'author_first_name':
+				return $author_id ? get_the_author_meta( 'first_name', $author_id ) : '';
+			case 'author_last_name':
+				return $author_id ? get_the_author_meta( 'last_name', $author_id ) : '';
 			case 'author_url':
 				return $author_id ? (string) get_author_posts_url( $author_id ) : '';
+			case 'author_avatar':
+				return $author_id ? (string) get_avatar_url( $author_id, [ 'size' => 512 ] ) : '';
 			case 'author_bio':
 				return $author_id ? get_the_author_meta( 'description', $author_id ) : '';
 			case 'author_email':
@@ -92,6 +106,12 @@ final class PropertyResolver {
 				return get_bloginfo( 'description' );
 			case 'site_language':
 				return str_replace( '_', '-', get_locale() );
+			case 'site_logo':
+				$logo_id = (int) get_theme_mod( 'custom_logo' );
+				$logo    = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : '';
+				return $logo ? (string) $logo : '';
+			case 'site_icon':
+				return (string) get_site_icon_url();
 			case 'home_url':
 				return home_url( '/' );
 			case 'post_id':
@@ -153,6 +173,17 @@ final class PropertyResolver {
 		];
 
 		return strtr( $text, $replacements );
+	}
+
+	/**
+	 * Comma-separated term names for a post in a taxonomy.
+	 */
+	private function term_names( int $post_id, string $taxonomy ): string {
+		$terms = get_the_terms( $post_id, $taxonomy );
+		if ( ! $terms || is_wp_error( $terms ) ) {
+			return '';
+		}
+		return implode( ', ', wp_list_pluck( $terms, 'name' ) );
 	}
 
 	/**

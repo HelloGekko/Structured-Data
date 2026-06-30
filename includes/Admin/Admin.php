@@ -311,13 +311,22 @@ final class Admin {
 			'permalink'       => __( 'Permalink (URL)', 'hg-structured-data' ),
 			'featured_image'  => __( 'Featured image URL', 'hg-structured-data' ),
 			'word_count'      => __( 'Word count', 'hg-structured-data' ),
+			'comment_count'   => __( 'Comment count', 'hg-structured-data' ),
+			'post_type'       => __( 'Post type', 'hg-structured-data' ),
+			'post_categories' => __( 'Post categories (names)', 'hg-structured-data' ),
+			'post_tags'       => __( 'Post tags (names)', 'hg-structured-data' ),
 			'author_name'     => __( 'Author name', 'hg-structured-data' ),
+			'author_first_name' => __( 'Author first name', 'hg-structured-data' ),
+			'author_last_name' => __( 'Author last name', 'hg-structured-data' ),
 			'author_url'      => __( 'Author URL', 'hg-structured-data' ),
+			'author_avatar'   => __( 'Author image (avatar URL)', 'hg-structured-data' ),
 			'author_bio'      => __( 'Author bio', 'hg-structured-data' ),
 			'author_email'    => __( 'Author email', 'hg-structured-data' ),
 			'site_name'       => __( 'Site name', 'hg-structured-data' ),
 			'site_description' => __( 'Site description', 'hg-structured-data' ),
 			'site_language'   => __( 'Site language', 'hg-structured-data' ),
+			'site_logo'       => __( 'Site logo URL', 'hg-structured-data' ),
+			'site_icon'       => __( 'Site icon URL', 'hg-structured-data' ),
 			'home_url'        => __( 'Home URL', 'hg-structured-data' ),
 		];
 	}
@@ -399,25 +408,35 @@ final class Admin {
 		$object = isset( $_GET['object'] ) ? sanitize_text_field( wp_unslash( (string) $_GET['object'] ) ) : 'post';
 		$search = isset( $_GET['search'] ) ? sanitize_text_field( wp_unslash( (string) $_GET['search'] ) ) : '';
 		$arg    = isset( $_GET['arg'] ) ? sanitize_text_field( wp_unslash( (string) $_GET['arg'] ) ) : '';
+		$id     = isset( $_GET['id'] ) ? absint( $_GET['id'] ) : 0;
 
 		$results = [];
 
 		if ( 'term' === $object ) {
-			$terms = get_terms(
-				[
-					'taxonomy'   => $arg ?: 'category',
-					'search'     => $search,
-					'number'     => 20,
-					'hide_empty' => false,
-				]
-			);
-			if ( ! is_wp_error( $terms ) ) {
-				foreach ( $terms as $term ) {
-					$results[] = [
-						'id'   => $term->term_id,
-						'text' => $term->name,
-					];
+			if ( $id ) {
+				$term = get_term( $id );
+				if ( $term && ! is_wp_error( $term ) ) {
+					$results[] = [ 'id' => $term->term_id, 'text' => $term->name ];
 				}
+			} else {
+				$terms = get_terms(
+					[
+						'taxonomy'   => $arg ?: 'category',
+						'search'     => $search,
+						'number'     => 20,
+						'hide_empty' => false,
+					]
+				);
+				if ( ! is_wp_error( $terms ) ) {
+					foreach ( $terms as $term ) {
+						$results[] = [ 'id' => $term->term_id, 'text' => $term->name ];
+					}
+				}
+			}
+		} elseif ( $id ) {
+			$post = get_post( $id );
+			if ( $post ) {
+				$results[] = [ 'id' => $post->ID, 'text' => get_the_title( $post ) . ' (#' . $post->ID . ')' ];
 			}
 		} else {
 			$posts = get_posts(

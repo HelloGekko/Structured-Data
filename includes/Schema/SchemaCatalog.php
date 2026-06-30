@@ -30,6 +30,7 @@ final class SchemaCatalog {
 		$this->data = [
 			'version' => (string) ( $data['version'] ?? 'unknown' ),
 			'types'   => is_array( $data['types'] ?? null ) ? $data['types'] : [],
+			'enums'   => is_array( $data['enums'] ?? null ) ? $data['enums'] : [],
 		];
 	}
 
@@ -54,5 +55,14 @@ final class SchemaCatalog {
 	 */
 	public function properties( string $class ): array {
 		return $this->data['types'][ $class ] ?? [];
+	}
+
+	/**
+	 * Allowed values for an enumeration-valued property (by property name).
+	 *
+	 * @return array<int,array{value:string,label:string}>
+	 */
+	public function enum( string $property ): array {
+		return $this->data['enums'][ $property ] ?? [];
 	}
 }
