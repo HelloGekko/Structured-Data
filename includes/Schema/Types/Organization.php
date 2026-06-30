@@ -30,6 +30,10 @@ class Organization extends AbstractSchemaType {
 		return __( 'Entities', 'hg-structured-data' );
 	}
 
+	public function supports_reviews(): bool {
+		return true;
+	}
+
 	public function recommended(): array {
 		return [
 			'name'                      => [

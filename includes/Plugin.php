@@ -11,6 +11,8 @@ namespace HelloGekko\StructuredData;
 
 use HelloGekko\StructuredData\Admin\Admin;
 use HelloGekko\StructuredData\Output\FrontendOutput;
+use HelloGekko\StructuredData\Reviews\ReviewsManager;
+use HelloGekko\StructuredData\Reviews\ReviewsSettings;
 use HelloGekko\StructuredData\Schema\SchemaCatalog;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 
@@ -24,6 +26,8 @@ final class Plugin {
 	private static ?Plugin $instance = null;
 
 	private SchemaRegistry $registry;
+
+	private ReviewsManager $reviews;
 
 	private function __construct() {}
 
@@ -51,16 +55,29 @@ final class Plugin {
 		$this->registry = new SchemaRegistry();
 		$this->registry->bootstrap();
 
+		// Reviews integration (providers, caching, cron sync).
+		$this->reviews = new ReviewsManager();
+		$this->reviews->register_hooks();
+		$this->reviews->schedule();
+
 		// Register the post type that stores schema definitions.
 		( new PostType() )->register_hooks();
 
 		// Front-end JSON-LD output.
-		( new FrontendOutput( $this->registry ) )->register_hooks();
+		( new FrontendOutput( $this->registry, $this->reviews ) )->register_hooks();
 
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
-			( new Admin( $this->registry ) )->register_hooks();
+			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
+			( new ReviewsSettings( $this->reviews ) )->register_hooks();
 		}
+	}
+
+	/**
+	 * Access the reviews manager.
+	 */
+	public function reviews(): ReviewsManager {
+		return $this->reviews;
 	}
 
 	/**
@@ -79,9 +96,10 @@ final class Plugin {
 	}
 
 	/**
-	 * Deactivation: clean up rewrite rules.
+	 * Deactivation: clean up rewrite rules and the reviews cron event.
 	 */
 	public static function deactivate(): void {
+		( new ReviewsManager() )->unschedule();
 		flush_rewrite_rules();
 	}
 

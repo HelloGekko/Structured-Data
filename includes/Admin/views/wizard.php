@@ -23,6 +23,7 @@ $saved = [
 	'conditions' => $def->conditions(),
 	'properties' => $def->properties(),
 	'faq'        => $def->faq(),
+	'reviews'    => $def->reviews(),
 ];
 
 // An existing schema (one that already has a type) is shown flat, without the
@@ -138,6 +139,35 @@ $is_edit = '' !== $saved['type'];
 			<div class="hgsd-faq-manual">
 				<div class="hgsd-faq-items"></div>
 				<button type="button" class="button hgsd-add-faq"><?php esc_html_e( 'Add Question', 'hg-structured-data' ); ?></button>
+			</div>
+		</div>
+
+		<?php /* Reviews (only for review-capable types). */ ?>
+		<div class="hgsd-reviews-wrap" hidden>
+			<h4><?php esc_html_e( 'Reviews', 'hg-structured-data' ); ?></h4>
+			<p>
+				<label>
+					<input type="checkbox" name="hgsd[reviews][enabled]" value="1" <?php checked( ! empty( $saved['reviews']['enabled'] ) ); ?> />
+					<?php esc_html_e( 'Add reviews to this schema', 'hg-structured-data' ); ?>
+				</label>
+			</p>
+			<div class="hgsd-reviews-options">
+				<p>
+					<label>
+						<input type="checkbox" name="hgsd[reviews][aggregate]" value="1" <?php checked( ! empty( $saved['reviews']['aggregate'] ) ); ?> />
+						<?php esc_html_e( 'Include aggregate rating', 'hg-structured-data' ); ?>
+					</label>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox" name="hgsd[reviews][individual]" value="1" <?php checked( ! empty( $saved['reviews']['individual'] ) ); ?> />
+						<?php esc_html_e( 'Include individual reviews', 'hg-structured-data' ); ?>
+					</label>
+				</p>
+				<p class="description">
+					<?php esc_html_e( 'Reviews are pulled from your configured source on a schedule.', 'hg-structured-data' ); ?>
+					<a href="<?php echo esc_url( add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-reviews' ], admin_url( 'edit.php' ) ) ); ?>"><?php esc_html_e( 'Manage review source →', 'hg-structured-data' ); ?></a>
+				</p>
 			</div>
 		</div>
 	</section>

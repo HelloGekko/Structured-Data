@@ -12,6 +12,7 @@ namespace HelloGekko\StructuredData\Admin;
 use HelloGekko\StructuredData\Display\DisplayConditions;
 use HelloGekko\StructuredData\Output\PropertyResolver;
 use HelloGekko\StructuredData\Plugin;
+use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
 
@@ -25,9 +26,11 @@ final class Admin {
 	private const NONCE = 'hgsd_save_schema';
 
 	private SchemaRegistry $registry;
+	private ReviewsManager $reviews;
 
-	public function __construct( SchemaRegistry $registry ) {
+	public function __construct( SchemaRegistry $registry, ReviewsManager $reviews ) {
 		$this->registry = $registry;
+		$this->reviews  = $reviews;
 	}
 
 	public function register_hooks(): void {
@@ -110,6 +113,7 @@ final class Admin {
 		$def->set_conditions( $this->sanitize_conditions( $raw['conditions'] ?? [] ) );
 		$def->set_properties( $this->sanitize_properties( $raw['properties'] ?? [] ) );
 		$def->set_faq( $this->sanitize_faq( $raw['faq'] ?? [] ) );
+		$def->set_reviews( is_array( $raw['reviews'] ?? null ) ? $raw['reviews'] : [] );
 	}
 
 	/**
@@ -238,10 +242,11 @@ final class Admin {
 		$types = [];
 		foreach ( $this->registry->all() as $key => $type ) {
 			$types[ $key ] = [
-				'label'      => $type->label(),
-				'group'      => $type->group(),
-				'properties' => $type->properties(),
-				'isFaq'      => 'FAQPage' === $type->type_value(),
+				'label'           => $type->label(),
+				'group'           => $type->group(),
+				'properties'      => $type->properties(),
+				'isFaq'           => 'FAQPage' === $type->type_value(),
+				'supportsReviews' => $type->supports_reviews(),
 			];
 		}
 
@@ -251,6 +256,7 @@ final class Admin {
 			'hasAcf'         => Plugin::has_acf(),
 			'hasAcfPro'      => Plugin::has_acf_pro(),
 			'schemaVersion'  => \HelloGekko\StructuredData\Schema\SchemaCatalog::instance()->version(),
+			'reviewsUrl'     => add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-reviews' ], admin_url( 'edit.php' ) ),
 			'types'          => $types,
 			'conditionTypes' => DisplayConditions::types(),
 			'wpFields'       => $this->wp_field_choices(),
@@ -279,6 +285,12 @@ final class Admin {
 				'previewRefresh' => __( 'Refresh', 'hg-structured-data' ),
 				'previewLoading' => __( 'Generating preview…', 'hg-structured-data' ),
 				'previewEmpty'  => __( 'No output yet — map at least one property with a value.', 'hg-structured-data' ),
+				'reviewsTitle'  => __( 'Reviews', 'hg-structured-data' ),
+				'reviewsEnable' => __( 'Add reviews to this schema', 'hg-structured-data' ),
+				'reviewsAgg'    => __( 'Include aggregate rating', 'hg-structured-data' ),
+				'reviewsInd'    => __( 'Include individual reviews', 'hg-structured-data' ),
+				'reviewsNote'   => __( 'Reviews are pulled from your configured source on a schedule.', 'hg-structured-data' ),
+				'reviewsManage' => __( 'Manage review source →', 'hg-structured-data' ),
 			],
 		];
 	}
@@ -452,6 +464,7 @@ final class Admin {
 		$config = [
 			'properties' => $this->sanitize_properties( $raw['properties'] ?? [] ),
 			'faq'        => $this->sanitize_faq( $raw['faq'] ?? [] ),
+			'reviews'    => is_array( $raw['reviews'] ?? null ) ? $raw['reviews'] : [],
 		];
 
 		[ $post_id, $note ] = $this->preview_context( $this->sanitize_conditions( $raw['conditions'] ?? [] ) );
@@ -460,6 +473,7 @@ final class Admin {
 			'post_id'        => $post_id,
 			'author_id'      => $post_id ? (int) get_post_field( 'post_author', $post_id ) : 0,
 			'queried_object' => $post_id ? get_post( $post_id ) : null,
+			'reviews'        => $this->reviews->data(),
 		];
 
 		$node = $type->build( $config, new PropertyResolver(), $context );

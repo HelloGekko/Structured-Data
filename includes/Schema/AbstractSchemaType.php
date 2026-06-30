@@ -44,6 +44,13 @@ abstract class AbstractSchemaType {
 	}
 
 	/**
+	 * Whether this type can carry review / aggregateRating markup.
+	 */
+	public function supports_reviews(): bool {
+		return false;
+	}
+
+	/**
 	 * Curated, recommended properties for this type — the ones shown first in
 	 * the wizard. Dotted keys (e.g. "author.name") describe nested objects;
 	 * the first segment is wrapped using {@see nested_types()}.
@@ -141,12 +148,75 @@ abstract class AbstractSchemaType {
 			$this->assign( $node, $property, $value );
 		}
 
+		if ( $this->supports_reviews() ) {
+			$this->apply_reviews(
+				$node,
+				isset( $config['reviews'] ) && is_array( $config['reviews'] ) ? $config['reviews'] : [],
+				isset( $context['reviews'] ) && is_array( $context['reviews'] ) ? $context['reviews'] : []
+			);
+		}
+
 		// A node with only @context/@type is not worth emitting.
 		if ( count( $node ) <= 2 ) {
 			return null;
 		}
 
 		return $node;
+	}
+
+	/**
+	 * Append aggregateRating and/or individual review nodes from cached review data.
+	 *
+	 * @param array<string,mixed> $node Node being built (by reference).
+	 * @param array<string,mixed> $cfg  Per-schema reviews config (enabled/aggregate/individual).
+	 * @param array<string,mixed> $data Cached normalised review payload (aggregate/items).
+	 */
+	protected function apply_reviews( array &$node, array $cfg, array $data ): void {
+		if ( empty( $cfg['enabled'] ) ) {
+			return;
+		}
+
+		$aggregate = is_array( $data['aggregate'] ?? null ) ? $data['aggregate'] : [];
+		$items     = is_array( $data['items'] ?? null ) ? $data['items'] : [];
+
+		if ( ! empty( $cfg['aggregate'] ) && ! empty( $aggregate['reviewCount'] ) && ! empty( $aggregate['ratingValue'] ) ) {
+			$node['aggregateRating'] = [
+				'@type'       => 'AggregateRating',
+				'ratingValue' => (float) $aggregate['ratingValue'],
+				'reviewCount' => (int) $aggregate['reviewCount'],
+				'bestRating'  => (int) ( $aggregate['bestRating'] ?? 5 ),
+			];
+		}
+
+		if ( ! empty( $cfg['individual'] ) && $items ) {
+			$reviews = [];
+			foreach ( $items as $item ) {
+				$review = [ '@type' => 'Review' ];
+				if ( ! empty( $item['author'] ) ) {
+					$review['author'] = [
+						'@type' => 'Person',
+						'name'  => (string) $item['author'],
+					];
+				}
+				if ( ! empty( $item['rating'] ) ) {
+					$review['reviewRating'] = [
+						'@type'       => 'Rating',
+						'ratingValue' => (int) $item['rating'],
+						'bestRating'  => 5,
+					];
+				}
+				if ( ! empty( $item['text'] ) ) {
+					$review['reviewBody'] = (string) $item['text'];
+				}
+				if ( ! empty( $item['date'] ) ) {
+					$review['datePublished'] = $this->iso_date( (string) $item['date'] );
+				}
+				$reviews[] = $review;
+			}
+			if ( $reviews ) {
+				$node['review'] = $reviews;
+			}
+		}
 	}
 
 	/**

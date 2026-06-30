@@ -90,6 +90,9 @@
 		$wrap.find( '.hgsd-faq-wrap' ).attr( 'hidden', ! type.isFaq );
 		$wrap.find( '.hgsd-properties-wrap' ).attr( 'hidden', !! type.isFaq );
 
+		// Reviews panel only for review-capable types.
+		$wrap.find( '.hgsd-reviews-wrap' ).attr( 'hidden', ! type.supportsReviews );
+
 		if ( rebuildRows && ! type.isFaq ) {
 			$wrap.find( '.hgsd-properties' ).empty();
 		}

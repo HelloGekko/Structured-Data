@@ -20,6 +20,7 @@ final class SchemaDefinition {
 	public const META_CONDITIONS = '_hgsd_conditions';
 	public const META_PROPERTIES = '_hgsd_properties';
 	public const META_FAQ        = '_hgsd_faq';
+	public const META_REVIEWS    = '_hgsd_reviews';
 	public const META_ENABLED    = '_hgsd_enabled';
 
 	private int $post_id;
@@ -121,5 +122,36 @@ final class SchemaDefinition {
 	 */
 	public function set_faq( array $faq ): void {
 		update_post_meta( $this->post_id, self::META_FAQ, $faq );
+	}
+
+	/**
+	 * Reviews configuration for this schema.
+	 *
+	 * @return array{enabled:bool,aggregate:bool,individual:bool}
+	 */
+	public function reviews(): array {
+		$stored = get_post_meta( $this->post_id, self::META_REVIEWS, true );
+		$stored = is_array( $stored ) ? $stored : [];
+
+		return [
+			'enabled'    => ! empty( $stored['enabled'] ),
+			'aggregate'  => ! empty( $stored['aggregate'] ),
+			'individual' => ! empty( $stored['individual'] ),
+		];
+	}
+
+	/**
+	 * @param array<string,mixed> $reviews Reviews config.
+	 */
+	public function set_reviews( array $reviews ): void {
+		update_post_meta(
+			$this->post_id,
+			self::META_REVIEWS,
+			[
+				'enabled'    => ! empty( $reviews['enabled'] ),
+				'aggregate'  => ! empty( $reviews['aggregate'] ),
+				'individual' => ! empty( $reviews['individual'] ),
+			]
+		);
 	}
 }

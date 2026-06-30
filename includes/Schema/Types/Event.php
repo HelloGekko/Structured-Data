@@ -30,6 +30,10 @@ class Event extends AbstractSchemaType {
 		return __( 'Local & Commerce', 'hg-structured-data' );
 	}
 
+	public function supports_reviews(): bool {
+		return true;
+	}
+
 	public function recommended(): array {
 		return [
 			'name'                  => [

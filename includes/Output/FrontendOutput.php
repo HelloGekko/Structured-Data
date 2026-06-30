@@ -10,6 +10,7 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData\Output;
 
 use HelloGekko\StructuredData\Display\DisplayConditions;
+use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
 
@@ -23,11 +24,13 @@ final class FrontendOutput {
 	private SchemaRegistry $registry;
 	private DisplayConditions $conditions;
 	private PropertyResolver $resolver;
+	private ReviewsManager $reviews;
 
-	public function __construct( SchemaRegistry $registry ) {
+	public function __construct( SchemaRegistry $registry, ReviewsManager $reviews ) {
 		$this->registry   = $registry;
 		$this->conditions = new DisplayConditions();
 		$this->resolver   = new PropertyResolver();
+		$this->reviews    = $reviews;
 	}
 
 	public function register_hooks(): void {
@@ -62,6 +65,7 @@ final class FrontendOutput {
 			$config = [
 				'properties' => $def->properties(),
 				'faq'        => $def->faq(),
+				'reviews'    => $def->reviews(),
 			];
 
 			$node = $type->build( $config, $this->resolver, $context );
@@ -115,6 +119,7 @@ final class FrontendOutput {
 			'post_id'        => $post_id,
 			'author_id'      => $post_id ? (int) get_post_field( 'post_author', $post_id ) : 0,
 			'queried_object' => get_queried_object(),
+			'reviews'        => $this->reviews->data(),
 		];
 	}
 
