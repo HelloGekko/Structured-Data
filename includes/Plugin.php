@@ -10,6 +10,8 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData;
 
 use HelloGekko\StructuredData\Admin\Admin;
+use HelloGekko\StructuredData\Compat\ConflictManager;
+use HelloGekko\StructuredData\Compat\ConflictSettings;
 use HelloGekko\StructuredData\Output\FrontendOutput;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Reviews\ReviewsSettings;
@@ -66,10 +68,15 @@ final class Plugin {
 		// Front-end JSON-LD output.
 		( new FrontendOutput( $this->registry, $this->reviews ) )->register_hooks();
 
+		// Detect and optionally overrule other structured-data plugins.
+		$conflicts = new ConflictManager();
+		$conflicts->register_hooks();
+
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
 			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
 			( new ReviewsSettings( $this->reviews ) )->register_hooks();
+			( new ConflictSettings( $conflicts ) )->register_hooks();
 		}
 	}
 

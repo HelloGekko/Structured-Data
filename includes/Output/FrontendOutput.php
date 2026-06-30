@@ -101,7 +101,8 @@ final class FrontendOutput {
 		// JSON-LD must be safe inside a <script> element; escape closing tags.
 		$json = str_replace( '</', '<\/', $json );
 
-		echo "\n<script type=\"application/ld+json\">" . $json . "</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		// data-hgsd marks our output so the conflict "strip foreign JSON-LD" mode keeps it.
+		echo "\n<script type=\"application/ld+json\" data-hgsd=\"1\">" . $json . "</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

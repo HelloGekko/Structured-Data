@@ -19,6 +19,10 @@ structured data (JSON-LD) to your site through a visual wizard.
   links an ACF repeater field and maps its question/answer sub-fields.
 - **ACF optional**: works without ACF, and unlocks ACF mapping + automatic FAQ when
   Advanced Custom Fields (Pro) is active.
+- **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
+  AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
+  structured data, and can overrule it — cleanly via the plugin's own filter (Yoast, Rank Math)
+  or by stripping all foreign JSON-LD so this plugin owns the structured data.
 - **Always current with schema.org**: the property catalog is generated directly from the
   official schema.org vocabulary (currently **v30.0**). Each type offers its curated,
   recommended properties first, with *Show all schema.org properties* revealing every valid
