@@ -9,7 +9,6 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Schema;
 
-use HelloGekko\StructuredData\SchemaDefinition;
 use HelloGekko\StructuredData\Output\PropertyResolver;
 
 defined( 'ABSPATH' ) || exit;
@@ -109,20 +108,22 @@ abstract class AbstractSchemaType {
 	}
 
 	/**
-	 * Build the JSON-LD node from a stored definition.
+	 * Build the JSON-LD node from a configuration array.
 	 *
-	 * @param array<string,mixed> $context Runtime context (post_id, queried_object...).
+	 * @param array{properties?:array<int,array<string,mixed>>,faq?:array<string,mixed>} $config  Schema config.
+	 * @param array<string,mixed>                                                        $context Runtime context (post_id...).
 	 * @return array<string,mixed>|null
 	 */
-	public function build( SchemaDefinition $def, PropertyResolver $resolver, array $context ): ?array {
+	public function build( array $config, PropertyResolver $resolver, array $context ): ?array {
 		$node = [
 			'@context' => 'https://schema.org',
 			'@type'    => $this->type_value(),
 		];
 
 		$definitions = $this->properties();
+		$mappings    = isset( $config['properties'] ) && is_array( $config['properties'] ) ? $config['properties'] : [];
 
-		foreach ( $def->properties() as $mapping ) {
+		foreach ( $mappings as $mapping ) {
 			$property = (string) ( $mapping['property'] ?? '' );
 			if ( '' === $property ) {
 				continue;

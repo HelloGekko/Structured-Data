@@ -192,3 +192,56 @@
 	color: #2271b1;
 	font-size: 12px;
 }
+
+/* Flat (edit) mode: stack the sections with separators instead of steps */
+.hgsd-wizard[data-mode="edit"] .hgsd-step {
+	border-top: 1px solid #dcdcde;
+	margin-top: 20px;
+	padding-top: 16px;
+}
+
+.hgsd-wizard[data-mode="edit"] .hgsd-step:first-of-type {
+	border-top: 0;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+/* Live preview */
+.hgsd-preview {
+	margin-top: 20px;
+	padding-top: 16px;
+	border-top: 1px solid #dcdcde;
+}
+
+.hgsd-preview-head {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.hgsd-preview-head h3 {
+	margin: 0;
+}
+
+.hgsd-preview-note {
+	margin: 6px 0;
+}
+
+.hgsd-preview-output {
+	max-height: 360px;
+	overflow: auto;
+	margin: 0;
+	padding: 14px;
+	background: #1d2327;
+	color: #d6e3b5;
+	border-radius: 4px;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+	line-height: 1.5;
+	white-space: pre;
+	tab-size: 2;
+}
+
+.hgsd-preview-output:empty {
+	display: none;
+}

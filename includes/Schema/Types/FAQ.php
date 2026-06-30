@@ -11,7 +11,6 @@ namespace HelloGekko\StructuredData\Schema\Types;
 
 use HelloGekko\StructuredData\Plugin;
 use HelloGekko\StructuredData\Schema\AbstractSchemaType;
-use HelloGekko\StructuredData\SchemaDefinition;
 use HelloGekko\StructuredData\Output\PropertyResolver;
 
 defined( 'ABSPATH' ) || exit;
@@ -51,14 +50,15 @@ class FAQ extends AbstractSchemaType {
 	/**
 	 * Build the FAQPage node from the FAQ configuration.
 	 *
-	 * @param array<string,mixed> $context Runtime context.
+	 * @param array{faq?:array<string,mixed>} $config  Schema config.
+	 * @param array<string,mixed>             $context Runtime context.
 	 * @return array<string,mixed>|null
 	 */
-	public function build( SchemaDefinition $def, PropertyResolver $resolver, array $context ): ?array {
-		$config = $def->faq();
-		$pairs  = 'automatic' === ( $config['method'] ?? 'manual' )
-			? $this->collect_automatic( $config, $context )
-			: $this->collect_manual( $config, $context );
+	public function build( array $config, PropertyResolver $resolver, array $context ): ?array {
+		$faq   = isset( $config['faq'] ) && is_array( $config['faq'] ) ? $config['faq'] : [];
+		$pairs = 'automatic' === ( $faq['method'] ?? 'manual' )
+			? $this->collect_automatic( $faq, $context )
+			: $this->collect_manual( $faq, $context );
 
 		$entities = [];
 		foreach ( $pairs as $pair ) {

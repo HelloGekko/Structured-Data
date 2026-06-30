@@ -10,6 +10,7 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData\Admin;
 
 use HelloGekko\StructuredData\Display\DisplayConditions;
+use HelloGekko\StructuredData\Output\PropertyResolver;
 use HelloGekko\StructuredData\Plugin;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
@@ -37,6 +38,7 @@ final class Admin {
 		// AJAX endpoints.
 		add_action( 'wp_ajax_hgsd_get_acf_fields', [ $this, 'ajax_acf_fields' ] );
 		add_action( 'wp_ajax_hgsd_search_content', [ $this, 'ajax_search_content' ] );
+		add_action( 'wp_ajax_hgsd_preview', [ $this, 'ajax_preview' ] );
 
 		// List table columns.
 		add_filter( 'manage_' . HGSD_CPT . '_posts_columns', [ $this, 'columns' ] );
@@ -154,7 +156,7 @@ final class Admin {
 		$raw    = is_array( $raw ) ? $raw : [];
 		$result = [];
 		foreach ( $raw as $row ) {
-			if ( ! is_array( $row ) || empty( $row['property'] ) ) {
+			if ( ! is_array( $row ) || empty( $row['property'] ) || '__all__' === $row['property'] ) {
 				continue;
 			}
 			$source = in_array( $row['source'] ?? '', [ 'wp', 'acf', 'custom' ], true ) ? $row['source'] : 'wp';
@@ -273,6 +275,10 @@ final class Admin {
 				'recommended'   => __( 'Recommended', 'hg-structured-data' ),
 				'allProperties' => __( 'All schema.org properties', 'hg-structured-data' ),
 				'showAll'       => __( 'Show all schema.org properties…', 'hg-structured-data' ),
+				'previewTitle'  => __( 'Live preview', 'hg-structured-data' ),
+				'previewRefresh' => __( 'Refresh', 'hg-structured-data' ),
+				'previewLoading' => __( 'Generating preview…', 'hg-structured-data' ),
+				'previewEmpty'  => __( 'No output yet — map at least one property with a value.', 'hg-structured-data' ),
 			],
 		];
 	}
@@ -418,6 +424,133 @@ final class Admin {
 		}
 
 		wp_send_json_success( $results );
+	}
+
+	/**
+	 * AJAX: build a live JSON-LD preview from the (unsaved) wizard values.
+	 */
+	public function ajax_preview(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified above.
+		$raw = isset( $_POST['hgsd'] ) ? wp_unslash( $_POST['hgsd'] ) : [];
+		$raw = is_array( $raw ) ? $raw : [];
+
+		$type = $this->registry->get( isset( $raw['type'] ) ? sanitize_text_field( (string) $raw['type'] ) : '' );
+		if ( ! $type ) {
+			wp_send_json_success(
+				[
+					'empty' => true,
+					'note'  => __( 'Select a schema type to preview its output.', 'hg-structured-data' ),
+				]
+			);
+		}
+
+		$config = [
+			'properties' => $this->sanitize_properties( $raw['properties'] ?? [] ),
+			'faq'        => $this->sanitize_faq( $raw['faq'] ?? [] ),
+		];
+
+		[ $post_id, $note ] = $this->preview_context( $this->sanitize_conditions( $raw['conditions'] ?? [] ) );
+
+		$context = [
+			'post_id'        => $post_id,
+			'author_id'      => $post_id ? (int) get_post_field( 'post_author', $post_id ) : 0,
+			'queried_object' => $post_id ? get_post( $post_id ) : null,
+		];
+
+		$node = $type->build( $config, new PropertyResolver(), $context );
+
+		if ( null === $node ) {
+			wp_send_json_success(
+				[
+					'empty' => true,
+					'note'  => $note,
+				]
+			);
+		}
+
+		$json = wp_json_encode( $node, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+
+		wp_send_json_success(
+			[
+				'json' => $json,
+				'note' => $note,
+			]
+		);
+	}
+
+	/**
+	 * Pick a representative post to render the preview against.
+	 *
+	 * @param array<string,mixed> $conditions Sanitized conditions.
+	 * @return array{0:int,1:string} [post_id, human note]
+	 */
+	private function preview_context( array $conditions ): array {
+		$include   = $conditions['include'] ?? [];
+		$post_type = 'post';
+
+		// A specific post/page beats everything else.
+		foreach ( $include as $rule ) {
+			$type  = $rule['type'] ?? '';
+			$value = (string) ( $rule['value'] ?? '' );
+			if ( in_array( $type, [ 'post', 'page' ], true ) && ctype_digit( $value ) ) {
+				$post = get_post( (int) $value );
+				if ( $post ) {
+					/* translators: %s: post title. */
+					return [ (int) $value, sprintf( __( 'Preview based on: %s', 'hg-structured-data' ), get_the_title( $post ) ) ];
+				}
+			}
+			if ( 'post_type' === $type && '' !== $value ) {
+				$post_type = $value;
+			}
+			if ( 'page' === $type ) {
+				$post_type = 'page';
+			}
+		}
+
+		// A taxonomy/category condition narrows to a post in that term.
+		foreach ( $include as $rule ) {
+			$type = $rule['type'] ?? '';
+			if ( in_array( $type, [ 'post_category', 'taxonomy' ], true ) && ! empty( $rule['value'] ) ) {
+				$taxonomy = 'post_category' === $type ? 'category' : ( $rule['value2'] ?: 'post_tag' );
+				$posts    = get_posts(
+					[
+						'numberposts' => 1,
+						'post_status' => 'publish',
+						'tax_query'   => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+							[
+								'taxonomy' => $taxonomy,
+								'field'    => ctype_digit( (string) $rule['value'] ) ? 'term_id' : 'slug',
+								'terms'    => $rule['value'],
+							],
+						],
+					]
+				);
+				if ( $posts ) {
+					/* translators: %s: post title. */
+					return [ $posts[0]->ID, sprintf( __( 'Preview based on: %s', 'hg-structured-data' ), get_the_title( $posts[0] ) ) ];
+				}
+			}
+		}
+
+		$latest = get_posts(
+			[
+				'post_type'   => $post_type,
+				'numberposts' => 1,
+				'post_status' => 'publish',
+			]
+		);
+
+		if ( $latest ) {
+			/* translators: 1: post type, 2: post title. */
+			return [ $latest[0]->ID, sprintf( __( 'Preview based on latest %1$s: %2$s', 'hg-structured-data' ), $post_type, get_the_title( $latest[0] ) ) ];
+		}
+
+		return [ 0, __( 'Preview without a specific post (site-wide).', 'hg-structured-data' ) ];
 	}
 
 	/**

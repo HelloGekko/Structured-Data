@@ -24,8 +24,12 @@ $saved = [
 	'properties' => $def->properties(),
 	'faq'        => $def->faq(),
 ];
+
+// An existing schema (one that already has a type) is shown flat, without the
+// step-by-step wizard; a brand-new one walks through the wizard.
+$is_edit = '' !== $saved['type'];
 ?>
-<div id="hgsd-wizard" class="hgsd-wizard">
+<div id="hgsd-wizard" class="hgsd-wizard" data-mode="<?php echo $is_edit ? 'edit' : 'new'; ?>">
 
 	<script type="application/json" id="hgsd-saved"><?php echo wp_json_encode( $saved ); ?></script>
 
@@ -143,4 +147,14 @@ $saved = [
 		<button type="button" class="button button-primary hgsd-next"><?php esc_html_e( 'Next →', 'hg-structured-data' ); ?></button>
 		<span class="hgsd-final-hint" hidden><?php esc_html_e( 'Press “Update” to save.', 'hg-structured-data' ); ?></span>
 	</div>
+
+	<?php /* Live JSON-LD preview ------------------------------------------- */ ?>
+	<section class="hgsd-preview">
+		<div class="hgsd-preview-head">
+			<h3><?php esc_html_e( 'Live preview', 'hg-structured-data' ); ?></h3>
+			<button type="button" class="button button-small hgsd-preview-refresh"><?php esc_html_e( 'Refresh', 'hg-structured-data' ); ?></button>
+		</div>
+		<p class="hgsd-preview-note description"></p>
+		<pre class="hgsd-preview-output" aria-live="polite"></pre>
+	</section>
 </div>

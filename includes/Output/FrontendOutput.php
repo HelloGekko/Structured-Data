@@ -59,7 +59,12 @@ final class FrontendOutput {
 				continue;
 			}
 
-			$node = $type->build( $def, $this->resolver, $context );
+			$config = [
+				'properties' => $def->properties(),
+				'faq'        => $def->faq(),
+			];
+
+			$node = $type->build( $config, $this->resolver, $context );
 			if ( null !== $node ) {
 				$nodes[] = $node;
 			}

@@ -14,6 +14,7 @@
 	var counter = 0;
 	var acfCache = { all: null, repeaters: null, subfields: {} };
 	var currentProps = {};
+	var mode = $wrap.attr( 'data-mode' ) || 'new';
 
 	/* -------------------------------------------------------------- helpers */
 
@@ -492,6 +493,49 @@
 		$( this ).closest( '.hgsd-row' ).remove();
 	} );
 
+	/* ------------------------------------------------------------- live preview */
+
+	var previewTimer = null;
+
+	function schedulePreview() {
+		clearTimeout( previewTimer );
+		previewTimer = setTimeout( refreshPreview, 600 );
+	}
+
+	function refreshPreview() {
+		var $out = $wrap.find( '.hgsd-preview-output' );
+		var $note = $wrap.find( '.hgsd-preview-note' );
+		var payload = $wrap.find( 'select, input, textarea' ).serialize();
+
+		$note.text( HGSD.i18n.previewLoading );
+
+		$.post(
+			HGSD.ajaxUrl,
+			payload + '&action=hgsd_preview&nonce=' + encodeURIComponent( HGSD.nonce ),
+			function ( res ) {
+				if ( res && res.success ) {
+					if ( res.data.empty ) {
+						$out.text( '' );
+						$note.text( res.data.note || HGSD.i18n.previewEmpty );
+					} else {
+						$out.text( res.data.json );
+						$note.text( res.data.note || '' );
+					}
+				} else {
+					$out.text( '' );
+					$note.text( '' );
+				}
+			}
+		).fail( function () {
+			$note.text( '' );
+		} );
+	}
+
+	$wrap.on( 'change keyup', 'select, input, textarea', schedulePreview );
+	$wrap.on( 'click', '.hgsd-preview-refresh', function () {
+		refreshPreview();
+	} );
+
 	/* ----------------------------------------------------------------- rehydrate */
 
 	function rehydrate() {
@@ -527,7 +571,15 @@
 			$wrap.find( '.hgsd-faq-items' ).append( buildFaqItem( item ) );
 		} );
 
-		showStep( 1 );
+		if ( 'edit' === mode ) {
+			// Existing schema: drop the step chrome and show everything at once.
+			$wrap.find( '.hgsd-steps, .hgsd-nav' ).hide();
+			$wrap.find( '.hgsd-step' ).removeAttr( 'hidden' );
+		} else {
+			showStep( 1 );
+		}
+
+		refreshPreview();
 	}
 
 	rehydrate();
