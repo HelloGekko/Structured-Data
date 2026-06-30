@@ -19,6 +19,11 @@ structured data (JSON-LD) to your site through a visual wizard.
   links an ACF repeater field and maps its question/answer sub-fields.
 - **ACF optional**: works without ACF, and unlocks ACF mapping + automatic FAQ when
   Advanced Custom Fields (Pro) is active.
+- **AI-readable output (llms.txt + Markdown)**: optionally serves a clean Markdown version of
+  any page when `.md` is appended to its URL (title, description, structured-data key facts,
+  the content as Markdown, and the raw JSON-LD), plus a site index at `/llms.txt`. The Markdown
+  mirror is sent with `X-Robots-Tag: noindex` and a canonical `Link` header to the HTML page, so
+  it helps LLMs/search without creating duplicate content.
 - **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
   AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
   structured data. Overrule options: clean per-plugin disable via the plugin's own filter

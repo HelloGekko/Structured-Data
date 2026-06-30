@@ -107,6 +107,43 @@ final class FrontendOutput {
 	}
 
 	/**
+	 * Build (but do not print) the schema nodes for a specific post, ignoring
+	 * display conditions. Used by the AI/Markdown output.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	public function nodes_for_post( int $post_id ): array {
+		$context = [
+			'post_id'        => $post_id,
+			'author_id'      => $post_id ? (int) get_post_field( 'post_author', $post_id ) : 0,
+			'queried_object' => $post_id ? get_post( $post_id ) : null,
+			'reviews'        => $this->reviews->data(),
+		];
+
+		$nodes = [];
+		foreach ( $this->definitions() as $def ) {
+			if ( ! $def->enabled() ) {
+				continue;
+			}
+			$type = $this->registry->get( $def->type() );
+			if ( ! $type ) {
+				continue;
+			}
+			$config = [
+				'properties' => $def->properties(),
+				'faq'        => $def->faq(),
+				'reviews'    => $def->reviews(),
+			];
+			$node = $type->build( $config, $this->resolver, $this->source_context( $context, $def ) );
+			if ( null !== $node ) {
+				$nodes[] = $node;
+			}
+		}
+
+		return $nodes;
+	}
+
+	/**
 	 * Print a single JSON-LD script tag.
 	 *
 	 * @param array<string,mixed> $node Schema node.

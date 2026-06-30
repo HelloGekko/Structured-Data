@@ -10,6 +10,9 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData;
 
 use HelloGekko\StructuredData\Admin\Admin;
+use HelloGekko\StructuredData\AI\AiSettings;
+use HelloGekko\StructuredData\AI\LlmsTxt;
+use HelloGekko\StructuredData\AI\MarkdownEndpoint;
 use HelloGekko\StructuredData\Compat\ConflictManager;
 use HelloGekko\StructuredData\Compat\ConflictSettings;
 use HelloGekko\StructuredData\Output\FrontendOutput;
@@ -69,6 +72,10 @@ final class Plugin {
 		$frontend = new FrontendOutput( $this->registry, $this->reviews );
 		$frontend->register_hooks();
 
+		// AI-readable output: per-page Markdown (.md) and /llms.txt index.
+		( new MarkdownEndpoint( $frontend ) )->register_hooks();
+		( new LlmsTxt() )->register_hooks();
+
 		// Detect and optionally overrule other structured-data plugins.
 		$conflicts = new ConflictManager( $frontend );
 		$conflicts->register_hooks();
@@ -78,6 +85,7 @@ final class Plugin {
 			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
 			( new ReviewsSettings( $this->reviews ) )->register_hooks();
 			( new ConflictSettings( $conflicts ) )->register_hooks();
+			( new AiSettings() )->register_hooks();
 		}
 	}
 
