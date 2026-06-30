@@ -30,7 +30,7 @@ class LocalBusiness extends AbstractSchemaType {
 		return __( 'Local & Commerce', 'hg-structured-data' );
 	}
 
-	public function properties(): array {
+	public function recommended(): array {
 		return [
 			'name'                       => [
 				'label'       => __( 'Name', 'hg-structured-data' ),
@@ -98,8 +98,8 @@ class LocalBusiness extends AbstractSchemaType {
 				'label' => __( 'Opening hours', 'hg-structured-data' ),
 				'type'  => 'text',
 			],
-			'priceCurrency'              => [
-				'label' => __( 'Currency', 'hg-structured-data' ),
+			'currenciesAccepted'         => [
+				'label' => __( 'Currencies accepted', 'hg-structured-data' ),
 				'type'  => 'text',
 			],
 		];

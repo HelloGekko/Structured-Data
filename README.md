@@ -17,6 +17,11 @@ structured data (JSON-LD) to your site through a visual wizard.
   links an ACF repeater field and maps its question/answer sub-fields.
 - **ACF optional**: works without ACF, and unlocks ACF mapping + automatic FAQ when
   Advanced Custom Fields (Pro) is active.
+- **Always current with schema.org**: the property catalog is generated directly from the
+  official schema.org vocabulary (currently **v30.0**). Each type offers its curated,
+  recommended properties first, with *Show all schema.org properties* revealing every valid
+  property (with the official description). Values are cast to the schema.org-expected data
+  type — real numbers, booleans and ISO 8601 dates.
 
 ## Requirements
 
@@ -36,8 +41,12 @@ includes/
   SchemaDefinition.php       Read/write wrapper around a definition's post meta
   Schema/
     SchemaRegistry.php       Registry of all schema types
-    AbstractSchemaType.php   Base: property definitions + JSON-LD builder
+    SchemaCatalog.php        Loads the generated schema.org property catalog
+    AbstractSchemaType.php   Base: curated + catalog property merge, JSON-LD builder, casting
     Types/                   The 12 schema type implementations
+    data/catalog.php         Auto-generated schema.org property catalog (do not edit)
+bin/
+  generate-catalog.php       Regenerates the catalog from the schema.org vocabulary
   Display/
     DisplayConditions.php    Evaluates where a schema is shown
   Output/
@@ -51,6 +60,17 @@ assets/
   css/admin.css              Wizard styling
   js/admin.js                Wizard interactivity
 ```
+
+## Updating the schema.org catalog
+
+When a new schema.org version ships, regenerate the bundled catalog:
+
+```bash
+curl -o /tmp/schemaorg.jsonld https://schema.org/version/latest/schemaorg-current-https.jsonld
+php bin/generate-catalog.php /tmp/schemaorg.jsonld <version>
+```
+
+This rewrites `includes/Schema/data/catalog.php` with the latest valid properties per type.
 
 ## Extending
 

@@ -11,6 +11,7 @@ namespace HelloGekko\StructuredData;
 
 use HelloGekko\StructuredData\Admin\Admin;
 use HelloGekko\StructuredData\Output\FrontendOutput;
+use HelloGekko\StructuredData\Schema\SchemaCatalog;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 
 defined( 'ABSPATH' ) || exit;
@@ -42,6 +43,10 @@ final class Plugin {
 	 */
 	public function boot(): void {
 		load_plugin_textdomain( 'hg-structured-data', false, dirname( HGSD_BASENAME ) . '/languages' );
+
+		if ( ! defined( 'HGSD_SCHEMA_VERSION' ) ) {
+			define( 'HGSD_SCHEMA_VERSION', SchemaCatalog::instance()->version() );
+		}
 
 		$this->registry = new SchemaRegistry();
 		$this->registry->bootstrap();

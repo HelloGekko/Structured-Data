@@ -30,7 +30,7 @@ class Person extends AbstractSchemaType {
 		return __( 'Entities', 'hg-structured-data' );
 	}
 
-	public function properties(): array {
+	public function recommended(): array {
 		return [
 			'name'         => [
 				'label'       => __( 'Name', 'hg-structured-data' ),

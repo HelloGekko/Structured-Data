@@ -28,9 +28,9 @@ class NewsArticle extends Article {
 		return 'NewsArticle';
 	}
 
-	public function properties(): array {
+	public function recommended(): array {
 		return array_merge(
-			parent::properties(),
+			parent::recommended(),
 			[
 				'dateline'     => [
 					'label' => __( 'Dateline', 'hg-structured-data' ),

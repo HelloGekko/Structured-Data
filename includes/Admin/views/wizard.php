@@ -81,6 +81,17 @@ $saved = [
 	<?php /* Step 3: Modify schema output ------------------------------------- */ ?>
 	<section class="hgsd-step" data-step="3" hidden>
 		<h3><?php esc_html_e( 'Modify Schema Output', 'hg-structured-data' ); ?></h3>
+		<?php if ( defined( 'HGSD_SCHEMA_VERSION' ) ) : ?>
+			<p class="hgsd-version">
+				<?php
+				printf(
+					/* translators: %s: schema.org version number. */
+					esc_html__( 'Properties based on schema.org v%s', 'hg-structured-data' ),
+					esc_html( HGSD_SCHEMA_VERSION )
+				);
+				?>
+			</p>
+		<?php endif; ?>
 
 		<?php /* Generic property mapping (hidden for FAQ). */ ?>
 		<div class="hgsd-properties-wrap">

@@ -103,12 +103,39 @@
 
 	/* --------------------------------------------------------- property mapping rows */
 
-	function propertyOptions() {
-		var items = { '': HGSD.i18n.selectValue };
+	function fillPropertySelect( $sel, selected, showAll ) {
+		$sel.empty();
+		$sel.append( opt( '', HGSD.i18n.selectValue, ! selected ) );
+
+		var $rec = $( '<optgroup />' ).attr( 'label', '★ ' + HGSD.i18n.recommended );
+		var $all = $( '<optgroup />' ).attr( 'label', HGSD.i18n.allProperties );
+		var recCount = 0;
+		var allCount = 0;
+
 		$.each( currentProps, function ( key, def ) {
-			items[ key ] = def.label + ( def.recommended ? ' ★' : '' );
+			var o = opt( key, def.label, key === selected );
+			if ( def.comment ) {
+				o.title = def.comment;
+			}
+			if ( def.recommended ) {
+				$rec.append( o );
+				recCount++;
+			} else if ( showAll ) {
+				$all.append( o );
+				allCount++;
+			}
 		} );
-		return items;
+
+		if ( recCount ) {
+			$sel.append( $rec );
+		}
+		if ( showAll ) {
+			if ( allCount ) {
+				$sel.append( $all );
+			}
+		} else {
+			$sel.append( opt( '__all__', HGSD.i18n.showAll, false ) );
+		}
 	}
 
 	function buildPropertyRow( data ) {
@@ -118,8 +145,27 @@
 
 		var $row = $( '<div class="hgsd-row hgsd-property-row" />' );
 
-		var $prop = $( '<select />' ).attr( 'name', base + '[property]' );
-		fillSelect( $prop, propertyOptions(), data.property, null );
+		// Show the full list up front when editing a non-recommended property.
+		var showAll = !! ( data.property && currentProps[ data.property ] && ! currentProps[ data.property ].recommended );
+
+		var $prop = $( '<select class="hgsd-prop-select" />' ).attr( 'name', base + '[property]' );
+		fillPropertySelect( $prop, data.property || '', showAll );
+
+		var $desc = $( '<p class="hgsd-prop-desc" />' );
+		function updateDesc() {
+			var d = currentProps[ $prop.val() ];
+			$desc.text( ( d && d.comment ) ? d.comment : '' );
+		}
+
+		$prop.on( 'change', function () {
+			if ( '__all__' === $( this ).val() ) {
+				fillPropertySelect( $prop, '', true );
+				$prop.trigger( 'focus' );
+				updateDesc();
+				return;
+			}
+			updateDesc();
+		} );
 
 		var $source = $( '<select class="hgsd-source" />' ).attr( 'name', base + '[source]' );
 		fillSelect( $source, {
@@ -136,10 +182,12 @@
 			$( '<span class="hgsd-col" />' ).append( $prop ),
 			$( '<span class="hgsd-col" />' ).append( $source ),
 			$( '<span class="hgsd-col hgsd-col-value" />' ).append( $value ),
-			$remove
+			$remove,
+			$desc
 		);
 
 		renderValueControl( $value, base, data.source || 'wp', data.value || '' );
+		updateDesc();
 
 		$source.on( 'change', function () {
 			renderValueControl( $value, base, $( this ).val(), '' );

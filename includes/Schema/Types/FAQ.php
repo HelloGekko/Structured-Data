@@ -37,6 +37,13 @@ class FAQ extends AbstractSchemaType {
 	/**
 	 * FAQ uses its own dedicated UI, so it exposes no generic properties.
 	 */
+	public function recommended(): array {
+		return [];
+	}
+
+	/**
+	 * The FAQ UI is fully custom; do not surface the generic property catalog.
+	 */
 	public function properties(): array {
 		return [];
 	}

@@ -30,7 +30,7 @@ class WebPage extends AbstractSchemaType {
 		return __( 'Content', 'hg-structured-data' );
 	}
 
-	public function properties(): array {
+	public function recommended(): array {
 		return [
 			'name'          => [
 				'label'       => __( 'Name', 'hg-structured-data' ),

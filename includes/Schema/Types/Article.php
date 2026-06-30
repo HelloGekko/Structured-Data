@@ -30,7 +30,7 @@ class Article extends AbstractSchemaType {
 		return __( 'Content', 'hg-structured-data' );
 	}
 
-	public function properties(): array {
+	public function recommended(): array {
 		return array_merge(
 			$this->content_properties(),
 			[

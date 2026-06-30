@@ -248,6 +248,7 @@ final class Admin {
 			'nonce'          => wp_create_nonce( 'hgsd_ajax' ),
 			'hasAcf'         => Plugin::has_acf(),
 			'hasAcfPro'      => Plugin::has_acf_pro(),
+			'schemaVersion'  => \HelloGekko\StructuredData\Schema\SchemaCatalog::instance()->version(),
 			'types'          => $types,
 			'conditionTypes' => DisplayConditions::types(),
 			'wpFields'       => $this->wp_field_choices(),
@@ -269,6 +270,9 @@ final class Admin {
 				'searchPosts'   => __( 'Type to search…', 'hg-structured-data' ),
 				'question'      => __( 'Question', 'hg-structured-data' ),
 				'answer'        => __( 'Answer', 'hg-structured-data' ),
+				'recommended'   => __( 'Recommended', 'hg-structured-data' ),
+				'allProperties' => __( 'All schema.org properties', 'hg-structured-data' ),
+				'showAll'       => __( 'Show all schema.org properties…', 'hg-structured-data' ),
 			],
 		];
 	}

@@ -45,14 +45,49 @@ abstract class AbstractSchemaType {
 	}
 
 	/**
-	 * Available properties for this type.
+	 * Curated, recommended properties for this type — the ones shown first in
+	 * the wizard. Dotted keys (e.g. "author.name") describe nested objects;
+	 * the first segment is wrapped using {@see nested_types()}.
 	 *
-	 * Dotted keys (e.g. "author.name") describe nested objects. The first
-	 * segment is wrapped using {@see nested_types()}.
-	 *
-	 * @return array<string,array{label:string,recommended?:bool,type?:string,description?:string}>
+	 * @return array<string,array{label:string,type?:string,description?:string}>
 	 */
-	abstract public function properties(): array;
+	abstract public function recommended(): array;
+
+	/**
+	 * The schema.org class used to look up the full property catalog.
+	 */
+	public function catalog_key(): string {
+		return $this->type_value();
+	}
+
+	/**
+	 * Complete property set: curated recommended properties first, followed by
+	 * every other scalar-mappable schema.org property valid for this type.
+	 *
+	 * @return array<string,array<string,mixed>>
+	 */
+	public function properties(): array {
+		$catalog = SchemaCatalog::instance()->properties( $this->catalog_key() );
+		$out     = [];
+
+		foreach ( $this->recommended() as $key => $def ) {
+			$def['recommended'] = true;
+			if ( empty( $def['comment'] ) && isset( $catalog[ $key ]['comment'] ) ) {
+				$def['comment'] = $catalog[ $key ]['comment'];
+			}
+			$out[ $key ] = $def;
+		}
+
+		foreach ( $catalog as $key => $def ) {
+			if ( isset( $out[ $key ] ) ) {
+				continue;
+			}
+			$def['recommended'] = false;
+			$out[ $key ]        = $def;
+		}
+
+		return $out;
+	}
 
 	/**
 	 * Nested object @type per top-level property segment.
@@ -85,6 +120,8 @@ abstract class AbstractSchemaType {
 			'@type'    => $this->type_value(),
 		];
 
+		$definitions = $this->properties();
+
 		foreach ( $def->properties() as $mapping ) {
 			$property = (string) ( $mapping['property'] ?? '' );
 			if ( '' === $property ) {
@@ -95,6 +132,10 @@ abstract class AbstractSchemaType {
 			if ( null === $value || '' === $value || [] === $value ) {
 				continue;
 			}
+
+			// Cast to the schema.org-expected data type for valid JSON-LD.
+			$type  = (string) ( $definitions[ $property ]['type'] ?? 'text' );
+			$value = $this->cast( $value, $type );
 
 			$this->assign( $node, $property, $value );
 		}
@@ -145,6 +186,56 @@ abstract class AbstractSchemaType {
 		}
 
 		$node[ $parent ][ $child ] = $value;
+	}
+
+	/**
+	 * Cast a resolved (string) value to the schema.org-expected data type so the
+	 * emitted JSON-LD uses real numbers, booleans and ISO 8601 dates.
+	 *
+	 * @param mixed $value Resolved value.
+	 * @return mixed
+	 */
+	protected function cast( $value, string $type ) {
+		if ( ! is_string( $value ) ) {
+			return $value;
+		}
+
+		switch ( $type ) {
+			case 'number':
+				if ( ! is_numeric( $value ) ) {
+					return $value;
+				}
+				return ( false !== strpos( $value, '.' ) ) ? (float) $value : (int) $value;
+
+			case 'boolean':
+				$normalized = strtolower( trim( $value ) );
+				if ( in_array( $normalized, [ '1', 'true', 'yes', 'on' ], true ) ) {
+					return true;
+				}
+				if ( in_array( $normalized, [ '0', 'false', 'no', 'off' ], true ) ) {
+					return false;
+				}
+				return (bool) $value;
+
+			case 'date':
+				return $this->iso_date( $value );
+
+			default:
+				return $value;
+		}
+	}
+
+	/**
+	 * Normalise a date string to ISO 8601, leaving already-valid values intact.
+	 */
+	protected function iso_date( string $value ): string {
+		// Already ISO 8601 (date or datetime).
+		if ( preg_match( '/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2})?/', $value ) ) {
+			return $value;
+		}
+
+		$timestamp = strtotime( $value );
+		return false === $timestamp ? $value : gmdate( 'c', $timestamp );
 	}
 
 	/**
