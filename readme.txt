@@ -1,4 +1,4 @@
-=== Structured Data ===
+=== Structured data for WordPress ===
 Contributors: hellogekko
 Tags: schema, structured data, json-ld, seo, rich results, acf
 Requires at least: 6.0

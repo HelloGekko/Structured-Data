@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Structured Data
+ * Plugin Name:       Structured data for WordPress
  * Plugin URI:        https://hellogekko.nl/structured-data
  * Description:       Build perfect, schema.org-compliant structured data (JSON-LD) for your WordPress site through a visual wizard. Supports display conditions and property mapping to WordPress, ACF or custom values.
  * Version:           1.0.0

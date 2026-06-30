@@ -1,7 +1,9 @@
-# Structured Data
+# Structured data for WordPress
 
 A premium WordPress plugin to add perfect, [schema.org](https://schema.org)-compliant
 structured data (JSON-LD) to your site through a visual wizard.
+
+> Plugin folder: `structured-data` · Main file: `structured-data.php`
 
 ## Features
 
