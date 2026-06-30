@@ -4164,6 +4164,117 @@ return array (
         'comment' => 'URL of the item.',
       ),
     ),
+    'Service' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'category' => 
+      array (
+        'label' => 'Category',
+        'type' => 'text',
+        'comment' => 'A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'providerMobility' => 
+      array (
+        'label' => 'Provider Mobility',
+        'type' => 'text',
+        'comment' => 'Indicates the mobility of a provided service (e.g. \'static\', \'dynamic\').',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'serviceType' => 
+      array (
+        'label' => 'Service Type',
+        'type' => 'text',
+        'comment' => 'The type of service being offered, e.g. veterans\' benefits, emergency relief, etc.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'termsOfService' => 
+      array (
+        'label' => 'Terms Of Service',
+        'type' => 'text',
+        'comment' => 'Human-readable terms of service documentation.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
     'Person' => 
     array (
       'additionalName' => 

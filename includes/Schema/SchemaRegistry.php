@@ -38,6 +38,7 @@ final class SchemaRegistry {
 			new Types\Event(),
 			new Types\LocalBusiness(),
 			new Types\Product(),
+			new Types\Service(),
 			new Types\Person(),
 			new Types\Organization(),
 		];

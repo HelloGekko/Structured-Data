@@ -8,8 +8,8 @@ structured data (JSON-LD) to your site through a visual wizard.
 ## Features
 
 - **3-step wizard**: pick a schema type → configure display conditions → modify the schema output.
-- **12 schema types**: Article, BlogPosting, Book, FAQ, NewsArticle, WebPage, ItemPage,
-  Event, Local Business, Product, Person, Organization.
+- **13 schema types**: Article, BlogPosting, Book, FAQ, NewsArticle, WebPage, ItemPage,
+  Event, Local Business, Product, Service, Person, Organization.
 - **Display conditions** with include/exclude logic: show globally, homepage, post type
   (equal / not equal), post, page, post category, taxonomy (tag), post format, page template,
   author, author name, URL parameter and date.

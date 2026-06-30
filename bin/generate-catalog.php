@@ -44,6 +44,7 @@ $targets = [
 	'Event'         => 'Event',
 	'LocalBusiness' => 'LocalBusiness',
 	'Product'       => 'Product',
+	'Service'       => 'Service',
 	'Person'        => 'Person',
 	'Organization'  => 'Organization',
 ];

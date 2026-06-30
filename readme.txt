@@ -30,6 +30,7 @@ Structured Data lets you output clean, valid JSON-LD for the schema types that m
 * Event
 * Local Business
 * Product
+* Service
 * Person
 * Organization
 
