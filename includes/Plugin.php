@@ -1,0 +1,96 @@
+<?php
+/**
+ * Main plugin controller.
+ *
+ * @package HelloGekko\StructuredData
+ */
+
+declare( strict_types=1 );
+
+namespace HelloGekko\StructuredData;
+
+use HelloGekko\StructuredData\Admin\Admin;
+use HelloGekko\StructuredData\Output\FrontendOutput;
+use HelloGekko\StructuredData\Schema\SchemaRegistry;
+
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Singleton that wires everything together.
+ */
+final class Plugin {
+
+	private static ?Plugin $instance = null;
+
+	private SchemaRegistry $registry;
+
+	private function __construct() {}
+
+	/**
+	 * Retrieve the shared instance.
+	 */
+	public static function instance(): Plugin {
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
+	/**
+	 * Boot all components.
+	 */
+	public function boot(): void {
+		load_plugin_textdomain( 'hg-structured-data', false, dirname( HGSD_BASENAME ) . '/languages' );
+
+		$this->registry = new SchemaRegistry();
+		$this->registry->bootstrap();
+
+		// Register the post type that stores schema definitions.
+		( new PostType() )->register_hooks();
+
+		// Front-end JSON-LD output.
+		( new FrontendOutput( $this->registry ) )->register_hooks();
+
+		// Admin UI (wizard, meta boxes, ajax).
+		if ( is_admin() ) {
+			( new Admin( $this->registry ) )->register_hooks();
+		}
+	}
+
+	/**
+	 * Access the schema registry.
+	 */
+	public function registry(): SchemaRegistry {
+		return $this->registry;
+	}
+
+	/**
+	 * Activation: register the CPT then flush rewrite rules.
+	 */
+	public static function activate(): void {
+		( new PostType() )->register();
+		flush_rewrite_rules();
+	}
+
+	/**
+	 * Deactivation: clean up rewrite rules.
+	 */
+	public static function deactivate(): void {
+		flush_rewrite_rules();
+	}
+
+	/**
+	 * Whether Advanced Custom Fields (free or Pro) is active.
+	 */
+	public static function has_acf(): bool {
+		return function_exists( 'acf' ) && function_exists( 'get_field' );
+	}
+
+	/**
+	 * Whether ACF Pro (repeater support) is available.
+	 */
+	public static function has_acf_pro(): bool {
+		return self::has_acf() && function_exists( 'have_rows' );
+	}
+}

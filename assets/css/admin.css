@@ -1,0 +1,170 @@
+/* Structured Data — admin wizard styles */
+
+.hgsd-wizard {
+	margin: 4px 0;
+}
+
+.hgsd-steps {
+	display: flex;
+	gap: 8px;
+	margin: 0 0 20px;
+	padding: 0;
+	list-style: none;
+	border-bottom: 1px solid #dcdcde;
+}
+
+.hgsd-steps li {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 10px 14px;
+	cursor: pointer;
+	color: #646970;
+	border-bottom: 3px solid transparent;
+	font-weight: 500;
+}
+
+.hgsd-steps li.is-active {
+	color: #1d2327;
+	border-bottom-color: #2271b1;
+}
+
+.hgsd-steps li span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #dcdcde;
+	color: #1d2327;
+	font-size: 12px;
+}
+
+.hgsd-steps li.is-active span {
+	background: #2271b1;
+	color: #fff;
+}
+
+.hgsd-step h3 {
+	margin-top: 0;
+}
+
+/* Type picker */
+.hgsd-type-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+}
+
+.hgsd-type-group h4 {
+	margin: 0 0 8px;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: .04em;
+	color: #646970;
+}
+
+.hgsd-type-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	margin-bottom: 6px;
+	cursor: pointer;
+}
+
+.hgsd-type-option:hover {
+	border-color: #2271b1;
+}
+
+.hgsd-type-option input {
+	margin: 0;
+}
+
+/* Rows */
+.hgsd-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 10px;
+	margin-bottom: 8px;
+	background: #f6f7f7;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+}
+
+.hgsd-col {
+	flex: 1 1 160px;
+	min-width: 140px;
+}
+
+.hgsd-col select,
+.hgsd-col-value select,
+.hgsd-col-value input {
+	width: 100%;
+}
+
+.hgsd-col-value {
+	flex: 2 1 220px;
+}
+
+.hgsd-half {
+	width: 48% !important;
+	display: inline-block;
+}
+
+.hgsd-search {
+	display: block;
+}
+
+.hgsd-search-input {
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.hgsd-search-select {
+	width: 100%;
+}
+
+.hgsd-remove {
+	color: #b32d2e;
+	cursor: pointer;
+	align-self: center;
+}
+
+.hgsd-note {
+	color: #646970;
+}
+
+/* FAQ */
+.hgsd-faq-item {
+	flex-direction: column;
+}
+
+.hgsd-faq-item input,
+.hgsd-faq-item textarea {
+	width: 100%;
+}
+
+/* Navigation */
+.hgsd-nav {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-top: 20px;
+	padding-top: 16px;
+	border-top: 1px solid #dcdcde;
+}
+
+.hgsd-final-hint {
+	color: #646970;
+	font-style: italic;
+}
+
+.hgsd-logic {
+	margin-bottom: 16px;
+}
