@@ -42,6 +42,16 @@ $show_updated = isset( $_GET['updated'] );
 				</td>
 			</tr>
 			<tr>
+				<th scope="row"><?php esc_html_e( 'Content negotiation', 'hg-structured-data' ); ?></th>
+				<td>
+					<label>
+						<input type="checkbox" name="hgsd_ai[negotiate]" value="1" <?php checked( $s['negotiate'] ); ?> />
+						<?php esc_html_e( 'Serve Markdown on the normal page URL to clients that ask for it (Accept: text/markdown)', 'hg-structured-data' ); ?>
+					</label>
+					<p class="description"><?php esc_html_e( 'The most reliable way for AI agents to get the Markdown — no .md needed. Browsers and Googlebot still get the normal HTML.', 'hg-structured-data' ); ?></p>
+				</td>
+			</tr>
+			<tr>
 				<th scope="row"><?php esc_html_e( 'llms.txt index', 'hg-structured-data' ); ?></th>
 				<td>
 					<label>
@@ -54,6 +64,7 @@ $show_updated = isset( $_GET['updated'] );
 						);
 						?>
 					</label>
+					<p class="description"><?php esc_html_e( 'Note: Google has said it does not use llms.txt. It is supported by parts of the AI tooling ecosystem; the Link header and content negotiation above are the reliable discovery methods.', 'hg-structured-data' ); ?></p>
 				</td>
 			</tr>
 			<tr>

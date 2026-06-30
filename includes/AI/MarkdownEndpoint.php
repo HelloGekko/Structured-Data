@@ -28,7 +28,86 @@ final class MarkdownEndpoint {
 	public function register_hooks(): void {
 		// Run before the conflict output-buffer (template_redirect @0) so we can exit cleanly.
 		add_action( 'template_redirect', [ $this, 'maybe_render' ], -10 );
+		add_action( 'template_redirect', [ $this, 'maybe_negotiate' ], -9 );
 		add_action( 'wp_head', [ $this, 'discovery_link' ] );
+		add_action( 'send_headers', [ $this, 'send_link_header' ] );
+	}
+
+	/**
+	 * Advertise the Markdown alternate via an HTTP Link header so crawlers can
+	 * find it without parsing the HTML.
+	 */
+	public function send_link_header(): void {
+		$settings = AiSettings::get();
+		if ( empty( $settings['enable_markdown'] ) || ! is_singular( $settings['post_types'] ) ) {
+			return;
+		}
+		$url = untrailingslashit( (string) get_permalink() ) . '.md';
+		header( 'Link: <' . esc_url_raw( $url ) . '>; rel="alternate"; type="text/markdown"', false );
+		header( 'Vary: Accept', false );
+	}
+
+	/**
+	 * Content negotiation: if a client requests the normal page URL but prefers
+	 * Markdown (Accept: text/markdown), serve Markdown on the canonical URL.
+	 */
+	public function maybe_negotiate(): void {
+		$settings = AiSettings::get();
+		if ( empty( $settings['enable_markdown'] ) || empty( $settings['negotiate'] ) ) {
+			return;
+		}
+		if ( is_admin() || ! is_singular( $settings['post_types'] ) ) {
+			return;
+		}
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$accept = isset( $_SERVER['HTTP_ACCEPT'] ) ? sanitize_text_field( wp_unslash( $_SERVER['HTTP_ACCEPT'] ) ) : '';
+		if ( ! $this->prefers_markdown( $accept ) ) {
+			return;
+		}
+
+		$post = get_queried_object();
+		if ( ! $post instanceof \WP_Post ) {
+			return;
+		}
+
+		header( 'Content-Type: text/markdown; charset=utf-8' );
+		header( 'Vary: Accept', false );
+		header( 'Link: <' . esc_url_raw( (string) get_permalink( $post ) ) . '>; rel="canonical"', false );
+		echo $this->page_markdown( $post, $settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		exit;
+	}
+
+	/**
+	 * Whether the Accept header prefers Markdown over HTML.
+	 */
+	private function prefers_markdown( string $accept ): bool {
+		if ( '' === $accept || false === stripos( $accept, 'markdown' ) ) {
+			return false;
+		}
+		$md   = $this->accept_q( $accept, 'text/markdown' );
+		$html = max( $this->accept_q( $accept, 'text/html' ), $this->accept_q( $accept, 'application/xhtml+xml' ) );
+		return $md > 0 && $md > $html;
+	}
+
+	/**
+	 * Parse the q-value for a media type from an Accept header (0 if absent).
+	 */
+	private function accept_q( string $accept, string $type ): float {
+		foreach ( explode( ',', $accept ) as $part ) {
+			$bits  = explode( ';', trim( $part ) );
+			$media = strtolower( trim( $bits[0] ) );
+			if ( $media !== $type ) {
+				continue;
+			}
+			$q = 1.0;
+			foreach ( array_slice( $bits, 1 ) as $param ) {
+				if ( 0 === strpos( trim( $param ), 'q=' ) ) {
+					$q = (float) substr( trim( $param ), 2 );
+				}
+			}
+			return $q;
+		}
+		return 0.0;
 	}
 
 	/**

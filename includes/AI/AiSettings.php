@@ -30,6 +30,7 @@ final class AiSettings {
 		return [
 			'enable_markdown' => ! array_key_exists( 'enable_markdown', $stored ) || ! empty( $stored['enable_markdown'] ),
 			'enable_llms'     => ! array_key_exists( 'enable_llms', $stored ) || ! empty( $stored['enable_llms'] ),
+			'negotiate'       => ! array_key_exists( 'negotiate', $stored ) || ! empty( $stored['negotiate'] ),
 			'include_content' => ! array_key_exists( 'include_content', $stored ) || ! empty( $stored['include_content'] ),
 			'include_schema'  => ! array_key_exists( 'include_schema', $stored ) || ! empty( $stored['include_schema'] ),
 			'post_types'      => is_array( $stored['post_types'] ?? null ) ? $stored['post_types'] : [ 'post', 'page' ],
@@ -88,6 +89,7 @@ final class AiSettings {
 			[
 				'enable_markdown' => ! empty( $in['enable_markdown'] ),
 				'enable_llms'     => ! empty( $in['enable_llms'] ),
+				'negotiate'       => ! empty( $in['negotiate'] ),
 				'include_content' => ! empty( $in['include_content'] ),
 				'include_schema'  => ! empty( $in['include_schema'] ),
 				'post_types'      => $types,
