@@ -62,8 +62,9 @@ class Person extends AbstractSchemaType {
 				'type'  => 'text',
 			],
 			'sameAs'       => [
-				'label' => __( 'Same as (social profile URL)', 'hg-structured-data' ),
-				'type'  => 'url',
+				'label'       => __( 'Same as — LinkedIn / social profile URL', 'hg-structured-data' ),
+				'recommended' => true,
+				'type'        => 'url',
 			],
 			'worksFor.name' => [
 				'label' => __( 'Works for (organization)', 'hg-structured-data' ),

@@ -68,7 +68,7 @@ class Organization extends AbstractSchemaType {
 				'type'  => 'text',
 			],
 			'sameAs'                    => [
-				'label' => __( 'Same as (social profile URL)', 'hg-structured-data' ),
+				'label' => __( 'Same as — LinkedIn / social profile URL', 'hg-structured-data' ),
 				'type'  => 'url',
 			],
 			'address.streetAddress'     => [

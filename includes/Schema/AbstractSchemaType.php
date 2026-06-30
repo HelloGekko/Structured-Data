@@ -244,7 +244,7 @@ abstract class AbstractSchemaType {
 	 */
 	protected function assign( array &$node, string $path, $value ): void {
 		if ( ! str_contains( $path, '.' ) ) {
-			$node[ $path ] = $value;
+			$this->set_or_append( $node, $path, $value );
 			return;
 		}
 
@@ -268,11 +268,37 @@ abstract class AbstractSchemaType {
 					$node[ $parent ][ $sub_parent ]['@type'] = $nested_type;
 				}
 			}
-			$node[ $parent ][ $sub_parent ][ $sub_child ] = $value;
+			$this->set_or_append( $node[ $parent ][ $sub_parent ], $sub_child, $value );
 			return;
 		}
 
-		$node[ $parent ][ $child ] = $value;
+		$this->set_or_append( $node[ $parent ], $child, $value );
+	}
+
+	/**
+	 * Set a property, or collect it into a list when the same property is
+	 * mapped more than once (e.g. several sameAs / social profile URLs).
+	 *
+	 * @param array<string,mixed> $container Target array (by reference).
+	 * @param mixed               $value     Value to set or append.
+	 */
+	private function set_or_append( array &$container, string $key, $value ): void {
+		if ( ! array_key_exists( $key, $container ) ) {
+			$container[ $key ] = $value;
+			return;
+		}
+
+		$existing = $container[ $key ];
+
+		// Already a plain (list) array of values — append.
+		if ( is_array( $existing ) && array_keys( $existing ) === range( 0, count( $existing ) - 1 ) ) {
+			$existing[]        = $value;
+			$container[ $key ] = $existing;
+			return;
+		}
+
+		// Scalar or typed object — turn into a list of both.
+		$container[ $key ] = [ $existing, $value ];
 	}
 
 	/**
