@@ -164,14 +164,21 @@ final class Admin {
 			if ( ! is_array( $row ) || empty( $row['property'] ) || '__all__' === $row['property'] ) {
 				continue;
 			}
-			$source = in_array( $row['source'] ?? '', [ 'wp', 'acf', 'custom' ], true ) ? $row['source'] : 'wp';
+			$source = in_array( $row['source'] ?? '', [ 'wp', 'acf', 'custom', 'media' ], true ) ? $row['source'] : 'wp';
 			$value  = (string) ( $row['value'] ?? '' );
+
+			if ( 'custom' === $source ) {
+				$value = sanitize_textarea_field( $value );
+			} elseif ( 'media' === $source ) {
+				$value = esc_url_raw( $value );
+			} else {
+				$value = sanitize_text_field( $value );
+			}
 
 			$result[] = [
 				'property' => sanitize_text_field( (string) $row['property'] ),
 				'source'   => $source,
-				// Custom text may legitimately contain punctuation; keep it but strip tags.
-				'value'    => 'custom' === $source ? sanitize_textarea_field( $value ) : sanitize_text_field( $value ),
+				'value'    => $value,
 			];
 		}
 		return $result;
@@ -228,6 +235,7 @@ final class Admin {
 			return;
 		}
 
+		wp_enqueue_media(); // WordPress media library picker.
 		wp_enqueue_style( 'hgsd-admin', HGSD_URL . 'assets/css/admin.css', [], HGSD_VERSION );
 		wp_enqueue_script( 'hgsd-admin', HGSD_URL . 'assets/js/admin.js', [ 'jquery' ], HGSD_VERSION, true );
 
@@ -275,6 +283,10 @@ final class Admin {
 				'customText'    => __( 'Custom text', 'hg-structured-data' ),
 				'wordpress'     => __( 'WordPress', 'hg-structured-data' ),
 				'acf'           => __( 'ACF', 'hg-structured-data' ),
+				'media'         => __( 'Media library', 'hg-structured-data' ),
+				'selectImage'   => __( 'Select image', 'hg-structured-data' ),
+				'changeImage'   => __( 'Change image', 'hg-structured-data' ),
+				'useImage'      => __( 'Use this image', 'hg-structured-data' ),
 				'noAcf'         => __( 'ACF is not active. Install Advanced Custom Fields to map ACF fields.', 'hg-structured-data' ),
 				'searchPosts'   => __( 'Type to search…', 'hg-structured-data' ),
 				'question'      => __( 'Question', 'hg-structured-data' ),

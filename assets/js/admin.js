@@ -180,6 +180,7 @@
 		fillSelect( $source, {
 			wp: HGSD.i18n.wordpress,
 			acf: HGSD.i18n.acf,
+			media: HGSD.i18n.media,
 			custom: HGSD.i18n.customText
 		}, data.source || 'wp', null );
 
@@ -239,6 +240,11 @@
 			return;
 		}
 
+		if ( 'media' === source ) {
+			renderMediaControl( $value, name, current );
+			return;
+		}
+
 		if ( 'acf' === source ) {
 			if ( ! HGSD.hasAcf ) {
 				$value.append( $( '<em class="hgsd-note" />' ).text( HGSD.i18n.noAcf ) );
@@ -260,6 +266,59 @@
 		var $wp = $( '<select />' ).attr( 'name', name );
 		fillSelect( $wp, HGSD.wpFields, current, HGSD.i18n.selectField );
 		$value.append( $wp );
+	}
+
+	function renderMediaControl( $value, name, current ) {
+		var $box = $( '<span class="hgsd-media" />' );
+		var $hidden = $( '<input type="hidden" />' ).attr( 'name', name ).val( current || '' );
+		var $img = $( '<img class="hgsd-media-preview" alt="" />' );
+		var $pick = $( '<button type="button" class="button hgsd-media-pick" />' );
+		var $remove = $( '<button type="button" class="button-link hgsd-media-remove" />' ).text( HGSD.i18n.remove );
+
+		function reflect( url ) {
+			if ( url ) {
+				$img.attr( 'src', url ).show();
+				$pick.text( HGSD.i18n.changeImage );
+				$remove.show();
+			} else {
+				$img.attr( 'src', '' ).hide();
+				$pick.text( HGSD.i18n.selectImage );
+				$remove.hide();
+			}
+		}
+
+		$pick.on( 'click', function ( e ) {
+			e.preventDefault();
+			if ( typeof wp === 'undefined' || ! wp.media ) {
+				// Media library unavailable — fall back to a URL field.
+				$box.replaceWith( $( '<input type="text" class="widefat" />' ).attr( 'name', name ).val( $hidden.val() ) );
+				return;
+			}
+			var frame = wp.media( {
+				title: HGSD.i18n.selectImage,
+				button: { text: HGSD.i18n.useImage },
+				library: { type: 'image' },
+				multiple: false
+			} );
+			frame.on( 'select', function () {
+				var att = frame.state().get( 'selection' ).first().toJSON();
+				var url = ( att.sizes && att.sizes.full ) ? att.sizes.full.url : att.url;
+				$hidden.val( url );
+				reflect( url );
+				$hidden.trigger( 'change' );
+			} );
+			frame.open();
+		} );
+
+		$remove.on( 'click', function () {
+			$hidden.val( '' );
+			reflect( '' );
+			$hidden.trigger( 'change' );
+		} );
+
+		$box.append( $hidden, $img, $pick, $remove );
+		$value.append( $box );
+		reflect( current || '' );
 	}
 
 	function loadAcfAll() {

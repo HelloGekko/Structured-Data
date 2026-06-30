@@ -168,6 +168,23 @@
 	color: #646970;
 }
 
+/* Media picker */
+.hgsd-media {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.hgsd-media-preview {
+	max-width: 60px;
+	max-height: 60px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #fff;
+	object-fit: contain;
+}
+
 /* FAQ */
 .hgsd-faq-item {
 	flex-direction: column;

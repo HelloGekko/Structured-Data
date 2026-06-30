@@ -35,6 +35,9 @@ final class PropertyResolver {
 				return $this->resolve_acf( $value, $context );
 			case 'custom':
 				return $this->resolve_custom( $value, $context );
+			case 'media':
+				// The value is already a media library URL chosen in the admin.
+				return esc_url_raw( $value );
 			case 'wp':
 			default:
 				return $this->resolve_wp( $value, $context );
