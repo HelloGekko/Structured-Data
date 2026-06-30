@@ -114,6 +114,7 @@ final class Admin {
 		$def->set_properties( $this->sanitize_properties( $raw['properties'] ?? [] ) );
 		$def->set_faq( $this->sanitize_faq( $raw['faq'] ?? [] ) );
 		$def->set_reviews( is_array( $raw['reviews'] ?? null ) ? $raw['reviews'] : [] );
+		$def->set_source( is_array( $raw['source'] ?? null ) ? $raw['source'] : [] );
 	}
 
 	/**
@@ -421,7 +422,7 @@ final class Admin {
 		} else {
 			$posts = get_posts(
 				[
-					'post_type'   => $arg ?: 'post',
+					'post_type'   => '' !== $arg ? $arg : 'post',
 					's'           => $search,
 					'numberposts' => 20,
 					'post_status' => 'publish',
@@ -467,7 +468,25 @@ final class Admin {
 			'reviews'    => is_array( $raw['reviews'] ?? null ) ? $raw['reviews'] : [],
 		];
 
-		[ $post_id, $note ] = $this->preview_context( $this->sanitize_conditions( $raw['conditions'] ?? [] ) );
+		// Field source can pin resolution to a specific post or to ACF options.
+		$source      = is_array( $raw['source'] ?? null ) ? $raw['source'] : [];
+		$source_mode = in_array( $source['mode'] ?? '', [ 'current', 'post', 'option' ], true ) ? $source['mode'] : 'current';
+
+		// An explicit preview post wins; then the schema's source post; then a representative post.
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- nonce verified at top.
+		$preview_post = isset( $_POST['preview_post'] ) ? (int) $_POST['preview_post'] : 0;
+
+		if ( $preview_post && get_post( $preview_post ) ) {
+			$post_id = $preview_post;
+			/* translators: %s: post title. */
+			$note = sprintf( __( 'Preview based on: %s', 'hg-structured-data' ), get_the_title( $post_id ) );
+		} elseif ( 'post' === $source_mode && ! empty( $source['post_id'] ) && get_post( (int) $source['post_id'] ) ) {
+			$post_id = (int) $source['post_id'];
+			/* translators: %s: post title. */
+			$note = sprintf( __( 'Preview based on field-source page: %s', 'hg-structured-data' ), get_the_title( $post_id ) );
+		} else {
+			[ $post_id, $note ] = $this->preview_context( $this->sanitize_conditions( $raw['conditions'] ?? [] ) );
+		}
 
 		$context = [
 			'post_id'        => $post_id,
@@ -475,6 +494,11 @@ final class Admin {
 			'queried_object' => $post_id ? get_post( $post_id ) : null,
 			'reviews'        => $this->reviews->data(),
 		];
+
+		if ( 'option' === $source_mode ) {
+			$context['acf_source'] = 'option';
+			$note                  = __( 'Preview using ACF options page.', 'hg-structured-data' );
+		}
 
 		$node = $type->build( $config, new PropertyResolver(), $context );
 

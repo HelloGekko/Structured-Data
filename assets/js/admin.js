@@ -381,6 +381,7 @@
 		$type.prepend( opt( '', HGSD.i18n.selectValue, ! data.type ) );
 
 		var $op = select( base + '[operator]', { is: 'is equal to', is_not: 'is not equal to' }, data.operator || 'is' );
+		var $opCol = $( '<span class="hgsd-col" />' ).append( $op );
 
 		var $cell = $( '<span class="hgsd-col hgsd-col-value" />' );
 
@@ -388,18 +389,28 @@
 
 		$row.append(
 			$( '<span class="hgsd-col" />' ).append( $type ),
-			$( '<span class="hgsd-col" />' ).append( $op ),
+			$opCol,
 			$cell,
 			$remove
 		);
 
-		conditionValueControl( $cell, base, data.type || '', data );
+		function applyConditionType( type, values ) {
+			// "Show globally" and "Homepage" are simple flags — no operator/value.
+			$opCol.toggle( hasOperator( type ) );
+			conditionValueControl( $cell, base, type, values );
+		}
+
+		applyConditionType( data.type || '', data );
 
 		$type.on( 'change', function () {
-			conditionValueControl( $cell, base, $( this ).val(), {} );
+			applyConditionType( $( this ).val(), {} );
 		} );
 
 		return $row;
+	}
+
+	function hasOperator( type ) {
+		return [ '', 'global', 'homepage' ].indexOf( type ) === -1;
 	}
 
 	$wrap.on( 'click', '.hgsd-add-rule', function () {
@@ -499,6 +510,7 @@
 	/* ------------------------------------------------------------- live preview */
 
 	var previewTimer = null;
+	var previewPostId = '';
 
 	function schedulePreview() {
 		clearTimeout( previewTimer );
@@ -509,12 +521,13 @@
 		var $out = $wrap.find( '.hgsd-preview-output' );
 		var $note = $wrap.find( '.hgsd-preview-note' );
 		var payload = $wrap.find( 'select, input, textarea' ).serialize();
+		var extra = previewPostId ? '&preview_post=' + encodeURIComponent( previewPostId ) : '';
 
 		$note.text( HGSD.i18n.previewLoading );
 
 		$.post(
 			HGSD.ajaxUrl,
-			payload + '&action=hgsd_preview&nonce=' + encodeURIComponent( HGSD.nonce ),
+			payload + '&action=hgsd_preview&nonce=' + encodeURIComponent( HGSD.nonce ) + extra,
 			function ( res ) {
 				if ( res && res.success ) {
 					if ( res.data.empty ) {
@@ -538,6 +551,40 @@
 	$wrap.on( 'click', '.hgsd-preview-refresh', function () {
 		refreshPreview();
 	} );
+
+	// Field-source: toggle the source-post picker and build its search control.
+	function initSourceControl() {
+		var $mode = $wrap.find( '.hgsd-source-mode' );
+		var $postRow = $wrap.find( '.hgsd-source-post' );
+		var $ctrl = $wrap.find( '.hgsd-source-post-control' );
+		if ( ! $mode.length ) {
+			return;
+		}
+		if ( ! $ctrl.data( 'built' ) ) {
+			$ctrl.data( 'built', true );
+			$ctrl.append( searchSelect( 'hgsd[source][post_id]', 'post', 'any', $ctrl.attr( 'data-selected' ) || '' ) );
+		}
+		function toggle() {
+			$postRow.attr( 'hidden', 'post' !== $mode.val() );
+		}
+		$mode.off( 'change.hgsdsrc' ).on( 'change.hgsdsrc', toggle );
+		toggle();
+	}
+
+	// Live-preview post picker (not part of the saved form).
+	function initPreviewPicker() {
+		var $c = $wrap.find( '.hgsd-preview-post-control' );
+		if ( ! $c.length || $c.data( 'built' ) ) {
+			return;
+		}
+		$c.data( 'built', true );
+		var $box = searchSelect( '', 'post', 'any', '' );
+		$c.append( $box );
+		$box.find( 'select' ).on( 'change', function () {
+			previewPostId = $( this ).val();
+			refreshPreview();
+		} );
+	}
 
 	/* ----------------------------------------------------------------- rehydrate */
 
@@ -573,6 +620,9 @@
 		$.each( faq.items || [], function ( i, item ) {
 			$wrap.find( '.hgsd-faq-items' ).append( buildFaqItem( item ) );
 		} );
+
+		initSourceControl();
+		initPreviewPicker();
 
 		if ( 'edit' === mode ) {
 			// Existing schema: drop the step chrome and show everything at once.

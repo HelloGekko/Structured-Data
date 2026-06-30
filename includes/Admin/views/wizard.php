@@ -24,6 +24,7 @@ $saved = [
 	'properties' => $def->properties(),
 	'faq'        => $def->faq(),
 	'reviews'    => $def->reviews(),
+	'source'     => $def->source(),
 ];
 
 // An existing schema (one that already has a type) is shown flat, without the
@@ -97,6 +98,25 @@ $is_edit = '' !== $saved['type'];
 				?>
 			</p>
 		<?php endif; ?>
+
+		<?php /* Field source: where WP/ACF values are resolved from. */ ?>
+		<div class="hgsd-source-wrap">
+			<p>
+				<label>
+					<strong><?php esc_html_e( 'Resolve field values from', 'hg-structured-data' ); ?></strong><br />
+					<select name="hgsd[source][mode]" class="hgsd-source-mode">
+						<option value="current" <?php selected( $saved['source']['mode'], 'current' ); ?>><?php esc_html_e( 'The current page being viewed (default)', 'hg-structured-data' ); ?></option>
+						<option value="post" <?php selected( $saved['source']['mode'], 'post' ); ?>><?php esc_html_e( 'A specific post or page', 'hg-structured-data' ); ?></option>
+						<option value="option" <?php selected( $saved['source']['mode'], 'option' ); ?>><?php esc_html_e( 'ACF options page', 'hg-structured-data' ); ?></option>
+					</select>
+				</label>
+			</p>
+			<p class="hgsd-source-post" hidden>
+				<label><?php esc_html_e( 'Source post / page', 'hg-structured-data' ); ?></label><br />
+				<span class="hgsd-source-post-control" data-selected="<?php echo esc_attr( (string) $saved['source']['post_id'] ); ?>"></span>
+			</p>
+			<p class="description"><?php esc_html_e( 'Useful for global schemas (e.g. Organization) whose data lives in ACF fields on one specific page or an ACF options page, so they resolve even on the homepage.', 'hg-structured-data' ); ?></p>
+		</div>
 
 		<?php /* Generic property mapping (hidden for FAQ). */ ?>
 		<div class="hgsd-properties-wrap">
@@ -182,6 +202,8 @@ $is_edit = '' !== $saved['type'];
 	<section class="hgsd-preview">
 		<div class="hgsd-preview-head">
 			<h3><?php esc_html_e( 'Live preview', 'hg-structured-data' ); ?></h3>
+			<span class="hgsd-preview-post-label"><?php esc_html_e( 'Preview for:', 'hg-structured-data' ); ?></span>
+			<span class="hgsd-preview-post-control"></span>
 			<button type="button" class="button button-small hgsd-preview-refresh"><?php esc_html_e( 'Refresh', 'hg-structured-data' ); ?></button>
 		</div>
 		<p class="hgsd-preview-note description"></p>

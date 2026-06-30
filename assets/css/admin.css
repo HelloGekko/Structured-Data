@@ -223,6 +223,26 @@
 	margin: 0;
 }
 
+.hgsd-preview-head .hgsd-search {
+	min-width: 220px;
+}
+
+.hgsd-preview-post-label {
+	margin-left: auto;
+	color: #646970;
+}
+
+/* Field source */
+.hgsd-source-wrap {
+	margin-bottom: 18px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.hgsd-source-wrap .hgsd-search {
+	max-width: 340px;
+}
+
 .hgsd-preview-note {
 	margin: 6px 0;
 }

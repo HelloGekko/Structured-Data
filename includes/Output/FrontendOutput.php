@@ -68,7 +68,7 @@ final class FrontendOutput {
 				'reviews'    => $def->reviews(),
 			];
 
-			$node = $type->build( $config, $this->resolver, $context );
+			$node = $type->build( $config, $this->resolver, $this->source_context( $context, $def ) );
 			if ( null !== $node ) {
 				$nodes[] = $node;
 			}
@@ -102,6 +102,25 @@ final class FrontendOutput {
 		$json = str_replace( '</', '<\/', $json );
 
 		echo "\n<script type=\"application/ld+json\">" . $json . "</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	/**
+	 * Apply a definition's field-source setting on top of the base context.
+	 *
+	 * @param array<string,mixed> $context Base runtime context.
+	 * @return array<string,mixed>
+	 */
+	private function source_context( array $context, SchemaDefinition $def ): array {
+		$source = $def->source();
+
+		if ( 'post' === $source['mode'] && $source['post_id'] ) {
+			$context['post_id']   = $source['post_id'];
+			$context['author_id'] = (int) get_post_field( 'post_author', $source['post_id'] );
+		} elseif ( 'option' === $source['mode'] ) {
+			$context['acf_source'] = 'option';
+		}
+
+		return $context;
 	}
 
 	/**

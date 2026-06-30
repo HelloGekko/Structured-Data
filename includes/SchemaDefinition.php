@@ -21,6 +21,7 @@ final class SchemaDefinition {
 	public const META_PROPERTIES = '_hgsd_properties';
 	public const META_FAQ        = '_hgsd_faq';
 	public const META_REVIEWS    = '_hgsd_reviews';
+	public const META_SOURCE     = '_hgsd_source';
 	public const META_ENABLED    = '_hgsd_enabled';
 
 	private int $post_id;
@@ -138,6 +139,37 @@ final class SchemaDefinition {
 			'aggregate'  => ! empty( $stored['aggregate'] ),
 			'individual' => ! empty( $stored['individual'] ),
 		];
+	}
+
+	/**
+	 * Where field values should be resolved from.
+	 *
+	 * @return array{mode:string,post_id:int}
+	 */
+	public function source(): array {
+		$stored = get_post_meta( $this->post_id, self::META_SOURCE, true );
+		$stored = is_array( $stored ) ? $stored : [];
+		$mode   = in_array( $stored['mode'] ?? '', [ 'current', 'post', 'option' ], true ) ? $stored['mode'] : 'current';
+
+		return [
+			'mode'    => $mode,
+			'post_id' => (int) ( $stored['post_id'] ?? 0 ),
+		];
+	}
+
+	/**
+	 * @param array<string,mixed> $source Source config.
+	 */
+	public function set_source( array $source ): void {
+		$mode = in_array( $source['mode'] ?? '', [ 'current', 'post', 'option' ], true ) ? $source['mode'] : 'current';
+		update_post_meta(
+			$this->post_id,
+			self::META_SOURCE,
+			[
+				'mode'    => $mode,
+				'post_id' => (int) ( $source['post_id'] ?? 0 ),
+			]
+		);
 	}
 
 	/**

@@ -112,8 +112,15 @@ final class PropertyResolver {
 			return '';
 		}
 
-		$post_id = (int) ( $context['post_id'] ?? 0 );
-		$value   = get_field( $field, $post_id ?: false );
+		// "option" resolves against an ACF options page; otherwise the post.
+		if ( 'option' === ( $context['acf_source'] ?? '' ) ) {
+			$target = 'option';
+		} else {
+			$post_id = (int) ( $context['post_id'] ?? 0 );
+			$target  = $post_id ?: false;
+		}
+
+		$value = get_field( $field, $target );
 
 		// Reduce common ACF return shapes to a scalar usable in JSON-LD.
 		if ( is_array( $value ) ) {
