@@ -21,8 +21,11 @@ structured data (JSON-LD) to your site through a visual wizard.
   Advanced Custom Fields (Pro) is active.
 - **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
   AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
-  structured data, and can overrule it — cleanly via the plugin's own filter (Yoast, Rank Math)
-  or by stripping all foreign JSON-LD so this plugin owns the structured data.
+  structured data. Overrule options: clean per-plugin disable via the plugin's own filter
+  (Yoast, Rank Math); a **"remove duplicates only"** mode that strips just the foreign schema
+  of the types this plugin already outputs on a page (e.g. a second FAQPage/Organization, also
+  inside `@graph`) while leaving breadcrumbs, sitelinks and the rest intact; or a full
+  "remove all foreign structured data" mode.
 - **Always current with schema.org**: the property catalog is generated directly from the
   official schema.org vocabulary (currently **v30.0**). Each type offers its curated,
   recommended properties first, with *Show all schema.org properties* revealing every valid

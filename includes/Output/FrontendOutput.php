@@ -26,6 +26,11 @@ final class FrontendOutput {
 	private PropertyResolver $resolver;
 	private ReviewsManager $reviews;
 
+	/**
+	 * @var array<int,string>
+	 */
+	private array $emitted_types = [];
+
 	public function __construct( SchemaRegistry $registry, ReviewsManager $reviews ) {
 		$this->registry   = $registry;
 		$this->conditions = new DisplayConditions();
@@ -83,8 +88,22 @@ final class FrontendOutput {
 		$nodes = apply_filters( 'hgsd_output_nodes', $nodes, $context );
 
 		foreach ( $nodes as $node ) {
+			if ( isset( $node['@type'] ) ) {
+				foreach ( (array) $node['@type'] as $type ) {
+					$this->emitted_types[] = (string) $type;
+				}
+			}
 			$this->print_node( $node );
 		}
+	}
+
+	/**
+	 * The schema.org @type values this plugin has emitted on the current request.
+	 *
+	 * @return array<int,string>
+	 */
+	public function emitted_types(): array {
+		return array_values( array_unique( $this->emitted_types ) );
 	}
 
 	/**

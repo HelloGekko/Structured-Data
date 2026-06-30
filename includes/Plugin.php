@@ -66,10 +66,11 @@ final class Plugin {
 		( new PostType() )->register_hooks();
 
 		// Front-end JSON-LD output.
-		( new FrontendOutput( $this->registry, $this->reviews ) )->register_hooks();
+		$frontend = new FrontendOutput( $this->registry, $this->reviews );
+		$frontend->register_hooks();
 
 		// Detect and optionally overrule other structured-data plugins.
-		$conflicts = new ConflictManager();
+		$conflicts = new ConflictManager( $frontend );
 		$conflicts->register_hooks();
 
 		// Admin UI (wizard, meta boxes, ajax).

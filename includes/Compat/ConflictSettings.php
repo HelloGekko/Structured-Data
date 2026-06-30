@@ -72,11 +72,13 @@ final class ConflictSettings {
 			$suppress[ $key ] = ! empty( $in['suppress'][ $key ] );
 		}
 
+		$mode = in_array( $in['mode'] ?? '', [ 'off', 'dedupe', 'all' ], true ) ? $in['mode'] : 'off';
+
 		update_option(
 			ConflictManager::OPTION,
 			[
-				'suppress'      => $suppress,
-				'strip_foreign' => ! empty( $in['strip_foreign'] ),
+				'suppress' => $suppress,
+				'mode'     => $mode,
 			]
 		);
 

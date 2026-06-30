@@ -9,6 +9,8 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Compat;
 
+use HelloGekko\StructuredData\Output\FrontendOutput;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -18,6 +20,37 @@ defined( 'ABSPATH' ) || exit;
 final class ConflictManager {
 
 	public const OPTION = 'hgsd_conflict_settings';
+
+	/**
+	 * Types that should be treated as the same entity when de-duplicating.
+	 * Maps a schema.org @type to a canonical family key.
+	 */
+	private const EQUIVALENCE = [
+		// Organization family.
+		'Corporation'           => 'Organization',
+		'LocalBusiness'         => 'Organization',
+		'OnlineBusiness'        => 'Organization',
+		'NGO'                   => 'Organization',
+		'GovernmentOrganization' => 'Organization',
+		'EducationalOrganization' => 'Organization',
+		'NewsMediaOrganization' => 'Organization',
+		'Store'                 => 'Organization',
+		// Article family.
+		'NewsArticle'           => 'Article',
+		'BlogPosting'           => 'Article',
+		'Report'                => 'Article',
+		// Page family.
+		'ItemPage'              => 'WebPage',
+		'CollectionPage'        => 'WebPage',
+		'AboutPage'             => 'WebPage',
+		'ContactPage'           => 'WebPage',
+	];
+
+	private ?FrontendOutput $frontend;
+
+	public function __construct( ?FrontendOutput $frontend = null ) {
+		$this->frontend = $frontend;
+	}
 
 	public function register_hooks(): void {
 		add_action( 'admin_notices', [ $this, 'notice' ] );
@@ -91,15 +124,24 @@ final class ConflictManager {
 	/**
 	 * Current settings.
 	 *
-	 * @return array{suppress:array<string,bool>,strip_foreign:bool}
+	 * mode: 'off' (do nothing) | 'dedupe' (remove only foreign types we also
+	 * output) | 'all' (remove every foreign JSON-LD block).
+	 *
+	 * @return array{suppress:array<string,bool>,mode:string}
 	 */
 	public function settings(): array {
 		$stored = get_option( self::OPTION, [] );
 		$stored = is_array( $stored ) ? $stored : [];
 
+		$mode = $stored['mode'] ?? '';
+		if ( ! in_array( $mode, [ 'off', 'dedupe', 'all' ], true ) ) {
+			// Back-compat with the original boolean toggle.
+			$mode = ! empty( $stored['strip_foreign'] ) ? 'all' : 'off';
+		}
+
 		return [
-			'suppress'      => is_array( $stored['suppress'] ?? null ) ? $stored['suppress'] : [],
-			'strip_foreign' => ! empty( $stored['strip_foreign'] ),
+			'suppress' => is_array( $stored['suppress'] ?? null ) ? $stored['suppress'] : [],
+			'mode'     => $mode,
 		];
 	}
 
@@ -121,9 +163,11 @@ final class ConflictManager {
 			}
 		}
 
-		// Aggressive fallback: strip every foreign JSON-LD block from the output.
-		if ( $settings['strip_foreign'] ) {
+		// Output filtering: either remove duplicates only, or all foreign JSON-LD.
+		if ( 'all' === $settings['mode'] ) {
 			ob_start( [ $this, 'strip_foreign_jsonld' ] );
+		} elseif ( 'dedupe' === $settings['mode'] ) {
+			ob_start( [ $this, 'dedupe_foreign_jsonld' ] );
 		}
 	}
 
@@ -139,6 +183,112 @@ final class ConflictManager {
 			},
 			$html
 		);
+	}
+
+	/**
+	 * Remove only the foreign schema nodes whose @type this plugin also outputs
+	 * on this page, leaving all other structured data (breadcrumbs, sitelinks,
+	 * website, …) untouched.
+	 */
+	public function dedupe_foreign_jsonld( string $html ): string {
+		$ours = [];
+		foreach ( $this->frontend ? $this->frontend->emitted_types() : [] as $type ) {
+			$ours[] = $this->canonical( $type );
+		}
+		$ours = array_values( array_unique( $ours ) );
+
+		if ( empty( $ours ) ) {
+			return $html;
+		}
+
+		return (string) preg_replace_callback(
+			'#<script\b[^>]*type=([\'"])application/ld\+json\1[^>]*>(.*?)</script>#is',
+			function ( array $m ) use ( $ours ): string {
+				// Never touch our own output.
+				if ( false !== strpos( $m[0], 'data-hgsd' ) ) {
+					return $m[0];
+				}
+
+				$data = json_decode( trim( $m[2] ), true );
+				if ( ! is_array( $data ) ) {
+					return $m[0]; // Not parseable — leave it alone.
+				}
+
+				$is_list = array_keys( $data ) === range( 0, count( $data ) - 1 );
+				$nodes   = $is_list ? $data : [ $data ];
+				$kept    = $this->filter_nodes( $nodes, $ours );
+
+				if ( empty( $kept ) ) {
+					return ''; // Everything in this block duplicated ours.
+				}
+
+				$payload = ( ! $is_list && 1 === count( $kept ) ) ? $kept[0] : $kept;
+				$json    = wp_json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+				if ( false === $json ) {
+					return $m[0];
+				}
+
+				return '<script type="application/ld+json">' . str_replace( '</', '<\/', $json ) . '</script>';
+			},
+			$html
+		);
+	}
+
+	/**
+	 * Keep only the nodes that do not conflict with our emitted types, recursing
+	 * into @graph containers.
+	 *
+	 * @param array<int,mixed>   $nodes Decoded top-level nodes.
+	 * @param array<int,string>  $ours  Canonical types we output.
+	 * @return array<int,mixed>
+	 */
+	private function filter_nodes( array $nodes, array $ours ): array {
+		$kept = [];
+		foreach ( $nodes as $node ) {
+			if ( ! is_array( $node ) ) {
+				$kept[] = $node;
+				continue;
+			}
+
+			if ( isset( $node['@graph'] ) && is_array( $node['@graph'] ) ) {
+				$graph = $this->filter_nodes( $node['@graph'], $ours );
+				if ( ! empty( $graph ) ) {
+					$node['@graph'] = $graph;
+					$kept[]         = $node;
+				}
+				continue;
+			}
+
+			if ( $this->conflicts( $node, $ours ) ) {
+				continue;
+			}
+			$kept[] = $node;
+		}
+		return $kept;
+	}
+
+	/**
+	 * Whether a decoded node carries a type we also output.
+	 *
+	 * @param array<string,mixed> $node Decoded node.
+	 * @param array<int,string>   $ours Canonical types we output.
+	 */
+	private function conflicts( array $node, array $ours ): bool {
+		$types = isset( $node['@type'] ) ? (array) $node['@type'] : [];
+		foreach ( $types as $type ) {
+			if ( in_array( $this->canonical( (string) $type ), $ours, true ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Canonical family key for a schema.org type, so e.g. Corporation and
+	 * Organization are treated as duplicates of one another.
+	 */
+	private function canonical( string $type ): string {
+		return self::EQUIVALENCE[ $type ] ?? $type;
 	}
 
 	/**
