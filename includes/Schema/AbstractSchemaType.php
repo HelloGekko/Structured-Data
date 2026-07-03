@@ -84,8 +84,19 @@ abstract class AbstractSchemaType {
 			$out[ $key ] = $def;
 		}
 
+		// Top-level segments that the curated set models as nested objects
+		// (author, location, address, offers, …). Their flat scalar catalog
+		// variant is dropped: mixing "location" (text) with "location.name"
+		// would emit invalid mixed markup that Google rejects.
+		$nested_parents = [];
+		foreach ( array_keys( $out ) as $key ) {
+			if ( false !== strpos( $key, '.' ) ) {
+				$nested_parents[ strstr( $key, '.', true ) ] = true;
+			}
+		}
+
 		foreach ( $catalog as $key => $def ) {
-			if ( isset( $out[ $key ] ) ) {
+			if ( isset( $out[ $key ] ) || isset( $nested_parents[ $key ] ) ) {
 				continue;
 			}
 			$def['recommended'] = false;
@@ -290,15 +301,26 @@ abstract class AbstractSchemaType {
 
 		$existing = $container[ $key ];
 
-		// Already a plain (list) array of values — append.
-		if ( is_array( $existing ) && array_keys( $existing ) === range( 0, count( $existing ) - 1 ) ) {
-			$existing[]        = $value;
-			$container[ $key ] = $existing;
+		// A typed object (associative array) may never be mixed with a scalar in
+		// one list — Google rejects that as an invalid object type. The object wins.
+		$existing_is_object = is_array( $existing ) && array_keys( $existing ) !== range( 0, count( $existing ) - 1 );
+		if ( $existing_is_object ) {
 			return;
 		}
 
-		// Scalar or typed object — turn into a list of both.
-		$container[ $key ] = [ $existing, $value ];
+		// Already a plain (list) array of values — append matching scalars only.
+		if ( is_array( $existing ) ) {
+			if ( is_scalar( $value ) ) {
+				$existing[]        = $value;
+				$container[ $key ] = $existing;
+			}
+			return;
+		}
+
+		// Two scalars — turn into a list (e.g. multiple sameAs URLs).
+		if ( is_scalar( $value ) ) {
+			$container[ $key ] = [ $existing, $value ];
+		}
 	}
 
 	/**

@@ -5625,34 +5625,6 @@ return array (
   ),
   'enums' => 
   array (
-    'actionPlatform' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/AndroidPlatform',
-        'label' => 'AndroidPlatform',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/DesktopWebPlatform',
-        'label' => 'DesktopWebPlatform',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/GenericWebPlatform',
-        'label' => 'GenericWebPlatform',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/IOSPlatform',
-        'label' => 'IOSPlatform',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/MobileWebPlatform',
-        'label' => 'MobileWebPlatform',
-      ),
-    ),
     'actionStatus' => 
     array (
       0 => 
@@ -5935,87 +5907,6 @@ return array (
         'label' => 'Wednesday',
       ),
     ),
-    'byDay' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/Friday',
-        'label' => 'Friday',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/Monday',
-        'label' => 'Monday',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/PublicHolidays',
-        'label' => 'PublicHolidays',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/Saturday',
-        'label' => 'Saturday',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/Sunday',
-        'label' => 'Sunday',
-      ),
-      5 => 
-      array (
-        'value' => 'https://schema.org/Thursday',
-        'label' => 'Thursday',
-      ),
-      6 => 
-      array (
-        'value' => 'https://schema.org/Tuesday',
-        'label' => 'Tuesday',
-      ),
-      7 => 
-      array (
-        'value' => 'https://schema.org/Wednesday',
-        'label' => 'Wednesday',
-      ),
-    ),
-    'category' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/AerobicActivity',
-        'label' => 'AerobicActivity',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/AnaerobicActivity',
-        'label' => 'AnaerobicActivity',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/Balance',
-        'label' => 'Balance',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/Flexibility',
-        'label' => 'Flexibility',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/LeisureTimeActivity',
-        'label' => 'LeisureTimeActivity',
-      ),
-      5 => 
-      array (
-        'value' => 'https://schema.org/OccupationalActivity',
-        'label' => 'OccupationalActivity',
-      ),
-      6 => 
-      array (
-        'value' => 'https://schema.org/StrengthTraining',
-        'label' => 'StrengthTraining',
-      ),
-    ),
     'certificationStatus' => 
     array (
       0 => 
@@ -6255,29 +6146,6 @@ return array (
         'label' => 'VirtualRecordingDigitalSource',
       ),
     ),
-    'driveWheelConfiguration' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/AllWheelDriveConfiguration',
-        'label' => 'AllWheelDriveConfiguration',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/FourWheelDriveConfiguration',
-        'label' => 'FourWheelDriveConfiguration',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/FrontWheelDriveConfiguration',
-        'label' => 'FrontWheelDriveConfiguration',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/RearWheelDriveConfiguration',
-        'label' => 'RearWheelDriveConfiguration',
-      ),
-    ),
     'energyEfficiencyScaleMax' => 
     array (
       0 => 
@@ -6474,32 +6342,6 @@ return array (
       array (
         'value' => 'https://schema.org/FulfillmentTypeScheduledDelivery',
         'label' => 'FulfillmentTypeScheduledDelivery',
-      ),
-    ),
-    'gameAvailabilityType' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/DemoGameAvailability',
-        'label' => 'DemoGameAvailability',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/FullGameAvailability',
-        'label' => 'FullGameAvailability',
-      ),
-    ),
-    'gender' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/Female',
-        'label' => 'Female',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/Male',
-        'label' => 'Male',
       ),
     ),
     'hasAdultConsideration' => 
@@ -7003,24 +6845,6 @@ return array (
         'label' => 'ReturnLabelInBox',
       ),
     ),
-    'itemListOrder' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/ItemListOrderAscending',
-        'label' => 'ItemListOrderAscending',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/ItemListOrderDescending',
-        'label' => 'ItemListOrderDescending',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/ItemListUnordered',
-        'label' => 'ItemListUnordered',
-      ),
-    ),
     'legislationLegalForce' => 
     array (
       0 => 
@@ -7083,22 +6907,6 @@ return array (
       array (
         'value' => 'https://schema.org/VenueMap',
         'label' => 'VenueMap',
-      ),
-    ),
-    'measurementMethod' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/ExampleMeasurementMethodEnum',
-        'label' => 'ExampleMeasurementMethodEnum',
-      ),
-    ),
-    'measurementTechnique' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/ExampleMeasurementMethodEnum',
-        'label' => 'ExampleMeasurementMethodEnum',
       ),
     ),
     'mediaAuthenticityCategory' => 
@@ -7560,34 +7368,6 @@ return array (
         'label' => 'PhoneCarrierPayment',
       ),
     ),
-    'paymentStatus' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/PaymentAutomaticallyApplied',
-        'label' => 'PaymentAutomaticallyApplied',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/PaymentComplete',
-        'label' => 'PaymentComplete',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/PaymentDeclined',
-        'label' => 'PaymentDeclined',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/PaymentDue',
-        'label' => 'PaymentDue',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/PaymentPastDue',
-        'label' => 'PaymentPastDue',
-      ),
-    ),
     'permissionType' => 
     array (
       0 => 
@@ -7657,19 +7437,6 @@ return array (
         'label' => 'FDAnotEvaluated',
       ),
     ),
-    'prescriptionStatus' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/OTC',
-        'label' => 'OTC',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/PrescriptionOnly',
-        'label' => 'PrescriptionOnly',
-      ),
-    ),
     'priceComponentType' => 
     array (
       0 => 
@@ -7701,49 +7468,6 @@ return array (
       array (
         'value' => 'https://schema.org/Subscription',
         'label' => 'Subscription',
-      ),
-    ),
-    'priceType' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/InvoicePrice',
-        'label' => 'InvoicePrice',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/ListPrice',
-        'label' => 'ListPrice',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/MSRP',
-        'label' => 'MSRP',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/MinimumAdvertisedPrice',
-        'label' => 'MinimumAdvertisedPrice',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/RegularPrice',
-        'label' => 'RegularPrice',
-      ),
-      5 => 
-      array (
-        'value' => 'https://schema.org/SRP',
-        'label' => 'SRP',
-      ),
-      6 => 
-      array (
-        'value' => 'https://schema.org/SalePrice',
-        'label' => 'SalePrice',
-      ),
-      7 => 
-      array (
-        'value' => 'https://schema.org/StrikethroughPrice',
-        'label' => 'StrikethroughPrice',
       ),
     ),
     'procedureType' => 
@@ -8192,90 +7916,6 @@ return array (
         'label' => 'OnlineFull',
       ),
     ),
-    'serviceType' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/BasicIncome',
-        'label' => 'BasicIncome',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/BusinessSupport',
-        'label' => 'BusinessSupport',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/DisabilitySupport',
-        'label' => 'DisabilitySupport',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/HealthCare',
-        'label' => 'HealthCare',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/OneTimePayments',
-        'label' => 'OneTimePayments',
-      ),
-      5 => 
-      array (
-        'value' => 'https://schema.org/PaidLeave',
-        'label' => 'PaidLeave',
-      ),
-      6 => 
-      array (
-        'value' => 'https://schema.org/ParentalSupport',
-        'label' => 'ParentalSupport',
-      ),
-      7 => 
-      array (
-        'value' => 'https://schema.org/UnemploymentSupport',
-        'label' => 'UnemploymentSupport',
-      ),
-    ),
-    'sizeSystem' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/SizeSystemImperial',
-        'label' => 'SizeSystemImperial',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/SizeSystemMetric',
-        'label' => 'SizeSystemMetric',
-      ),
-    ),
-    'status' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/EventCancelled',
-        'label' => 'EventCancelled',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/EventMovedOnline',
-        'label' => 'EventMovedOnline',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/EventPostponed',
-        'label' => 'EventPostponed',
-      ),
-      3 => 
-      array (
-        'value' => 'https://schema.org/EventRescheduled',
-        'label' => 'EventRescheduled',
-      ),
-      4 => 
-      array (
-        'value' => 'https://schema.org/EventScheduled',
-        'label' => 'EventScheduled',
-      ),
-    ),
     'steeringPosition' => 
     array (
       0 => 
@@ -8320,19 +7960,6 @@ return array (
       array (
         'value' => 'https://schema.org/Registry',
         'label' => 'Registry',
-      ),
-    ),
-    'suggestedGender' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/Female',
-        'label' => 'Female',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/Male',
-        'label' => 'Male',
       ),
     ),
     'suitableForDiet' => 
@@ -8439,24 +8066,6 @@ return array (
       array (
         'value' => 'https://schema.org/TripleBlindedTrial',
         'label' => 'TripleBlindedTrial',
-      ),
-    ),
-    'vehicleSpecialUsage' => 
-    array (
-      0 => 
-      array (
-        'value' => 'https://schema.org/DrivingSchoolVehicleUsage',
-        'label' => 'DrivingSchoolVehicleUsage',
-      ),
-      1 => 
-      array (
-        'value' => 'https://schema.org/RentalVehicleUsage',
-        'label' => 'RentalVehicleUsage',
-      ),
-      2 => 
-      array (
-        'value' => 'https://schema.org/TaxiVehicleUsage',
-        'label' => 'TaxiVehicleUsage',
       ),
     ),
   ),

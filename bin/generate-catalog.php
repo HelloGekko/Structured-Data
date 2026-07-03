@@ -185,10 +185,18 @@ foreach ( $graph as $node ) {
 
 // Allowed values for every enumeration-valued property, across the whole
 // vocabulary (so curated nested props like offers.availability find them too).
+// Only pure-enum properties qualify: when the range also allows a scalar type
+// (e.g. category = Text|URL|Thing|PhysicalActivityCategory) the user must be
+// able to type freely, so no fixed list is attached.
 $global_enums = [];
 foreach ( $properties as $pid => $prop ) {
-	$name = substr( $pid, strlen( 'schema:' ) );
-	foreach ( $ids( $prop['schema:rangeIncludes'] ?? null ) as $rid ) {
+	$name      = substr( $pid, strlen( 'schema:' ) );
+	$range_ids = $ids( $prop['schema:rangeIncludes'] ?? null );
+	$ranges    = array_map( static fn( $r ) => substr( $r, strlen( 'schema:' ) ), $range_ids );
+	if ( null !== $classify( $ranges ) ) {
+		continue; // Scalar datatype allowed — keep it a free field.
+	}
+	foreach ( $range_ids as $rid ) {
 		if ( isset( $enum_members[ $rid ] ) ) {
 			$global_enums[ $name ] = array_slice( $enum_members[ $rid ], 0, 60 );
 			break;
