@@ -190,6 +190,12 @@ $is_edit = '' !== $saved['type'];
 				</p>
 			</div>
 		</div>
+
+		<?php /* Shown instead of the panel when Google doesn't support reviews on the type. */ ?>
+		<div class="hgsd-reviews-blocked" hidden>
+			<h4><?php esc_html_e( 'Reviews', 'hg-structured-data' ); ?></h4>
+			<p class="hgsd-reviews-blocked-text description"></p>
+		</div>
 	</section>
 
 	<div class="hgsd-nav">

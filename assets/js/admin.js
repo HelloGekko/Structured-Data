@@ -90,8 +90,12 @@
 		$wrap.find( '.hgsd-faq-wrap' ).attr( 'hidden', ! type.isFaq );
 		$wrap.find( '.hgsd-properties-wrap' ).attr( 'hidden', !! type.isFaq );
 
-		// Reviews panel only for review-capable types.
+		// Reviews panel only for types Google supports as itemReviewed; for
+		// blocked types (Service, Organization) show the explanation instead.
 		$wrap.find( '.hgsd-reviews-wrap' ).attr( 'hidden', ! type.supportsReviews );
+		var $blocked = $wrap.find( '.hgsd-reviews-blocked' );
+		$blocked.attr( 'hidden', ! type.reviewsBlocked );
+		$blocked.find( '.hgsd-reviews-blocked-text' ).text( type.reviewsBlocked || '' );
 
 		if ( rebuildRows && ! type.isFaq ) {
 			$wrap.find( '.hgsd-properties' ).empty();

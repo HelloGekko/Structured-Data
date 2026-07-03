@@ -44,10 +44,22 @@ abstract class AbstractSchemaType {
 	}
 
 	/**
-	 * Whether this type can carry review / aggregateRating markup.
+	 * Whether this type can carry review / aggregateRating markup. Only types
+	 * Google supports as itemReviewed for review snippets qualify (Product,
+	 * LocalBusiness, Event, Book, …) — emitting ratings on other types is valid
+	 * schema.org but triggers "invalid object type" errors in Search Console.
 	 */
 	public function supports_reviews(): bool {
 		return false;
+	}
+
+	/**
+	 * Explanation shown in the wizard when reviews are structurally possible on
+	 * this type per schema.org, but deliberately disabled because Google does
+	 * not support review snippets for it. Empty for all other types.
+	 */
+	public function reviews_blocked_reason(): string {
+		return '';
 	}
 
 	/**

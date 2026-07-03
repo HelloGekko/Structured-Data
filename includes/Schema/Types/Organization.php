@@ -30,8 +30,8 @@ class Organization extends AbstractSchemaType {
 		return __( 'Entities', 'hg-structured-data' );
 	}
 
-	public function supports_reviews(): bool {
-		return true;
+	public function reviews_blocked_reason(): string {
+		return __( 'Google does not support review snippets for Organization (self-serving reviews are ignored), so review markup on this type only triggers Search Console errors.', 'hg-structured-data' );
 	}
 
 	public function recommended(): array {

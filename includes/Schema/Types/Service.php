@@ -30,8 +30,8 @@ class Service extends AbstractSchemaType {
 		return __( 'Local & Commerce', 'hg-structured-data' );
 	}
 
-	public function supports_reviews(): bool {
-		return true;
+	public function reviews_blocked_reason(): string {
+		return __( 'Google does not support review snippets for Service, so review markup on this type only triggers Search Console errors. Attach reviews to a Product instead, or show testimonials as regular page content.', 'hg-structured-data' );
 	}
 
 	public function recommended(): array {

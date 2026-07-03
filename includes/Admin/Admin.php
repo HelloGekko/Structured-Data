@@ -256,6 +256,7 @@ final class Admin {
 				'properties'      => $type->properties(),
 				'isFaq'           => 'FAQPage' === $type->type_value(),
 				'supportsReviews' => $type->supports_reviews(),
+				'reviewsBlocked'  => $type->reviews_blocked_reason(),
 			];
 		}
 

@@ -168,6 +168,14 @@
 	color: #646970;
 }
 
+/* Reviews blocked note */
+.hgsd-reviews-blocked-text {
+	margin: 0;
+	padding: 8px 12px;
+	background: #fcf9e8;
+	border-left: 4px solid #dba617;
+}
+
 /* Media picker */
 .hgsd-media {
 	display: flex;
