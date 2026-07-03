@@ -8069,4 +8069,16697 @@ return array (
       ),
     ),
   ),
+  'objects' => 
+  array (
+    'Article' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'BlogPosting' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sharedContent' => 
+      array (
+        'label' => 'Shared Content',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork such as an image, video, or audio clip shared as part of this posting.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'Book' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'illustrator' => 
+      array (
+        'label' => 'Illustrator',
+        'class' => 'Person',
+        'comment' => 'The illustrator of the book.',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'FAQPage' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainContentOfPage' => 
+      array (
+        'label' => 'Main Content Of Page',
+        'class' => 'WebPageElement',
+        'comment' => 'Indicates if this web page element is the main subject of the page.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'primaryImageOfPage' => 
+      array (
+        'label' => 'Primary Image Of Page',
+        'class' => 'ImageObject',
+        'comment' => 'Indicates the main image on the page.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviewedBy' => 
+      array (
+        'label' => 'Reviewed By',
+        'class' => 'Organization',
+        'comment' => 'People or organizations that have reviewed the content on this web page for accuracy and/or completeness.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'specialty' => 
+      array (
+        'label' => 'Specialty',
+        'class' => 'Specialty',
+        'comment' => 'One of the domain specialities to which this web page\'s content applies.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'NewsArticle' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'WebPage' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainContentOfPage' => 
+      array (
+        'label' => 'Main Content Of Page',
+        'class' => 'WebPageElement',
+        'comment' => 'Indicates if this web page element is the main subject of the page.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'primaryImageOfPage' => 
+      array (
+        'label' => 'Primary Image Of Page',
+        'class' => 'ImageObject',
+        'comment' => 'Indicates the main image on the page.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviewedBy' => 
+      array (
+        'label' => 'Reviewed By',
+        'class' => 'Organization',
+        'comment' => 'People or organizations that have reviewed the content on this web page for accuracy and/or completeness.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'specialty' => 
+      array (
+        'label' => 'Specialty',
+        'class' => 'Specialty',
+        'comment' => 'One of the domain specialities to which this web page\'s content applies.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'ItemPage' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'accessModeSufficient' => 
+      array (
+        'label' => 'Access Mode Sufficient',
+        'class' => 'ItemList',
+        'comment' => 'A list of single or combined access modes that are sufficient to understand all the intellectual content of a resource, including any adaptations. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).',
+      ),
+      'accountablePerson' => 
+      array (
+        'label' => 'Accountable Person',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person that is legally accountable for the CreativeWork.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'associatedMedia' => 
+      array (
+        'label' => 'Associated Media',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for encoding.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'audio' => 
+      array (
+        'label' => 'Audio',
+        'class' => 'AudioObject',
+        'comment' => 'An embedded audio object.',
+      ),
+      'author' => 
+      array (
+        'label' => 'Author',
+        'class' => 'Organization',
+        'comment' => 'The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.',
+      ),
+      'character' => 
+      array (
+        'label' => 'Character',
+        'class' => 'Person',
+        'comment' => 'Fictional person connected with a creative work.',
+      ),
+      'comment' => 
+      array (
+        'label' => 'Comment',
+        'class' => 'Comment',
+        'comment' => 'Comments, typically from users.',
+      ),
+      'contentLocation' => 
+      array (
+        'label' => 'Content Location',
+        'class' => 'Place',
+        'comment' => 'The location depicted or described in the content. For example, the location in a photograph or painting.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'copyrightHolder' => 
+      array (
+        'label' => 'Copyright Holder',
+        'class' => 'Organization',
+        'comment' => 'The party holding the legal copyright to the CreativeWork.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'creator' => 
+      array (
+        'label' => 'Creator',
+        'class' => 'Organization',
+        'comment' => 'The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'editor' => 
+      array (
+        'label' => 'Editor',
+        'class' => 'Person',
+        'comment' => 'Specifies the Person who edited the CreativeWork.',
+      ),
+      'educationalAlignment' => 
+      array (
+        'label' => 'Educational Alignment',
+        'class' => 'AlignmentObject',
+        'comment' => 'An alignment to an established educational framework. This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource teaches or assesses a competency.',
+      ),
+      'encoding' => 
+      array (
+        'label' => 'Encoding',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.',
+      ),
+      'encodings' => 
+      array (
+        'label' => 'Encodings',
+        'class' => 'MediaObject',
+        'comment' => 'A media object that encodes this CreativeWork.',
+      ),
+      'exampleOfWork' => 
+      array (
+        'label' => 'Example Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'A creative work that this work is an example/instance/realization/derivation of.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasPart' => 
+      array (
+        'label' => 'Has Part',
+        'class' => 'CreativeWork',
+        'comment' => 'Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'interpretedAsClaim' => 
+      array (
+        'label' => 'Interpreted As Claim',
+        'class' => 'Claim',
+        'comment' => 'Used to indicate a specific claim contained, implied, translated or refined from the content of a MediaObject or other CreativeWork. The interpreting party can be indicated using claimInterpreter.',
+      ),
+      'locationCreated' => 
+      array (
+        'label' => 'Location Created',
+        'class' => 'Place',
+        'comment' => 'The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.',
+      ),
+      'mainContentOfPage' => 
+      array (
+        'label' => 'Main Content Of Page',
+        'class' => 'WebPageElement',
+        'comment' => 'Indicates if this web page element is the main subject of the page.',
+      ),
+      'mainEntity' => 
+      array (
+        'label' => 'Main Entity',
+        'class' => 'Thing',
+        'comment' => 'Indicates the primary entity described in some page or other CreativeWork.',
+      ),
+      'maintainer' => 
+      array (
+        'label' => 'Maintainer',
+        'class' => 'Organization',
+        'comment' => 'A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When maintainer is applied to a specific version of something e.g. a particular version or packaging of a Dataset, it is always possible that the upstream source has a different maintainer. The isBasedOn property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.',
+      ),
+      'mentions' => 
+      array (
+        'label' => 'Mentions',
+        'class' => 'Thing',
+        'comment' => 'Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'primaryImageOfPage' => 
+      array (
+        'label' => 'Primary Image Of Page',
+        'class' => 'ImageObject',
+        'comment' => 'Indicates the main image on the page.',
+      ),
+      'producer' => 
+      array (
+        'label' => 'Producer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.).',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'publication' => 
+      array (
+        'label' => 'Publication',
+        'class' => 'PublicationEvent',
+        'comment' => 'A publication event associated with the item.',
+      ),
+      'publisher' => 
+      array (
+        'label' => 'Publisher',
+        'class' => 'Organization',
+        'comment' => 'The publisher of the article in question.',
+      ),
+      'publisherImprint' => 
+      array (
+        'label' => 'Publisher Imprint',
+        'class' => 'Organization',
+        'comment' => 'The publishing division which published the comic.',
+      ),
+      'recordedAt' => 
+      array (
+        'label' => 'Recorded At',
+        'class' => 'Event',
+        'comment' => 'The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.',
+      ),
+      'releasedEvent' => 
+      array (
+        'label' => 'Released Event',
+        'class' => 'PublicationEvent',
+        'comment' => 'The place and time the release was issued, expressed as a PublicationEvent.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviewedBy' => 
+      array (
+        'label' => 'Reviewed By',
+        'class' => 'Organization',
+        'comment' => 'People or organizations that have reviewed the content on this web page for accuracy and/or completeness.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'sdPublisher' => 
+      array (
+        'label' => 'Sd Publisher',
+        'class' => 'Organization',
+        'comment' => 'Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The sdPublisher property helps make such practices more explicit.',
+      ),
+      'sourceOrganization' => 
+      array (
+        'label' => 'Source Organization',
+        'class' => 'Organization',
+        'comment' => 'The Organization on whose behalf the creator was working.',
+      ),
+      'spatial' => 
+      array (
+        'label' => 'Spatial',
+        'class' => 'Place',
+        'comment' => 'The "spatial" property can be used in cases when more specific properties (e.g. locationCreated, spatialCoverage, contentLocation) are not known to be appropriate.',
+      ),
+      'spatialCoverage' => 
+      array (
+        'label' => 'Spatial Coverage',
+        'class' => 'Place',
+        'comment' => 'The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.',
+      ),
+      'specialty' => 
+      array (
+        'label' => 'Specialty',
+        'class' => 'Specialty',
+        'comment' => 'One of the domain specialities to which this web page\'s content applies.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'thumbnail' => 
+      array (
+        'label' => 'Thumbnail',
+        'class' => 'ImageObject',
+        'comment' => 'Thumbnail image for an image or video.',
+      ),
+      'timeRequired' => 
+      array (
+        'label' => 'Time Required',
+        'class' => 'Duration',
+        'comment' => 'Approximate or typical time it usually takes to work with or through the content of this work for the typical or target audience.',
+      ),
+      'translationOfWork' => 
+      array (
+        'label' => 'Translation Of Work',
+        'class' => 'CreativeWork',
+        'comment' => 'The work that this work has been translated from. E.g. 物种起源 is a translationOf “On the Origin of Species”.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'video' => 
+      array (
+        'label' => 'Video',
+        'class' => 'Clip',
+        'comment' => 'An embedded video object.',
+      ),
+      'workExample' => 
+      array (
+        'label' => 'Work Example',
+        'class' => 'CreativeWork',
+        'comment' => 'Example/instance/realization/derivation of the concept of this creative work. E.g. the paperback edition, first edition, or e-book.',
+      ),
+      'workTranslation' => 
+      array (
+        'label' => 'Work Translation',
+        'class' => 'CreativeWork',
+        'comment' => 'A work that is a translation of the content of this work. E.g. 西遊記 has an English workTranslation “Journey to the West”, a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese translation Tây du ký bình khảo.',
+      ),
+    ),
+    'Event' => 
+    array (
+      'about' => 
+      array (
+        'label' => 'About',
+        'class' => 'Thing',
+        'comment' => 'The subject matter of an object.',
+      ),
+      'actor' => 
+      array (
+        'label' => 'Actor',
+        'class' => 'PerformingGroup',
+        'comment' => 'An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'attendee' => 
+      array (
+        'label' => 'Attendee',
+        'class' => 'Organization',
+        'comment' => 'A person or organization attending the event.',
+      ),
+      'attendees' => 
+      array (
+        'label' => 'Attendees',
+        'class' => 'Organization',
+        'comment' => 'A person attending the event.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'composer' => 
+      array (
+        'label' => 'Composer',
+        'class' => 'Organization',
+        'comment' => 'The person or organization who wrote a composition, or who is the composer of a work performed at some event.',
+      ),
+      'contributor' => 
+      array (
+        'label' => 'Contributor',
+        'class' => 'Organization',
+        'comment' => 'A secondary contributor to the CreativeWork or Event.',
+      ),
+      'director' => 
+      array (
+        'label' => 'Director',
+        'class' => 'Person',
+        'comment' => 'A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.',
+      ),
+      'duration' => 
+      array (
+        'label' => 'Duration',
+        'class' => 'Duration',
+        'comment' => 'The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).',
+      ),
+      'eventSchedule' => 
+      array (
+        'label' => 'Event Schedule',
+        'class' => 'Schedule',
+        'comment' => 'Associates an Event with a Schedule. There are circumstances where it is preferable to share a schedule for a series of repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An Event that is associated with a Schedule using this property should not have startDate or endDate properties. These are instead defined within the associated Schedule, this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months or seasons.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasParticipationOffer' => 
+      array (
+        'label' => 'Has Participation Offer',
+        'class' => 'Offer',
+        'comment' => 'An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.',
+      ),
+      'hasSponsorshipOffer' => 
+      array (
+        'label' => 'Has Sponsorship Offer',
+        'class' => 'Offer',
+        'comment' => 'An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'organizer' => 
+      array (
+        'label' => 'Organizer',
+        'class' => 'Organization',
+        'comment' => 'An organizer of an Event.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'performer' => 
+      array (
+        'label' => 'Performer',
+        'class' => 'Organization',
+        'comment' => 'A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.',
+      ),
+      'performers' => 
+      array (
+        'label' => 'Performers',
+        'class' => 'Organization',
+        'comment' => 'The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'recordedIn' => 
+      array (
+        'label' => 'Recorded In',
+        'class' => 'CreativeWork',
+        'comment' => 'The CreativeWork that captured all or part of this Event.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subEvent' => 
+      array (
+        'label' => 'Sub Event',
+        'class' => 'Event',
+        'comment' => 'An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.',
+      ),
+      'subEvents' => 
+      array (
+        'label' => 'Sub Events',
+        'class' => 'Event',
+        'comment' => 'Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'superEvent' => 
+      array (
+        'label' => 'Super Event',
+        'class' => 'Event',
+        'comment' => 'An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.',
+      ),
+      'translator' => 
+      array (
+        'label' => 'Translator',
+        'class' => 'Organization',
+        'comment' => 'Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.',
+      ),
+      'workFeatured' => 
+      array (
+        'label' => 'Work Featured',
+        'class' => 'CreativeWork',
+        'comment' => 'A work featured in some event, e.g. exhibited in an ExhibitionEvent. Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).',
+      ),
+      'workPerformed' => 
+      array (
+        'label' => 'Work Performed',
+        'class' => 'CreativeWork',
+        'comment' => 'A work performed in some event, for example a play performed in a TheaterEvent.',
+      ),
+    ),
+    'LocalBusiness' => 
+    array (
+      'additionalProperty' => 
+      array (
+        'label' => 'Additional Property',
+        'class' => 'PropertyValue',
+        'comment' => 'A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.',
+      ),
+      'agentInteractionStatistic' => 
+      array (
+        'label' => 'Agent Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of completed interactions for this entity, in a particular role (the \'agent\'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'alumni' => 
+      array (
+        'label' => 'Alumni',
+        'class' => 'Person',
+        'comment' => 'Alumni of an organization.',
+      ),
+      'amenityFeature' => 
+      array (
+        'label' => 'Amenity Feature',
+        'class' => 'LocationFeatureSpecification',
+        'comment' => 'An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.',
+      ),
+      'branchOf' => 
+      array (
+        'label' => 'Branch Of',
+        'class' => 'Organization',
+        'comment' => 'The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical) branch.',
+      ),
+      'brand' => 
+      array (
+        'label' => 'Brand',
+        'class' => 'Brand',
+        'comment' => 'The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.',
+      ),
+      'companyRegistration' => 
+      array (
+        'label' => 'Company Registration',
+        'class' => 'Certification',
+        'comment' => 'The official registration information of a business including the organization that issued it such as Company House or Chamber of Commerce in form of a Certification.',
+      ),
+      'contactPoint' => 
+      array (
+        'label' => 'Contact Point',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'contactPoints' => 
+      array (
+        'label' => 'Contact Points',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'containedIn' => 
+      array (
+        'label' => 'Contained In',
+        'class' => 'Place',
+        'comment' => 'The basic containment relation between a place and one that contains it.',
+      ),
+      'containedInPlace' => 
+      array (
+        'label' => 'Contained In Place',
+        'class' => 'Place',
+        'comment' => 'The basic containment relation between a place and one that contains it.',
+      ),
+      'containsPlace' => 
+      array (
+        'label' => 'Contains Place',
+        'class' => 'Place',
+        'comment' => 'The basic containment relation between a place and another that it contains.',
+      ),
+      'department' => 
+      array (
+        'label' => 'Department',
+        'class' => 'Organization',
+        'comment' => 'A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.',
+      ),
+      'employee' => 
+      array (
+        'label' => 'Employee',
+        'class' => 'Person',
+        'comment' => 'Someone working for this organization.',
+      ),
+      'employees' => 
+      array (
+        'label' => 'Employees',
+        'class' => 'Person',
+        'comment' => 'People working for this organization.',
+      ),
+      'event' => 
+      array (
+        'label' => 'Event',
+        'class' => 'Event',
+        'comment' => 'Upcoming or past event associated with this place, organization, or action.',
+      ),
+      'events' => 
+      array (
+        'label' => 'Events',
+        'class' => 'Event',
+        'comment' => 'Upcoming or past events associated with this place or organization.',
+      ),
+      'founder' => 
+      array (
+        'label' => 'Founder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who founded this organization.',
+      ),
+      'founders' => 
+      array (
+        'label' => 'Founders',
+        'class' => 'Person',
+        'comment' => 'A person who founded this organization.',
+      ),
+      'foundingLocation' => 
+      array (
+        'label' => 'Founding Location',
+        'class' => 'Place',
+        'comment' => 'The place where the Organization was founded.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'geo' => 
+      array (
+        'label' => 'Geo',
+        'class' => 'GeoCoordinates',
+        'comment' => 'The geo coordinates of the place.',
+      ),
+      'geoContains' => 
+      array (
+        'label' => 'Geo Contains',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoCoveredBy' => 
+      array (
+        'label' => 'Geo Covered By',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoCovers' => 
+      array (
+        'label' => 'Geo Covers',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoCrosses' => 
+      array (
+        'label' => 'Geo Crosses',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoDisjoint' => 
+      array (
+        'label' => 'Geo Disjoint',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)',
+      ),
+      'geoEquals' => 
+      array (
+        'label' => 'Geo Equals',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).',
+      ),
+      'geoIntersects' => 
+      array (
+        'label' => 'Geo Intersects',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoOverlaps' => 
+      array (
+        'label' => 'Geo Overlaps',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'geoTouches' => 
+      array (
+        'label' => 'Geo Touches',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)',
+      ),
+      'geoWithin' => 
+      array (
+        'label' => 'Geo Within',
+        'class' => 'GeospatialGeometry',
+        'comment' => 'Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).',
+      ),
+      'hasCertification' => 
+      array (
+        'label' => 'Has Certification',
+        'class' => 'Certification',
+        'comment' => 'Certification information about a product, organization, service, place, or person.',
+      ),
+      'hasCredential' => 
+      array (
+        'label' => 'Has Credential',
+        'class' => 'Credential',
+        'comment' => 'A credential awarded to the Person or Organization.',
+      ),
+      'hasMemberProgram' => 
+      array (
+        'label' => 'Has Member Program',
+        'class' => 'MemberProgram',
+        'comment' => 'MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.',
+      ),
+      'hasMerchantReturnPolicy' => 
+      array (
+        'label' => 'Has Merchant Return Policy',
+        'class' => 'MerchantReturnPolicy',
+        'comment' => 'Specifies a MerchantReturnPolicy that may be applicable.',
+      ),
+      'hasOfferCatalog' => 
+      array (
+        'label' => 'Has Offer Catalog',
+        'class' => 'OfferCatalog',
+        'comment' => 'Indicates an OfferCatalog listing for this Organization, Person, or Service.',
+      ),
+      'hasPOS' => 
+      array (
+        'label' => 'Has P O S',
+        'class' => 'Place',
+        'comment' => 'Points-of-Sales operated by the organization or person.',
+      ),
+      'hasShippingService' => 
+      array (
+        'label' => 'Has Shipping Service',
+        'class' => 'ShippingService',
+        'comment' => 'Specification of a shipping service offered by the organization.',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'legalAddress' => 
+      array (
+        'label' => 'Legal Address',
+        'class' => 'PostalAddress',
+        'comment' => 'The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.',
+      ),
+      'legalRepresentative' => 
+      array (
+        'label' => 'Legal Representative',
+        'class' => 'Person',
+        'comment' => 'One or multiple persons who represent this organization legally such as CEO or sole administrator.',
+      ),
+      'makesOffer' => 
+      array (
+        'label' => 'Makes Offer',
+        'class' => 'Offer',
+        'comment' => 'A pointer to products or services offered by the organization or person.',
+      ),
+      'member' => 
+      array (
+        'label' => 'Member',
+        'class' => 'Organization',
+        'comment' => 'A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.',
+      ),
+      'memberOf' => 
+      array (
+        'label' => 'Member Of',
+        'class' => 'MemberProgramTier',
+        'comment' => 'An Organization (or ProgramMembership) to which this Person or Organization belongs.',
+      ),
+      'members' => 
+      array (
+        'label' => 'Members',
+        'class' => 'Organization',
+        'comment' => 'A member of this organization.',
+      ),
+      'nonprofitStatus' => 
+      array (
+        'label' => 'Nonprofit Status',
+        'class' => 'NonprofitType',
+        'comment' => 'nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.',
+      ),
+      'numberOfEmployees' => 
+      array (
+        'label' => 'Number Of Employees',
+        'class' => 'QuantitativeValue',
+        'comment' => 'The number of employees in an organization, e.g. business.',
+      ),
+      'openingHoursSpecification' => 
+      array (
+        'label' => 'Opening Hours Specification',
+        'class' => 'OpeningHoursSpecification',
+        'comment' => 'The opening hours of a certain place.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'owns' => 
+      array (
+        'label' => 'Owns',
+        'class' => 'Thing',
+        'comment' => 'Things owned by the organization or person.',
+      ),
+      'parentOrganization' => 
+      array (
+        'label' => 'Parent Organization',
+        'class' => 'Organization',
+        'comment' => 'The larger organization that this organization is a subOrganization of, if any.',
+      ),
+      'photo' => 
+      array (
+        'label' => 'Photo',
+        'class' => 'ImageObject',
+        'comment' => 'A photograph of this place.',
+      ),
+      'photos' => 
+      array (
+        'label' => 'Photos',
+        'class' => 'ImageObject',
+        'comment' => 'Photographs of this place.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'seeks' => 
+      array (
+        'label' => 'Seeks',
+        'class' => 'Demand',
+        'comment' => 'A pointer to products or services sought by the organization or person (demand).',
+      ),
+      'serviceArea' => 
+      array (
+        'label' => 'Service Area',
+        'class' => 'AdministrativeArea',
+        'comment' => 'The geographic area where the service is provided.',
+      ),
+      'specialOpeningHoursSpecification' => 
+      array (
+        'label' => 'Special Opening Hours Specification',
+        'class' => 'OpeningHoursSpecification',
+        'comment' => 'The special opening hours of a certain place.\\n\\nUse this to explicitly override general opening hours brought in scope by openingHoursSpecification or openingHours.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subOrganization' => 
+      array (
+        'label' => 'Sub Organization',
+        'class' => 'Organization',
+        'comment' => 'A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific \'department\' property.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+    ),
+    'Product' => 
+    array (
+      'additionalProperty' => 
+      array (
+        'label' => 'Additional Property',
+        'class' => 'PropertyValue',
+        'comment' => 'A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.\\n\\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'brand' => 
+      array (
+        'label' => 'Brand',
+        'class' => 'Brand',
+        'comment' => 'The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.',
+      ),
+      'countryOfOrigin' => 
+      array (
+        'label' => 'Country Of Origin',
+        'class' => 'Country',
+        'comment' => 'The country of origin of something, including products as well as creative works such as movie and TV content. In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of CreativeWork it is difficult to provide fully general guidance, and properties such as contentLocation and locationCreated may be more applicable. In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.',
+      ),
+      'depth' => 
+      array (
+        'label' => 'Depth',
+        'class' => 'Distance',
+        'comment' => 'The depth of the item.',
+      ),
+      'displayLocation' => 
+      array (
+        'label' => 'Display Location',
+        'class' => 'Place',
+        'comment' => 'The location at which an item can be viewed or experienced in-person.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasCertification' => 
+      array (
+        'label' => 'Has Certification',
+        'class' => 'Certification',
+        'comment' => 'Certification information about a product, organization, service, place, or person.',
+      ),
+      'hasEnergyConsumptionDetails' => 
+      array (
+        'label' => 'Has Energy Consumption Details',
+        'class' => 'EnergyConsumptionDetails',
+        'comment' => 'Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.',
+      ),
+      'hasMeasurement' => 
+      array (
+        'label' => 'Has Measurement',
+        'class' => 'QuantitativeValue',
+        'comment' => 'A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.',
+      ),
+      'hasMerchantReturnPolicy' => 
+      array (
+        'label' => 'Has Merchant Return Policy',
+        'class' => 'MerchantReturnPolicy',
+        'comment' => 'Specifies a MerchantReturnPolicy that may be applicable.',
+      ),
+      'height' => 
+      array (
+        'label' => 'Height',
+        'class' => 'Distance',
+        'comment' => 'The height of the item.',
+      ),
+      'isAccessoryOrSparePartFor' => 
+      array (
+        'label' => 'Is Accessory Or Spare Part For',
+        'class' => 'Product',
+        'comment' => 'A pointer to another product (or multiple products) for which this product is an accessory or spare part.',
+      ),
+      'isConsumableFor' => 
+      array (
+        'label' => 'Is Consumable For',
+        'class' => 'Product',
+        'comment' => 'A pointer to another product (or multiple products) for which this product is a consumable.',
+      ),
+      'isRelatedTo' => 
+      array (
+        'label' => 'Is Related To',
+        'class' => 'Product',
+        'comment' => 'A pointer to another, somehow related product (or multiple products).',
+      ),
+      'isSimilarTo' => 
+      array (
+        'label' => 'Is Similar To',
+        'class' => 'Product',
+        'comment' => 'A pointer to another, functionally similar product (or multiple products).',
+      ),
+      'isVariantOf' => 
+      array (
+        'label' => 'Is Variant Of',
+        'class' => 'ProductGroup',
+        'comment' => 'Indicates the kind of product that this is a variant of. In the case of ProductModel, this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a ProductGroup, the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with ProductGroup, this property can apply to any Product included in the group.',
+      ),
+      'manufacturer' => 
+      array (
+        'label' => 'Manufacturer',
+        'class' => 'Organization',
+        'comment' => 'The manufacturer of the product.',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'weight' => 
+      array (
+        'label' => 'Weight',
+        'class' => 'Mass',
+        'comment' => 'The weight of the product or person.',
+      ),
+      'width' => 
+      array (
+        'label' => 'Width',
+        'class' => 'Distance',
+        'comment' => 'The width of the item.',
+      ),
+    ),
+    'Service' => 
+    array (
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'audience' => 
+      array (
+        'label' => 'Audience',
+        'class' => 'Audience',
+        'comment' => 'An intended audience, i.e. a group for whom something was created.',
+      ),
+      'availableChannel' => 
+      array (
+        'label' => 'Available Channel',
+        'class' => 'ServiceChannel',
+        'comment' => 'A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).',
+      ),
+      'brand' => 
+      array (
+        'label' => 'Brand',
+        'class' => 'Brand',
+        'comment' => 'The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.',
+      ),
+      'broker' => 
+      array (
+        'label' => 'Broker',
+        'class' => 'Organization',
+        'comment' => 'An entity that arranges for an exchange between a buyer and a seller. In most cases a broker never acquires or releases ownership of a product or service involved in an exchange. If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.',
+      ),
+      'hasCertification' => 
+      array (
+        'label' => 'Has Certification',
+        'class' => 'Certification',
+        'comment' => 'Certification information about a product, organization, service, place, or person.',
+      ),
+      'hasOfferCatalog' => 
+      array (
+        'label' => 'Has Offer Catalog',
+        'class' => 'OfferCatalog',
+        'comment' => 'Indicates an OfferCatalog listing for this Organization, Person, or Service.',
+      ),
+      'hoursAvailable' => 
+      array (
+        'label' => 'Hours Available',
+        'class' => 'OpeningHoursSpecification',
+        'comment' => 'The hours during which this service or contact is available.',
+      ),
+      'isRelatedTo' => 
+      array (
+        'label' => 'Is Related To',
+        'class' => 'Product',
+        'comment' => 'A pointer to another, somehow related product (or multiple products).',
+      ),
+      'isSimilarTo' => 
+      array (
+        'label' => 'Is Similar To',
+        'class' => 'Product',
+        'comment' => 'A pointer to another, functionally similar product (or multiple products).',
+      ),
+      'offers' => 
+      array (
+        'label' => 'Offers',
+        'class' => 'Demand',
+        'comment' => 'An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use businessFunction to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a Demand. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'produces' => 
+      array (
+        'label' => 'Produces',
+        'class' => 'Thing',
+        'comment' => 'The tangible thing generated by the service, e.g. a passport, permit, etc.',
+      ),
+      'provider' => 
+      array (
+        'label' => 'Provider',
+        'class' => 'Organization',
+        'comment' => 'The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'serviceArea' => 
+      array (
+        'label' => 'Service Area',
+        'class' => 'AdministrativeArea',
+        'comment' => 'The geographic area where the service is provided.',
+      ),
+      'serviceAudience' => 
+      array (
+        'label' => 'Service Audience',
+        'class' => 'Audience',
+        'comment' => 'The audience eligible for this service.',
+      ),
+      'serviceOutput' => 
+      array (
+        'label' => 'Service Output',
+        'class' => 'Thing',
+        'comment' => 'The tangible thing generated by the service, e.g. a passport, permit, etc.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+    ),
+    'Person' => 
+    array (
+      'affiliation' => 
+      array (
+        'label' => 'Affiliation',
+        'class' => 'Organization',
+        'comment' => 'An organization that this person is affiliated with. For example, a school/university, a club, or a team.',
+      ),
+      'agentInteractionStatistic' => 
+      array (
+        'label' => 'Agent Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of completed interactions for this entity, in a particular role (the \'agent\'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).',
+      ),
+      'alumniOf' => 
+      array (
+        'label' => 'Alumni Of',
+        'class' => 'EducationalOrganization',
+        'comment' => 'An organization that the person is an alumni of.',
+      ),
+      'birthPlace' => 
+      array (
+        'label' => 'Birth Place',
+        'class' => 'Place',
+        'comment' => 'The place where the person was born.',
+      ),
+      'brand' => 
+      array (
+        'label' => 'Brand',
+        'class' => 'Brand',
+        'comment' => 'The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.',
+      ),
+      'children' => 
+      array (
+        'label' => 'Children',
+        'class' => 'Person',
+        'comment' => 'A child of the person.',
+      ),
+      'colleagues' => 
+      array (
+        'label' => 'Colleagues',
+        'class' => 'Person',
+        'comment' => 'A colleague of the person.',
+      ),
+      'contactPoint' => 
+      array (
+        'label' => 'Contact Point',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'contactPoints' => 
+      array (
+        'label' => 'Contact Points',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'deathPlace' => 
+      array (
+        'label' => 'Death Place',
+        'class' => 'Place',
+        'comment' => 'The place where the person died.',
+      ),
+      'follows' => 
+      array (
+        'label' => 'Follows',
+        'class' => 'Person',
+        'comment' => 'The most generic uni-directional social relation.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasCertification' => 
+      array (
+        'label' => 'Has Certification',
+        'class' => 'Certification',
+        'comment' => 'Certification information about a product, organization, service, place, or person.',
+      ),
+      'hasCredential' => 
+      array (
+        'label' => 'Has Credential',
+        'class' => 'Credential',
+        'comment' => 'A credential awarded to the Person or Organization.',
+      ),
+      'hasOccupation' => 
+      array (
+        'label' => 'Has Occupation',
+        'class' => 'Occupation',
+        'comment' => 'The Person\'s occupation. For past professions, use Role for expressing dates.',
+      ),
+      'hasOfferCatalog' => 
+      array (
+        'label' => 'Has Offer Catalog',
+        'class' => 'OfferCatalog',
+        'comment' => 'Indicates an OfferCatalog listing for this Organization, Person, or Service.',
+      ),
+      'hasPOS' => 
+      array (
+        'label' => 'Has P O S',
+        'class' => 'Place',
+        'comment' => 'Points-of-Sales operated by the organization or person.',
+      ),
+      'height' => 
+      array (
+        'label' => 'Height',
+        'class' => 'Distance',
+        'comment' => 'The height of the item.',
+      ),
+      'homeLocation' => 
+      array (
+        'label' => 'Home Location',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact location for a person\'s residence.',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'knows' => 
+      array (
+        'label' => 'Knows',
+        'class' => 'Person',
+        'comment' => 'The most generic bi-directional social/work relation.',
+      ),
+      'lifeEvent' => 
+      array (
+        'label' => 'Life Event',
+        'class' => 'Event',
+        'comment' => 'A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....',
+      ),
+      'makesOffer' => 
+      array (
+        'label' => 'Makes Offer',
+        'class' => 'Offer',
+        'comment' => 'A pointer to products or services offered by the organization or person.',
+      ),
+      'memberOf' => 
+      array (
+        'label' => 'Member Of',
+        'class' => 'MemberProgramTier',
+        'comment' => 'An Organization (or ProgramMembership) to which this Person or Organization belongs.',
+      ),
+      'nationality' => 
+      array (
+        'label' => 'Nationality',
+        'class' => 'Country',
+        'comment' => 'Nationality of the person.',
+      ),
+      'netWorth' => 
+      array (
+        'label' => 'Net Worth',
+        'class' => 'MonetaryAmount',
+        'comment' => 'The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'owns' => 
+      array (
+        'label' => 'Owns',
+        'class' => 'Thing',
+        'comment' => 'Things owned by the organization or person.',
+      ),
+      'parent' => 
+      array (
+        'label' => 'Parent',
+        'class' => 'Person',
+        'comment' => 'A parent of this person.',
+      ),
+      'parents' => 
+      array (
+        'label' => 'Parents',
+        'class' => 'Person',
+        'comment' => 'A parents of the person.',
+      ),
+      'performerIn' => 
+      array (
+        'label' => 'Performer In',
+        'class' => 'Event',
+        'comment' => 'Event that this person is a performer or participant in.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'relatedTo' => 
+      array (
+        'label' => 'Related To',
+        'class' => 'Person',
+        'comment' => 'The most generic familial relation.',
+      ),
+      'seeks' => 
+      array (
+        'label' => 'Seeks',
+        'class' => 'Demand',
+        'comment' => 'A pointer to products or services sought by the organization or person (demand).',
+      ),
+      'sibling' => 
+      array (
+        'label' => 'Sibling',
+        'class' => 'Person',
+        'comment' => 'A sibling of the person.',
+      ),
+      'siblings' => 
+      array (
+        'label' => 'Siblings',
+        'class' => 'Person',
+        'comment' => 'A sibling of the person.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'spouse' => 
+      array (
+        'label' => 'Spouse',
+        'class' => 'Person',
+        'comment' => 'The person\'s spouse.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+      'weight' => 
+      array (
+        'label' => 'Weight',
+        'class' => 'Mass',
+        'comment' => 'The weight of the product or person.',
+      ),
+      'workLocation' => 
+      array (
+        'label' => 'Work Location',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact location for a person\'s place of work.',
+      ),
+      'worksFor' => 
+      array (
+        'label' => 'Works For',
+        'class' => 'Organization',
+        'comment' => 'Organizations that the person works for.',
+      ),
+    ),
+    'Organization' => 
+    array (
+      'agentInteractionStatistic' => 
+      array (
+        'label' => 'Agent Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of completed interactions for this entity, in a particular role (the \'agent\'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).',
+      ),
+      'aggregateRating' => 
+      array (
+        'label' => 'Aggregate Rating',
+        'class' => 'AggregateRating',
+        'comment' => 'The overall rating, based on a collection of reviews or ratings, of the item.',
+      ),
+      'alumni' => 
+      array (
+        'label' => 'Alumni',
+        'class' => 'Person',
+        'comment' => 'Alumni of an organization.',
+      ),
+      'brand' => 
+      array (
+        'label' => 'Brand',
+        'class' => 'Brand',
+        'comment' => 'The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.',
+      ),
+      'companyRegistration' => 
+      array (
+        'label' => 'Company Registration',
+        'class' => 'Certification',
+        'comment' => 'The official registration information of a business including the organization that issued it such as Company House or Chamber of Commerce in form of a Certification.',
+      ),
+      'contactPoint' => 
+      array (
+        'label' => 'Contact Point',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'contactPoints' => 
+      array (
+        'label' => 'Contact Points',
+        'class' => 'ContactPoint',
+        'comment' => 'A contact point for a person or organization.',
+      ),
+      'department' => 
+      array (
+        'label' => 'Department',
+        'class' => 'Organization',
+        'comment' => 'A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.',
+      ),
+      'employee' => 
+      array (
+        'label' => 'Employee',
+        'class' => 'Person',
+        'comment' => 'Someone working for this organization.',
+      ),
+      'employees' => 
+      array (
+        'label' => 'Employees',
+        'class' => 'Person',
+        'comment' => 'People working for this organization.',
+      ),
+      'event' => 
+      array (
+        'label' => 'Event',
+        'class' => 'Event',
+        'comment' => 'Upcoming or past event associated with this place, organization, or action.',
+      ),
+      'events' => 
+      array (
+        'label' => 'Events',
+        'class' => 'Event',
+        'comment' => 'Upcoming or past events associated with this place or organization.',
+      ),
+      'founder' => 
+      array (
+        'label' => 'Founder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who founded this organization.',
+      ),
+      'founders' => 
+      array (
+        'label' => 'Founders',
+        'class' => 'Person',
+        'comment' => 'A person who founded this organization.',
+      ),
+      'foundingLocation' => 
+      array (
+        'label' => 'Founding Location',
+        'class' => 'Place',
+        'comment' => 'The place where the Organization was founded.',
+      ),
+      'funder' => 
+      array (
+        'label' => 'Funder',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports (sponsors) something through some kind of financial contribution.',
+      ),
+      'funding' => 
+      array (
+        'label' => 'Funding',
+        'class' => 'Grant',
+        'comment' => 'A Grant that directly or indirectly provide funding or sponsorship for this item. See also ownershipFundingInfo.',
+      ),
+      'hasCertification' => 
+      array (
+        'label' => 'Has Certification',
+        'class' => 'Certification',
+        'comment' => 'Certification information about a product, organization, service, place, or person.',
+      ),
+      'hasCredential' => 
+      array (
+        'label' => 'Has Credential',
+        'class' => 'Credential',
+        'comment' => 'A credential awarded to the Person or Organization.',
+      ),
+      'hasMemberProgram' => 
+      array (
+        'label' => 'Has Member Program',
+        'class' => 'MemberProgram',
+        'comment' => 'MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.',
+      ),
+      'hasMerchantReturnPolicy' => 
+      array (
+        'label' => 'Has Merchant Return Policy',
+        'class' => 'MerchantReturnPolicy',
+        'comment' => 'Specifies a MerchantReturnPolicy that may be applicable.',
+      ),
+      'hasOfferCatalog' => 
+      array (
+        'label' => 'Has Offer Catalog',
+        'class' => 'OfferCatalog',
+        'comment' => 'Indicates an OfferCatalog listing for this Organization, Person, or Service.',
+      ),
+      'hasPOS' => 
+      array (
+        'label' => 'Has P O S',
+        'class' => 'Place',
+        'comment' => 'Points-of-Sales operated by the organization or person.',
+      ),
+      'hasShippingService' => 
+      array (
+        'label' => 'Has Shipping Service',
+        'class' => 'ShippingService',
+        'comment' => 'Specification of a shipping service offered by the organization.',
+      ),
+      'interactionStatistic' => 
+      array (
+        'label' => 'Interaction Statistic',
+        'class' => 'InteractionCounter',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.',
+      ),
+      'legalAddress' => 
+      array (
+        'label' => 'Legal Address',
+        'class' => 'PostalAddress',
+        'comment' => 'The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.',
+      ),
+      'legalRepresentative' => 
+      array (
+        'label' => 'Legal Representative',
+        'class' => 'Person',
+        'comment' => 'One or multiple persons who represent this organization legally such as CEO or sole administrator.',
+      ),
+      'makesOffer' => 
+      array (
+        'label' => 'Makes Offer',
+        'class' => 'Offer',
+        'comment' => 'A pointer to products or services offered by the organization or person.',
+      ),
+      'member' => 
+      array (
+        'label' => 'Member',
+        'class' => 'Organization',
+        'comment' => 'A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.',
+      ),
+      'memberOf' => 
+      array (
+        'label' => 'Member Of',
+        'class' => 'MemberProgramTier',
+        'comment' => 'An Organization (or ProgramMembership) to which this Person or Organization belongs.',
+      ),
+      'members' => 
+      array (
+        'label' => 'Members',
+        'class' => 'Organization',
+        'comment' => 'A member of this organization.',
+      ),
+      'nonprofitStatus' => 
+      array (
+        'label' => 'Nonprofit Status',
+        'class' => 'NonprofitType',
+        'comment' => 'nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.',
+      ),
+      'numberOfEmployees' => 
+      array (
+        'label' => 'Number Of Employees',
+        'class' => 'QuantitativeValue',
+        'comment' => 'The number of employees in an organization, e.g. business.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'owns' => 
+      array (
+        'label' => 'Owns',
+        'class' => 'Thing',
+        'comment' => 'Things owned by the organization or person.',
+      ),
+      'parentOrganization' => 
+      array (
+        'label' => 'Parent Organization',
+        'class' => 'Organization',
+        'comment' => 'The larger organization that this organization is a subOrganization of, if any.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'review' => 
+      array (
+        'label' => 'Review',
+        'class' => 'Review',
+        'comment' => 'A review of the item.',
+      ),
+      'reviews' => 
+      array (
+        'label' => 'Reviews',
+        'class' => 'Review',
+        'comment' => 'Review of the item.',
+      ),
+      'seeks' => 
+      array (
+        'label' => 'Seeks',
+        'class' => 'Demand',
+        'comment' => 'A pointer to products or services sought by the organization or person (demand).',
+      ),
+      'serviceArea' => 
+      array (
+        'label' => 'Service Area',
+        'class' => 'AdministrativeArea',
+        'comment' => 'The geographic area where the service is provided.',
+      ),
+      'sponsor' => 
+      array (
+        'label' => 'Sponsor',
+        'class' => 'Organization',
+        'comment' => 'A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.',
+      ),
+      'subOrganization' => 
+      array (
+        'label' => 'Sub Organization',
+        'class' => 'Organization',
+        'comment' => 'A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific \'department\' property.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+    ),
+  ),
+  'classes' => 
+  array (
+    'Action' => 
+    array (
+      'actionStatus' => 
+      array (
+        'label' => 'Action Status',
+        'type' => 'enum',
+        'comment' => 'Indicates the current disposition of the Action.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/ActiveActionStatus',
+            'label' => 'ActiveActionStatus',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/CompletedActionStatus',
+            'label' => 'CompletedActionStatus',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/FailedActionStatus',
+            'label' => 'FailedActionStatus',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/PotentialActionStatus',
+            'label' => 'PotentialActionStatus',
+          ),
+        ),
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'target' => 
+      array (
+        'label' => 'Target',
+        'type' => 'url',
+        'comment' => 'Indicates a target EntryPoint, or url, for an Action.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'AdministrativeArea' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'branchCode' => 
+      array (
+        'label' => 'Branch Code',
+        'type' => 'text',
+        'comment' => 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasDriveThroughService' => 
+      array (
+        'label' => 'Has Drive Through Service',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'hasMap' => 
+      array (
+        'label' => 'Has Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'latitude' => 
+      array (
+        'label' => 'Latitude',
+        'type' => 'number',
+        'comment' => 'The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'longitude' => 
+      array (
+        'label' => 'Longitude',
+        'type' => 'number',
+        'comment' => 'The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'map' => 
+      array (
+        'label' => 'Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maps' => 
+      array (
+        'label' => 'Maps',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'publicAccess' => 
+      array (
+        'label' => 'Public Access',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'smokingAllowed' => 
+      array (
+        'label' => 'Smoking Allowed',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'tourBookingPage' => 
+      array (
+        'label' => 'Tour Booking Page',
+        'type' => 'url',
+        'comment' => 'A page providing information on how to book a tour of some Place, such as an Accommodation or ApartmentComplex in a real estate setting, as well as other kinds of tours as appropriate.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'AggregateRating' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'bestRating' => 
+      array (
+        'label' => 'Best Rating',
+        'type' => 'number',
+        'comment' => 'The highest value allowed in this rating system.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'ratingCount' => 
+      array (
+        'label' => 'Rating Count',
+        'type' => 'number',
+        'comment' => 'The count of total number of ratings.',
+      ),
+      'ratingExplanation' => 
+      array (
+        'label' => 'Rating Explanation',
+        'type' => 'text',
+        'comment' => 'A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using ClaimReview.',
+      ),
+      'ratingValue' => 
+      array (
+        'label' => 'Rating Value',
+        'type' => 'number',
+        'comment' => 'The rating for the content.\\n\\nUsage guidelines:\\n\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.',
+      ),
+      'reviewAspect' => 
+      array (
+        'label' => 'Review Aspect',
+        'type' => 'text',
+        'comment' => 'This Review or Rating is relevant to this part or facet of the itemReviewed.',
+      ),
+      'reviewCount' => 
+      array (
+        'label' => 'Review Count',
+        'type' => 'number',
+        'comment' => 'The count of total number of reviews.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'worstRating' => 
+      array (
+        'label' => 'Worst Rating',
+        'type' => 'number',
+        'comment' => 'The lowest value allowed in this rating system.',
+      ),
+    ),
+    'AlignmentObject' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alignmentType' => 
+      array (
+        'label' => 'Alignment Type',
+        'type' => 'text',
+        'comment' => 'A category of alignment between the learning resource and the framework node. Recommended values include: \'requires\', \'textComplexity\', \'readingLevel\', and \'educationalSubject\'.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'educationalFramework' => 
+      array (
+        'label' => 'Educational Framework',
+        'type' => 'text',
+        'comment' => 'The framework to which the resource being described is aligned.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'targetDescription' => 
+      array (
+        'label' => 'Target Description',
+        'type' => 'text',
+        'comment' => 'The description of a node in an established educational framework.',
+      ),
+      'targetName' => 
+      array (
+        'label' => 'Target Name',
+        'type' => 'text',
+        'comment' => 'The name of a node in an established educational framework.',
+      ),
+      'targetUrl' => 
+      array (
+        'label' => 'Target Url',
+        'type' => 'url',
+        'comment' => 'The URL of a node in an established educational framework.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Audience' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'audienceType' => 
+      array (
+        'label' => 'Audience Type',
+        'type' => 'text',
+        'comment' => 'The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'AudioObject' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'bitrate' => 
+      array (
+        'label' => 'Bitrate',
+        'type' => 'text',
+        'comment' => 'The bitrate of the media object.',
+      ),
+      'caption' => 
+      array (
+        'label' => 'Caption',
+        'type' => 'text',
+        'comment' => 'The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'contentSize' => 
+      array (
+        'label' => 'Content Size',
+        'type' => 'text',
+        'comment' => 'File size in (mega/kilo)bytes.',
+      ),
+      'contentUrl' => 
+      array (
+        'label' => 'Content Url',
+        'type' => 'url',
+        'comment' => 'Actual bytes of the media object, for example the image file or video file.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'embedUrl' => 
+      array (
+        'label' => 'Embed Url',
+        'type' => 'url',
+        'comment' => 'A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.',
+      ),
+      'embeddedTextCaption' => 
+      array (
+        'label' => 'Embedded Text Caption',
+        'type' => 'text',
+        'comment' => 'Represents textual captioning from a MediaObject, e.g. text of a \'meme\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'ineligibleRegion' => 
+      array (
+        'label' => 'Ineligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also eligibleRegion.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'playerType' => 
+      array (
+        'label' => 'Player Type',
+        'type' => 'text',
+        'comment' => 'Player type required&#x2014;for example, Flash or Silverlight.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'requiresSubscription' => 
+      array (
+        'label' => 'Requires Subscription',
+        'type' => 'boolean',
+        'comment' => 'Indicates if use of the media require a subscription (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had \'yes\', \'no\').',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'sha256' => 
+      array (
+        'label' => 'Sha256',
+        'type' => 'text',
+        'comment' => 'The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value \'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\'.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'transcript' => 
+      array (
+        'label' => 'Transcript',
+        'type' => 'text',
+        'comment' => 'If this MediaObject is an AudioObject or VideoObject, the transcript of that object.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'uploadDate' => 
+      array (
+        'label' => 'Upload Date',
+        'type' => 'date',
+        'comment' => 'Date (including time if available) when this media object was uploaded to this site.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Brand' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Certification' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'auditDate' => 
+      array (
+        'label' => 'Audit Date',
+        'type' => 'date',
+        'comment' => 'Date when a certification was last audited. See also [gs1:certificationAuditDate](https://www.gs1.org/voc/certificationAuditDate).',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'certificationIdentification' => 
+      array (
+        'label' => 'Certification Identification',
+        'type' => 'text',
+        'comment' => 'Identifier of a certification instance (as registered with an independent certification body). Typically this identifier can be used to consult and verify the certification instance. See also [gs1:certificationIdentification](https://www.gs1.org/voc/certificationIdentification).',
+      ),
+      'certificationStatus' => 
+      array (
+        'label' => 'Certification Status',
+        'type' => 'enum',
+        'comment' => 'Indicates the current status of a certification: active or inactive. See also [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/CertificationActive',
+            'label' => 'CertificationActive',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/CertificationInactive',
+            'label' => 'CertificationInactive',
+          ),
+        ),
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Claim' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Clip' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'clipNumber' => 
+      array (
+        'label' => 'Clip Number',
+        'type' => 'number',
+        'comment' => 'Position of the clip within an ordered group of clips.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'endOffset' => 
+      array (
+        'label' => 'End Offset',
+        'type' => 'number',
+        'comment' => 'The end time of the clip expressed as the number of seconds from the beginning of the work.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'startOffset' => 
+      array (
+        'label' => 'Start Offset',
+        'type' => 'number',
+        'comment' => 'The start time of the clip expressed as the number of seconds from the beginning of the work.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Comment' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'downvoteCount' => 
+      array (
+        'label' => 'Downvote Count',
+        'type' => 'number',
+        'comment' => 'The number of downvotes this question, answer or comment has received from the community.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'upvoteCount' => 
+      array (
+        'label' => 'Upvote Count',
+        'type' => 'number',
+        'comment' => 'The number of upvotes this question, answer or comment has received from the community.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'ContactPoint' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'availableLanguage' => 
+      array (
+        'label' => 'Available Language',
+        'type' => 'text',
+        'comment' => 'A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also inLanguage.',
+      ),
+      'contactOption' => 
+      array (
+        'label' => 'Contact Option',
+        'type' => 'enum',
+        'comment' => 'An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/HearingImpairedSupported',
+            'label' => 'HearingImpairedSupported',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/TollFree',
+            'label' => 'TollFree',
+          ),
+        ),
+      ),
+      'contactType' => 
+      array (
+        'label' => 'Contact Type',
+        'type' => 'text',
+        'comment' => 'A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'productSupported' => 
+      array (
+        'label' => 'Product Supported',
+        'type' => 'text',
+        'comment' => 'The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Country' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'branchCode' => 
+      array (
+        'label' => 'Branch Code',
+        'type' => 'text',
+        'comment' => 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasDriveThroughService' => 
+      array (
+        'label' => 'Has Drive Through Service',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'hasMap' => 
+      array (
+        'label' => 'Has Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'latitude' => 
+      array (
+        'label' => 'Latitude',
+        'type' => 'number',
+        'comment' => 'The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'longitude' => 
+      array (
+        'label' => 'Longitude',
+        'type' => 'number',
+        'comment' => 'The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'map' => 
+      array (
+        'label' => 'Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maps' => 
+      array (
+        'label' => 'Maps',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'publicAccess' => 
+      array (
+        'label' => 'Public Access',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'smokingAllowed' => 
+      array (
+        'label' => 'Smoking Allowed',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'tourBookingPage' => 
+      array (
+        'label' => 'Tour Booking Page',
+        'type' => 'url',
+        'comment' => 'A page providing information on how to book a tour of some Place, such as an Accommodation or ApartmentComplex in a real estate setting, as well as other kinds of tours as appropriate.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'CreativeWork' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Credential' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'credentialCategory' => 
+      array (
+        'label' => 'Credential Category',
+        'type' => 'text',
+        'comment' => 'The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Demand' => 
+    array (
+      'acceptedPaymentMethod' => 
+      array (
+        'label' => 'Accepted Payment Method',
+        'type' => 'text',
+        'comment' => 'The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'asin' => 
+      array (
+        'label' => 'Asin',
+        'type' => 'text',
+        'comment' => 'An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)\'s article). Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details. ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.',
+      ),
+      'availability' => 
+      array (
+        'label' => 'Availability',
+        'type' => 'enum',
+        'comment' => 'The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/BackOrder',
+            'label' => 'BackOrder',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/Discontinued',
+            'label' => 'Discontinued',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/InStock',
+            'label' => 'InStock',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/InStoreOnly',
+            'label' => 'InStoreOnly',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/LimitedAvailability',
+            'label' => 'LimitedAvailability',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/MadeToOrder',
+            'label' => 'MadeToOrder',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/OnlineOnly',
+            'label' => 'OnlineOnly',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/OutOfStock',
+            'label' => 'OutOfStock',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/PreOrder',
+            'label' => 'PreOrder',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/PreSale',
+            'label' => 'PreSale',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/Reserved',
+            'label' => 'Reserved',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/SoldOut',
+            'label' => 'SoldOut',
+          ),
+        ),
+      ),
+      'availabilityEnds' => 
+      array (
+        'label' => 'Availability Ends',
+        'type' => 'date',
+        'comment' => 'The end of the availability of the product or service included in the offer.',
+      ),
+      'availabilityStarts' => 
+      array (
+        'label' => 'Availability Starts',
+        'type' => 'date',
+        'comment' => 'The beginning of the availability of the product or service included in the offer.',
+      ),
+      'availableDeliveryMethod' => 
+      array (
+        'label' => 'Available Delivery Method',
+        'type' => 'enum',
+        'comment' => 'The delivery method(s) available for this offer.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/LockerDelivery',
+            'label' => 'LockerDelivery',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OnSitePickup',
+            'label' => 'OnSitePickup',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ParcelService',
+            'label' => 'ParcelService',
+          ),
+        ),
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'eligibleRegion' => 
+      array (
+        'label' => 'Eligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also ineligibleRegion.',
+      ),
+      'gtin' => 
+      array (
+        'label' => 'Gtin',
+        'type' => 'text',
+        'comment' => 'A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. A correct gtin value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1\'s GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The gtin property generalizes the earlier gtin8, gtin12, gtin13, and gtin14 properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.). Digital Links should be populated into the hasGS1DigitalLink attribute. Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.',
+      ),
+      'gtin12' => 
+      array (
+        'label' => 'Gtin12',
+        'type' => 'text',
+        'comment' => 'The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin13' => 
+      array (
+        'label' => 'Gtin13',
+        'type' => 'text',
+        'comment' => 'The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin14' => 
+      array (
+        'label' => 'Gtin14',
+        'type' => 'text',
+        'comment' => 'The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin8' => 
+      array (
+        'label' => 'Gtin8',
+        'type' => 'text',
+        'comment' => 'The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'ineligibleRegion' => 
+      array (
+        'label' => 'Ineligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also eligibleRegion.',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'mpn' => 
+      array (
+        'label' => 'Mpn',
+        'type' => 'text',
+        'comment' => 'The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'serialNumber' => 
+      array (
+        'label' => 'Serial Number',
+        'type' => 'text',
+        'comment' => 'The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.',
+      ),
+      'sku' => 
+      array (
+        'label' => 'Sku',
+        'type' => 'text',
+        'comment' => 'The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+    ),
+    'Distance' => 
+    array (
+    ),
+    'Duration' => 
+    array (
+    ),
+    'EducationalOrganization' => 
+    array (
+      'acceptedPaymentMethod' => 
+      array (
+        'label' => 'Accepted Payment Method',
+        'type' => 'text',
+        'comment' => 'The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.',
+      ),
+      'actionableFeedbackPolicy' => 
+      array (
+        'label' => 'Actionable Feedback Policy',
+        'type' => 'url',
+        'comment' => 'For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'branchCode' => 
+      array (
+        'label' => 'Branch Code',
+        'type' => 'text',
+        'comment' => 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.',
+      ),
+      'correctionsPolicy' => 
+      array (
+        'label' => 'Corrections Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'dissolutionDate' => 
+      array (
+        'label' => 'Dissolution Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was dissolved.',
+      ),
+      'diversityPolicy' => 
+      array (
+        'label' => 'Diversity Policy',
+        'type' => 'url',
+        'comment' => 'Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.',
+      ),
+      'diversityStaffingReport' => 
+      array (
+        'label' => 'Diversity Staffing Report',
+        'type' => 'url',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.',
+      ),
+      'duns' => 
+      array (
+        'label' => 'Duns',
+        'type' => 'text',
+        'comment' => 'The Dun & Bradstreet DUNS number for identifying an organization or business person.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'ethicsPolicy' => 
+      array (
+        'label' => 'Ethics Policy',
+        'type' => 'url',
+        'comment' => 'Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'foundingDate' => 
+      array (
+        'label' => 'Founding Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was founded.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasDriveThroughService' => 
+      array (
+        'label' => 'Has Drive Through Service',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'hasMap' => 
+      array (
+        'label' => 'Has Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'iso6523Code' => 
+      array (
+        'label' => 'Iso6523 Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'knowsAbout' => 
+      array (
+        'label' => 'Knows About',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.',
+      ),
+      'knowsLanguage' => 
+      array (
+        'label' => 'Knows Language',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).',
+      ),
+      'latitude' => 
+      array (
+        'label' => 'Latitude',
+        'type' => 'number',
+        'comment' => 'The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'legalName' => 
+      array (
+        'label' => 'Legal Name',
+        'type' => 'text',
+        'comment' => 'The official name of the organization, e.g. the registered company name.',
+      ),
+      'leiCode' => 
+      array (
+        'label' => 'Lei Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'longitude' => 
+      array (
+        'label' => 'Longitude',
+        'type' => 'number',
+        'comment' => 'The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'map' => 
+      array (
+        'label' => 'Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maps' => 
+      array (
+        'label' => 'Maps',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'naics' => 
+      array (
+        'label' => 'Naics',
+        'type' => 'text',
+        'comment' => 'The North American Industry Classification System (NAICS) code for a particular organization or business person.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'openingHours' => 
+      array (
+        'label' => 'Opening Hours',
+        'type' => 'text',
+        'comment' => 'The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas \',\' separating each day. Day or time ranges are specified using a hyphen \'-\'.\\n\\n* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.\\n* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. \\n* Here is an example: &lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;.\\n* If a business is open 7 days a week, then it can be specified as &lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;.',
+      ),
+      'ownershipFundingInfo' => 
+      array (
+        'label' => 'Ownership Funding Info',
+        'type' => 'text',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence. Note that the funder is also available and can be used to make basic funder information machine-readable.',
+      ),
+      'publicAccess' => 
+      array (
+        'label' => 'Public Access',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'smokingAllowed' => 
+      array (
+        'label' => 'Smoking Allowed',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.',
+      ),
+      'taxID' => 
+      array (
+        'label' => 'Tax I D',
+        'type' => 'text',
+        'comment' => 'The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'tourBookingPage' => 
+      array (
+        'label' => 'Tour Booking Page',
+        'type' => 'url',
+        'comment' => 'A page providing information on how to book a tour of some Place, such as an Accommodation or ApartmentComplex in a real estate setting, as well as other kinds of tours as appropriate.',
+      ),
+      'unnamedSourcesPolicy' => 
+      array (
+        'label' => 'Unnamed Sources Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'vatID' => 
+      array (
+        'label' => 'Vat I D',
+        'type' => 'text',
+        'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
+      ),
+    ),
+    'EnergyConsumptionDetails' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'energyEfficiencyScaleMax' => 
+      array (
+        'label' => 'Energy Efficiency Scale Max',
+        'type' => 'enum',
+        'comment' => 'Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA',
+            'label' => 'EUEnergyEfficiencyCategoryA',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA1Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA1Plus',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA2Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA2Plus',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA3Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA3Plus',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryB',
+            'label' => 'EUEnergyEfficiencyCategoryB',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryC',
+            'label' => 'EUEnergyEfficiencyCategoryC',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryD',
+            'label' => 'EUEnergyEfficiencyCategoryD',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryE',
+            'label' => 'EUEnergyEfficiencyCategoryE',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryF',
+            'label' => 'EUEnergyEfficiencyCategoryF',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryG',
+            'label' => 'EUEnergyEfficiencyCategoryG',
+          ),
+        ),
+      ),
+      'energyEfficiencyScaleMin' => 
+      array (
+        'label' => 'Energy Efficiency Scale Min',
+        'type' => 'enum',
+        'comment' => 'Specifies the least energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA',
+            'label' => 'EUEnergyEfficiencyCategoryA',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA1Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA1Plus',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA2Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA2Plus',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryA3Plus',
+            'label' => 'EUEnergyEfficiencyCategoryA3Plus',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryB',
+            'label' => 'EUEnergyEfficiencyCategoryB',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryC',
+            'label' => 'EUEnergyEfficiencyCategoryC',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryD',
+            'label' => 'EUEnergyEfficiencyCategoryD',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryE',
+            'label' => 'EUEnergyEfficiencyCategoryE',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryF',
+            'label' => 'EUEnergyEfficiencyCategoryF',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/EUEnergyEfficiencyCategoryG',
+            'label' => 'EUEnergyEfficiencyCategoryG',
+          ),
+        ),
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Event' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'doorTime' => 
+      array (
+        'label' => 'Door Time',
+        'type' => 'date',
+        'comment' => 'The time admission will commence.',
+      ),
+      'endDate' => 
+      array (
+        'label' => 'End Date',
+        'type' => 'date',
+        'comment' => 'The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'eventAttendanceMode' => 
+      array (
+        'label' => 'Event Attendance Mode',
+        'type' => 'enum',
+        'comment' => 'The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/MixedEventAttendanceMode',
+            'label' => 'MixedEventAttendanceMode',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OfflineEventAttendanceMode',
+            'label' => 'OfflineEventAttendanceMode',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/OnlineEventAttendanceMode',
+            'label' => 'OnlineEventAttendanceMode',
+          ),
+        ),
+      ),
+      'eventStatus' => 
+      array (
+        'label' => 'Event Status',
+        'type' => 'enum',
+        'comment' => 'An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/EventCancelled',
+            'label' => 'EventCancelled',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EventMovedOnline',
+            'label' => 'EventMovedOnline',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/EventPostponed',
+            'label' => 'EventPostponed',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/EventRescheduled',
+            'label' => 'EventRescheduled',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/EventScheduled',
+            'label' => 'EventScheduled',
+          ),
+        ),
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'maximumPhysicalAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Physical Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The maximum physical attendee capacity of an Event whose eventAttendanceMode is OfflineEventAttendanceMode (or the offline aspects, in the case of a MixedEventAttendanceMode).',
+      ),
+      'maximumVirtualAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Virtual Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The maximum virtual attendee capacity of an Event whose eventAttendanceMode is OnlineEventAttendanceMode (or the online aspects, in the case of a MixedEventAttendanceMode).',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'previousStartDate' => 
+      array (
+        'label' => 'Previous Start Date',
+        'type' => 'date',
+        'comment' => 'Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.',
+      ),
+      'remainingAttendeeCapacity' => 
+      array (
+        'label' => 'Remaining Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The number of attendee places for an event that remain unallocated.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'startDate' => 
+      array (
+        'label' => 'Start Date',
+        'type' => 'date',
+        'comment' => 'The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'GeoCoordinates' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'addressCountry' => 
+      array (
+        'label' => 'Address Country',
+        'type' => 'text',
+        'comment' => 'The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'elevation' => 
+      array (
+        'label' => 'Elevation',
+        'type' => 'number',
+        'comment' => 'The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form \'NUMBER UNIT\\_OF\\_MEASUREMENT\' (e.g., \'1,000 m\', \'3,200 ft\') while numbers alone should be assumed to be a value in meters.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'latitude' => 
+      array (
+        'label' => 'Latitude',
+        'type' => 'number',
+        'comment' => 'The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'longitude' => 
+      array (
+        'label' => 'Longitude',
+        'type' => 'number',
+        'comment' => 'The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'postalCode' => 
+      array (
+        'label' => 'Postal Code',
+        'type' => 'text',
+        'comment' => 'The postal code. For example, 94043.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'GeospatialGeometry' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Grant' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'ImageObject' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'bitrate' => 
+      array (
+        'label' => 'Bitrate',
+        'type' => 'text',
+        'comment' => 'The bitrate of the media object.',
+      ),
+      'caption' => 
+      array (
+        'label' => 'Caption',
+        'type' => 'text',
+        'comment' => 'The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the encodingFormat.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'contentSize' => 
+      array (
+        'label' => 'Content Size',
+        'type' => 'text',
+        'comment' => 'File size in (mega/kilo)bytes.',
+      ),
+      'contentUrl' => 
+      array (
+        'label' => 'Content Url',
+        'type' => 'url',
+        'comment' => 'Actual bytes of the media object, for example the image file or video file.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'embedUrl' => 
+      array (
+        'label' => 'Embed Url',
+        'type' => 'url',
+        'comment' => 'A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.',
+      ),
+      'embeddedTextCaption' => 
+      array (
+        'label' => 'Embedded Text Caption',
+        'type' => 'text',
+        'comment' => 'Represents textual captioning from a MediaObject, e.g. text of a \'meme\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'exifData' => 
+      array (
+        'label' => 'Exif Data',
+        'type' => 'text',
+        'comment' => 'exif data for this object.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'ineligibleRegion' => 
+      array (
+        'label' => 'Ineligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also eligibleRegion.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'playerType' => 
+      array (
+        'label' => 'Player Type',
+        'type' => 'text',
+        'comment' => 'Player type required&#x2014;for example, Flash or Silverlight.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'representativeOfPage' => 
+      array (
+        'label' => 'Representative Of Page',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this image is representative of the content of the page.',
+      ),
+      'requiresSubscription' => 
+      array (
+        'label' => 'Requires Subscription',
+        'type' => 'boolean',
+        'comment' => 'Indicates if use of the media require a subscription (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had \'yes\', \'no\').',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'sha256' => 
+      array (
+        'label' => 'Sha256',
+        'type' => 'text',
+        'comment' => 'The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value \'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\'.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'uploadDate' => 
+      array (
+        'label' => 'Upload Date',
+        'type' => 'date',
+        'comment' => 'Date (including time if available) when this media object was uploaded to this site.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'InteractionCounter' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'userInteractionCount' => 
+      array (
+        'label' => 'User Interaction Count',
+        'type' => 'number',
+        'comment' => 'The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.',
+      ),
+    ),
+    'ItemList' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'itemListElement' => 
+      array (
+        'label' => 'Item List Element',
+        'type' => 'text',
+        'comment' => 'For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements. Use ListItem with a \'position\' property in such cases.',
+      ),
+      'itemListOrder' => 
+      array (
+        'label' => 'Item List Order',
+        'type' => 'text',
+        'comment' => 'Type of ordering (e.g. Ascending, Descending, Unordered).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'numberOfItems' => 
+      array (
+        'label' => 'Number Of Items',
+        'type' => 'number',
+        'comment' => 'The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'LocationFeatureSpecification' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maxValue' => 
+      array (
+        'label' => 'Max Value',
+        'type' => 'number',
+        'comment' => 'The upper value of some characteristic or property.',
+      ),
+      'measurementMethod' => 
+      array (
+        'label' => 'Measurement Method',
+        'type' => 'text',
+        'comment' => 'A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.',
+      ),
+      'measurementTechnique' => 
+      array (
+        'label' => 'Measurement Technique',
+        'type' => 'text',
+        'comment' => 'A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; for Observation, a StatisticalVariable). Often but not necessarily each variableMeasured will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of variableMeasured called measuredProperty is applicable. The measurementTechnique property helps when extra clarification is needed about how a measuredProperty was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. For example, if variableMeasured is: molecule concentration, measurementTechnique could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the variableMeasured is "depression rating", the measurementTechnique could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". If there are several variableMeasured properties recorded for some given data object, use a PropertyValue for each variableMeasured and attach the corresponding measurementTechnique. The value can also be from an enumeration, organized as a MeasurementMethodEnum.',
+      ),
+      'minValue' => 
+      array (
+        'label' => 'Min Value',
+        'type' => 'number',
+        'comment' => 'The lower value of some characteristic or property.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'propertyID' => 
+      array (
+        'label' => 'Property I D',
+        'type' => 'text',
+        'comment' => 'A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3) a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'unitCode' => 
+      array (
+        'label' => 'Unit Code',
+        'type' => 'text',
+        'comment' => 'The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.',
+      ),
+      'unitText' => 
+      array (
+        'label' => 'Unit Text',
+        'type' => 'text',
+        'comment' => 'A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+      'value' => 
+      array (
+        'label' => 'Value',
+        'type' => 'boolean',
+        'comment' => 'The value of a QuantitativeValue (including Observation) or property value node.\\n\\n* For QuantitativeValue and MonetaryAmount, the recommended type for values is \'Number\'.\\n* For PropertyValue, it can be \'Text\', \'Number\', \'Boolean\', or \'StructuredValue\'.\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.',
+      ),
+      'valueReference' => 
+      array (
+        'label' => 'Value Reference',
+        'type' => 'text',
+        'comment' => 'A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.',
+      ),
+    ),
+    'Mass' => 
+    array (
+    ),
+    'MediaObject' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'bitrate' => 
+      array (
+        'label' => 'Bitrate',
+        'type' => 'text',
+        'comment' => 'The bitrate of the media object.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'contentSize' => 
+      array (
+        'label' => 'Content Size',
+        'type' => 'text',
+        'comment' => 'File size in (mega/kilo)bytes.',
+      ),
+      'contentUrl' => 
+      array (
+        'label' => 'Content Url',
+        'type' => 'url',
+        'comment' => 'Actual bytes of the media object, for example the image file or video file.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'embedUrl' => 
+      array (
+        'label' => 'Embed Url',
+        'type' => 'url',
+        'comment' => 'A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'ineligibleRegion' => 
+      array (
+        'label' => 'Ineligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also eligibleRegion.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'playerType' => 
+      array (
+        'label' => 'Player Type',
+        'type' => 'text',
+        'comment' => 'Player type required&#x2014;for example, Flash or Silverlight.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'requiresSubscription' => 
+      array (
+        'label' => 'Requires Subscription',
+        'type' => 'boolean',
+        'comment' => 'Indicates if use of the media require a subscription (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had \'yes\', \'no\').',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'sha256' => 
+      array (
+        'label' => 'Sha256',
+        'type' => 'text',
+        'comment' => 'The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value \'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\'.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'uploadDate' => 
+      array (
+        'label' => 'Upload Date',
+        'type' => 'date',
+        'comment' => 'Date (including time if available) when this media object was uploaded to this site.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'MemberProgram' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'MemberProgramTier' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'hasTierBenefit' => 
+      array (
+        'label' => 'Has Tier Benefit',
+        'type' => 'enum',
+        'comment' => 'A member benefit for a particular tier of a loyalty program.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/TierBenefitLoyaltyPoints',
+            'label' => 'TierBenefitLoyaltyPoints',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/TierBenefitLoyaltyPrice',
+            'label' => 'TierBenefitLoyaltyPrice',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/TierBenefitLoyaltyReturns',
+            'label' => 'TierBenefitLoyaltyReturns',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/TierBenefitLoyaltyShipping',
+            'label' => 'TierBenefitLoyaltyShipping',
+          ),
+        ),
+      ),
+      'hasTierRequirement' => 
+      array (
+        'label' => 'Has Tier Requirement',
+        'type' => 'text',
+        'comment' => 'A requirement for a user to join a membership tier, for example: a CreditCard if the tier requires sign up for a credit card, A UnitPriceSpecification if the user is required to pay a (periodic) fee, or a MonetaryAmount if the user needs to spend a minimum amount to join the tier. If a tier is free to join then this property does not need to be specified.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'membershipPointsEarned' => 
+      array (
+        'label' => 'Membership Points Earned',
+        'type' => 'number',
+        'comment' => 'The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (E.g. stars, miles, etc.)',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'MerchantReturnPolicy' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'applicableCountry' => 
+      array (
+        'label' => 'Applicable Country',
+        'type' => 'text',
+        'comment' => 'A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.',
+      ),
+      'customerRemorseReturnFees' => 
+      array (
+        'label' => 'Customer Remorse Return Fees',
+        'type' => 'enum',
+        'comment' => 'The type of return fees if the product is returned due to customer remorse.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/FreeReturn',
+            'label' => 'FreeReturn',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OriginalShippingFees',
+            'label' => 'OriginalShippingFees',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RestockingFees',
+            'label' => 'RestockingFees',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+            'label' => 'ReturnFeesCustomerResponsibility',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReturnShippingFees',
+            'label' => 'ReturnShippingFees',
+          ),
+        ),
+      ),
+      'customerRemorseReturnLabelSource' => 
+      array (
+        'label' => 'Customer Remorse Return Label Source',
+        'type' => 'enum',
+        'comment' => 'The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+            'label' => 'ReturnLabelCustomerResponsibility',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+            'label' => 'ReturnLabelDownloadAndPrint',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelInBox',
+            'label' => 'ReturnLabelInBox',
+          ),
+        ),
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inStoreReturnsOffered' => 
+      array (
+        'label' => 'In Store Returns Offered',
+        'type' => 'boolean',
+        'comment' => 'Are in-store returns offered? (For more advanced return methods use the returnMethod property.)',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
+      ),
+      'itemDefectReturnFees' => 
+      array (
+        'label' => 'Item Defect Return Fees',
+        'type' => 'enum',
+        'comment' => 'The type of return fees for returns of defect products.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/FreeReturn',
+            'label' => 'FreeReturn',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OriginalShippingFees',
+            'label' => 'OriginalShippingFees',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RestockingFees',
+            'label' => 'RestockingFees',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+            'label' => 'ReturnFeesCustomerResponsibility',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReturnShippingFees',
+            'label' => 'ReturnShippingFees',
+          ),
+        ),
+      ),
+      'itemDefectReturnLabelSource' => 
+      array (
+        'label' => 'Item Defect Return Label Source',
+        'type' => 'enum',
+        'comment' => 'The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+            'label' => 'ReturnLabelCustomerResponsibility',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+            'label' => 'ReturnLabelDownloadAndPrint',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelInBox',
+            'label' => 'ReturnLabelInBox',
+          ),
+        ),
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'merchantReturnDays' => 
+      array (
+        'label' => 'Merchant Return Days',
+        'type' => 'number',
+        'comment' => 'Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the returnPolicyCategory property is specified as MerchantReturnFiniteReturnWindow.',
+      ),
+      'merchantReturnLink' => 
+      array (
+        'label' => 'Merchant Return Link',
+        'type' => 'url',
+        'comment' => 'Specifies a Web page or service by URL, for product returns.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'refundType' => 
+      array (
+        'label' => 'Refund Type',
+        'type' => 'enum',
+        'comment' => 'A refund type, from an enumerated list.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/ExchangeRefund',
+            'label' => 'ExchangeRefund',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/FullRefund',
+            'label' => 'FullRefund',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/StoreCreditRefund',
+            'label' => 'StoreCreditRefund',
+          ),
+        ),
+      ),
+      'restockingFee' => 
+      array (
+        'label' => 'Restocking Fee',
+        'type' => 'number',
+        'comment' => 'Use MonetaryAmount to specify a fixed restocking fee for product returns, or use Number to specify a percentage of the product price paid by the customer.',
+      ),
+      'returnFees' => 
+      array (
+        'label' => 'Return Fees',
+        'type' => 'enum',
+        'comment' => 'The type of return fees for purchased products (for any return reason).',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/FreeReturn',
+            'label' => 'FreeReturn',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OriginalShippingFees',
+            'label' => 'OriginalShippingFees',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RestockingFees',
+            'label' => 'RestockingFees',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/ReturnFeesCustomerResponsibility',
+            'label' => 'ReturnFeesCustomerResponsibility',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReturnShippingFees',
+            'label' => 'ReturnShippingFees',
+          ),
+        ),
+      ),
+      'returnLabelSource' => 
+      array (
+        'label' => 'Return Label Source',
+        'type' => 'enum',
+        'comment' => 'The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelCustomerResponsibility',
+            'label' => 'ReturnLabelCustomerResponsibility',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelDownloadAndPrint',
+            'label' => 'ReturnLabelDownloadAndPrint',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ReturnLabelInBox',
+            'label' => 'ReturnLabelInBox',
+          ),
+        ),
+      ),
+      'returnMethod' => 
+      array (
+        'label' => 'Return Method',
+        'type' => 'enum',
+        'comment' => 'The type of return method offered, specified from an enumeration.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/KeepProduct',
+            'label' => 'KeepProduct',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/ReturnAtKiosk',
+            'label' => 'ReturnAtKiosk',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ReturnByMail',
+            'label' => 'ReturnByMail',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/ReturnInStore',
+            'label' => 'ReturnInStore',
+          ),
+        ),
+      ),
+      'returnPolicyCategory' => 
+      array (
+        'label' => 'Return Policy Category',
+        'type' => 'enum',
+        'comment' => 'Specifies an applicable return policy (from an enumeration).',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/MerchantReturnFiniteReturnWindow',
+            'label' => 'MerchantReturnFiniteReturnWindow',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/MerchantReturnNotPermitted',
+            'label' => 'MerchantReturnNotPermitted',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/MerchantReturnUnlimitedWindow',
+            'label' => 'MerchantReturnUnlimitedWindow',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/MerchantReturnUnspecified',
+            'label' => 'MerchantReturnUnspecified',
+          ),
+        ),
+      ),
+      'returnPolicyCountry' => 
+      array (
+        'label' => 'Return Policy Country',
+        'type' => 'text',
+        'comment' => 'The country where the product has to be sent to for returns, for example "Ireland" using the name property of Country. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent to.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'MonetaryAmount' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'currency' => 
+      array (
+        'label' => 'Currency',
+        'type' => 'text',
+        'comment' => 'The currency in which the monetary amount is expressed.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maxValue' => 
+      array (
+        'label' => 'Max Value',
+        'type' => 'number',
+        'comment' => 'The upper value of some characteristic or property.',
+      ),
+      'minValue' => 
+      array (
+        'label' => 'Min Value',
+        'type' => 'number',
+        'comment' => 'The lower value of some characteristic or property.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+      'value' => 
+      array (
+        'label' => 'Value',
+        'type' => 'boolean',
+        'comment' => 'The value of a QuantitativeValue (including Observation) or property value node.\\n\\n* For QuantitativeValue and MonetaryAmount, the recommended type for values is \'Number\'.\\n* For PropertyValue, it can be \'Text\', \'Number\', \'Boolean\', or \'StructuredValue\'.\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.',
+      ),
+    ),
+    'NonprofitType' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Occupation' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'educationRequirements' => 
+      array (
+        'label' => 'Education Requirements',
+        'type' => 'text',
+        'comment' => 'Educational background needed for the position or Occupation.',
+      ),
+      'estimatedSalary' => 
+      array (
+        'label' => 'Estimated Salary',
+        'type' => 'number',
+        'comment' => 'An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.',
+      ),
+      'experienceRequirements' => 
+      array (
+        'label' => 'Experience Requirements',
+        'type' => 'text',
+        'comment' => 'Description of skills and experience needed for the position or Occupation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'occupationalCategory' => 
+      array (
+        'label' => 'Occupational Category',
+        'type' => 'text',
+        'comment' => 'A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.',
+      ),
+      'qualifications' => 
+      array (
+        'label' => 'Qualifications',
+        'type' => 'text',
+        'comment' => 'Specific qualifications required for this role or Occupation.',
+      ),
+      'responsibilities' => 
+      array (
+        'label' => 'Responsibilities',
+        'type' => 'text',
+        'comment' => 'Responsibilities associated with this role or Occupation.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Offer' => 
+    array (
+      'acceptedPaymentMethod' => 
+      array (
+        'label' => 'Accepted Payment Method',
+        'type' => 'text',
+        'comment' => 'The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'asin' => 
+      array (
+        'label' => 'Asin',
+        'type' => 'text',
+        'comment' => 'An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)\'s article). Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details. ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.',
+      ),
+      'availability' => 
+      array (
+        'label' => 'Availability',
+        'type' => 'enum',
+        'comment' => 'The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/BackOrder',
+            'label' => 'BackOrder',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/Discontinued',
+            'label' => 'Discontinued',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/InStock',
+            'label' => 'InStock',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/InStoreOnly',
+            'label' => 'InStoreOnly',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/LimitedAvailability',
+            'label' => 'LimitedAvailability',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/MadeToOrder',
+            'label' => 'MadeToOrder',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/OnlineOnly',
+            'label' => 'OnlineOnly',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/OutOfStock',
+            'label' => 'OutOfStock',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/PreOrder',
+            'label' => 'PreOrder',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/PreSale',
+            'label' => 'PreSale',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/Reserved',
+            'label' => 'Reserved',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/SoldOut',
+            'label' => 'SoldOut',
+          ),
+        ),
+      ),
+      'availabilityEnds' => 
+      array (
+        'label' => 'Availability Ends',
+        'type' => 'date',
+        'comment' => 'The end of the availability of the product or service included in the offer.',
+      ),
+      'availabilityStarts' => 
+      array (
+        'label' => 'Availability Starts',
+        'type' => 'date',
+        'comment' => 'The beginning of the availability of the product or service included in the offer.',
+      ),
+      'availableDeliveryMethod' => 
+      array (
+        'label' => 'Available Delivery Method',
+        'type' => 'enum',
+        'comment' => 'The delivery method(s) available for this offer.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/LockerDelivery',
+            'label' => 'LockerDelivery',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OnSitePickup',
+            'label' => 'OnSitePickup',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/ParcelService',
+            'label' => 'ParcelService',
+          ),
+        ),
+      ),
+      'category' => 
+      array (
+        'label' => 'Category',
+        'type' => 'text',
+        'comment' => 'A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.',
+      ),
+      'checkoutPageURLTemplate' => 
+      array (
+        'label' => 'Checkout Page U R L Template',
+        'type' => 'text',
+        'comment' => 'A URL template (RFC 6570) for a checkout page for an offer. This approach allows merchants to specify a URL for online checkout of the offered product, by interpolating parameters such as the logged in user ID, product ID, quantity, discount code etc. Parameter naming and standardization are not specified here.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'eligibleRegion' => 
+      array (
+        'label' => 'Eligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.\\n\\nSee also ineligibleRegion.',
+      ),
+      'gtin' => 
+      array (
+        'label' => 'Gtin',
+        'type' => 'text',
+        'comment' => 'A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. A correct gtin value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1\'s GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The gtin property generalizes the earlier gtin8, gtin12, gtin13, and gtin14 properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.). Digital Links should be populated into the hasGS1DigitalLink attribute. Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.',
+      ),
+      'gtin12' => 
+      array (
+        'label' => 'Gtin12',
+        'type' => 'text',
+        'comment' => 'The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin13' => 
+      array (
+        'label' => 'Gtin13',
+        'type' => 'text',
+        'comment' => 'The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin14' => 
+      array (
+        'label' => 'Gtin14',
+        'type' => 'text',
+        'comment' => 'The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin8' => 
+      array (
+        'label' => 'Gtin8',
+        'type' => 'text',
+        'comment' => 'The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'hasAdultConsideration' => 
+      array (
+        'label' => 'Has Adult Consideration',
+        'type' => 'enum',
+        'comment' => 'Used to tag an item to be intended or suitable for consumption or use by adults only.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlcoholConsideration',
+            'label' => 'AlcoholConsideration',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/DangerousGoodConsideration',
+            'label' => 'DangerousGoodConsideration',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/HealthcareConsideration',
+            'label' => 'HealthcareConsideration',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/NarcoticConsideration',
+            'label' => 'NarcoticConsideration',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReducedRelevanceForChildrenConsideration',
+            'label' => 'ReducedRelevanceForChildrenConsideration',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/SexualContentConsideration',
+            'label' => 'SexualContentConsideration',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/TobaccoNicotineConsideration',
+            'label' => 'TobaccoNicotineConsideration',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/UnclassifiedAdultConsideration',
+            'label' => 'UnclassifiedAdultConsideration',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/ViolenceConsideration',
+            'label' => 'ViolenceConsideration',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/WeaponConsideration',
+            'label' => 'WeaponConsideration',
+          ),
+        ),
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'ineligibleRegion' => 
+      array (
+        'label' => 'Ineligible Region',
+        'type' => 'text',
+        'comment' => 'The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.\\n\\nSee also eligibleRegion.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'mobileUrl' => 
+      array (
+        'label' => 'Mobile Url',
+        'type' => 'text',
+        'comment' => 'The mobileUrl property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated \'mobile site\'. To discourage over-use, and reflecting intial usecases, the property is expected only on Product and Offer, rather than Thing. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established url property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all url markup to use mobileUrl for more mobile-oriented pages. The property is intended for the case when items (primarily Product and Offer) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.',
+      ),
+      'mpn' => 
+      array (
+        'label' => 'Mpn',
+        'type' => 'text',
+        'comment' => 'The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'price' => 
+      array (
+        'label' => 'Price',
+        'type' => 'number',
+        'comment' => 'The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.\\n\\nUsage guidelines:\\n\\n* Use the priceCurrency property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as \'$\' in the value.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.\\n* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.',
+      ),
+      'priceCurrency' => 
+      array (
+        'label' => 'Price Currency',
+        'type' => 'text',
+        'comment' => 'The currency of the price, or a price component when attached to PriceSpecification and its subtypes.\\n\\nUse standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".',
+      ),
+      'priceValidUntil' => 
+      array (
+        'label' => 'Price Valid Until',
+        'type' => 'date',
+        'comment' => 'The date after which the price is no longer available.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'serialNumber' => 
+      array (
+        'label' => 'Serial Number',
+        'type' => 'text',
+        'comment' => 'The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.',
+      ),
+      'sku' => 
+      array (
+        'label' => 'Sku',
+        'type' => 'text',
+        'comment' => 'The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+    ),
+    'OfferCatalog' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'itemListElement' => 
+      array (
+        'label' => 'Item List Element',
+        'type' => 'text',
+        'comment' => 'For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.\\n\\nText values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.\\n\\nNote: The order of elements in your mark-up is not sufficient for indicating the order or elements. Use ListItem with a \'position\' property in such cases.',
+      ),
+      'itemListOrder' => 
+      array (
+        'label' => 'Item List Order',
+        'type' => 'text',
+        'comment' => 'Type of ordering (e.g. Ascending, Descending, Unordered).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'numberOfItems' => 
+      array (
+        'label' => 'Number Of Items',
+        'type' => 'number',
+        'comment' => 'The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'OpeningHoursSpecification' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'closes' => 
+      array (
+        'label' => 'Closes',
+        'type' => 'time',
+        'comment' => 'The closing hour of the place or service on the given day(s) of the week.',
+      ),
+      'dayOfWeek' => 
+      array (
+        'label' => 'Day Of Week',
+        'type' => 'enum',
+        'comment' => 'The day of the week for which these opening hours are valid.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/Friday',
+            'label' => 'Friday',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/Monday',
+            'label' => 'Monday',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/PublicHolidays',
+            'label' => 'PublicHolidays',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/Saturday',
+            'label' => 'Saturday',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/Sunday',
+            'label' => 'Sunday',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/Thursday',
+            'label' => 'Thursday',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/Tuesday',
+            'label' => 'Tuesday',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/Wednesday',
+            'label' => 'Wednesday',
+          ),
+        ),
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'opens' => 
+      array (
+        'label' => 'Opens',
+        'type' => 'time',
+        'comment' => 'The opening hour of the place or service on the given day(s) of the week.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validFrom' => 
+      array (
+        'label' => 'Valid From',
+        'type' => 'date',
+        'comment' => 'The date when the item becomes valid.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+    ),
+    'Organization' => 
+    array (
+      'acceptedPaymentMethod' => 
+      array (
+        'label' => 'Accepted Payment Method',
+        'type' => 'text',
+        'comment' => 'The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.',
+      ),
+      'actionableFeedbackPolicy' => 
+      array (
+        'label' => 'Actionable Feedback Policy',
+        'type' => 'url',
+        'comment' => 'For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'correctionsPolicy' => 
+      array (
+        'label' => 'Corrections Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'dissolutionDate' => 
+      array (
+        'label' => 'Dissolution Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was dissolved.',
+      ),
+      'diversityPolicy' => 
+      array (
+        'label' => 'Diversity Policy',
+        'type' => 'url',
+        'comment' => 'Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.',
+      ),
+      'diversityStaffingReport' => 
+      array (
+        'label' => 'Diversity Staffing Report',
+        'type' => 'url',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.',
+      ),
+      'duns' => 
+      array (
+        'label' => 'Duns',
+        'type' => 'text',
+        'comment' => 'The Dun & Bradstreet DUNS number for identifying an organization or business person.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'ethicsPolicy' => 
+      array (
+        'label' => 'Ethics Policy',
+        'type' => 'url',
+        'comment' => 'Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'foundingDate' => 
+      array (
+        'label' => 'Founding Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was founded.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'iso6523Code' => 
+      array (
+        'label' => 'Iso6523 Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'knowsAbout' => 
+      array (
+        'label' => 'Knows About',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.',
+      ),
+      'knowsLanguage' => 
+      array (
+        'label' => 'Knows Language',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).',
+      ),
+      'legalName' => 
+      array (
+        'label' => 'Legal Name',
+        'type' => 'text',
+        'comment' => 'The official name of the organization, e.g. the registered company name.',
+      ),
+      'leiCode' => 
+      array (
+        'label' => 'Lei Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'naics' => 
+      array (
+        'label' => 'Naics',
+        'type' => 'text',
+        'comment' => 'The North American Industry Classification System (NAICS) code for a particular organization or business person.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'ownershipFundingInfo' => 
+      array (
+        'label' => 'Ownership Funding Info',
+        'type' => 'text',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence. Note that the funder is also available and can be used to make basic funder information machine-readable.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'taxID' => 
+      array (
+        'label' => 'Tax I D',
+        'type' => 'text',
+        'comment' => 'The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'unnamedSourcesPolicy' => 
+      array (
+        'label' => 'Unnamed Sources Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'vatID' => 
+      array (
+        'label' => 'Vat I D',
+        'type' => 'text',
+        'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
+      ),
+    ),
+    'PerformingGroup' => 
+    array (
+      'acceptedPaymentMethod' => 
+      array (
+        'label' => 'Accepted Payment Method',
+        'type' => 'text',
+        'comment' => 'The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.',
+      ),
+      'actionableFeedbackPolicy' => 
+      array (
+        'label' => 'Actionable Feedback Policy',
+        'type' => 'url',
+        'comment' => 'For a NewsMediaOrganization or other news-related Organization, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'correctionsPolicy' => 
+      array (
+        'label' => 'Corrections Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (e.g. NewsMediaOrganization), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'dissolutionDate' => 
+      array (
+        'label' => 'Dissolution Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was dissolved.',
+      ),
+      'diversityPolicy' => 
+      array (
+        'label' => 'Diversity Policy',
+        'type' => 'url',
+        'comment' => 'Statement on diversity policy by an Organization e.g. a NewsMediaOrganization. For a NewsMediaOrganization, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.',
+      ),
+      'diversityStaffingReport' => 
+      array (
+        'label' => 'Diversity Staffing Report',
+        'type' => 'url',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.',
+      ),
+      'duns' => 
+      array (
+        'label' => 'Duns',
+        'type' => 'text',
+        'comment' => 'The Dun & Bradstreet DUNS number for identifying an organization or business person.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'ethicsPolicy' => 
+      array (
+        'label' => 'Ethics Policy',
+        'type' => 'url',
+        'comment' => 'Statement about ethics policy, e.g. of a NewsMediaOrganization regarding journalistic and publishing practices, or of a Restaurant, a page describing food source policies. In the case of a NewsMediaOrganization, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'foundingDate' => 
+      array (
+        'label' => 'Founding Date',
+        'type' => 'date',
+        'comment' => 'The date that this organization was founded.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'iso6523Code' => 
+      array (
+        'label' => 'Iso6523 Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'knowsAbout' => 
+      array (
+        'label' => 'Knows About',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.',
+      ),
+      'knowsLanguage' => 
+      array (
+        'label' => 'Knows Language',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).',
+      ),
+      'legalName' => 
+      array (
+        'label' => 'Legal Name',
+        'type' => 'text',
+        'comment' => 'The official name of the organization, e.g. the registered company name.',
+      ),
+      'leiCode' => 
+      array (
+        'label' => 'Lei Code',
+        'type' => 'text',
+        'comment' => 'An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'naics' => 
+      array (
+        'label' => 'Naics',
+        'type' => 'text',
+        'comment' => 'The North American Industry Classification System (NAICS) code for a particular organization or business person.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'ownershipFundingInfo' => 
+      array (
+        'label' => 'Ownership Funding Info',
+        'type' => 'text',
+        'comment' => 'For an Organization (often but not necessarily a NewsMediaOrganization), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence. Note that the funder is also available and can be used to make basic funder information machine-readable.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'taxID' => 
+      array (
+        'label' => 'Tax I D',
+        'type' => 'text',
+        'comment' => 'The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'unnamedSourcesPolicy' => 
+      array (
+        'label' => 'Unnamed Sources Policy',
+        'type' => 'url',
+        'comment' => 'For an Organization (typically a NewsMediaOrganization), a statement about policy on use of unnamed sources and the decision process required.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'vatID' => 
+      array (
+        'label' => 'Vat I D',
+        'type' => 'text',
+        'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
+      ),
+    ),
+    'Person' => 
+    array (
+      'additionalName' => 
+      array (
+        'label' => 'Additional Name',
+        'type' => 'text',
+        'comment' => 'An additional name for a Person, can be used for a middle name.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'birthDate' => 
+      array (
+        'label' => 'Birth Date',
+        'type' => 'date',
+        'comment' => 'Date of birth.',
+      ),
+      'callSign' => 
+      array (
+        'label' => 'Call Sign',
+        'type' => 'text',
+        'comment' => 'A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.',
+      ),
+      'colleague' => 
+      array (
+        'label' => 'Colleague',
+        'type' => 'url',
+        'comment' => 'A colleague of the person.',
+      ),
+      'deathDate' => 
+      array (
+        'label' => 'Death Date',
+        'type' => 'date',
+        'comment' => 'Date of death.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'duns' => 
+      array (
+        'label' => 'Duns',
+        'type' => 'text',
+        'comment' => 'The Dun & Bradstreet DUNS number for identifying an organization or business person.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'familyName' => 
+      array (
+        'label' => 'Family Name',
+        'type' => 'text',
+        'comment' => 'Family name. In the U.S., the last name of a Person.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'gender' => 
+      array (
+        'label' => 'Gender',
+        'type' => 'text',
+        'comment' => 'Gender of something, typically a Person, but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The gender property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender SportsTeam can be indicated with a text value of "Mixed".',
+      ),
+      'givenName' => 
+      array (
+        'label' => 'Given Name',
+        'type' => 'text',
+        'comment' => 'Given name. In the U.S., the first name of a Person.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'honorificPrefix' => 
+      array (
+        'label' => 'Honorific Prefix',
+        'type' => 'text',
+        'comment' => 'An honorific prefix preceding a Person\'s name such as Dr/Mrs/Mr.',
+      ),
+      'honorificSuffix' => 
+      array (
+        'label' => 'Honorific Suffix',
+        'type' => 'text',
+        'comment' => 'An honorific suffix following a Person\'s name such as M.D./PhD/MSCSW.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'jobTitle' => 
+      array (
+        'label' => 'Job Title',
+        'type' => 'text',
+        'comment' => 'The job title of the person (for example, Financial Manager).',
+      ),
+      'knowsAbout' => 
+      array (
+        'label' => 'Knows About',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or JobPosting descriptions.',
+      ),
+      'knowsLanguage' => 
+      array (
+        'label' => 'Knows Language',
+        'type' => 'text',
+        'comment' => 'Of a Person, and less typically of an Organization, to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'naics' => 
+      array (
+        'label' => 'Naics',
+        'type' => 'text',
+        'comment' => 'The North American Industry Classification System (NAICS) code for a particular organization or business person.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pronouns' => 
+      array (
+        'label' => 'Pronouns',
+        'type' => 'text',
+        'comment' => 'A short string listing or describing pronouns for a person. Typically the person concerned is the best authority as pronouns are a critical part of personal identity and expression. Publishers and consumers of this information are reminded to treat this data responsibly, take country-specific laws related to gender expression into account, and be wary of out-of-date data and drawing unwarranted inferences about the person being described. In English, formulations such as "they/them", "she/her", and "he/him" are commonly used online and can also be used here. We do not intend to enumerate all possible micro-syntaxes in all languages. More structured and well-defined external values for pronouns can be referenced using the StructuredValue or DefinedTerm values.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'taxID' => 
+      array (
+        'label' => 'Tax I D',
+        'type' => 'text',
+        'comment' => 'The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'vatID' => 
+      array (
+        'label' => 'Vat I D',
+        'type' => 'text',
+        'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
+      ),
+    ),
+    'Place' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'address' => 
+      array (
+        'label' => 'Address',
+        'type' => 'text',
+        'comment' => 'Physical address of the item.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'branchCode' => 
+      array (
+        'label' => 'Branch Code',
+        'type' => 'text',
+        'comment' => 'A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\\n\\nFor example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'globalLocationNumber' => 
+      array (
+        'label' => 'Global Location Number',
+        'type' => 'text',
+        'comment' => 'The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.',
+      ),
+      'hasDriveThroughService' => 
+      array (
+        'label' => 'Has Drive Through Service',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether some facility (e.g. FoodEstablishment, CovidTestingFacility) offers a service that can be used by driving through in a car. In the case of CovidTestingFacility such facilities could potentially help with social distancing from other potentially-infected users.',
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'hasMap' => 
+      array (
+        'label' => 'Has Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isicV4' => 
+      array (
+        'label' => 'Isic V4',
+        'type' => 'text',
+        'comment' => 'The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'latitude' => 
+      array (
+        'label' => 'Latitude',
+        'type' => 'number',
+        'comment' => 'The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'longitude' => 
+      array (
+        'label' => 'Longitude',
+        'type' => 'number',
+        'comment' => 'The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'map' => 
+      array (
+        'label' => 'Map',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maps' => 
+      array (
+        'label' => 'Maps',
+        'type' => 'url',
+        'comment' => 'A URL to a map of the place.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'publicAccess' => 
+      array (
+        'label' => 'Public Access',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the Place is open to public visitors. If this property is omitted there is no assumed default boolean value.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'smokingAllowed' => 
+      array (
+        'label' => 'Smoking Allowed',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'tourBookingPage' => 
+      array (
+        'label' => 'Tour Booking Page',
+        'type' => 'url',
+        'comment' => 'A page providing information on how to book a tour of some Place, such as an Accommodation or ApartmentComplex in a real estate setting, as well as other kinds of tours as appropriate.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'PostalAddress' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'addressCountry' => 
+      array (
+        'label' => 'Address Country',
+        'type' => 'text',
+        'comment' => 'The country. Recommended to be in 2-letter [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1) format, for example "US". For backward compatibility, a 3-letter [ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) country code such as "SGP" or a full country name such as "Singapore" can also be used.',
+      ),
+      'addressLocality' => 
+      array (
+        'label' => 'Address Locality',
+        'type' => 'text',
+        'comment' => 'The locality in which the street address is, and which is in the region. For example, Mountain View.',
+      ),
+      'addressRegion' => 
+      array (
+        'label' => 'Address Region',
+        'type' => 'text',
+        'comment' => 'The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) such as the Province in Italy or Region in Germany.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'areaServed' => 
+      array (
+        'label' => 'Area Served',
+        'type' => 'text',
+        'comment' => 'The geographic area where a service or offered item is provided.',
+      ),
+      'availableLanguage' => 
+      array (
+        'label' => 'Available Language',
+        'type' => 'text',
+        'comment' => 'A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also inLanguage.',
+      ),
+      'contactOption' => 
+      array (
+        'label' => 'Contact Option',
+        'type' => 'enum',
+        'comment' => 'An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/HearingImpairedSupported',
+            'label' => 'HearingImpairedSupported',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/TollFree',
+            'label' => 'TollFree',
+          ),
+        ),
+      ),
+      'contactType' => 
+      array (
+        'label' => 'Contact Type',
+        'type' => 'text',
+        'comment' => 'A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'email' => 
+      array (
+        'label' => 'Email',
+        'type' => 'text',
+        'comment' => 'Email address.',
+      ),
+      'extendedAddress' => 
+      array (
+        'label' => 'Extended Address',
+        'type' => 'text',
+        'comment' => 'An address extension such as an apartment number, C/O or alternative name.',
+      ),
+      'faxNumber' => 
+      array (
+        'label' => 'Fax Number',
+        'type' => 'text',
+        'comment' => 'The fax number.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'postOfficeBoxNumber' => 
+      array (
+        'label' => 'Post Office Box Number',
+        'type' => 'text',
+        'comment' => 'The post office box number for PO box addresses.',
+      ),
+      'postalCode' => 
+      array (
+        'label' => 'Postal Code',
+        'type' => 'text',
+        'comment' => 'The postal code. For example, 94043.',
+      ),
+      'productSupported' => 
+      array (
+        'label' => 'Product Supported',
+        'type' => 'text',
+        'comment' => 'The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'streetAddress' => 
+      array (
+        'label' => 'Street Address',
+        'type' => 'text',
+        'comment' => 'The street address. For example, 1600 Amphitheatre Pkwy.',
+      ),
+      'telephone' => 
+      array (
+        'label' => 'Telephone',
+        'type' => 'text',
+        'comment' => 'The telephone number.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Product' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'asin' => 
+      array (
+        'label' => 'Asin',
+        'type' => 'text',
+        'comment' => 'An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)\'s article). Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details. ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'category' => 
+      array (
+        'label' => 'Category',
+        'type' => 'text',
+        'comment' => 'A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.',
+      ),
+      'color' => 
+      array (
+        'label' => 'Color',
+        'type' => 'text',
+        'comment' => 'The color of the product.',
+      ),
+      'colorSwatch' => 
+      array (
+        'label' => 'Color Swatch',
+        'type' => 'url',
+        'comment' => 'A color swatch image, visualizing the color of a Product. Should match the textual description specified in the color property. This can be a URL or a fully described ImageObject.',
+      ),
+      'countryOfAssembly' => 
+      array (
+        'label' => 'Country Of Assembly',
+        'type' => 'text',
+        'comment' => 'The place where the product was assembled.',
+      ),
+      'countryOfLastProcessing' => 
+      array (
+        'label' => 'Country Of Last Processing',
+        'type' => 'text',
+        'comment' => 'The place where the item (typically Product) was last processed and tested before importation.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'gtin' => 
+      array (
+        'label' => 'Gtin',
+        'type' => 'text',
+        'comment' => 'A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. A correct gtin value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1\'s GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The gtin property generalizes the earlier gtin8, gtin12, gtin13, and gtin14 properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.). Digital Links should be populated into the hasGS1DigitalLink attribute. Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.',
+      ),
+      'gtin12' => 
+      array (
+        'label' => 'Gtin12',
+        'type' => 'text',
+        'comment' => 'The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin13' => 
+      array (
+        'label' => 'Gtin13',
+        'type' => 'text',
+        'comment' => 'The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin14' => 
+      array (
+        'label' => 'Gtin14',
+        'type' => 'text',
+        'comment' => 'The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin8' => 
+      array (
+        'label' => 'Gtin8',
+        'type' => 'text',
+        'comment' => 'The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'hasAdultConsideration' => 
+      array (
+        'label' => 'Has Adult Consideration',
+        'type' => 'enum',
+        'comment' => 'Used to tag an item to be intended or suitable for consumption or use by adults only.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlcoholConsideration',
+            'label' => 'AlcoholConsideration',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/DangerousGoodConsideration',
+            'label' => 'DangerousGoodConsideration',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/HealthcareConsideration',
+            'label' => 'HealthcareConsideration',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/NarcoticConsideration',
+            'label' => 'NarcoticConsideration',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReducedRelevanceForChildrenConsideration',
+            'label' => 'ReducedRelevanceForChildrenConsideration',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/SexualContentConsideration',
+            'label' => 'SexualContentConsideration',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/TobaccoNicotineConsideration',
+            'label' => 'TobaccoNicotineConsideration',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/UnclassifiedAdultConsideration',
+            'label' => 'UnclassifiedAdultConsideration',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/ViolenceConsideration',
+            'label' => 'ViolenceConsideration',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/WeaponConsideration',
+            'label' => 'WeaponConsideration',
+          ),
+        ),
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inProductGroupWithID' => 
+      array (
+        'label' => 'In Product Group With I D',
+        'type' => 'text',
+        'comment' => 'Indicates the productGroupID for a ProductGroup that this product isVariantOf.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'mobileUrl' => 
+      array (
+        'label' => 'Mobile Url',
+        'type' => 'text',
+        'comment' => 'The mobileUrl property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated \'mobile site\'. To discourage over-use, and reflecting intial usecases, the property is expected only on Product and Offer, rather than Thing. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established url property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all url markup to use mobileUrl for more mobile-oriented pages. The property is intended for the case when items (primarily Product and Offer) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.',
+      ),
+      'model' => 
+      array (
+        'label' => 'Model',
+        'type' => 'text',
+        'comment' => 'The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.',
+      ),
+      'mpn' => 
+      array (
+        'label' => 'Mpn',
+        'type' => 'text',
+        'comment' => 'The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'negativeNotes' => 
+      array (
+        'label' => 'Negative Notes',
+        'type' => 'text',
+        'comment' => 'Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside positiveNotes). For symmetry In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. Since product descriptions tend to emphasise positive claims, it may be relatively unusual to find negativeNotes used in this way. Nevertheless for the sake of symmetry, negativeNotes can be used on Product. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).',
+      ),
+      'nsn' => 
+      array (
+        'label' => 'Nsn',
+        'type' => 'text',
+        'comment' => 'Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a Product.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'positiveNotes' => 
+      array (
+        'label' => 'Positive Notes',
+        'type' => 'text',
+        'comment' => 'Provides positive considerations regarding something, for example product highlights or (alongside negativeNotes) pro/con lists for reviews. In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).',
+      ),
+      'productID' => 
+      array (
+        'label' => 'Product I D',
+        'type' => 'text',
+        'comment' => 'The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.',
+      ),
+      'productionDate' => 
+      array (
+        'label' => 'Production Date',
+        'type' => 'date',
+        'comment' => 'The date of production of the item, e.g. vehicle.',
+      ),
+      'purchaseDate' => 
+      array (
+        'label' => 'Purchase Date',
+        'type' => 'date',
+        'comment' => 'The date the item, e.g. vehicle, was purchased by the current owner.',
+      ),
+      'releaseDate' => 
+      array (
+        'label' => 'Release Date',
+        'type' => 'date',
+        'comment' => 'The release date of a product or product model. This can be used to distinguish the exact variant of a product.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'sku' => 
+      array (
+        'label' => 'Sku',
+        'type' => 'text',
+        'comment' => 'The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'ProductGroup' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'asin' => 
+      array (
+        'label' => 'Asin',
+        'type' => 'text',
+        'comment' => 'An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)\'s article). Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details. ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'category' => 
+      array (
+        'label' => 'Category',
+        'type' => 'text',
+        'comment' => 'A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.',
+      ),
+      'color' => 
+      array (
+        'label' => 'Color',
+        'type' => 'text',
+        'comment' => 'The color of the product.',
+      ),
+      'colorSwatch' => 
+      array (
+        'label' => 'Color Swatch',
+        'type' => 'url',
+        'comment' => 'A color swatch image, visualizing the color of a Product. Should match the textual description specified in the color property. This can be a URL or a fully described ImageObject.',
+      ),
+      'countryOfAssembly' => 
+      array (
+        'label' => 'Country Of Assembly',
+        'type' => 'text',
+        'comment' => 'The place where the product was assembled.',
+      ),
+      'countryOfLastProcessing' => 
+      array (
+        'label' => 'Country Of Last Processing',
+        'type' => 'text',
+        'comment' => 'The place where the item (typically Product) was last processed and tested before importation.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'gtin' => 
+      array (
+        'label' => 'Gtin',
+        'type' => 'text',
+        'comment' => 'A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. A correct gtin value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1\'s GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged. The gtin property generalizes the earlier gtin8, gtin12, gtin13, and gtin14 properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) expresses GTINs as URLs (URIs, IRIs, etc.). Digital Links should be populated into the hasGS1DigitalLink attribute. Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.',
+      ),
+      'gtin12' => 
+      array (
+        'label' => 'Gtin12',
+        'type' => 'text',
+        'comment' => 'The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin13' => 
+      array (
+        'label' => 'Gtin13',
+        'type' => 'text',
+        'comment' => 'The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin14' => 
+      array (
+        'label' => 'Gtin14',
+        'type' => 'text',
+        'comment' => 'The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'gtin8' => 
+      array (
+        'label' => 'Gtin8',
+        'type' => 'text',
+        'comment' => 'The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.',
+      ),
+      'hasAdultConsideration' => 
+      array (
+        'label' => 'Has Adult Consideration',
+        'type' => 'enum',
+        'comment' => 'Used to tag an item to be intended or suitable for consumption or use by adults only.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlcoholConsideration',
+            'label' => 'AlcoholConsideration',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/DangerousGoodConsideration',
+            'label' => 'DangerousGoodConsideration',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/HealthcareConsideration',
+            'label' => 'HealthcareConsideration',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/NarcoticConsideration',
+            'label' => 'NarcoticConsideration',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/ReducedRelevanceForChildrenConsideration',
+            'label' => 'ReducedRelevanceForChildrenConsideration',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/SexualContentConsideration',
+            'label' => 'SexualContentConsideration',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/TobaccoNicotineConsideration',
+            'label' => 'TobaccoNicotineConsideration',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/UnclassifiedAdultConsideration',
+            'label' => 'UnclassifiedAdultConsideration',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/ViolenceConsideration',
+            'label' => 'ViolenceConsideration',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/WeaponConsideration',
+            'label' => 'WeaponConsideration',
+          ),
+        ),
+      ),
+      'hasGS1DigitalLink' => 
+      array (
+        'label' => 'Has G S1 Digital Link',
+        'type' => 'url',
+        'comment' => 'The GS1 digital link associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a Product or an Organization, and for the correct granularity. In particular, for products:A Digital Link that contains a serial number (AI 21) should only be present on instances of IndividualProductA Digital Link that contains a lot number (AI 10) should be annotated as SomeProducts if only products from that lot are sold, or IndividualProduct if there is only a specific product.A Digital Link that contains a global model number (AI 8013) should be attached to a Product or a ProductModel. Other item types should be adapted similarly.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inProductGroupWithID' => 
+      array (
+        'label' => 'In Product Group With I D',
+        'type' => 'text',
+        'comment' => 'Indicates the productGroupID for a ProductGroup that this product isVariantOf.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'itemCondition' => 
+      array (
+        'label' => 'Item Condition',
+        'type' => 'enum',
+        'comment' => 'A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/DamagedCondition',
+            'label' => 'DamagedCondition',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/NewCondition',
+            'label' => 'NewCondition',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/RefurbishedCondition',
+            'label' => 'RefurbishedCondition',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/UsedCondition',
+            'label' => 'UsedCondition',
+          ),
+        ),
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'logo' => 
+      array (
+        'label' => 'Logo',
+        'type' => 'url',
+        'comment' => 'An associated logo.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'mobileUrl' => 
+      array (
+        'label' => 'Mobile Url',
+        'type' => 'text',
+        'comment' => 'The mobileUrl property is provided for specific situations in which data consumers need to determine whether one of several provided URLs is a dedicated \'mobile site\'. To discourage over-use, and reflecting intial usecases, the property is expected only on Product and Offer, rather than Thing. The general trend in web technology is towards [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) in which content can be flexibly adapted to a wide range of browsing environments. Pages and sites referenced with the long-established url property should ideally also be usable on a wide variety of devices, including mobile phones. In most cases, it would be pointless and counter productive to attempt to update all url markup to use mobileUrl for more mobile-oriented pages. The property is intended for the case when items (primarily Product and Offer) have extra URLs hosted on an additional "mobile site" alongside the main one. It should not be taken as an endorsement of this publication style.',
+      ),
+      'model' => 
+      array (
+        'label' => 'Model',
+        'type' => 'text',
+        'comment' => 'The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.',
+      ),
+      'mpn' => 
+      array (
+        'label' => 'Mpn',
+        'type' => 'text',
+        'comment' => 'The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'negativeNotes' => 
+      array (
+        'label' => 'Negative Notes',
+        'type' => 'text',
+        'comment' => 'Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside positiveNotes). For symmetry In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. Since product descriptions tend to emphasise positive claims, it may be relatively unusual to find negativeNotes used in this way. Nevertheless for the sake of symmetry, negativeNotes can be used on Product. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).',
+      ),
+      'nsn' => 
+      array (
+        'label' => 'Nsn',
+        'type' => 'text',
+        'comment' => 'Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a Product.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'positiveNotes' => 
+      array (
+        'label' => 'Positive Notes',
+        'type' => 'text',
+        'comment' => 'Provides positive considerations regarding something, for example product highlights or (alongside negativeNotes) pro/con lists for reviews. In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).',
+      ),
+      'productGroupID' => 
+      array (
+        'label' => 'Product Group I D',
+        'type' => 'text',
+        'comment' => 'Indicates a textual identifier for a ProductGroup.',
+      ),
+      'productID' => 
+      array (
+        'label' => 'Product I D',
+        'type' => 'text',
+        'comment' => 'The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.',
+      ),
+      'productionDate' => 
+      array (
+        'label' => 'Production Date',
+        'type' => 'date',
+        'comment' => 'The date of production of the item, e.g. vehicle.',
+      ),
+      'purchaseDate' => 
+      array (
+        'label' => 'Purchase Date',
+        'type' => 'date',
+        'comment' => 'The date the item, e.g. vehicle, was purchased by the current owner.',
+      ),
+      'releaseDate' => 
+      array (
+        'label' => 'Release Date',
+        'type' => 'date',
+        'comment' => 'The release date of a product or product model. This can be used to distinguish the exact variant of a product.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'sku' => 
+      array (
+        'label' => 'Sku',
+        'type' => 'text',
+        'comment' => 'The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.',
+      ),
+      'slogan' => 
+      array (
+        'label' => 'Slogan',
+        'type' => 'text',
+        'comment' => 'A slogan or motto associated with the item.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'variesBy' => 
+      array (
+        'label' => 'Varies By',
+        'type' => 'text',
+        'comment' => 'Indicates the property or properties by which the variants in a ProductGroup vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.',
+      ),
+    ),
+    'PropertyValue' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maxValue' => 
+      array (
+        'label' => 'Max Value',
+        'type' => 'number',
+        'comment' => 'The upper value of some characteristic or property.',
+      ),
+      'measurementMethod' => 
+      array (
+        'label' => 'Measurement Method',
+        'type' => 'text',
+        'comment' => 'A subproperty of measurementTechnique that can be used for specifying specific methods, in particular via MeasurementMethodEnum.',
+      ),
+      'measurementTechnique' => 
+      array (
+        'label' => 'Measurement Technique',
+        'type' => 'text',
+        'comment' => 'A technique, method or technology used in an Observation, StatisticalVariable or Dataset (or DataDownload, DataCatalog), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using variableMeasured; for Observation, a StatisticalVariable). Often but not necessarily each variableMeasured will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of variableMeasured called measuredProperty is applicable. The measurementTechnique property helps when extra clarification is needed about how a measuredProperty was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. For example, if variableMeasured is: molecule concentration, measurementTechnique could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the variableMeasured is "depression rating", the measurementTechnique could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". If there are several variableMeasured properties recorded for some given data object, use a PropertyValue for each variableMeasured and attach the corresponding measurementTechnique. The value can also be from an enumeration, organized as a MeasurementMethodEnum.',
+      ),
+      'minValue' => 
+      array (
+        'label' => 'Min Value',
+        'type' => 'number',
+        'comment' => 'The lower value of some characteristic or property.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'propertyID' => 
+      array (
+        'label' => 'Property I D',
+        'type' => 'text',
+        'comment' => 'A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3) a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'unitCode' => 
+      array (
+        'label' => 'Unit Code',
+        'type' => 'text',
+        'comment' => 'The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.',
+      ),
+      'unitText' => 
+      array (
+        'label' => 'Unit Text',
+        'type' => 'text',
+        'comment' => 'A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'value' => 
+      array (
+        'label' => 'Value',
+        'type' => 'boolean',
+        'comment' => 'The value of a QuantitativeValue (including Observation) or property value node.\\n\\n* For QuantitativeValue and MonetaryAmount, the recommended type for values is \'Number\'.\\n* For PropertyValue, it can be \'Text\', \'Number\', \'Boolean\', or \'StructuredValue\'.\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.',
+      ),
+      'valueReference' => 
+      array (
+        'label' => 'Value Reference',
+        'type' => 'text',
+        'comment' => 'A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.',
+      ),
+    ),
+    'PublicationEvent' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'doorTime' => 
+      array (
+        'label' => 'Door Time',
+        'type' => 'date',
+        'comment' => 'The time admission will commence.',
+      ),
+      'endDate' => 
+      array (
+        'label' => 'End Date',
+        'type' => 'date',
+        'comment' => 'The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'eventAttendanceMode' => 
+      array (
+        'label' => 'Event Attendance Mode',
+        'type' => 'enum',
+        'comment' => 'The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/MixedEventAttendanceMode',
+            'label' => 'MixedEventAttendanceMode',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/OfflineEventAttendanceMode',
+            'label' => 'OfflineEventAttendanceMode',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/OnlineEventAttendanceMode',
+            'label' => 'OnlineEventAttendanceMode',
+          ),
+        ),
+      ),
+      'eventStatus' => 
+      array (
+        'label' => 'Event Status',
+        'type' => 'enum',
+        'comment' => 'An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/EventCancelled',
+            'label' => 'EventCancelled',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/EventMovedOnline',
+            'label' => 'EventMovedOnline',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/EventPostponed',
+            'label' => 'EventPostponed',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/EventRescheduled',
+            'label' => 'EventRescheduled',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/EventScheduled',
+            'label' => 'EventScheduled',
+          ),
+        ),
+      ),
+      'free' => 
+      array (
+        'label' => 'Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'location' => 
+      array (
+        'label' => 'Location',
+        'type' => 'text',
+        'comment' => 'The location of, for example, where an event is happening, where an organization is located, or where an action takes place.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maximumAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The total number of individuals that may attend an event or venue.',
+      ),
+      'maximumPhysicalAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Physical Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The maximum physical attendee capacity of an Event whose eventAttendanceMode is OfflineEventAttendanceMode (or the offline aspects, in the case of a MixedEventAttendanceMode).',
+      ),
+      'maximumVirtualAttendeeCapacity' => 
+      array (
+        'label' => 'Maximum Virtual Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The maximum virtual attendee capacity of an Event whose eventAttendanceMode is OnlineEventAttendanceMode (or the online aspects, in the case of a MixedEventAttendanceMode).',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'previousStartDate' => 
+      array (
+        'label' => 'Previous Start Date',
+        'type' => 'date',
+        'comment' => 'Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.',
+      ),
+      'remainingAttendeeCapacity' => 
+      array (
+        'label' => 'Remaining Attendee Capacity',
+        'type' => 'number',
+        'comment' => 'The number of attendee places for an event that remain unallocated.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'startDate' => 
+      array (
+        'label' => 'Start Date',
+        'type' => 'date',
+        'comment' => 'The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'QuantitativeValue' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'maxValue' => 
+      array (
+        'label' => 'Max Value',
+        'type' => 'number',
+        'comment' => 'The upper value of some characteristic or property.',
+      ),
+      'minValue' => 
+      array (
+        'label' => 'Min Value',
+        'type' => 'number',
+        'comment' => 'The lower value of some characteristic or property.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'unitCode' => 
+      array (
+        'label' => 'Unit Code',
+        'type' => 'text',
+        'comment' => 'The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.',
+      ),
+      'unitText' => 
+      array (
+        'label' => 'Unit Text',
+        'type' => 'text',
+        'comment' => 'A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'value' => 
+      array (
+        'label' => 'Value',
+        'type' => 'boolean',
+        'comment' => 'The value of a QuantitativeValue (including Observation) or property value node.\\n\\n* For QuantitativeValue and MonetaryAmount, the recommended type for values is \'Number\'.\\n* For PropertyValue, it can be \'Text\', \'Number\', \'Boolean\', or \'StructuredValue\'.\\n* Use values from 0123456789 (Unicode \'DIGIT ZERO\' (U+0030) to \'DIGIT NINE\' (U+0039)) rather than superficially similar Unicode symbols.\\n* Use \'.\' (Unicode \'FULL STOP\' (U+002E)) rather than \',\' to indicate a decimal point. Avoid using these symbols as a readability separator.',
+      ),
+      'valueReference' => 
+      array (
+        'label' => 'Value Reference',
+        'type' => 'text',
+        'comment' => 'A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.',
+      ),
+    ),
+    'Review' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'negativeNotes' => 
+      array (
+        'label' => 'Negative Notes',
+        'type' => 'text',
+        'comment' => 'Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside positiveNotes). For symmetry In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. Since product descriptions tend to emphasise positive claims, it may be relatively unusual to find negativeNotes used in this way. Nevertheless for the sake of symmetry, negativeNotes can be used on Product. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'positiveNotes' => 
+      array (
+        'label' => 'Positive Notes',
+        'type' => 'text',
+        'comment' => 'Provides positive considerations regarding something, for example product highlights or (alongside negativeNotes) pro/con lists for reviews. In the case of a Review, the property describes the itemReviewed from the perspective of the review; in the case of a Product, the product itself is being described. The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most positive is at the beginning of the list).',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'reviewAspect' => 
+      array (
+        'label' => 'Review Aspect',
+        'type' => 'text',
+        'comment' => 'This Review or Rating is relevant to this part or facet of the itemReviewed.',
+      ),
+      'reviewBody' => 
+      array (
+        'label' => 'Review Body',
+        'type' => 'text',
+        'comment' => 'The actual body of the review.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+    ),
+    'Schedule' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'byDay' => 
+      array (
+        'label' => 'By Day',
+        'type' => 'text',
+        'comment' => 'Defines the day(s) of the week on which a recurring Event takes place. May be specified using either DayOfWeek, or alternatively Text conforming to iCal\'s syntax for byDay recurrence rules.',
+      ),
+      'byMonth' => 
+      array (
+        'label' => 'By Month',
+        'type' => 'number',
+        'comment' => 'Defines the month(s) of the year on which a recurring Event takes place. Specified as an Integer between 1-12. January is 1.',
+      ),
+      'byMonthDay' => 
+      array (
+        'label' => 'By Month Day',
+        'type' => 'number',
+        'comment' => 'Defines the day(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-31.',
+      ),
+      'byMonthWeek' => 
+      array (
+        'label' => 'By Month Week',
+        'type' => 'number',
+        'comment' => 'Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'endDate' => 
+      array (
+        'label' => 'End Date',
+        'type' => 'date',
+        'comment' => 'The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'endTime' => 
+      array (
+        'label' => 'End Time',
+        'type' => 'date',
+        'comment' => 'The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it\'s the time offset of the end of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'exceptDate' => 
+      array (
+        'label' => 'Except Date',
+        'type' => 'date',
+        'comment' => 'Defines a Date or DateTime during which a scheduled Event will not take place. The property allows exceptions to a Schedule to be specified. If an exception is specified as a DateTime then only the event that would have started at that specific date and time should be excluded from the schedule. If an exception is specified as a Date then any event that is scheduled for that 24 hour period should be excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'repeatCount' => 
+      array (
+        'label' => 'Repeat Count',
+        'type' => 'number',
+        'comment' => 'Defines the number of times a recurring Event will take place.',
+      ),
+      'repeatFrequency' => 
+      array (
+        'label' => 'Repeat Frequency',
+        'type' => 'text',
+        'comment' => 'Defines the frequency at which Events will occur according to a schedule Schedule. The intervals between events should be defined as a Duration of time.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'scheduleTimezone' => 
+      array (
+        'label' => 'Schedule Timezone',
+        'type' => 'text',
+        'comment' => 'Indicates the timezone for which the time(s) indicated in the Schedule are given. The value provided should be among those listed in the IANA Time Zone Database.',
+      ),
+      'startDate' => 
+      array (
+        'label' => 'Start Date',
+        'type' => 'date',
+        'comment' => 'The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).',
+      ),
+      'startTime' => 
+      array (
+        'label' => 'Start Time',
+        'type' => 'date',
+        'comment' => 'The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it\'s the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'ServiceChannel' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'availableLanguage' => 
+      array (
+        'label' => 'Available Language',
+        'type' => 'text',
+        'comment' => 'A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also inLanguage.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'serviceUrl' => 
+      array (
+        'label' => 'Service Url',
+        'type' => 'url',
+        'comment' => 'The website to access the service.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'ShippingService' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'fulfillmentType' => 
+      array (
+        'label' => 'Fulfillment Type',
+        'type' => 'enum',
+        'comment' => 'Type of fulfillment applicable to the ShippingService.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/FulfillmentTypeCollectionPoint',
+            'label' => 'FulfillmentTypeCollectionPoint',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/FulfillmentTypeDelivery',
+            'label' => 'FulfillmentTypeDelivery',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/FulfillmentTypePickupDropoff',
+            'label' => 'FulfillmentTypePickupDropoff',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/FulfillmentTypePickupInStore',
+            'label' => 'FulfillmentTypePickupInStore',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/FulfillmentTypeScheduledDelivery',
+            'label' => 'FulfillmentTypeScheduledDelivery',
+          ),
+        ),
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Specialty' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'Thing' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+    ),
+    'WebPageElement' => 
+    array (
+      'abstract' => 
+      array (
+        'label' => 'Abstract',
+        'type' => 'text',
+        'comment' => 'An abstract is a short description that summarizes a CreativeWork.',
+      ),
+      'accessMode' => 
+      array (
+        'label' => 'Access Mode',
+        'type' => 'text',
+        'comment' => 'The human sensory perceptual system or cognitive faculty through which a person may process or perceive the intellectual content of a resource, not including any adaptations of the content (e.g., text alternatives for images). Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).',
+      ),
+      'accessibilityAPI' => 
+      array (
+        'label' => 'Accessibility A P I',
+        'type' => 'text',
+        'comment' => 'Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).',
+      ),
+      'accessibilityControl' => 
+      array (
+        'label' => 'Accessibility Control',
+        'type' => 'text',
+        'comment' => 'Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).',
+      ),
+      'accessibilityFeature' => 
+      array (
+        'label' => 'Accessibility Feature',
+        'type' => 'text',
+        'comment' => 'Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).',
+      ),
+      'accessibilityHazard' => 
+      array (
+        'label' => 'Accessibility Hazard',
+        'type' => 'text',
+        'comment' => 'A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).',
+      ),
+      'accessibilitySummary' => 
+      array (
+        'label' => 'Accessibility Summary',
+        'type' => 'text',
+        'comment' => 'A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed".',
+      ),
+      'acquireLicensePage' => 
+      array (
+        'label' => 'Acquire License Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.',
+      ),
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'alternativeHeadline' => 
+      array (
+        'label' => 'Alternative Headline',
+        'type' => 'text',
+        'comment' => 'A secondary title of the CreativeWork.',
+      ),
+      'archivedAt' => 
+      array (
+        'label' => 'Archived At',
+        'type' => 'url',
+        'comment' => 'Indicates a page or other link involved in archival of a CreativeWork. In the case of MediaReview, the items in a MediaReviewItem may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.',
+      ),
+      'assesses' => 
+      array (
+        'label' => 'Assesses',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to assess the competency or learning outcome defined by the referenced term.',
+      ),
+      'award' => 
+      array (
+        'label' => 'Award',
+        'type' => 'text',
+        'comment' => 'An award won by or for this item.',
+      ),
+      'awards' => 
+      array (
+        'label' => 'Awards',
+        'type' => 'text',
+        'comment' => 'Awards won by or for this item.',
+      ),
+      'citation' => 
+      array (
+        'label' => 'Citation',
+        'type' => 'text',
+        'comment' => 'A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.',
+      ),
+      'commentCount' => 
+      array (
+        'label' => 'Comment Count',
+        'type' => 'number',
+        'comment' => 'The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.',
+      ),
+      'conditionsOfAccess' => 
+      array (
+        'label' => 'Conditions Of Access',
+        'type' => 'text',
+        'comment' => 'Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an ArchiveComponent held by an ArchiveOrganization. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.\\n\\nFor example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ".',
+      ),
+      'contentRating' => 
+      array (
+        'label' => 'Content Rating',
+        'type' => 'text',
+        'comment' => 'Official rating of a piece of content&#x2014;for example, \'MPAA PG-13\'.',
+      ),
+      'contentReferenceTime' => 
+      array (
+        'label' => 'Content Reference Time',
+        'type' => 'date',
+        'comment' => 'The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.',
+      ),
+      'copyrightNotice' => 
+      array (
+        'label' => 'Copyright Notice',
+        'type' => 'text',
+        'comment' => 'Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.',
+      ),
+      'copyrightYear' => 
+      array (
+        'label' => 'Copyright Year',
+        'type' => 'number',
+        'comment' => 'The year during which the claimed copyright for the CreativeWork was first asserted.',
+      ),
+      'correction' => 
+      array (
+        'label' => 'Correction',
+        'type' => 'text',
+        'comment' => 'Indicates a correction to a CreativeWork, either via a CorrectionComment, textually or in another document.',
+      ),
+      'creativeWorkStatus' => 
+      array (
+        'label' => 'Creative Work Status',
+        'type' => 'text',
+        'comment' => 'The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.',
+      ),
+      'creditText' => 
+      array (
+        'label' => 'Credit Text',
+        'type' => 'text',
+        'comment' => 'Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.',
+      ),
+      'cssSelector' => 
+      array (
+        'label' => 'Css Selector',
+        'type' => 'text',
+        'comment' => 'A CSS selector, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".',
+      ),
+      'dateCreated' => 
+      array (
+        'label' => 'Date Created',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was created or the item was added to a DataFeed.',
+      ),
+      'dateModified' => 
+      array (
+        'label' => 'Date Modified',
+        'type' => 'date',
+        'comment' => 'The date on which the CreativeWork was most recently modified or when the item\'s entry was modified within a DataFeed.',
+      ),
+      'datePublished' => 
+      array (
+        'label' => 'Date Published',
+        'type' => 'date',
+        'comment' => 'Date of first publication or broadcast. For example the date a CreativeWork was broadcast or a Certification was issued.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'digitalSourceType' => 
+      array (
+        'label' => 'Digital Source Type',
+        'type' => 'enum',
+        'comment' => 'Indicates an IPTCDigitalSourceEnumeration code indicating the nature of the digital source(s) for some CreativeWork.',
+        'enum' => 
+        array (
+          0 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicMediaDigitalSource',
+            'label' => 'AlgorithmicMediaDigitalSource',
+          ),
+          1 => 
+          array (
+            'value' => 'https://schema.org/AlgorithmicallyEnhancedDigitalSource',
+            'label' => 'AlgorithmicallyEnhancedDigitalSource',
+          ),
+          2 => 
+          array (
+            'value' => 'https://schema.org/CompositeCaptureDigitalSource',
+            'label' => 'CompositeCaptureDigitalSource',
+          ),
+          3 => 
+          array (
+            'value' => 'https://schema.org/CompositeDigitalSource',
+            'label' => 'CompositeDigitalSource',
+          ),
+          4 => 
+          array (
+            'value' => 'https://schema.org/CompositeSyntheticDigitalSource',
+            'label' => 'CompositeSyntheticDigitalSource',
+          ),
+          5 => 
+          array (
+            'value' => 'https://schema.org/CompositeWithTrainedAlgorithmicMediaDigitalSource',
+            'label' => 'CompositeWithTrainedAlgorithmicMediaDigitalSource',
+          ),
+          6 => 
+          array (
+            'value' => 'https://schema.org/DataDrivenMediaDigitalSource',
+            'label' => 'DataDrivenMediaDigitalSource',
+          ),
+          7 => 
+          array (
+            'value' => 'https://schema.org/DigitalArtDigitalSource',
+            'label' => 'DigitalArtDigitalSource',
+          ),
+          8 => 
+          array (
+            'value' => 'https://schema.org/DigitalCaptureDigitalSource',
+            'label' => 'DigitalCaptureDigitalSource',
+          ),
+          9 => 
+          array (
+            'value' => 'https://schema.org/MinorHumanEditsDigitalSource',
+            'label' => 'MinorHumanEditsDigitalSource',
+          ),
+          10 => 
+          array (
+            'value' => 'https://schema.org/MultiFrameComputationalCaptureDigitalSource',
+            'label' => 'MultiFrameComputationalCaptureDigitalSource',
+          ),
+          11 => 
+          array (
+            'value' => 'https://schema.org/NegativeFilmDigitalSource',
+            'label' => 'NegativeFilmDigitalSource',
+          ),
+          12 => 
+          array (
+            'value' => 'https://schema.org/PositiveFilmDigitalSource',
+            'label' => 'PositiveFilmDigitalSource',
+          ),
+          13 => 
+          array (
+            'value' => 'https://schema.org/PrintDigitalSource',
+            'label' => 'PrintDigitalSource',
+          ),
+          14 => 
+          array (
+            'value' => 'https://schema.org/ScreenCaptureDigitalSource',
+            'label' => 'ScreenCaptureDigitalSource',
+          ),
+          15 => 
+          array (
+            'value' => 'https://schema.org/TrainedAlgorithmicMediaDigitalSource',
+            'label' => 'TrainedAlgorithmicMediaDigitalSource',
+          ),
+          16 => 
+          array (
+            'value' => 'https://schema.org/VirtualRecordingDigitalSource',
+            'label' => 'VirtualRecordingDigitalSource',
+          ),
+        ),
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'discussionUrl' => 
+      array (
+        'label' => 'Discussion Url',
+        'type' => 'url',
+        'comment' => 'A link to the page containing the comments of the CreativeWork.',
+      ),
+      'editEIDR' => 
+      array (
+        'label' => 'Edit E I D R',
+        'type' => 'text',
+        'comment' => 'An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) identifier representing a specific edit / edition for a work of film or television. For example, the motion picture known as "Ghostbusters" whose titleEIDR is "10.5240/7EC7-228A-510A-053E-CBB8-J" has several edits, e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3". Since schema.org types like Movie and TVEpisode can be used for both works and their multiple expressions, it is possible to use titleEIDR alone (for a general description), or alongside editEIDR for a more edit-specific description.',
+      ),
+      'educationalLevel' => 
+      array (
+        'label' => 'Educational Level',
+        'type' => 'text',
+        'comment' => 'The level in terms of progression through an educational or training context. Examples of educational levels include \'beginner\', \'intermediate\' or \'advanced\', and formal sets of level indicators.',
+      ),
+      'educationalUse' => 
+      array (
+        'label' => 'Educational Use',
+        'type' => 'text',
+        'comment' => 'The purpose of a work in the context of education; for example, \'assignment\', \'group work\'.',
+      ),
+      'encodingFormat' => 
+      array (
+        'label' => 'Encoding Format',
+        'type' => 'text',
+        'comment' => 'Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc. In cases where a CreativeWork has several media type representations, encoding can be used to indicate each MediaObject alongside particular encodingFormat information. Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.',
+      ),
+      'expires' => 
+      array (
+        'label' => 'Expires',
+        'type' => 'date',
+        'comment' => 'Date the content expires and is no longer useful or available. For example a VideoObject or NewsArticle whose availability or relevance is time-limited, a ClaimReview fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a Certification the validity has expired.',
+      ),
+      'fileFormat' => 
+      array (
+        'label' => 'File Format',
+        'type' => 'text',
+        'comment' => 'Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content, e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, \'encoding\' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.',
+      ),
+      'genre' => 
+      array (
+        'label' => 'Genre',
+        'type' => 'text',
+        'comment' => 'Genre of the creative work, broadcast channel or group.',
+      ),
+      'headline' => 
+      array (
+        'label' => 'Headline',
+        'type' => 'text',
+        'comment' => 'Headline of the article.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'inLanguage' => 
+      array (
+        'label' => 'In Language',
+        'type' => 'text',
+        'comment' => 'The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also availableLanguage.',
+      ),
+      'interactivityType' => 
+      array (
+        'label' => 'Interactivity Type',
+        'type' => 'text',
+        'comment' => 'The predominant mode of learning supported by the learning resource. Acceptable values are \'active\', \'expositive\', or \'mixed\'.',
+      ),
+      'isAccessibleForFree' => 
+      array (
+        'label' => 'Is Accessible For Free',
+        'type' => 'boolean',
+        'comment' => 'A flag to signal that the item, event, or place is accessible for free.',
+      ),
+      'isBasedOn' => 
+      array (
+        'label' => 'Is Based On',
+        'type' => 'url',
+        'comment' => 'A resource from which this work is derived or from which it is a modification or adaptation.',
+      ),
+      'isBasedOnUrl' => 
+      array (
+        'label' => 'Is Based On Url',
+        'type' => 'url',
+        'comment' => 'A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.',
+      ),
+      'isFamilyFriendly' => 
+      array (
+        'label' => 'Is Family Friendly',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether this content is family friendly.',
+      ),
+      'isPartOf' => 
+      array (
+        'label' => 'Is Part Of',
+        'type' => 'url',
+        'comment' => 'Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.',
+      ),
+      'keywords' => 
+      array (
+        'label' => 'Keywords',
+        'type' => 'text',
+        'comment' => 'Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.',
+      ),
+      'learningResourceType' => 
+      array (
+        'label' => 'Learning Resource Type',
+        'type' => 'text',
+        'comment' => 'The predominant type or kind characterizing the learning resource. For example, \'presentation\', \'handout\'.',
+      ),
+      'license' => 
+      array (
+        'label' => 'License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this content, typically indicated by URL.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'material' => 
+      array (
+        'label' => 'Material',
+        'type' => 'text',
+        'comment' => 'A material that something is made from, e.g. leather, wool, cotton, paper.',
+      ),
+      'materialExtent' => 
+      array (
+        'label' => 'Material Extent',
+        'type' => 'text',
+        'comment' => 'The quantity of the materials being described or an expression of the physical space they occupy.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'pattern' => 
+      array (
+        'label' => 'Pattern',
+        'type' => 'text',
+        'comment' => 'A pattern that something has, for example \'polka dot\', \'striped\', \'Canadian flag\'. Values are typically expressed as text, although links to controlled value schemes are also supported.',
+      ),
+      'position' => 
+      array (
+        'label' => 'Position',
+        'type' => 'number',
+        'comment' => 'The position of an item in a series or sequence of items.',
+      ),
+      'publishingPrinciples' => 
+      array (
+        'label' => 'Publishing Principles',
+        'type' => 'url',
+        'comment' => 'The publishingPrinciples property indicates (typically via URL) a document describing the editorial principles of an Organization (or individual, e.g. a Person writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a CreativeWork (e.g. NewsArticle) the principles are those of the party primarily responsible for the creation of the CreativeWork. While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a funder) can be expressed using schema.org terminology.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'schemaVersion' => 
+      array (
+        'label' => 'Schema Version',
+        'type' => 'text',
+        'comment' => 'Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.',
+      ),
+      'sdDatePublished' => 
+      array (
+        'label' => 'Sd Date Published',
+        'type' => 'date',
+        'comment' => 'Indicates the date on which the current structured data was generated / published. Typically used alongside sdPublisher.',
+      ),
+      'sdLicense' => 
+      array (
+        'label' => 'Sd License',
+        'type' => 'url',
+        'comment' => 'A license document that applies to this structured data, typically indicated by URL.',
+      ),
+      'size' => 
+      array (
+        'label' => 'Size',
+        'type' => 'text',
+        'comment' => 'A standardized size of a product or creative work, specified either through a simple textual string (for example \'XL\', \'32Wx34L\'), a QuantitativeValue with a unitCode, or a comprehensive and structured SizeSpecification; in other cases, the width, height, depth and weight properties may be more applicable.',
+      ),
+      'teaches' => 
+      array (
+        'label' => 'Teaches',
+        'type' => 'text',
+        'comment' => 'The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.',
+      ),
+      'temporal' => 
+      array (
+        'label' => 'Temporal',
+        'type' => 'date',
+        'comment' => 'The "temporal" property can be used in cases where more specific properties (e.g. temporalCoverage, dateCreated, dateModified, datePublished) are not known to be appropriate.',
+      ),
+      'temporalCoverage' => 
+      array (
+        'label' => 'Temporal Coverage',
+        'type' => 'date',
+        'comment' => 'The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content, e.g. ScholarlyArticle, Book, TVSeries or TVEpisode, may indicate their temporalCoverage in broader terms - textually or via well-known URL. Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945". Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.',
+      ),
+      'text' => 
+      array (
+        'label' => 'Text',
+        'type' => 'text',
+        'comment' => 'The textual content of this CreativeWork.',
+      ),
+      'thumbnailUrl' => 
+      array (
+        'label' => 'Thumbnail Url',
+        'type' => 'url',
+        'comment' => 'A thumbnail image relevant to the Thing.',
+      ),
+      'typicalAgeRange' => 
+      array (
+        'label' => 'Typical Age Range',
+        'type' => 'text',
+        'comment' => 'The typical expected age range, e.g. \'7-9\', \'11-\'.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'usageInfo' => 
+      array (
+        'label' => 'Usage Info',
+        'type' => 'url',
+        'comment' => 'The schema.org usageInfo property indicates further information about a CreativeWork. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information, e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options. This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.',
+      ),
+      'version' => 
+      array (
+        'label' => 'Version',
+        'type' => 'number',
+        'comment' => 'The version of the CreativeWork embodied by a specified resource.',
+      ),
+      'wordCount' => 
+      array (
+        'label' => 'Word Count',
+        'type' => 'number',
+        'comment' => 'The number of words in the text of the CreativeWork such as an Article, Book, etc.',
+      ),
+      'xpath' => 
+      array (
+        'label' => 'Xpath',
+        'type' => 'text',
+        'comment' => 'An XPath, e.g. of a SpeakableSpecification or WebPageElement. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".',
+      ),
+    ),
+  ),
 );

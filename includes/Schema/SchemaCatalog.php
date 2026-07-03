@@ -31,6 +31,8 @@ final class SchemaCatalog {
 			'version' => (string) ( $data['version'] ?? 'unknown' ),
 			'types'   => is_array( $data['types'] ?? null ) ? $data['types'] : [],
 			'enums'   => is_array( $data['enums'] ?? null ) ? $data['enums'] : [],
+			'objects' => is_array( $data['objects'] ?? null ) ? $data['objects'] : [],
+			'classes' => is_array( $data['classes'] ?? null ) ? $data['classes'] : [],
 		];
 	}
 
@@ -64,5 +66,23 @@ final class SchemaCatalog {
 	 */
 	public function enum( string $property ): array {
 		return $this->data['enums'][ $property ] ?? [];
+	}
+
+	/**
+	 * Object-valued properties for a schema.org class: property => target class.
+	 *
+	 * @return array<string,array{label:string,class:string,comment:string}>
+	 */
+	public function objects( string $class ): array {
+		return $this->data['objects'][ $class ] ?? [];
+	}
+
+	/**
+	 * Scalar sub-properties of an expandable target class (e.g. MerchantReturnPolicy).
+	 *
+	 * @return array<string,array<string,mixed>>
+	 */
+	public function class_properties( string $class ): array {
+		return $this->data['classes'][ $class ] ?? [];
 	}
 }

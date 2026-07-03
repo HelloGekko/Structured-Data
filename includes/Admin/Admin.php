@@ -42,6 +42,7 @@ final class Admin {
 		add_action( 'wp_ajax_hgsd_get_acf_fields', [ $this, 'ajax_acf_fields' ] );
 		add_action( 'wp_ajax_hgsd_search_content', [ $this, 'ajax_search_content' ] );
 		add_action( 'wp_ajax_hgsd_preview', [ $this, 'ajax_preview' ] );
+		add_action( 'wp_ajax_hgsd_class_props', [ $this, 'ajax_class_props' ] );
 
 		// List table columns.
 		add_filter( 'manage_' . HGSD_CPT . '_posts_columns', [ $this, 'columns' ] );
@@ -295,6 +296,7 @@ final class Admin {
 				'recommended'   => __( 'Recommended', 'hg-structured-data' ),
 				'allProperties' => __( 'All schema.org properties', 'hg-structured-data' ),
 				'showAll'       => __( 'Show all schema.org properties…', 'hg-structured-data' ),
+				'subProperty'   => __( '— Select sub-property —', 'hg-structured-data' ),
 				'previewTitle'  => __( 'Live preview', 'hg-structured-data' ),
 				'previewRefresh' => __( 'Refresh', 'hg-structured-data' ),
 				'previewLoading' => __( 'Generating preview…', 'hg-structured-data' ),
@@ -469,6 +471,20 @@ final class Admin {
 		}
 
 		wp_send_json_success( $results );
+	}
+
+	/**
+	 * AJAX: scalar sub-properties of an expandable schema.org class, used by
+	 * the wizard's second dropdown for object-valued properties.
+	 */
+	public function ajax_class_props(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$class = isset( $_GET['class'] ) ? sanitize_text_field( wp_unslash( (string) $_GET['class'] ) ) : '';
+		wp_send_json_success( \HelloGekko\StructuredData\Schema\SchemaCatalog::instance()->class_properties( $class ) );
 	}
 
 	/**

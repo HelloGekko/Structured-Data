@@ -146,6 +146,50 @@
 		}
 	}
 
+	// Sub-property definitions per expandable schema.org class (AJAX-cached).
+	var classCache = {};
+
+	function loadClassProps( cls ) {
+		if ( classCache[ cls ] ) {
+			return $.Deferred().resolve( classCache[ cls ] ).promise();
+		}
+		return $.getJSON( HGSD.ajaxUrl, {
+			action: 'hgsd_class_props',
+			nonce: HGSD.nonce,
+			class: cls
+		} ).then( function ( res ) {
+			classCache[ cls ] = ( res && res.success ) ? res.data : {};
+			return classCache[ cls ];
+		} );
+	}
+
+	// Definition for a full (possibly two-tier) property key.
+	function resolveDef( fullKey ) {
+		if ( currentProps[ fullKey ] ) {
+			return currentProps[ fullKey ];
+		}
+		if ( fullKey && fullKey.indexOf( '.' ) !== -1 ) {
+			var head = fullKey.split( '.' )[ 0 ];
+			var leaf = fullKey.substring( head.length + 1 );
+			var hd = currentProps[ head ];
+			if ( hd && hd.object && classCache[ hd.object ] && classCache[ hd.object ][ leaf ] ) {
+				return classCache[ hd.object ][ leaf ];
+			}
+		}
+		return {};
+	}
+
+	function fillSubSelect( $sub, props, selected ) {
+		$sub.empty().append( opt( '', HGSD.i18n.subProperty, ! selected ) );
+		$.each( props, function ( key, def ) {
+			var o = opt( key, def.label, key === selected );
+			if ( def.comment ) {
+				o.title = def.comment;
+			}
+			$sub.append( o );
+		} );
+	}
+
 	function buildPropertyRow( data ) {
 		data = data || {};
 		var id = uid();
@@ -153,31 +197,82 @@
 
 		var $row = $( '<div class="hgsd-row hgsd-property-row" />' );
 
-		// Show the full list up front when editing a non-recommended property.
-		var showAll = !! ( data.property && currentProps[ data.property ] && ! currentProps[ data.property ].recommended );
+		// The saved key may be a plain property or "objectProp.subProp".
+		var savedKey = data.property || '';
+		var savedHead = savedKey;
+		var savedLeaf = '';
+		if ( savedKey && ! currentProps[ savedKey ] && savedKey.indexOf( '.' ) !== -1 ) {
+			var head = savedKey.split( '.' )[ 0 ];
+			if ( currentProps[ head ] && currentProps[ head ].object ) {
+				savedHead = head;
+				savedLeaf = savedKey.substring( head.length + 1 );
+			}
+		}
 
-		var $prop = $( '<select class="hgsd-prop-select" />' ).attr( 'name', base + '[property]' );
-		fillPropertySelect( $prop, data.property || '', showAll );
+		// Show the full list up front when editing a non-recommended property.
+		var showAll = !! ( savedHead && currentProps[ savedHead ] && ! currentProps[ savedHead ].recommended );
+
+		var $prop = $( '<select class="hgsd-prop-select" />' );
+		fillPropertySelect( $prop, savedHead, showAll );
+
+		var $sub = $( '<select class="hgsd-subprop" />' ).hide();
+		var $propHidden = $( '<input type="hidden" />' ).attr( 'name', base + '[property]' ).val( savedKey );
+
+		function syncHidden() {
+			var key = $prop.val() || '';
+			var def = currentProps[ key ] || {};
+			if ( '__all__' === key ) {
+				key = '';
+			} else if ( def.object ) {
+				key = $sub.val() ? key + '.' + $sub.val() : '';
+			}
+			$propHidden.val( key ).trigger( 'change' );
+		}
 
 		var $desc = $( '<p class="hgsd-prop-desc" />' );
 		function updateDesc() {
-			var d = currentProps[ $prop.val() ];
-			$desc.text( ( d && d.comment ) ? d.comment : '' );
+			var d = resolveDef( $propHidden.val() );
+			if ( ! d.comment ) {
+				d = currentProps[ $prop.val() ] || {};
+			}
+			$desc.text( d.comment || '' );
 		}
 
 		function renderValue( current ) {
-			renderValueControl( $value, base, $source.val(), current || '', $prop.val() );
+			renderValueControl( $value, base, $source.val(), current || '', $propHidden.val() );
+		}
+
+		function applyProp( leafToSelect, currentValue ) {
+			var def = currentProps[ $prop.val() ] || {};
+			if ( def.object ) {
+				$sub.show();
+				loadClassProps( def.object ).done( function ( props ) {
+					fillSubSelect( $sub, props, leafToSelect || '' );
+					syncHidden();
+					updateDesc();
+					renderValue( currentValue || '' );
+				} );
+				return;
+			}
+			$sub.hide().empty();
+			syncHidden();
+			updateDesc();
+			renderValue( currentValue || '' );
 		}
 
 		$prop.on( 'change', function () {
 			if ( '__all__' === $( this ).val() ) {
 				fillPropertySelect( $prop, '', true );
 				$prop.trigger( 'focus' );
-				updateDesc();
 				return;
 			}
+			applyProp( '', '' );
+		} );
+
+		$sub.on( 'change', function () {
+			syncHidden();
 			updateDesc();
-			renderValue( '' ); // The value control depends on the chosen property (enums).
+			renderValue( '' );
 		} );
 
 		var $source = $( '<select class="hgsd-source" />' ).attr( 'name', base + '[source]' );
@@ -193,15 +288,19 @@
 		var $remove = $( '<button type="button" class="button-link hgsd-remove" />' ).text( HGSD.i18n.remove );
 
 		$row.append(
-			$( '<span class="hgsd-col" />' ).append( $prop ),
+			$( '<span class="hgsd-col" />' ).append( $prop, $sub, $propHidden ),
 			$( '<span class="hgsd-col" />' ).append( $source ),
 			$( '<span class="hgsd-col hgsd-col-value" />' ).append( $value ),
 			$remove,
 			$desc
 		);
 
-		renderValueControl( $value, base, data.source || 'wp', data.value || '', data.property || '' );
-		updateDesc();
+		if ( savedLeaf ) {
+			applyProp( savedLeaf, data.value || '' );
+		} else {
+			renderValueControl( $value, base, data.source || 'wp', data.value || '', savedKey );
+			updateDesc();
+		}
 
 		$source.on( 'change', function () {
 			renderValue( '' );
@@ -213,7 +312,7 @@
 	function renderValueControl( $value, base, source, current, propKey ) {
 		$value.empty();
 		var name = base + '[value]';
-		var def = currentProps[ propKey ] || {};
+		var def = resolveDef( propKey );
 
 		if ( 'custom' === source ) {
 			// Fixed list of allowed values for enumeration properties.

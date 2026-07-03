@@ -34,8 +34,10 @@ structured data (JSON-LD) to your site through a visual wizard.
 - **Always current with schema.org**: the property catalog is generated directly from the
   official schema.org vocabulary (currently **v30.0**). Each type offers its curated,
   recommended properties first, with *Show all schema.org properties* revealing every valid
-  property (with the official description). Values are cast to the schema.org-expected data
-  type — real numbers, booleans and ISO 8601 dates.
+  property (with the official description). Object-valued properties (e.g.
+  `hasMerchantReturnPolicy`) are expandable: picking one adds a second dropdown with the
+  target class's sub-properties, emitted as a properly `@type`d nested object. Values are
+  cast to the schema.org-expected data type — real numbers, booleans and ISO 8601 dates.
 
 ## Requirements
 

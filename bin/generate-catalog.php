@@ -104,14 +104,16 @@ $classify = static function ( array $ranges ): ?string {
 	if ( isset( $set['Boolean'] ) ) {
 		return 'boolean';
 	}
+	// Number beats date for mixed ranges (merchantReturnDays: Integer|Date) —
+	// a plain "30" must stay a number, not be coerced into a date.
+	if ( isset( $set['Number'] ) || isset( $set['Integer'] ) || isset( $set['Float'] ) ) {
+		return 'number';
+	}
 	if ( isset( $set['Date'] ) || isset( $set['DateTime'] ) ) {
 		return 'date';
 	}
 	if ( isset( $set['Time'] ) ) {
 		return 'time';
-	}
-	if ( isset( $set['Number'] ) || isset( $set['Integer'] ) || isset( $set['Float'] ) ) {
-		return 'number';
 	}
 	if ( isset( $set['Text'] ) || isset( $set['PronounceableText'] ) || isset( $set['CssSelectorType'] ) || isset( $set['XPathType'] ) ) {
 		return 'text';
@@ -204,9 +206,11 @@ foreach ( $properties as $pid => $prop ) {
 	}
 }
 
-$catalog = [];
-
-foreach ( $targets as $key => $class ) {
+/**
+ * The scalar (and pure-enum) properties valid for a class, direct + inherited.
+ * Shared by the per-type entries and the object sub-property expansion.
+ */
+$scalar_props_for = static function ( string $class ) use ( $properties, $ancestors, $ids, $classify, $humanise, $clean, $enum_members, $global_enums ): array {
 	$anc   = $ancestors( $class );
 	$entry = [];
 
@@ -221,15 +225,15 @@ foreach ( $targets as $key => $class ) {
 		$datatype  = $classify( $ranges );
 
 		// Enumeration-valued properties become a fixed list of allowed values.
-		$members = [];
 		if ( null === $datatype ) {
+			$has_members = false;
 			foreach ( $range_ids as $rid ) {
 				if ( isset( $enum_members[ $rid ] ) ) {
-					$members = $enum_members[ $rid ];
+					$has_members = true;
 					break;
 				}
 			}
-			if ( empty( $members ) ) {
+			if ( ! $has_members ) {
 				continue; // Object-only property.
 			}
 			$datatype = 'enum';
@@ -249,8 +253,75 @@ foreach ( $targets as $key => $class ) {
 	}
 
 	ksort( $entry );
-	$catalog[ $key ] = $entry;
+	return $entry;
+};
+
+$datatype_names = array_flip( $datatypes );
+
+/**
+ * Object-valued properties of a class: property => target class to expand.
+ * Picks the first defined, non-enumeration class in the range.
+ */
+$object_props_for = static function ( string $class ) use ( $properties, $ancestors, $ids, $classify, $humanise, $clean, $enum_members, $classes, $datatype_names ): array {
+	$anc = $ancestors( $class );
+	$out = [];
+
+	foreach ( $properties as $pid => $prop ) {
+		$domains = $ids( $prop['schema:domainIncludes'] ?? null );
+		if ( ! array_intersect( $domains, array_keys( $anc ) ) ) {
+			continue;
+		}
+
+		$range_ids = $ids( $prop['schema:rangeIncludes'] ?? null );
+		$ranges    = array_map( static fn( $r ) => substr( $r, strlen( 'schema:' ) ), $range_ids );
+		if ( null !== $classify( $ranges ) ) {
+			continue; // Scalar — already covered.
+		}
+
+		$target = '';
+		foreach ( $range_ids as $rid ) {
+			$short = substr( $rid, strlen( 'schema:' ) );
+			if ( isset( $enum_members[ $rid ] ) || isset( $datatype_names[ $short ] ) ) {
+				continue;
+			}
+			if ( isset( $classes[ $rid ] ) ) {
+				$target = $short;
+				break;
+			}
+		}
+		if ( '' === $target ) {
+			continue; // Pure enumeration (handled as enum) or unknown range.
+		}
+
+		$name         = substr( $pid, strlen( 'schema:' ) );
+		$out[ $name ] = [
+			'label'   => $humanise( $name ),
+			'class'   => $target,
+			'comment' => $clean( $prop['rdfs:comment'] ?? '' ),
+		];
+	}
+
+	ksort( $out );
+	return $out;
+};
+
+$catalog     = [];
+$objects_map = [];
+$class_props = [];
+
+foreach ( $targets as $key => $class ) {
+	$catalog[ $key ]     = $scalar_props_for( $class );
+	$objects_map[ $key ] = $object_props_for( $class );
+
+	// Collect the sub-property sets for every referenced target class.
+	foreach ( $objects_map[ $key ] as $object ) {
+		$target = $object['class'];
+		if ( ! isset( $class_props[ $target ] ) ) {
+			$class_props[ $target ] = $scalar_props_for( $target );
+		}
+	}
 }
+ksort( $class_props );
 
 ksort( $global_enums );
 
@@ -259,6 +330,8 @@ $export = var_export(
 		'version' => $version,
 		'types'   => $catalog,
 		'enums'   => $global_enums,
+		'objects' => $objects_map,
+		'classes' => $class_props,
 	],
 	true
 );
@@ -278,5 +351,6 @@ $out = $header . $export . ";\n";
 $target = dirname( __DIR__ ) . '/includes/Schema/data/catalog.php';
 file_put_contents( $target, $out );
 
-$total = array_sum( array_map( 'count', $catalog ) );
-fwrite( STDOUT, "Wrote {$target}\nschema.org version {$version}, {$total} scalar properties across " . count( $catalog ) . " types.\n" );
+$total   = array_sum( array_map( 'count', $catalog ) );
+$objects = array_sum( array_map( 'count', $objects_map ) );
+fwrite( STDOUT, "Wrote {$target}\nschema.org version {$version}: {$total} scalar properties, {$objects} object properties (" . count( $class_props ) . ' expandable classes) across ' . count( $catalog ) . " types.\n" );

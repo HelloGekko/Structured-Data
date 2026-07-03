@@ -115,6 +115,22 @@ abstract class AbstractSchemaType {
 			$out[ $key ]        = $def;
 		}
 
+		// Object-valued properties (hasMerchantReturnPolicy, funder, …): offered
+		// as expandable entries — the wizard adds a second dropdown with the
+		// target class's sub-properties.
+		foreach ( SchemaCatalog::instance()->objects( $this->catalog_key() ) as $key => $def ) {
+			if ( isset( $out[ $key ] ) || isset( $nested_parents[ $key ] ) ) {
+				continue;
+			}
+			$out[ $key ] = [
+				'label'       => $def['label'] . ' →',
+				'type'        => 'object',
+				'object'      => $def['class'],
+				'comment'     => $def['comment'],
+				'recommended' => false,
+			];
+		}
+
 		// Attach enumeration values by the property's leaf name so both flat and
 		// nested keys (e.g. offers.availability) offer a fixed value list.
 		$catalog_obj = SchemaCatalog::instance();
@@ -175,14 +191,18 @@ abstract class AbstractSchemaType {
 				continue;
 			}
 
+			// An object property without a chosen sub-property carries no value.
+			if ( 'object' === ( $definitions[ $property ]['type'] ?? '' ) ) {
+				continue;
+			}
+
 			$value = $resolver->resolve( $mapping, $context );
 			if ( null === $value || '' === $value || [] === $value ) {
 				continue;
 			}
 
 			// Cast to the schema.org-expected data type for valid JSON-LD.
-			$type  = (string) ( $definitions[ $property ]['type'] ?? 'text' );
-			$value = $this->cast( $value, $type );
+			$value = $this->cast( $value, $this->expected_type( $property, $definitions ) );
 
 			$this->assign( $node, $property, $value );
 		}
@@ -266,36 +286,65 @@ abstract class AbstractSchemaType {
 	 * @param mixed               $value Resolved value.
 	 */
 	protected function assign( array &$node, string $path, $value ): void {
-		if ( ! str_contains( $path, '.' ) ) {
-			$this->set_or_append( $node, $path, $value );
-			return;
-		}
+		$segments = explode( '.', $path );
+		$leaf     = array_pop( $segments );
 
-		[ $parent, $child ] = explode( '.', $path, 2 );
-
-		if ( ! isset( $node[ $parent ] ) || ! is_array( $node[ $parent ] ) ) {
-			$node[ $parent ] = [];
-			$nested_type     = $this->nested_types()[ $parent ] ?? null;
-			if ( $nested_type ) {
-				$node[ $parent ]['@type'] = $nested_type;
-			}
-		}
-
-		// Support a single further level of nesting (e.g. address.geo.latitude).
-		if ( str_contains( $child, '.' ) ) {
-			[ $sub_parent, $sub_child ] = explode( '.', $child, 2 );
-			if ( ! isset( $node[ $parent ][ $sub_parent ] ) || ! is_array( $node[ $parent ][ $sub_parent ] ) ) {
-				$node[ $parent ][ $sub_parent ] = [];
-				$nested_type                    = $this->nested_types()[ $parent . '.' . $sub_parent ] ?? null;
+		// Walk (and create) the nested object chain at any depth, wrapping each
+		// level with its @type from nested_types() — e.g. Google's merchant
+		// fields live 4 levels deep (offers.shippingDetails.shippingRate.value).
+		$ref    = &$node;
+		$prefix = '';
+		foreach ( $segments as $segment ) {
+			$prefix = '' === $prefix ? $segment : $prefix . '.' . $segment;
+			if ( ! isset( $ref[ $segment ] ) || ! is_array( $ref[ $segment ] ) ) {
+				$ref[ $segment ] = [];
+				$nested_type     = $this->nested_types()[ $prefix ] ?? $this->dynamic_nested_type( $prefix );
 				if ( $nested_type ) {
-					$node[ $parent ][ $sub_parent ]['@type'] = $nested_type;
+					$ref[ $segment ]['@type'] = $nested_type;
 				}
 			}
-			$this->set_or_append( $node[ $parent ][ $sub_parent ], $sub_child, $value );
-			return;
+			$ref = &$ref[ $segment ];
 		}
 
-		$this->set_or_append( $node[ $parent ], $child, $value );
+		$this->set_or_append( $ref, $leaf, $value );
+	}
+
+	/**
+	 * Expected data type for a (possibly dynamic) property path. Curated and
+	 * catalog keys resolve directly; "object.leaf" paths resolve the leaf via
+	 * the object's target class in the catalog.
+	 *
+	 * @param array<string,array<string,mixed>> $definitions Known definitions.
+	 */
+	protected function expected_type( string $property, array $definitions ): string {
+		if ( isset( $definitions[ $property ]['type'] ) ) {
+			return (string) $definitions[ $property ]['type'];
+		}
+
+		if ( str_contains( $property, '.' ) ) {
+			[ $head, $leaf ] = explode( '.', $property, 2 );
+			$class           = $definitions[ $head ]['object'] ?? $this->dynamic_nested_type( $head );
+			if ( $class && ! str_contains( $leaf, '.' ) ) {
+				$sub = SchemaCatalog::instance()->class_properties( (string) $class );
+				if ( isset( $sub[ $leaf ]['type'] ) ) {
+					return (string) $sub[ $leaf ]['type'];
+				}
+			}
+		}
+
+		return 'text';
+	}
+
+	/**
+	 * @type for a dynamically expanded object property (top-level segment),
+	 * resolved from the schema.org catalog.
+	 */
+	protected function dynamic_nested_type( string $prefix ): ?string {
+		if ( str_contains( $prefix, '.' ) ) {
+			return null; // Dynamic expansion is one level deep.
+		}
+		$objects = SchemaCatalog::instance()->objects( $this->catalog_key() );
+		return isset( $objects[ $prefix ]['class'] ) ? (string) $objects[ $prefix ]['class'] : null;
 	}
 
 	/**
@@ -378,6 +427,12 @@ abstract class AbstractSchemaType {
 	protected function iso_date( string $value ): string {
 		// Already ISO 8601 (date or datetime).
 		if ( preg_match( '/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2})?/', $value ) ) {
+			return $value;
+		}
+
+		// A bare number is not a date (e.g. merchantReturnDays = 30, whose
+		// schema.org range mixes Integer and Date) — leave it untouched.
+		if ( is_numeric( $value ) && strlen( $value ) <= 6 ) {
 			return $value;
 		}
 

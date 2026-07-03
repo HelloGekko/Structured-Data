@@ -235,6 +235,10 @@
 	display: none;
 }
 
+.hgsd-subprop {
+	margin-top: 4px;
+}
+
 .hgsd-version {
 	display: inline-block;
 	margin: 0 0 12px;

@@ -90,6 +90,38 @@ class Product extends AbstractSchemaType {
 				'label' => __( 'Price valid until', 'hg-structured-data' ),
 				'type'  => 'date',
 			],
+			'offers.hasMerchantReturnPolicy.applicableCountry' => [
+				'label' => __( 'Return policy — country (e.g. NL)', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
+			'offers.hasMerchantReturnPolicy.returnPolicyCategory' => [
+				'label' => __( 'Return policy — category', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
+			'offers.hasMerchantReturnPolicy.merchantReturnDays' => [
+				'label' => __( 'Return policy — days to return', 'hg-structured-data' ),
+				'type'  => 'number',
+			],
+			'offers.hasMerchantReturnPolicy.returnMethod' => [
+				'label' => __( 'Return policy — method', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
+			'offers.hasMerchantReturnPolicy.returnFees' => [
+				'label' => __( 'Return policy — fees', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
+			'offers.shippingDetails.shippingRate.value' => [
+				'label' => __( 'Shipping — rate', 'hg-structured-data' ),
+				'type'  => 'number',
+			],
+			'offers.shippingDetails.shippingRate.currency' => [
+				'label' => __( 'Shipping — currency', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
+			'offers.shippingDetails.shippingDestination.addressCountry' => [
+				'label' => __( 'Shipping — destination country (e.g. NL)', 'hg-structured-data' ),
+				'type'  => 'text',
+			],
 			'aggregateRating.ratingValue'   => [
 				'label' => __( 'Rating value', 'hg-structured-data' ),
 				'type'  => 'number',
@@ -114,6 +146,10 @@ class Product extends AbstractSchemaType {
 			'brand'           => 'Brand',
 			'offers'          => 'Offer',
 			'aggregateRating' => 'AggregateRating',
+			'offers.hasMerchantReturnPolicy' => 'MerchantReturnPolicy',
+			'offers.shippingDetails' => 'OfferShippingDetails',
+			'offers.shippingDetails.shippingRate' => 'MonetaryAmount',
+			'offers.shippingDetails.shippingDestination' => 'DefinedRegion',
 		];
 	}
 
