@@ -93,6 +93,17 @@ final class Plugin {
 		// Cockpit: link index, graph metrics and SEO orchestration layer.
 		Installer::maybe_install();
 		( new LinkIndexer() )->register_hooks();
+
+		// When the sibling Internal Link Builder rebuilds its front-end link
+		// graph, our cached click-depth/orphan metrics become stale — drop them
+		// so the next cockpit view recomputes with the fresh links.
+		add_action(
+			'ilb_generation_complete',
+			static function () {
+				\HelloGekko\StructuredData\Graph\LinkBuilderBridge::flush();
+				GraphMetrics::flush_cache();
+			}
+		);
 		$seo = new SeoManager();
 		$seo->register_hooks();
 

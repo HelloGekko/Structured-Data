@@ -31,7 +31,41 @@ final class LinkRepository {
 		foreach ( $rows as $row ) {
 			$out[ (int) $row->target_id ] = (int) $row->n;
 		}
+
+		// Fold in front-end links injected by Internal Link Builder, counting
+		// each extra source only once per target.
+		if ( LinkBuilderBridge::active() ) {
+			$existing = $this->sources_by_target();
+			foreach ( LinkBuilderBridge::edges() as $edge ) {
+				[ $source, $target ] = $edge;
+				if ( isset( $existing[ $target ][ $source ] ) ) {
+					continue;
+				}
+				$existing[ $target ][ $source ] = true;
+				$out[ $target ]                 = ( $out[ $target ] ?? 0 ) + 1;
+			}
+		}
+
 		return $out;
+	}
+
+	/**
+	 * Map of target_id => [source_id => true] from the native index, used to
+	 * de-duplicate when merging Internal Link Builder edges.
+	 *
+	 * @return array<int,array<int,bool>>
+	 */
+	private function sources_by_target(): array {
+		global $wpdb;
+		$table = Installer::table();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results( "SELECT DISTINCT source_id, target_id FROM {$table}", ARRAY_N );
+
+		$map = [];
+		foreach ( $rows as $row ) {
+			$map[ (int) $row[1] ][ (int) $row[0] ] = true;
+		}
+		return $map;
 	}
 
 	/**
@@ -63,10 +97,28 @@ final class LinkRepository {
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 		$rows = $wpdb->get_results( "SELECT DISTINCT source_id, target_id FROM {$table}", ARRAY_N );
 
-		return array_map(
+		$edges = array_map(
 			static fn( $row ) => [ (int) $row[0], (int) $row[1] ],
 			$rows
 		);
+
+		// Include front-end links injected by Internal Link Builder so
+		// click-depth, orphan detection and the cluster graph see them too.
+		if ( LinkBuilderBridge::active() ) {
+			$seen = [];
+			foreach ( $edges as $edge ) {
+				$seen[ $edge[0] . '-' . $edge[1] ] = true;
+			}
+			foreach ( LinkBuilderBridge::edges() as $edge ) {
+				$key = $edge[0] . '-' . $edge[1];
+				if ( ! isset( $seen[ $key ] ) ) {
+					$seen[ $key ] = true;
+					$edges[]      = $edge;
+				}
+			}
+		}
+
+		return $edges;
 	}
 
 	/**
@@ -136,7 +188,27 @@ final class LinkRepository {
 			ARRAY_N
 		);
 
-		return array_map( static fn( $row ) => [ (int) $row[0], (int) $row[1] ], $rows );
+		$edges = array_map( static fn( $row ) => [ (int) $row[0], (int) $row[1] ], $rows );
+
+		if ( LinkBuilderBridge::active() ) {
+			$set = array_flip( $ids );
+			$seen = [];
+			foreach ( $edges as $edge ) {
+				$seen[ $edge[0] . '-' . $edge[1] ] = true;
+			}
+			foreach ( LinkBuilderBridge::edges() as $edge ) {
+				if ( ! isset( $set[ $edge[0] ], $set[ $edge[1] ] ) ) {
+					continue;
+				}
+				$key = $edge[0] . '-' . $edge[1];
+				if ( ! isset( $seen[ $key ] ) ) {
+					$seen[ $key ] = true;
+					$edges[]      = $edge;
+				}
+			}
+		}
+
+		return $edges;
 	}
 
 	/**
@@ -220,7 +292,16 @@ final class LinkRepository {
 			$wpdb->prepare( "SELECT DISTINCT source_id FROM {$table} WHERE target_id = %d AND source_id > 0", $target_id )
 		);
 
-		return array_map( 'intval', $ids );
+		$ids = array_map( 'intval', $ids );
+
+		// A post that only links via Internal Link Builder's front-end
+		// injection still counts as a linking source — this is what stops the
+		// "mentioned but not linked" tip from firing on links that do exist.
+		if ( LinkBuilderBridge::active() ) {
+			$ids = array_values( array_unique( array_merge( $ids, LinkBuilderBridge::sources_for( $target_id ) ) ) );
+		}
+
+		return $ids;
 	}
 
 	/**
