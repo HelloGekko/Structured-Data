@@ -165,6 +165,66 @@ final class LinkRepository {
 	}
 
 	/**
+	 * Published, public post IDs (for site-wide checks).
+	 *
+	 * @return array<int,int>
+	 */
+	public function all_published_ids(): array {
+		global $wpdb;
+		$types = array_keys( get_post_types( [ 'public' => true ] ) );
+		$types = array_values( array_diff( $types, [ 'attachment' ] ) );
+		if ( empty( $types ) ) {
+			return [];
+		}
+		$placeholders = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$ids = $wpdb->get_col(
+			$wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type IN ({$placeholders})", $types )
+		);
+
+		return array_map( 'intval', $ids );
+	}
+
+	/**
+	 * Posts whose indexed text mentions a phrase.
+	 *
+	 * @return array<int,int>
+	 */
+	public function mentioning_posts( string $phrase, int $limit = 50 ): array {
+		if ( mb_strlen( $phrase ) < 4 ) {
+			return [];
+		}
+
+		global $wpdb;
+		$table = Installer::content_table();
+		$like  = '%' . $wpdb->esc_like( $phrase ) . '%';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$ids = $wpdb->get_col(
+			$wpdb->prepare( "SELECT post_id FROM {$table} WHERE txt LIKE %s LIMIT %d", $like, $limit )
+		);
+
+		return array_map( 'intval', $ids );
+	}
+
+	/**
+	 * Distinct posts that link to a target (content links).
+	 *
+	 * @return array<int,int>
+	 */
+	public function linking_sources( int $target_id ): array {
+		global $wpdb;
+		$table = Installer::table();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$ids = $wpdb->get_col(
+			$wpdb->prepare( "SELECT DISTINCT source_id FROM {$table} WHERE target_id = %d AND source_id > 0", $target_id )
+		);
+
+		return array_map( 'intval', $ids );
+	}
+
+	/**
 	 * Attach post titles to raw link rows.
 	 *
 	 * @param array<int,object> $rows  Raw rows.

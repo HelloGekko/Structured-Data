@@ -310,11 +310,27 @@ final class ConflictManager {
 			return;
 		}
 
+		// Already handled: the dedupe/strip output mode covers everything, and a
+		// per-plugin suppression covers that plugin. Only warn about the rest.
+		$settings = $this->settings();
+		if ( 'off' !== $settings['mode'] ) {
+			return;
+		}
+
 		$labels = [];
 		foreach ( $this->integrations() as $key => $integration ) {
-			if ( in_array( $key, $detected, true ) ) {
-				$labels[] = $integration['label'];
+			if ( ! in_array( $key, $detected, true ) ) {
+				continue;
 			}
+			$suppressed = ! empty( $settings['suppress'][ $key ] ) && is_callable( $integration['disable'] ?? null );
+			if ( $suppressed ) {
+				continue;
+			}
+			$labels[] = $integration['label'];
+		}
+
+		if ( empty( $labels ) ) {
+			return;
 		}
 
 		$url = add_query_arg(

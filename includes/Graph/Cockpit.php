@@ -31,6 +31,7 @@ final class Cockpit {
 	private SchemaRegistry $registry;
 	private RelationRepository $relations;
 	private ?GscClient $gsc;
+	private Advisor $advisor;
 
 	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations, ?GscClient $gsc = null ) {
 		$this->repository = $repository;
@@ -39,6 +40,7 @@ final class Cockpit {
 		$this->registry   = $registry;
 		$this->relations  = $relations;
 		$this->gsc        = $gsc;
+		$this->advisor    = new Advisor( $repository, $metrics, $relations, $seo );
 	}
 
 	public function register_hooks(): void {
@@ -51,6 +53,27 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_relation_delete', [ $this, 'ajax_relation_delete' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_graph', [ $this, 'ajax_graph' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_tip', [ $this, 'ajax_tip' ] );
+	}
+
+	/**
+	 * AJAX: dismiss or restore a tip.
+	 */
+	public function ajax_tip(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$key = isset( $_POST['key'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['key'] ) ) : '';
+		$op  = isset( $_POST['op'] ) && 'restore' === $_POST['op'] ? 'restore' : 'dismiss';
+
+		if ( '' === $key || ! preg_match( '/^[a-z_]+:[0-9:a-zA-Z_-]+$/', $key ) ) {
+			wp_send_json_error();
+		}
+
+		Advisor::set_dismissed( $key, 'dismiss' === $op );
+		wp_send_json_success();
 	}
 
 	/**
@@ -192,6 +215,11 @@ final class Cockpit {
 			$cluster_options[ $cornerstone_id ] = (string) get_the_title( $cornerstone_id );
 		}
 		asort( $cluster_options );
+
+		// Tips: everything the advisor flags, split into active and dismissed.
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$show_ignored                    = isset( $_GET['ignored'] ) && '1' === $_GET['ignored'];
+		[ $tips_active, $tips_dismissed ] = Advisor::split_dismissed( $this->advisor->issues() );
 
 		require HGSD_PATH . 'includes/Graph/views/cockpit.php';
 	}

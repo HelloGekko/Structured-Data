@@ -414,6 +414,40 @@
 		openPanelById( parseInt( $( this ).attr( 'data-post' ), 10 ), null );
 	} );
 
+	/* ------------------------------------------------------------------- tips */
+
+	function tipRequest( $tip, op, done ) {
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_tip',
+			nonce: HGSDCockpit.nonce,
+			key: $tip.attr( 'data-key' ),
+			op: op
+		} ).done( done );
+	}
+
+	$( document ).on( 'click', '.hgsd-tip-open', function () {
+		openPanelById( parseInt( $( this ).attr( 'data-post' ), 10 ), null );
+	} );
+
+	$( document ).on( 'click', '.hgsd-tip-dismiss', function () {
+		var $tip = $( this ).closest( '.hgsd-tip' );
+		tipRequest( $tip, 'dismiss', function () {
+			$tip.slideUp( 150, function () {
+				$tip.remove();
+				var $count = $( '.hgsd-tips-count' );
+				var n = Math.max( 0, parseInt( $count.text(), 10 ) - 1 );
+				$count.text( n ).toggleClass( 'is-zero', 0 === n );
+			} );
+		} );
+	} );
+
+	$( document ).on( 'click', '.hgsd-tip-restore', function () {
+		var $tip = $( this ).closest( '.hgsd-tip' );
+		tipRequest( $tip, 'restore', function () {
+			window.location.reload();
+		} );
+	} );
+
 	// Reindex.
 	$( document ).on( 'click', '.hgsd-reindex', function () {
 		var $btn = $( this );

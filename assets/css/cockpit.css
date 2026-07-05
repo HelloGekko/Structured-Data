@@ -116,6 +116,104 @@
 	margin-top: 12px;
 }
 
+/* Tips */
+.hgsd-tips {
+	margin: 14px 0;
+	padding: 14px 18px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.hgsd-tips-head {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.hgsd-tips-head h2 {
+	margin: 0;
+	font-size: 15px;
+}
+
+.hgsd-tips-count {
+	display: inline-block;
+	min-width: 20px;
+	padding: 1px 7px;
+	border-radius: 10px;
+	background: #b32d2e;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+
+.hgsd-tips-count.is-zero {
+	background: #16794a;
+}
+
+.hgsd-tips-empty {
+	color: #16794a;
+	margin: 10px 0 0;
+}
+
+.hgsd-tips-list {
+	margin: 10px 0 0;
+	max-height: 320px;
+	overflow-y: auto;
+}
+
+.hgsd-tip {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+	padding: 7px 0;
+	margin: 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.hgsd-tip:last-child {
+	border-bottom: 0;
+}
+
+.hgsd-tip-message {
+	flex: 1;
+}
+
+.hgsd-tip.is-dismissed {
+	opacity: .55;
+}
+
+.hgsd-severity-error {
+	background: #fcf0f1;
+	color: #b32d2e;
+	border: 1px solid #f0c2c4;
+}
+
+.hgsd-severity-warning {
+	background: #fcf9e8;
+	color: #996800;
+	border: 1px solid #f0e3b3;
+}
+
+.hgsd-severity-tip {
+	background: #f0f6fc;
+	color: #2271b1;
+	border: 1px solid #c5d9ed;
+}
+
+.hgsd-tip-dismiss,
+.hgsd-tip-restore {
+	color: #8c8f94;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.hgsd-tip-open {
+	color: #2271b1;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
 /* Cluster graph */
 .hgsd-graph-bar {
 	display: flex;

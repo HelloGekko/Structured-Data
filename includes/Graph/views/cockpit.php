@@ -50,6 +50,53 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 		<button type="button" class="button button-small hgsd-reindex"><?php esc_html_e( 'Reindex', 'hg-structured-data' ); ?></button>
 	</p>
 
+	<?php /* Tips ------------------------------------------------------------ */ ?>
+	<div class="hgsd-tips">
+		<div class="hgsd-tips-head">
+			<h2>
+				<?php esc_html_e( 'Tips', 'hg-structured-data' ); ?>
+				<span class="hgsd-tips-count <?php echo empty( $tips_active ) ? 'is-zero' : ''; ?>"><?php echo count( $tips_active ); ?></span>
+			</h2>
+			<?php if ( $show_ignored ) : ?>
+				<a href="<?php echo esc_url( remove_query_arg( 'ignored' ) ); ?>"><?php esc_html_e( 'Hide ignored', 'hg-structured-data' ); ?></a>
+			<?php else : ?>
+				<a href="<?php echo esc_url( add_query_arg( 'ignored', '1' ) ); ?>">
+					<?php
+					printf(
+						/* translators: %d: number of ignored tips. */
+						esc_html__( 'Show ignored (%d)', 'hg-structured-data' ),
+						count( $tips_dismissed )
+					);
+					?>
+				</a>
+			<?php endif; ?>
+		</div>
+
+		<?php if ( empty( $tips_active ) && ! $show_ignored ) : ?>
+			<p class="hgsd-tips-empty">✓ <?php esc_html_e( 'Nothing to fix — everything the cockpit checks looks good.', 'hg-structured-data' ); ?></p>
+		<?php else : ?>
+			<ul class="hgsd-tips-list">
+				<?php foreach ( $tips_active as $hgsd_tip ) : ?>
+					<li class="hgsd-tip" data-key="<?php echo esc_attr( $hgsd_tip['key'] ); ?>">
+						<span class="hgsd-badge hgsd-severity-<?php echo esc_attr( $hgsd_tip['severity'] ); ?>"><?php echo esc_html( $hgsd_tip['severity'] ); ?></span>
+						<span class="hgsd-tip-message"><?php echo esc_html( $hgsd_tip['message'] ); ?></span>
+						<button type="button" class="button-link hgsd-tip-open" data-post="<?php echo (int) $hgsd_tip['post_id']; ?>"><?php esc_html_e( 'Open', 'hg-structured-data' ); ?></button>
+						<button type="button" class="button-link hgsd-tip-dismiss"><?php esc_html_e( 'Ignore', 'hg-structured-data' ); ?></button>
+					</li>
+				<?php endforeach; ?>
+				<?php if ( $show_ignored ) : ?>
+					<?php foreach ( $tips_dismissed as $hgsd_tip ) : ?>
+						<li class="hgsd-tip is-dismissed" data-key="<?php echo esc_attr( $hgsd_tip['key'] ); ?>">
+							<span class="hgsd-badge hgsd-severity-<?php echo esc_attr( $hgsd_tip['severity'] ); ?>"><?php echo esc_html( $hgsd_tip['severity'] ); ?></span>
+							<span class="hgsd-tip-message"><?php echo esc_html( $hgsd_tip['message'] ); ?></span>
+							<button type="button" class="button-link hgsd-tip-restore"><?php esc_html_e( 'Restore', 'hg-structured-data' ); ?></button>
+						</li>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</ul>
+		<?php endif; ?>
+	</div>
+
 	<?php if ( ! empty( $cluster_options ) ) : ?>
 		<div class="hgsd-graph-bar">
 			<label>

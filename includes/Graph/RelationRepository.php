@@ -194,6 +194,34 @@ final class RelationRepository {
 	}
 
 	/**
+	 * All relations that have NO matching content link, with both IDs.
+	 *
+	 * @return array<int,array{source_id:int,target_id:int,relation:string}>
+	 */
+	public function missing_pairs(): array {
+		global $wpdb;
+		$relations = Installer::relations_table();
+		$links     = Installer::table();
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results(
+			"SELECT r.source_id, r.target_id, r.relation
+			 FROM {$relations} r
+			 LEFT JOIN {$links} l ON l.source_id = r.source_id AND l.target_id = r.target_id
+			 WHERE l.id IS NULL"
+		);
+
+		return array_map(
+			static fn( $row ) => [
+				'source_id' => (int) $row->source_id,
+				'target_id' => (int) $row->target_id,
+				'relation'  => (string) $row->relation,
+			],
+			$rows
+		);
+	}
+
+	/**
 	 * Per-source count of relations that have NO matching content link — the
 	 * "intended but not built" delta shown as a flag in the cockpit.
 	 *
