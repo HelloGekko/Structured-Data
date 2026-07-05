@@ -34,7 +34,15 @@ structured data (JSON-LD) to your site through a visual wizard.
   between pages (*is part of* a cornerstone, *is about*, *mentions*, *cites*). They are emitted
   as schema.org `@id` references on the page's primary node, and the cockpit flags every
   relation that has no actual internal link yet ("intended vs. built" delta), plus suggests
-  cornerstones worth linking to.
+  cornerstones worth linking to — ranking cornerstones that are *mentioned in the page's text
+  but not linked* first (local mention detection, no external AI needed).
+- **Cluster graph**: pick a cornerstone and see its cluster as an SVG graph (no external
+  libraries): solid edges are real links, blue edges are declared relations, dashed yellow
+  edges are relations whose link is still missing. Clicking a node opens the same side panel.
+- **Search Console integration**: connect GSC (OAuth) and the cockpit shows per page how
+  Google indexed it — coverage state, last crawl, and the canonical *Google* chose, with a red
+  flag when it differs from the declared one. Inspect on demand per page or automatically
+  (20/hour, least-recently-checked first).
 - **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
   AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
   structured data. Overrule options: clean per-plugin disable via the plugin's own filter

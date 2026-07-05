@@ -137,6 +137,63 @@ final class RelationRepository {
 	}
 
 	/**
+	 * All relations touching a post (both directions).
+	 *
+	 * @return array<int,array{source_id:int,target_id:int,relation:string}>
+	 */
+	public function touching( int $post_id ): array {
+		global $wpdb;
+		$table = Installer::relations_table();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results(
+			$wpdb->prepare( "SELECT source_id, target_id, relation FROM {$table} WHERE source_id = %d OR target_id = %d", $post_id, $post_id )
+		);
+
+		return array_map(
+			static fn( $row ) => [
+				'source_id' => (int) $row->source_id,
+				'target_id' => (int) $row->target_id,
+				'relation'  => (string) $row->relation,
+			],
+			$rows
+		);
+	}
+
+	/**
+	 * Relations between a set of posts.
+	 *
+	 * @param array<int,int> $ids Member post IDs.
+	 * @return array<int,array{source_id:int,target_id:int,relation:string}>
+	 */
+	public function between( array $ids ): array {
+		$ids = array_values( array_filter( array_map( 'intval', $ids ) ) );
+		if ( count( $ids ) < 2 ) {
+			return [];
+		}
+
+		global $wpdb;
+		$table        = Installer::relations_table();
+		$placeholders = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT source_id, target_id, relation FROM {$table} WHERE source_id IN ({$placeholders}) AND target_id IN ({$placeholders})",
+				array_merge( $ids, $ids )
+			)
+		);
+
+		return array_map(
+			static fn( $row ) => [
+				'source_id' => (int) $row->source_id,
+				'target_id' => (int) $row->target_id,
+				'relation'  => (string) $row->relation,
+			],
+			$rows
+		);
+	}
+
+	/**
 	 * Per-source count of relations that have NO matching content link — the
 	 * "intended but not built" delta shown as a flag in the cockpit.
 	 *

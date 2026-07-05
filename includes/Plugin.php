@@ -21,6 +21,8 @@ use HelloGekko\StructuredData\Graph\Installer;
 use HelloGekko\StructuredData\Graph\LinkIndexer;
 use HelloGekko\StructuredData\Graph\LinkRepository;
 use HelloGekko\StructuredData\Graph\RelationRepository;
+use HelloGekko\StructuredData\Gsc\GscClient;
+use HelloGekko\StructuredData\Gsc\GscSettings;
 use HelloGekko\StructuredData\Output\FrontendOutput;
 use HelloGekko\StructuredData\Seo\SeoManager;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
@@ -94,6 +96,10 @@ final class Plugin {
 		$seo = new SeoManager();
 		$seo->register_hooks();
 
+		// Search Console integration (URL inspection).
+		$gsc = new GscClient();
+		$gsc->register_hooks();
+
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
 			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
@@ -101,8 +107,10 @@ final class Plugin {
 			( new ConflictSettings( $conflicts ) )->register_hooks();
 			( new AiSettings() )->register_hooks();
 
+			( new GscSettings( $gsc ) )->register_hooks();
+
 			$link_repository = new LinkRepository();
-			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations ) )->register_hooks();
+			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations, $gsc ) )->register_hooks();
 		}
 	}
 
@@ -134,6 +142,7 @@ final class Plugin {
 	public static function deactivate(): void {
 		( new ReviewsManager() )->unschedule();
 		Installer::unschedule();
+		GscClient::unschedule();
 		flush_rewrite_rules();
 	}
 

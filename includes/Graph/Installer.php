@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Installer {
 
-	public const DB_VERSION     = '2';
+	public const DB_VERSION     = '3';
 	public const OPTION_VERSION = 'hgsd_db_version';
 	public const OPTION_POINTER = 'hgsd_index_pointer';
 	public const OPTION_INDEXED = 'hgsd_indexed_at';
@@ -37,6 +37,14 @@ final class Installer {
 	public static function relations_table(): string {
 		global $wpdb;
 		return $wpdb->prefix . 'hgsd_relations';
+	}
+
+	/**
+	 * Plain-text content table name (for mention-based suggestions).
+	 */
+	public static function content_table(): string {
+		global $wpdb;
+		return $wpdb->prefix . 'hgsd_content';
 	}
 
 	/**
@@ -76,6 +84,15 @@ final class Installer {
 				PRIMARY KEY  (id),
 				UNIQUE KEY rel (source_id,target_id,relation),
 				KEY target_id (target_id)
+			) {$charset_collate};"
+		);
+
+		$content = self::content_table();
+		dbDelta(
+			"CREATE TABLE {$content} (
+				post_id bigint(20) unsigned NOT NULL,
+				txt mediumtext,
+				PRIMARY KEY  (post_id)
 			) {$charset_collate};"
 		);
 

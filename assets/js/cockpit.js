@@ -106,6 +106,9 @@
 			var $li = $( '<li />' );
 			$li.append( document.createTextNode( HGSDCockpit.i18n.linkTo + ' ' ) );
 			$li.append( $( '<a target="_blank" />' ).attr( 'href', s.url ).text( s.title ) );
+			if ( 'mention' === s.reason ) {
+				$li.append( ' ' ).append( $( '<span class="hgsd-badge hgsd-badge-yellow" />' ).text( HGSDCockpit.i18n.mentioned ) );
+			}
 			$list.append( $li );
 		} );
 	}
@@ -121,8 +124,12 @@
 	}
 
 	function openPanel( $row ) {
-		currentPost = parseInt( $row.attr( 'data-post' ), 10 );
-		$currentRow = $row;
+		openPanelById( parseInt( $row.attr( 'data-post' ), 10 ), $row );
+	}
+
+	function openPanelById( postId, $row ) {
+		currentPost = postId;
+		$currentRow = $row || null;
 
 		$.getJSON( HGSDCockpit.ajaxUrl, {
 			action: 'hgsd_cockpit_detail',
@@ -147,6 +154,7 @@
 			renderRelations( d.relations );
 			renderIncoming( d.incoming );
 			renderSuggestions( d.suggestions );
+			renderGsc( d.gsc, d.gscReady );
 			$panel.find( '.hgsd-rel-search-input' ).val( '' );
 			$panel.find( '.hgsd-rel-target' ).val( '' );
 			$panel.removeAttr( 'hidden' );
@@ -255,6 +263,155 @@
 				renderRelations( res.data.relations );
 			}
 		} );
+	} );
+
+	/* ------------------------------------------------------------ search console */
+
+	function renderGsc( gsc, ready ) {
+		var $facts = $panel.find( '.hgsd-panel-gsc-facts' );
+		var $btn = $panel.find( '.hgsd-gsc-inspect' );
+		$facts.empty();
+		$panel.find( '.hgsd-gsc-status' ).text( '' );
+
+		if ( ! ready ) {
+			$facts.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.gscOff ) );
+			$btn.hide();
+			return;
+		}
+		$btn.show();
+
+		if ( ! gsc || ! gsc.coverage ) {
+			$facts.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.gscNone ) );
+			return;
+		}
+		$facts.append( $( '<li />' ).text( gsc.coverage ) );
+		if ( gsc.google_canonical ) {
+			$facts.append( $( '<li />' ).text( 'Google canonical: ' + gsc.google_canonical ) );
+		}
+		if ( gsc.last_crawl ) {
+			$facts.append( $( '<li />' ).text( 'Last crawl: ' + gsc.last_crawl.substring( 0, 10 ) ) );
+		}
+	}
+
+	$panel.on( 'click', '.hgsd-gsc-inspect', function () {
+		var $status = $panel.find( '.hgsd-gsc-status' );
+		$status.text( '…' );
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_gsc',
+			nonce: HGSDCockpit.nonce,
+			post_id: currentPost
+		} ).done( function ( res ) {
+			if ( res && res.success ) {
+				renderGsc( res.data, true );
+			} else {
+				$status.text( ( res && res.data && res.data.message ) ? res.data.message : HGSDCockpit.i18n.error );
+			}
+		} );
+	} );
+
+	/* ------------------------------------------------------------ cluster graph */
+
+	var SVG_NS = 'http://www.w3.org/2000/svg';
+
+	function svgEl( tag, attrs ) {
+		var el = document.createElementNS( SVG_NS, tag );
+		$.each( attrs || {}, function ( key, value ) {
+			el.setAttribute( key, value );
+		} );
+		return el;
+	}
+
+	function renderGraph( data ) {
+		var $wrap = $( '.hgsd-graph-wrap' );
+		var svg = $( '.hgsd-graph-svg' )[0];
+		if ( ! svg ) {
+			return;
+		}
+		while ( svg.firstChild ) {
+			svg.removeChild( svg.firstChild );
+		}
+
+		var width = 900, height = 560;
+		var cx = width / 2, cy = height / 2;
+		var nodes = data.nodes || [];
+		var edges = data.edges || [];
+
+		// Arrowhead marker.
+		var defs = svgEl( 'defs' );
+		var marker = svgEl( 'marker', {
+			id: 'hgsd-arrow', viewBox: '0 0 10 10', refX: 22, refY: 5,
+			markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse'
+		} );
+		marker.appendChild( svgEl( 'path', { d: 'M 0 0 L 10 5 L 0 10 z', 'class': 'hgsd-arrowhead' } ) );
+		defs.appendChild( marker );
+		svg.appendChild( defs );
+
+		// Radial layout: center in the middle, the rest on a circle.
+		var positions = {};
+		var ring = [];
+		$.each( nodes, function ( i, n ) {
+			if ( n.center ) {
+				positions[ n.id ] = { x: cx, y: cy };
+			} else {
+				ring.push( n );
+			}
+		} );
+		var radius = Math.min( cx, cy ) - 70;
+		$.each( ring, function ( i, n ) {
+			var angle = ( i / ring.length ) * 2 * Math.PI - Math.PI / 2;
+			positions[ n.id ] = {
+				x: cx + radius * Math.cos( angle ),
+				y: cy + radius * Math.sin( angle )
+			};
+		} );
+
+		// Edges first (under the nodes).
+		$.each( edges, function ( i, e ) {
+			var a = positions[ e.source ], b = positions[ e.target ];
+			if ( ! a || ! b ) {
+				return;
+			}
+			svg.appendChild( svgEl( 'line', {
+				x1: a.x, y1: a.y, x2: b.x, y2: b.y,
+				'class': 'hgsd-edge hgsd-edge-' + e.type,
+				'marker-end': 'url(#hgsd-arrow)'
+			} ) );
+		} );
+
+		// Nodes.
+		$.each( nodes, function ( i, n ) {
+			var p = positions[ n.id ];
+			var g = svgEl( 'g', { 'class': 'hgsd-node' + ( n.center ? ' is-center' : '' ) + ( n.cornerstone ? ' is-cornerstone' : '' ) + ( n.orphan ? ' is-orphan' : '' ), 'data-post': n.id } );
+			g.appendChild( svgEl( 'circle', { cx: p.x, cy: p.y, r: n.center ? 22 : 13 } ) );
+			var label = svgEl( 'text', { x: p.x, y: p.y + ( n.center ? 40 : 28 ) } );
+			label.textContent = n.title.length > 22 ? n.title.substring( 0, 21 ) + '…' : n.title;
+			g.appendChild( label );
+			svg.appendChild( g );
+		} );
+
+		$wrap.removeAttr( 'hidden' );
+	}
+
+	$( document ).on( 'change', '.hgsd-graph-select', function () {
+		var id = parseInt( $( this ).val(), 10 );
+		if ( ! id ) {
+			$( '.hgsd-graph-wrap' ).attr( 'hidden', true );
+			return;
+		}
+		$.getJSON( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_graph',
+			nonce: HGSDCockpit.nonce,
+			post_id: id
+		} ).done( function ( res ) {
+			if ( res && res.success ) {
+				renderGraph( res.data );
+			}
+		} );
+	} );
+
+	// Clicking a node opens the same side panel as a table row.
+	$( document ).on( 'click', '.hgsd-node', function () {
+		openPanelById( parseInt( $( this ).attr( 'data-post' ), 10 ), null );
 	} );
 
 	// Reindex.

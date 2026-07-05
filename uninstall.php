@@ -23,13 +23,19 @@ foreach ( $hgsd_posts as $hgsd_post_id ) {
 }
 
 // Options and transients.
-foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at' ] as $hgsd_option ) {
+foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at', 'hgsd_gsc_settings' ] as $hgsd_option ) {
 	delete_option( $hgsd_option );
 }
 delete_transient( 'hgsd_llms_txt' );
 delete_transient( 'hgsd_graph_metrics' );
+delete_transient( 'hgsd_gsc_token' );
 
-// Link-index and relations tables.
+// Link-index, relations and content tables.
 global $wpdb;
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_links" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_relations" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_content" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+
+// Per-post Search Console snapshots.
+delete_post_meta_by_key( '_hgsd_gsc' );
+delete_post_meta_by_key( '_hgsd_gsc_time' );

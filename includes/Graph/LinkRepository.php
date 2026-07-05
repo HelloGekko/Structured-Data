@@ -102,6 +102,69 @@ final class LinkRepository {
 	}
 
 	/**
+	 * Plain-text content snapshot of a post (from the index).
+	 */
+	public function text_for( int $post_id ): string {
+		global $wpdb;
+		$table = Installer::content_table();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		return (string) $wpdb->get_var( $wpdb->prepare( "SELECT txt FROM {$table} WHERE post_id = %d", $post_id ) );
+	}
+
+	/**
+	 * Distinct content-link edges between a set of posts.
+	 *
+	 * @param array<int,int> $ids Member post IDs.
+	 * @return array<int,array{0:int,1:int}>
+	 */
+	public function edges_between( array $ids ): array {
+		$ids = array_values( array_filter( array_map( 'intval', $ids ) ) );
+		if ( count( $ids ) < 2 ) {
+			return [];
+		}
+
+		global $wpdb;
+		$table        = Installer::table();
+		$placeholders = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT DISTINCT source_id, target_id FROM {$table} WHERE source_id IN ({$placeholders}) AND target_id IN ({$placeholders})",
+				array_merge( $ids, $ids )
+			),
+			ARRAY_N
+		);
+
+		return array_map( static fn( $row ) => [ (int) $row[0], (int) $row[1] ], $rows );
+	}
+
+	/**
+	 * All posts linked to or from a post (content links only).
+	 *
+	 * @return array<int,int>
+	 */
+	public function neighbours( int $post_id, int $limit = 40 ): array {
+		global $wpdb;
+		$table = Installer::table();
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT DISTINCT CASE WHEN source_id = %d THEN target_id ELSE source_id END
+				 FROM {$table}
+				 WHERE (source_id = %d OR target_id = %d) AND source_id > 0
+				 LIMIT %d",
+				$post_id,
+				$post_id,
+				$post_id,
+				$limit
+			)
+		);
+
+		return array_map( 'intval', $rows );
+	}
+
+	/**
 	 * Attach post titles to raw link rows.
 	 *
 	 * @param array<int,object> $rows  Raw rows.

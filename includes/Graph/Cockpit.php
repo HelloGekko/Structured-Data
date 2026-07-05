@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\Gsc\GscClient;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
 use HelloGekko\StructuredData\Seo\SeoManager;
@@ -29,13 +30,15 @@ final class Cockpit {
 	private SeoManager $seo;
 	private SchemaRegistry $registry;
 	private RelationRepository $relations;
+	private ?GscClient $gsc;
 
-	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations ) {
+	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations, ?GscClient $gsc = null ) {
 		$this->repository = $repository;
 		$this->metrics    = $metrics;
 		$this->seo        = $seo;
 		$this->registry   = $registry;
 		$this->relations  = $relations;
+		$this->gsc        = $gsc;
 	}
 
 	public function register_hooks(): void {
@@ -46,6 +49,30 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_reindex', [ $this, 'ajax_reindex' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_relation_add', [ $this, 'ajax_relation_add' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_relation_delete', [ $this, 'ajax_relation_delete' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_graph', [ $this, 'ajax_graph' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
+	}
+
+	/**
+	 * AJAX: inspect a URL in Search Console on demand.
+	 */
+	public function ajax_gsc(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
+		if ( ! $post_id || null === $this->gsc || ! $this->gsc->configured() ) {
+			wp_send_json_error( [ 'message' => __( 'Search Console is not connected.', 'hg-structured-data' ) ] );
+		}
+
+		$result = $this->gsc->inspect_and_store( $post_id );
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( [ 'message' => $result->get_error_message() ] );
+		}
+
+		wp_send_json_success( $result );
 	}
 
 	private string $hook = '';
@@ -82,8 +109,11 @@ final class Cockpit {
 					'saved'  => __( 'Saved.', 'hg-structured-data' ),
 					'error'  => __( 'Could not save.', 'hg-structured-data' ),
 					'none'   => __( 'None', 'hg-structured-data' ),
-					'noLink' => __( 'no link yet', 'hg-structured-data' ),
-					'linkTo' => __( 'Consider linking to', 'hg-structured-data' ),
+					'noLink'    => __( 'no link yet', 'hg-structured-data' ),
+					'linkTo'    => __( 'Consider linking to', 'hg-structured-data' ),
+					'mentioned' => __( 'mentioned in text', 'hg-structured-data' ),
+					'gscOff'    => __( 'Not connected — see Structured Data → Search Console.', 'hg-structured-data' ),
+					'gscNone'   => __( 'Not inspected yet.', 'hg-structured-data' ),
 				],
 			]
 		);
@@ -141,6 +171,8 @@ final class Cockpit {
 				'robots'      => $adapter->get_robots( $post->ID ),
 			];
 
+			$row['gsc_mismatch'] = GscClient::canonical_mismatch( $post->ID, (string) $row['canonical'] );
+
 			if ( 'orphans' === $filter_flag && ! $row['orphan'] ) {
 				continue;
 			}
@@ -154,6 +186,12 @@ final class Cockpit {
 		$indexed_at   = (int) get_option( Installer::OPTION_INDEXED, 0 );
 		$engine_label = $adapter->label();
 		$total_pages  = (int) $query->max_num_pages;
+
+		$cluster_options = [];
+		foreach ( $adapter->cornerstone_ids() as $cornerstone_id ) {
+			$cluster_options[ $cornerstone_id ] = (string) get_the_title( $cornerstone_id );
+		}
+		asort( $cluster_options );
 
 		require HGSD_PATH . 'includes/Graph/views/cockpit.php';
 	}
@@ -252,6 +290,8 @@ final class Cockpit {
 				'incoming'      => $this->relations->for_target( $post->ID ),
 				'relationTypes' => RelationRepository::types(),
 				'suggestions'   => $this->suggestions( $post ),
+				'gsc'           => GscClient::result_for( $post->ID ),
+				'gscReady'      => null !== $this->gsc && $this->gsc->configured(),
 			]
 		);
 	}
@@ -272,10 +312,11 @@ final class Cockpit {
 	}
 
 	/**
-	 * Simple link suggestions: cornerstones this page does not link to yet,
-	 * preferring ones that share a category or tag.
+	 * Link suggestions: cornerstones this page does not link to yet. A
+	 * cornerstone whose title is literally mentioned in this page's text ranks
+	 * first ("mention"); otherwise topical overlap via shared terms ("topic").
 	 *
-	 * @return array<int,array{post_id:int,title:string,url:string}>
+	 * @return array<int,array{post_id:int,title:string,url:string,reason:string}>
 	 */
 	private function suggestions( \WP_Post $post ): array {
 		$cornerstones = $this->seo->adapter()->cornerstone_ids();
@@ -288,18 +329,33 @@ final class Cockpit {
 			$linked[ $link['post_id'] ] = true;
 		}
 
+		$text      = $this->repository->text_for( $post->ID );
 		$own_terms = array_map(
 			'intval',
 			wp_get_object_terms( $post->ID, [ 'category', 'post_tag' ], [ 'fields' => 'ids' ] ) ?: []
 		);
 
-		$out = [];
+		$mentions = [];
+		$topical  = [];
 		foreach ( $cornerstones as $candidate ) {
 			if ( $candidate === $post->ID || isset( $linked[ $candidate ] ) ) {
 				continue;
 			}
 
-			// Prefer topical overlap when the post has terms at all.
+			$title = (string) get_the_title( $candidate );
+			$item  = [
+				'post_id' => $candidate,
+				'title'   => $title,
+				'url'     => (string) get_permalink( $candidate ),
+			];
+
+			// Strongest signal: the cornerstone is mentioned but not linked.
+			if ( '' !== $text && mb_strlen( $title ) >= 4 && false !== mb_stripos( $text, $title ) ) {
+				$item['reason'] = 'mention';
+				$mentions[]     = $item;
+				continue;
+			}
+
 			if ( ! empty( $own_terms ) ) {
 				$candidate_terms = array_map(
 					'intval',
@@ -310,17 +366,82 @@ final class Cockpit {
 				}
 			}
 
-			$out[] = [
-				'post_id' => $candidate,
-				'title'   => (string) get_the_title( $candidate ),
-				'url'     => (string) get_permalink( $candidate ),
-			];
-			if ( count( $out ) >= 5 ) {
-				break;
-			}
+			$item['reason'] = 'topic';
+			$topical[]      = $item;
 		}
 
-		return $out;
+		return array_slice( array_merge( $mentions, $topical ), 0, 5 );
+	}
+
+	/**
+	 * AJAX: cluster graph data around a center post — nodes plus typed edges
+	 * (link / relation / relation-without-link).
+	 */
+	public function ajax_graph(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$center = isset( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
+		if ( ! $center || ! get_post( $center ) ) {
+			wp_send_json_error();
+		}
+
+		// Cluster members: everything related to or linked with the center.
+		$members = [ $center ];
+		foreach ( $this->relations->touching( $center ) as $relation ) {
+			$members[] = $relation['source_id'];
+			$members[] = $relation['target_id'];
+		}
+		$members = array_merge( $members, $this->repository->neighbours( $center, 40 ) );
+		$members = array_slice( array_values( array_unique( array_filter( $members ) ) ), 0, 41 );
+
+		$link_edges = $this->repository->edges_between( $members );
+		$link_index = [];
+		foreach ( $link_edges as [ $source, $target ] ) {
+			$link_index[ $source . '|' . $target ] = true;
+		}
+
+		$edges = [];
+		foreach ( $link_edges as [ $source, $target ] ) {
+			$edges[ $source . '|' . $target ] = [
+				'source' => $source,
+				'target' => $target,
+				'type'   => 'link',
+			];
+		}
+		foreach ( $this->relations->between( $members ) as $relation ) {
+			$key    = $relation['source_id'] . '|' . $relation['target_id'];
+			$linked = isset( $link_index[ $key ] );
+			$edges[ $key . '|' . $relation['relation'] ] = [
+				'source'   => $relation['source_id'],
+				'target'   => $relation['target_id'],
+				'type'     => $linked ? 'relation' : 'relation-missing',
+				'relation' => $relation['relation'],
+			];
+		}
+
+		$adapter = $this->seo->adapter();
+		$inlinks = $this->repository->inlink_counts();
+		$nodes   = [];
+		foreach ( $members as $member ) {
+			$nodes[] = [
+				'id'          => $member,
+				'title'       => (string) get_the_title( $member ),
+				'url'         => (string) get_permalink( $member ),
+				'center'      => $member === $center,
+				'cornerstone' => $adapter->get_cornerstone( $member ),
+				'orphan'      => GraphMetrics::is_orphan( $member, $inlinks ),
+			];
+		}
+
+		wp_send_json_success(
+			[
+				'nodes' => $nodes,
+				'edges' => array_values( $edges ),
+			]
+		);
 	}
 
 	/**

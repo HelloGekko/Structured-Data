@@ -51,6 +51,7 @@ final class LinkIndexer {
 		$table = Installer::table();
 		$wpdb->delete( $table, [ 'source_id' => $post_id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 		$wpdb->delete( $table, [ 'target_id' => $post_id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$wpdb->delete( Installer::content_table(), [ 'post_id' => $post_id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 		GraphMetrics::flush_cache();
 	}
 
@@ -65,6 +66,7 @@ final class LinkIndexer {
 		$wpdb->delete( $table, [ 'source_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 		if ( 'publish' !== $post->post_status ) {
+			$wpdb->delete( Installer::content_table(), [ 'post_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 			return;
 		}
 		$type = get_post_type_object( $post->post_type );
@@ -72,8 +74,21 @@ final class LinkIndexer {
 			return;
 		}
 
-		$html  = ContentRenderer::render( $post );
-		$seen  = [];
+		$html = ContentRenderer::render( $post );
+
+		// Plain text snapshot, used for mention-based link suggestions.
+		$text = trim( (string) preg_replace( '/\s+/', ' ', wp_strip_all_tags( $html ) ) );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$wpdb->replace(
+			Installer::content_table(),
+			[
+				'post_id' => $post->ID,
+				'txt'     => mb_substr( $text, 0, 60000 ),
+			],
+			[ '%d', '%s' ]
+		);
+
+		$seen = [];
 		foreach ( self::extract_links( $html ) as $link ) {
 			$target = $this->resolve( $link['href'] );
 			if ( ! $target || $target === $post->ID ) {

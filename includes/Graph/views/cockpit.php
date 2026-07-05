@@ -50,6 +50,28 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 		<button type="button" class="button button-small hgsd-reindex"><?php esc_html_e( 'Reindex', 'hg-structured-data' ); ?></button>
 	</p>
 
+	<?php if ( ! empty( $cluster_options ) ) : ?>
+		<div class="hgsd-graph-bar">
+			<label>
+				<?php esc_html_e( 'Cluster graph:', 'hg-structured-data' ); ?>
+				<select class="hgsd-graph-select">
+					<option value=""><?php esc_html_e( '— choose a cornerstone —', 'hg-structured-data' ); ?></option>
+					<?php foreach ( $cluster_options as $hgsd_cid => $hgsd_ctitle ) : ?>
+						<option value="<?php echo (int) $hgsd_cid; ?>"><?php echo esc_html( $hgsd_ctitle ); ?></option>
+					<?php endforeach; ?>
+				</select>
+			</label>
+			<span class="hgsd-graph-legend">
+				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-link"></span> <?php esc_html_e( 'link', 'hg-structured-data' ); ?></span>
+				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-relation"></span> <?php esc_html_e( 'relation + link', 'hg-structured-data' ); ?></span>
+				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-missing"></span> <?php esc_html_e( 'relation, link missing', 'hg-structured-data' ); ?></span>
+			</span>
+		</div>
+		<div class="hgsd-graph-wrap" hidden>
+			<svg class="hgsd-graph-svg" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid meet"></svg>
+		</div>
+	<?php endif; ?>
+
 	<form method="get" class="hgsd-cockpit-filters">
 		<input type="hidden" name="post_type" value="<?php echo esc_attr( HGSD_CPT ); ?>" />
 		<input type="hidden" name="page" value="hgsd-cockpit" />
@@ -136,6 +158,11 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 								?>
 							</span>
 						<?php endif; ?>
+						<?php if ( ! empty( $hgsd_row['gsc_mismatch'] ) ) : ?>
+							<span class="hgsd-badge hgsd-badge-red" title="<?php esc_attr_e( 'Google chose a different canonical than this page declares', 'hg-structured-data' ); ?>">
+								<?php esc_html_e( 'GSC canonical', 'hg-structured-data' ); ?>
+							</span>
+						<?php endif; ?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -203,6 +230,13 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 
 		<h3><?php esc_html_e( 'Link suggestions', 'hg-structured-data' ); ?></h3>
 		<ul class="hgsd-panel-suggestions"></ul>
+
+		<h3><?php esc_html_e( 'Search Console', 'hg-structured-data' ); ?></h3>
+		<div class="hgsd-panel-gsc">
+			<ul class="hgsd-panel-gsc-facts"></ul>
+			<button type="button" class="button button-small hgsd-gsc-inspect"><?php esc_html_e( 'Inspect now', 'hg-structured-data' ); ?></button>
+			<span class="hgsd-gsc-status"></span>
+		</div>
 
 		<h3><?php esc_html_e( 'Incoming links', 'hg-structured-data' ); ?></h3>
 		<ul class="hgsd-panel-inlinks"></ul>

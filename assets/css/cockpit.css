@@ -116,6 +116,109 @@
 	margin-top: 12px;
 }
 
+/* Cluster graph */
+.hgsd-graph-bar {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	margin: 12px 0;
+	flex-wrap: wrap;
+}
+
+.hgsd-graph-legend {
+	display: inline-flex;
+	gap: 14px;
+	color: #646970;
+	font-size: 12px;
+}
+
+.hgsd-legend-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.hgsd-legend-line {
+	display: inline-block;
+	width: 26px;
+	height: 0;
+	border-top: 2px solid #a7aaad;
+}
+
+.hgsd-legend-relation {
+	border-top-color: #2271b1;
+}
+
+.hgsd-legend-missing {
+	border-top: 2px dashed #dba617;
+}
+
+.hgsd-graph-wrap {
+	margin: 0 0 16px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.hgsd-graph-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 560px;
+}
+
+.hgsd-edge {
+	stroke: #c3c4c7;
+	stroke-width: 1.5;
+}
+
+.hgsd-edge-relation {
+	stroke: #2271b1;
+	stroke-width: 2;
+}
+
+.hgsd-edge-relation-missing {
+	stroke: #dba617;
+	stroke-width: 2;
+	stroke-dasharray: 6 5;
+}
+
+.hgsd-arrowhead {
+	fill: #a7aaad;
+}
+
+.hgsd-node {
+	cursor: pointer;
+}
+
+.hgsd-node circle {
+	fill: #f0f6fc;
+	stroke: #2271b1;
+	stroke-width: 2;
+}
+
+.hgsd-node.is-center circle {
+	fill: #2271b1;
+}
+
+.hgsd-node.is-cornerstone:not(.is-center) circle {
+	fill: #dbeafd;
+}
+
+.hgsd-node.is-orphan circle {
+	stroke: #b32d2e;
+}
+
+.hgsd-node text {
+	font-size: 12px;
+	fill: #1d2327;
+	text-anchor: middle;
+}
+
+.hgsd-node:hover circle {
+	stroke-width: 3;
+}
+
 /* Side panel */
 .hgsd-panel {
 	position: fixed;
