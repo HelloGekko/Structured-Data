@@ -175,6 +175,10 @@ final class GscSettings {
 
 		$s['refresh_token'] = (string) $body['refresh_token'];
 		update_option( GscClient::OPTION, $s );
+
+		// Drop any access token cached under the previous scope, so the next
+		// call mints a fresh one that carries the newly granted indexing scope.
+		delete_transient( GscClient::TOKEN_CACHE );
 		$this->client->sync_schedule();
 
 		wp_safe_redirect( $this->settings_url( [ 'connected' => '1' ] ) );
