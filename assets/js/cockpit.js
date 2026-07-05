@@ -155,6 +155,7 @@
 			renderIncoming( d.incoming );
 			renderSuggestions( d.suggestions );
 			renderGsc( d.gsc, d.gscReady );
+			renderIndex( d.indexReady, d.indexStatus );
 			$panel.find( '.hgsd-rel-search-input' ).val( '' );
 			$panel.find( '.hgsd-rel-target' ).val( '' );
 			$panel.removeAttr( 'hidden' );
@@ -303,6 +304,51 @@
 		} ).done( function ( res ) {
 			if ( res && res.success ) {
 				renderGsc( res.data, true );
+			} else {
+				$status.text( ( res && res.data && res.data.message ) ? res.data.message : HGSDCockpit.i18n.error );
+			}
+		} );
+	} );
+
+	/* --------------------------------------------------- instant indexing */
+
+	function renderIndex( ready, status ) {
+		var $facts = $panel.find( '.hgsd-panel-index-facts' );
+		var $btn = $panel.find( '.hgsd-index-submit' );
+		$facts.empty();
+		$panel.find( '.hgsd-index-status' ).text( '' );
+
+		if ( ! ready ) {
+			$facts.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.indexOff ) );
+			$btn.hide();
+			return;
+		}
+		$btn.text( HGSDCockpit.i18n.indexBtn ).prop( 'disabled', false ).show();
+
+		if ( status && status.time ) {
+			var when = new Date( status.time * 1000 ).toISOString().substring( 0, 10 );
+			var ok = 'error' !== status.status;
+			$facts.append(
+				$( '<li />' ).text( HGSDCockpit.i18n.indexOn + ': ' + when + ( ok ? ' ✓' : ' ✕' ) )
+			);
+		} else {
+			$facts.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.indexNever ) );
+		}
+	}
+
+	$panel.on( 'click', '.hgsd-index-submit', function () {
+		var $btn = $( this );
+		var $status = $panel.find( '.hgsd-index-status' );
+		$btn.prop( 'disabled', true ).text( HGSDCockpit.i18n.indexBusy );
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_index',
+			nonce: HGSDCockpit.nonce,
+			post_id: currentPost
+		} ).done( function ( res ) {
+			$btn.prop( 'disabled', false ).text( HGSDCockpit.i18n.indexBtn );
+			if ( res && res.success ) {
+				$status.text( res.data.message || '✓' );
+				renderIndex( true, { time: res.data.time, status: 'ok' } );
 			} else {
 				$status.text( ( res && res.data && res.data.message ) ? res.data.message : HGSDCockpit.i18n.error );
 			}

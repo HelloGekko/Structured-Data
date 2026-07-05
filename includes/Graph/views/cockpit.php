@@ -306,6 +306,13 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 			<span class="hgsd-gsc-status"></span>
 		</div>
 
+		<h3><?php esc_html_e( 'Instant indexing', 'hg-structured-data' ); ?></h3>
+		<div class="hgsd-panel-index">
+			<ul class="hgsd-panel-index-facts"></ul>
+			<button type="button" class="button button-small button-primary hgsd-index-submit"><?php esc_html_e( 'Submit to Google', 'hg-structured-data' ); ?></button>
+			<span class="hgsd-index-status hgsd-panel-status"></span>
+		</div>
+
 		<h3><?php esc_html_e( 'Incoming links', 'hg-structured-data' ); ?></h3>
 		<ul class="hgsd-panel-inlinks"></ul>
 

@@ -43,6 +43,13 @@ final class ContentTypes {
 	}
 
 	/**
+	 * Whether a post type name counts as site content.
+	 */
+	public static function is_content( string $name ): bool {
+		return in_array( $name, self::list(), true );
+	}
+
+	/**
 	 * Content post type objects, keyed by name.
 	 *
 	 * @return array<string,\WP_Post_Type>

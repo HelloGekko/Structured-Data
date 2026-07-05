@@ -233,6 +233,16 @@ final class GscClient {
 	}
 
 	/**
+	 * Public accessor for a valid bearer token, shared with the Indexing API
+	 * client (same OAuth connection, same cached token).
+	 *
+	 * @return string|WP_Error
+	 */
+	public function bearer_token() {
+		return $this->access_token();
+	}
+
+	/**
 	 * Exchange the refresh token for a short-lived access token (cached).
 	 *
 	 * @return string|WP_Error

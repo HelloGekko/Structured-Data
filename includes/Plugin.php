@@ -23,6 +23,8 @@ use HelloGekko\StructuredData\Graph\LinkRepository;
 use HelloGekko\StructuredData\Graph\RelationRepository;
 use HelloGekko\StructuredData\Gsc\GscClient;
 use HelloGekko\StructuredData\Gsc\GscSettings;
+use HelloGekko\StructuredData\Gsc\IndexingClient;
+use HelloGekko\StructuredData\Gsc\IndexingSettings;
 use HelloGekko\StructuredData\Output\FrontendOutput;
 use HelloGekko\StructuredData\Seo\SeoManager;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
@@ -111,6 +113,10 @@ final class Plugin {
 		$gsc = new GscClient();
 		$gsc->register_hooks();
 
+		// Instant indexing: submit URLs to Google through the same connection.
+		$indexing = new IndexingClient( $gsc );
+		$indexing->register_hooks();
+
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
 			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
@@ -119,9 +125,10 @@ final class Plugin {
 			( new AiSettings() )->register_hooks();
 
 			( new GscSettings( $gsc ) )->register_hooks();
+			( new IndexingSettings( $indexing, $gsc ) )->register_hooks();
 
 			$link_repository = new LinkRepository();
-			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations, $gsc ) )->register_hooks();
+			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations, $gsc, $indexing ) )->register_hooks();
 		}
 	}
 
@@ -154,6 +161,7 @@ final class Plugin {
 		( new ReviewsManager() )->unschedule();
 		Installer::unschedule();
 		GscClient::unschedule();
+		IndexingClient::unschedule();
 		flush_rewrite_rules();
 	}
 

@@ -23,7 +23,7 @@ foreach ( $hgsd_posts as $hgsd_post_id ) {
 }
 
 // Options and transients.
-foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at', 'hgsd_gsc_settings', 'hgsd_tips_dismissed', 'hgsd_tips_settings' ] as $hgsd_option ) {
+foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at', 'hgsd_gsc_settings', 'hgsd_tips_dismissed', 'hgsd_tips_settings', 'hgsd_indexing_settings', 'hgsd_indexing_state', 'hgsd_indexing_queue' ] as $hgsd_option ) {
 	delete_option( $hgsd_option );
 }
 delete_transient( 'hgsd_llms_txt' );
@@ -39,3 +39,7 @@ $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_content" ); // phpcs:ign
 // Per-post Search Console snapshots.
 delete_post_meta_by_key( '_hgsd_gsc' );
 delete_post_meta_by_key( '_hgsd_gsc_time' );
+
+// Per-post instant-indexing submission markers.
+delete_post_meta_by_key( '_hgsd_indexed_at' );
+delete_post_meta_by_key( '_hgsd_indexed_status' );

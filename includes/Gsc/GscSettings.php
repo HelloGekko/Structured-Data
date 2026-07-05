@@ -17,7 +17,9 @@ defined( 'ABSPATH' ) || exit;
  */
 final class GscSettings {
 
-	private const SCOPE    = 'https://www.googleapis.com/auth/webmasters.readonly';
+	// Read-only Search Console access (URL inspection) plus the Indexing API
+	// scope so the same connection can submit URLs for (re)crawling.
+	private const SCOPE    = 'https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/indexing';
 	private const AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 	private const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 

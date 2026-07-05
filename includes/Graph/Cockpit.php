@@ -10,6 +10,7 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData\Graph;
 
 use HelloGekko\StructuredData\Gsc\GscClient;
+use HelloGekko\StructuredData\Gsc\IndexingClient;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
 use HelloGekko\StructuredData\Seo\SeoManager;
@@ -31,15 +32,17 @@ final class Cockpit {
 	private SchemaRegistry $registry;
 	private RelationRepository $relations;
 	private ?GscClient $gsc;
+	private ?IndexingClient $indexing;
 	private Advisor $advisor;
 
-	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations, ?GscClient $gsc = null ) {
+	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations, ?GscClient $gsc = null, ?IndexingClient $indexing = null ) {
 		$this->repository = $repository;
 		$this->metrics    = $metrics;
 		$this->seo        = $seo;
 		$this->registry   = $registry;
 		$this->relations  = $relations;
 		$this->gsc        = $gsc;
+		$this->indexing   = $indexing;
 		$this->advisor    = new Advisor( $repository, $metrics, $relations, $seo );
 	}
 
@@ -53,6 +56,7 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_relation_delete', [ $this, 'ajax_relation_delete' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_graph', [ $this, 'ajax_graph' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_index', [ $this, 'ajax_index' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip', [ $this, 'ajax_tip' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip_settings', [ $this, 'ajax_tip_settings' ] );
 	}
@@ -115,6 +119,34 @@ final class Cockpit {
 		wp_send_json_success( $result );
 	}
 
+	/**
+	 * AJAX: submit a URL to Google's Indexing API on demand.
+	 */
+	public function ajax_index(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
+		if ( ! $post_id || null === $this->indexing || ! $this->indexing->ready() ) {
+			wp_send_json_error( [ 'message' => __( 'Instant indexing is not enabled.', 'hg-structured-data' ) ] );
+		}
+
+		$result = $this->indexing->submit_post( $post_id );
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( [ 'message' => $result->get_error_message() ] );
+		}
+
+		wp_send_json_success(
+			[
+				'time'      => (int) get_post_meta( $post_id, IndexingClient::META_TIME, true ),
+				'remaining' => $this->indexing->remaining_quota(),
+				'message'   => __( 'Submitted to Google.', 'hg-structured-data' ),
+			]
+		);
+	}
+
 	private string $hook = '';
 
 	public function menu(): void {
@@ -154,6 +186,11 @@ final class Cockpit {
 					'mentioned' => __( 'mentioned in text', 'hg-structured-data' ),
 					'gscOff'    => __( 'Not connected — see Structured Data → Search Console.', 'hg-structured-data' ),
 					'gscNone'   => __( 'Not inspected yet.', 'hg-structured-data' ),
+					'indexBtn'    => __( 'Submit to Google', 'hg-structured-data' ),
+					'indexBusy'   => __( 'Submitting…', 'hg-structured-data' ),
+					'indexOff'    => __( 'Enable Structured Data → Instant Indexing to submit URLs.', 'hg-structured-data' ),
+					'indexNever'  => __( 'Not submitted yet.', 'hg-structured-data' ),
+					'indexOn'     => __( 'Last submitted', 'hg-structured-data' ),
 				],
 			]
 		);
@@ -351,6 +388,8 @@ final class Cockpit {
 				'suggestions'   => $this->suggestions( $post ),
 				'gsc'           => GscClient::result_for( $post->ID ),
 				'gscReady'      => null !== $this->gsc && $this->gsc->configured(),
+				'indexReady'    => null !== $this->indexing && $this->indexing->ready(),
+				'indexStatus'   => IndexingClient::status_for( $post->ID ),
 			]
 		);
 	}
