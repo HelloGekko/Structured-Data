@@ -29,6 +29,7 @@ foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settin
 delete_transient( 'hgsd_llms_txt' );
 delete_transient( 'hgsd_graph_metrics' );
 delete_transient( 'hgsd_gsc_token' );
+delete_transient( 'hgsd_update_release' );
 
 // Link-index, relations and content tables.
 global $wpdb;

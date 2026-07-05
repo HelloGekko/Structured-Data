@@ -1,0 +1,67 @@
+name: Build & attach plugin zip
+
+# Push a version tag (e.g. v1.1.0) and this builds a clean installable zip
+# — only the runtime files, no tests/CI/dev tooling — and attaches it to a
+# GitHub Release. Sites running the plugin then see the update automatically
+# and download this asset.
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Verify tag matches the plugin header version
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          HEADER="$(grep -oP '^\s*\*\s*Version:\s*\K[0-9.]+' structured-data.php | head -1)"
+          echo "Tag version:    $TAG"
+          echo "Header version: $HEADER"
+          if [ "$TAG" != "$HEADER" ]; then
+            echo "::error::Tag $TAG does not match the Version header ($HEADER). Bump the header first."
+            exit 1
+          fi
+
+      - name: Build clean plugin folder
+        run: |
+          mkdir -p build/structured-data
+          rsync -a --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'bin' \
+            --exclude 'tests' \
+            --exclude 'node_modules' \
+            --exclude 'vendor' \
+            --exclude '.gitignore' \
+            --exclude '.gitattributes' \
+            --exclude 'composer.json' \
+            --exclude 'composer.lock' \
+            --exclude 'phpcs.xml.dist' \
+            --exclude 'phpunit.xml.dist' \
+            --exclude '*.zip' \
+            ./ build/structured-data/
+
+      - name: Create zip
+        run: |
+          cd build
+          zip -r ../structured-data.zip structured-data
+          cd ..
+          unzip -l structured-data.zip | head -20
+
+      - name: Publish release with asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" structured-data.zip \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            || gh release upload "$GITHUB_REF_NAME" structured-data.zip --clobber

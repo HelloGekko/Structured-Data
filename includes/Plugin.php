@@ -31,6 +31,7 @@ use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Reviews\ReviewsSettings;
 use HelloGekko\StructuredData\Schema\SchemaCatalog;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
+use HelloGekko\StructuredData\Update\Updater;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -116,6 +117,10 @@ final class Plugin {
 		// Instant indexing: submit URLs to Google through the same connection.
 		$indexing = new IndexingClient( $gsc );
 		$indexing->register_hooks();
+
+		// Deliver updates from GitHub Releases (runs during update checks in the
+		// admin and via cron, so it is not gated behind is_admin()).
+		( new Updater( 'HelloGekko', 'Structured-Data', HGSD_BASENAME, HGSD_VERSION ) )->register_hooks();
 
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
