@@ -36,7 +36,9 @@ final class IndexingClient {
 
 	private const PUBLISH_URL   = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
 	private const DEFAULT_QUOTA = 200;
-	private const DRAIN_LIMIT   = 25;
+	private const DRAIN_LIMIT   = 10;
+	private const HTTP_TIMEOUT  = 8;
+	private const RUN_BUDGET    = 15;
 	private const LOG_MAX       = 40;
 
 	private GscClient $gsc;
@@ -141,9 +143,16 @@ final class IndexingClient {
 			return;
 		}
 
-		$processed = 0;
+		$processed   = 0;
+		$started     = microtime( true );
+		$quota_bound = false;
 		foreach ( $queue as $post_id => $type ) {
-			if ( $processed >= self::DRAIN_LIMIT || $this->remaining_quota() < 1 ) {
+			if ( $this->remaining_quota() < 1 ) {
+				$quota_bound = true;
+				break;
+			}
+			// Keep each cron run short so it can never hog a PHP worker.
+			if ( $processed >= self::DRAIN_LIMIT || ( microtime( true ) - $started ) > self::RUN_BUDGET ) {
 				break;
 			}
 
@@ -155,9 +164,11 @@ final class IndexingClient {
 			++$processed;
 		}
 
-		// Anything still queued (quota/limit) gets picked up on the next run.
+		// Anything still queued gets picked up later: soon when we simply ran out
+		// of time/limit, or after an hour when today's quota is exhausted.
 		if ( ! empty( $queue ) && ! wp_next_scheduled( self::DRAIN_HOOK ) ) {
-			wp_schedule_single_event( time() + HOUR_IN_SECONDS, self::DRAIN_HOOK );
+			$delay = $quota_bound ? HOUR_IN_SECONDS : 5 * MINUTE_IN_SECONDS;
+			wp_schedule_single_event( time() + $delay, self::DRAIN_HOOK );
 		}
 	}
 
@@ -207,7 +218,7 @@ final class IndexingClient {
 		$response = wp_remote_post(
 			self::PUBLISH_URL,
 			[
-				'timeout' => 20,
+				'timeout' => self::HTTP_TIMEOUT,
 				'headers' => [
 					'Authorization' => 'Bearer ' . $token,
 					'Content-Type'  => 'application/json',

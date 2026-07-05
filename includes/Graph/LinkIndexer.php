@@ -22,6 +22,7 @@ defined( 'ABSPATH' ) || exit;
 final class LinkIndexer {
 
 	private const BATCH_SIZE = 25;
+	private const RUN_BUDGET = 15;
 
 	public function register_hooks(): void {
 		add_action( 'save_post', [ $this, 'on_save_post' ], 20, 2 );
@@ -160,15 +161,26 @@ final class LinkIndexer {
 		$pointer = (int) get_option( Installer::OPTION_POINTER, 0 );
 		$ids     = $this->ids_after( $pointer );
 
+		$started = microtime( true );
+		$done    = 0;
 		foreach ( $ids as $id ) {
 			$post = get_post( $id );
 			if ( $post ) {
 				$this->index_post( $post );
 			}
 			$pointer = $id;
+			++$done;
+
+			// Rendering content (Elementor included) is the heaviest work we do;
+			// stop after the budget so a single run can't tie up a PHP worker,
+			// and resume from the pointer on the next run.
+			if ( ( microtime( true ) - $started ) > self::RUN_BUDGET ) {
+				break;
+			}
 		}
 
-		if ( count( $ids ) === self::BATCH_SIZE ) {
+		// More to do when we filled a batch, or we stopped early mid-batch.
+		if ( count( $ids ) === self::BATCH_SIZE || $done < count( $ids ) ) {
 			update_option( Installer::OPTION_POINTER, $pointer, false );
 			wp_schedule_single_event( time() + 15, Installer::CRON_HOOK );
 			return;

@@ -27,7 +27,9 @@ final class GscClient {
 	public const TOKEN_CACHE  = 'hgsd_gsc_token';
 	private const TOKEN_URL   = 'https://oauth2.googleapis.com/token';
 	private const INSPECT_URL = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
-	private const BATCH_SIZE  = 20;
+	private const BATCH_SIZE  = 10;
+	private const HTTP_TIMEOUT = 8;
+	private const RUN_BUDGET   = 15;
 
 	/**
 	 * Settings merged with defaults.
@@ -120,7 +122,7 @@ final class GscClient {
 		$response = wp_remote_post(
 			self::INSPECT_URL,
 			[
-				'timeout' => 20,
+				'timeout' => self::HTTP_TIMEOUT,
 				'headers' => [
 					'Authorization' => 'Bearer ' . $token,
 					'Content-Type'  => 'application/json',
@@ -224,10 +226,17 @@ final class GscClient {
 			);
 		}
 
+		$started = microtime( true );
 		foreach ( array_unique( array_map( 'intval', $ids ) ) as $post_id ) {
 			$result = $this->inspect_and_store( $post_id );
 			if ( is_wp_error( $result ) ) {
 				break; // Token/quota trouble — retry next hour.
+			}
+
+			// Never let one cron run hog a PHP worker: stop after the budget and
+			// let the next hourly run pick up where we left off.
+			if ( ( microtime( true ) - $started ) > self::RUN_BUDGET ) {
+				break;
 			}
 		}
 	}
@@ -257,7 +266,7 @@ final class GscClient {
 		$response = wp_remote_post(
 			self::TOKEN_URL,
 			[
-				'timeout' => 15,
+				'timeout' => 10,
 				'body'    => [
 					'client_id'     => $s['client_id'],
 					'client_secret' => $s['client_secret'],
