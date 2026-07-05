@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Installer {
 
-	public const DB_VERSION     = '3';
+	public const DB_VERSION     = '4';
 	public const OPTION_VERSION = 'hgsd_db_version';
 	public const OPTION_POINTER = 'hgsd_index_pointer';
 	public const OPTION_INDEXED = 'hgsd_indexed_at';

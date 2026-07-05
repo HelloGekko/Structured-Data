@@ -191,7 +191,7 @@ final class GscClient {
 		// Never-checked posts first.
 		$ids = get_posts(
 			[
-				'post_type'      => array_keys( get_post_types( [ 'public' => true ] ) ),
+				'post_type'      => \HelloGekko\StructuredData\ContentTypes::list(),
 				'post_status'    => 'publish',
 				'numberposts'    => self::BATCH_SIZE,
 				'fields'         => 'ids',
@@ -211,7 +211,7 @@ final class GscClient {
 				$ids,
 				get_posts(
 					[
-						'post_type'     => array_keys( get_post_types( [ 'public' => true ] ) ),
+						'post_type'     => \HelloGekko\StructuredData\ContentTypes::list(),
 						'post_status'   => 'publish',
 						'numberposts'   => self::BATCH_SIZE - count( $ids ),
 						'fields'        => 'ids',

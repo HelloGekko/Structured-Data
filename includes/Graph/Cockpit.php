@@ -157,8 +157,7 @@ final class Cockpit {
 		$paged       = isset( $_GET['paged'] ) ? max( 1, (int) $_GET['paged'] ) : 1;
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 
-		$public_types = get_post_types( [ 'public' => true ], 'objects' );
-		unset( $public_types['attachment'] );
+		$public_types = \HelloGekko\StructuredData\ContentTypes::objects();
 
 		$query = new \WP_Query(
 			[

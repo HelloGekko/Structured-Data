@@ -171,8 +171,7 @@ final class LinkRepository {
 	 */
 	public function all_published_ids(): array {
 		global $wpdb;
-		$types = array_keys( get_post_types( [ 'public' => true ] ) );
-		$types = array_values( array_diff( $types, [ 'attachment' ] ) );
+		$types = \HelloGekko\StructuredData\ContentTypes::list();
 		if ( empty( $types ) ) {
 			return [];
 		}

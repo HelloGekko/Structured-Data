@@ -65,7 +65,7 @@ abstract class SeoAdapter {
 
 		$ids = get_posts(
 			[
-				'post_type'      => array_keys( get_post_types( [ 'public' => true ] ) ),
+				'post_type'      => \HelloGekko\StructuredData\ContentTypes::list(),
 				'post_status'    => 'publish',
 				'numberposts'    => 100,
 				'fields'         => 'ids',

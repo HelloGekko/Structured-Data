@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\ContentTypes;
 use HelloGekko\StructuredData\Output\ContentRenderer;
 
 defined( 'ABSPATH' ) || exit;
@@ -65,12 +66,8 @@ final class LinkIndexer {
 		// Always clear the old rows for this source first.
 		$wpdb->delete( $table, [ 'source_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
-		if ( 'publish' !== $post->post_status ) {
+		if ( 'publish' !== $post->post_status || ! in_array( $post->post_type, ContentTypes::list(), true ) ) {
 			$wpdb->delete( Installer::content_table(), [ 'post_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
-			return;
-		}
-		$type = get_post_type_object( $post->post_type );
-		if ( ! $type || ! $type->public ) {
 			return;
 		}
 
@@ -177,11 +174,50 @@ final class LinkIndexer {
 			return;
 		}
 
-		// Done: refresh menu edges and stamp completion.
+		// Done: refresh menu edges, purge stale rows and stamp completion.
 		delete_option( Installer::OPTION_POINTER );
 		$this->reindex_menus();
+		$this->purge_stale();
 		update_option( Installer::OPTION_INDEXED, time(), false );
 		GraphMetrics::flush_cache();
+	}
+
+	/**
+	 * Remove rows that reference deleted posts or non-content types (e.g.
+	 * Elementor templates indexed before they were excluded).
+	 */
+	public function purge_stale(): void {
+		global $wpdb;
+		$types = ContentTypes::list();
+		if ( empty( $types ) ) {
+			return;
+		}
+
+		$links        = Installer::table();
+		$content      = Installer::content_table();
+		$placeholders = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+		$conditions   = "p.ID IS NULL OR p.post_status != 'publish' OR p.post_type NOT IN ({$placeholders})";
+
+		// phpcs:disable WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$wpdb->query(
+			$wpdb->prepare(
+				"DELETE l FROM {$links} l LEFT JOIN {$wpdb->posts} p ON p.ID = l.source_id WHERE l.source_id > 0 AND ({$conditions})",
+				$types
+			)
+		);
+		$wpdb->query(
+			$wpdb->prepare(
+				"DELETE l FROM {$links} l LEFT JOIN {$wpdb->posts} p ON p.ID = l.target_id WHERE {$conditions}",
+				$types
+			)
+		);
+		$wpdb->query(
+			$wpdb->prepare(
+				"DELETE c FROM {$content} c LEFT JOIN {$wpdb->posts} p ON p.ID = c.post_id WHERE {$conditions}",
+				$types
+			)
+		);
+		// phpcs:enable
 	}
 
 	/**
@@ -191,7 +227,7 @@ final class LinkIndexer {
 	 */
 	private function ids_after( int $pointer ): array {
 		global $wpdb;
-		$types = array_keys( get_post_types( [ 'public' => true ] ) );
+		$types = ContentTypes::list();
 		if ( empty( $types ) ) {
 			return [];
 		}

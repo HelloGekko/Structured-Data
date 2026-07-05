@@ -119,10 +119,16 @@ final class Advisor {
 	 */
 	private function orphans(): array {
 		$inlinks = $this->repository->inlink_counts();
+		$adapter = $this->seo->adapter();
 		$issues  = [];
 
 		foreach ( $this->repository->all_published_ids() as $post_id ) {
 			if ( ! GraphMetrics::is_orphan( $post_id, $inlinks ) ) {
+				continue;
+			}
+			// Deliberately unlinked pages (thank-you, confirmation) are noindexed —
+			// then being an orphan is by design, not a problem.
+			if ( $adapter->get_robots( $post_id )['noindex'] ) {
 				continue;
 			}
 			$issues[] = [
@@ -173,7 +179,7 @@ final class Advisor {
 	private function gsc_issues(): array {
 		$inspected = get_posts(
 			[
-				'post_type'     => array_keys( get_post_types( [ 'public' => true ] ) ),
+				'post_type'     => \HelloGekko\StructuredData\ContentTypes::list(),
 				'post_status'   => 'publish',
 				'numberposts'   => 300,
 				'fields'        => 'ids',
