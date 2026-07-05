@@ -426,7 +426,24 @@
 	}
 
 	$( document ).on( 'click', '.hgsd-tip-open', function () {
-		openPanelById( parseInt( $( this ).attr( 'data-post' ), 10 ), null );
+		var post = parseInt( $( this ).attr( 'data-post' ), 10 );
+		if ( post ) { // Aggregated tips render as plain links instead.
+			openPanelById( post, null );
+		}
+	} );
+
+	$( document ).on( 'click', '.hgsd-tips-settings-save', function () {
+		var types = [];
+		$( '.hgsd-tips-skip:checked' ).each( function () {
+			types.push( $( this ).val() );
+		} );
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_tip_settings',
+			nonce: HGSDCockpit.nonce,
+			types: types
+		} ).always( function () {
+			window.location.reload();
+		} );
 	} );
 
 	$( document ).on( 'click', '.hgsd-tip-dismiss', function () {

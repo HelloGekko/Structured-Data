@@ -22,8 +22,64 @@ defined( 'ABSPATH' ) || exit;
 final class Advisor {
 
 	public const OPTION_DISMISSED = 'hgsd_tips_dismissed';
+	public const OPTION_SETTINGS  = 'hgsd_tips_settings';
 
 	private const MAX_PER_TYPE = 15;
+
+	/**
+	 * Tips settings with defaults.
+	 *
+	 * @return array{skip_orphan_types:array<int,string>}
+	 */
+	public static function settings(): array {
+		$stored = get_option( self::OPTION_SETTINGS, [] );
+		$stored = is_array( $stored ) ? $stored : [];
+
+		return [
+			'skip_orphan_types' => is_array( $stored['skip_orphan_types'] ?? null ) ? $stored['skip_orphan_types'] : [],
+		];
+	}
+
+	/**
+	 * Persist which post types the orphan/archive checks should skip.
+	 *
+	 * @param array<int,string> $skip_types Post type names.
+	 */
+	public static function save_settings( array $skip_types ): void {
+		update_option(
+			self::OPTION_SETTINGS,
+			[ 'skip_orphan_types' => array_values( array_map( 'sanitize_key', $skip_types ) ) ],
+			false
+		);
+	}
+
+	/**
+	 * Whether a post is reachable through an archive listing even without any
+	 * contextual link: posts live on the blog archive, CPTs may have their own
+	 * archive, and any public taxonomy term implies a term archive.
+	 */
+	public static function is_archive_reachable( \WP_Post $post ): bool {
+		if ( 'post' === $post->post_type ) {
+			return true; // The main blog archive lists every post.
+		}
+
+		$type = get_post_type_object( $post->post_type );
+		if ( $type && ! empty( $type->has_archive ) ) {
+			return true;
+		}
+
+		foreach ( get_object_taxonomies( $post->post_type, 'objects' ) as $taxonomy ) {
+			if ( empty( $taxonomy->public ) ) {
+				continue;
+			}
+			$terms = get_the_terms( $post, $taxonomy->name );
+			if ( $terms && ! is_wp_error( $terms ) ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 	private LinkRepository $repository;
 	private GraphMetrics $metrics;
@@ -120,10 +176,17 @@ final class Advisor {
 	private function orphans(): array {
 		$inlinks = $this->repository->inlink_counts();
 		$adapter = $this->seo->adapter();
-		$issues  = [];
+		$skip    = self::settings()['skip_orphan_types'];
+
+		$hard         = [];
+		$archive_only = [];
 
 		foreach ( $this->repository->all_published_ids() as $post_id ) {
 			if ( ! GraphMetrics::is_orphan( $post_id, $inlinks ) ) {
+				continue;
+			}
+			$post = get_post( $post_id );
+			if ( ! $post || in_array( $post->post_type, $skip, true ) ) {
 				continue;
 			}
 			// Deliberately unlinked pages (thank-you, confirmation) are noindexed —
@@ -131,19 +194,50 @@ final class Advisor {
 			if ( $adapter->get_robots( $post_id )['noindex'] ) {
 				continue;
 			}
-			$issues[] = [
+
+			// Reachable via an archive listing: not a real orphan for Google, just
+			// weakly linked. Bundled into one tip per post type below.
+			if ( self::is_archive_reachable( $post ) ) {
+				$archive_only[ $post->post_type ][] = $post_id;
+				continue;
+			}
+
+			$hard[] = [
 				'key'      => 'orphan:' . $post_id,
 				'severity' => 'warning',
 				'post_id'  => $post_id,
 				'message'  => sprintf(
 					/* translators: %s: page title. */
-					__( '“%s” is an orphan: no internal link or menu item points to it, so search engines may never find it. Link to it from a related page.', 'hg-structured-data' ),
+					__( '“%s” is a true orphan: no internal link, menu item or archive lists it — search engines may never find it. Link to it from a related page.', 'hg-structured-data' ),
 					get_the_title( $post_id )
 				),
 			];
 		}
 
-		return self::cap( $issues );
+		$issues = self::cap( $hard );
+
+		foreach ( $archive_only as $post_type => $ids ) {
+			$type_object = get_post_type_object( $post_type );
+			$label       = $type_object ? strtolower( (string) $type_object->labels->name ) : $post_type;
+
+			$issues[] = [
+				'key'      => 'archiveonly:' . $post_type,
+				'severity' => 'tip',
+				'post_id'  => 0,
+				'url'      => add_query_arg(
+					[ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockpit', 'pt' => $post_type, 'flag' => 'archiveonly' ],
+					admin_url( 'edit.php' )
+				),
+				'message'  => sprintf(
+					/* translators: 1: number of posts, 2: post type plural label. */
+					__( '%1$d %2$s are only reachable via archive pages (blog/category overviews) — no contextual links point to them. Google finds them, but archive links weaken as content grows. Link the important ones from related content.', 'hg-structured-data' ),
+					count( $ids ),
+					$label
+				),
+			];
+		}
+
+		return $issues;
 	}
 
 	/**

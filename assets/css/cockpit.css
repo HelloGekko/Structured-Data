@@ -212,6 +212,22 @@
 	color: #2271b1;
 	cursor: pointer;
 	white-space: nowrap;
+	text-decoration: none;
+}
+
+.hgsd-tips-settings {
+	margin-top: 10px;
+	color: #646970;
+}
+
+.hgsd-tips-settings summary {
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.hgsd-tips-skip-label {
+	margin: 0 10px 0 4px;
+	white-space: nowrap;
 }
 
 /* Cluster graph */

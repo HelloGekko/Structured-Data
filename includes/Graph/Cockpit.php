@@ -54,6 +54,23 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_graph', [ $this, 'ajax_graph' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip', [ $this, 'ajax_tip' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_tip_settings', [ $this, 'ajax_tip_settings' ] );
+	}
+
+	/**
+	 * AJAX: save which post types the orphan/archive checks skip.
+	 */
+	public function ajax_tip_settings(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- verified above.
+		$types = isset( $_POST['types'] ) ? (array) wp_unslash( $_POST['types'] ) : [];
+		Advisor::save_settings( array_map( 'sanitize_key', $types ) );
+
+		wp_send_json_success();
 	}
 
 	/**
@@ -177,25 +194,39 @@ final class Cockpit {
 		$missing  = $this->relations->missing_link_counts();
 		$adapter  = $this->seo->adapter();
 
+		$skip_types = Advisor::settings()['skip_orphan_types'];
+
 		$rows = [];
 		foreach ( $query->posts as $post ) {
-			$orphan = GraphMetrics::is_orphan( $post->ID, $inlinks );
-			$row    = [
+			$row = [
 				'post'        => $post,
 				'schemas'     => $this->schema_labels( $post ),
 				'inlinks'     => $inlinks[ $post->ID ] ?? 0,
 				'outlinks'    => $outlinks[ $post->ID ] ?? 0,
 				'depth'       => $depths[ $post->ID ] ?? null,
-				'orphan'      => $orphan,
 				'missing'     => $missing[ $post->ID ] ?? 0,
 				'cornerstone' => $adapter->get_cornerstone( $post->ID ),
 				'canonical'   => $adapter->get_canonical( $post->ID ),
 				'robots'      => $adapter->get_robots( $post->ID ),
 			];
 
+			// Link state: fine / archive-only (weak) / true orphan.
+			$state = 'linked';
+			if (
+				GraphMetrics::is_orphan( $post->ID, $inlinks )
+				&& ! in_array( $post->post_type, $skip_types, true )
+				&& ! $row['robots']['noindex']
+			) {
+				$state = Advisor::is_archive_reachable( $post ) ? 'archive' : 'orphan';
+			}
+			$row['link_state'] = $state;
+
 			$row['gsc_mismatch'] = GscClient::canonical_mismatch( $post->ID, (string) $row['canonical'] );
 
-			if ( 'orphans' === $filter_flag && ! $row['orphan'] ) {
+			if ( 'orphans' === $filter_flag && 'orphan' !== $state ) {
+				continue;
+			}
+			if ( 'archiveonly' === $filter_flag && 'archive' !== $state ) {
 				continue;
 			}
 			if ( 'cornerstones' === $filter_flag && ! $row['cornerstone'] ) {
@@ -219,6 +250,7 @@ final class Cockpit {
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$show_ignored                    = isset( $_GET['ignored'] ) && '1' === $_GET['ignored'];
 		[ $tips_active, $tips_dismissed ] = Advisor::split_dismissed( $this->advisor->issues() );
+		$tips_skip_types                  = $skip_types;
 
 		require HGSD_PATH . 'includes/Graph/views/cockpit.php';
 	}

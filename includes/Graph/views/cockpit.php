@@ -80,7 +80,11 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 					<li class="hgsd-tip" data-key="<?php echo esc_attr( $hgsd_tip['key'] ); ?>">
 						<span class="hgsd-badge hgsd-severity-<?php echo esc_attr( $hgsd_tip['severity'] ); ?>"><?php echo esc_html( $hgsd_tip['severity'] ); ?></span>
 						<span class="hgsd-tip-message"><?php echo esc_html( $hgsd_tip['message'] ); ?></span>
-						<button type="button" class="button-link hgsd-tip-open" data-post="<?php echo (int) $hgsd_tip['post_id']; ?>"><?php esc_html_e( 'Open', 'hg-structured-data' ); ?></button>
+						<?php if ( ! empty( $hgsd_tip['url'] ) ) : ?>
+							<a class="hgsd-tip-open" href="<?php echo esc_url( $hgsd_tip['url'] ); ?>"><?php esc_html_e( 'View list', 'hg-structured-data' ); ?></a>
+						<?php elseif ( ! empty( $hgsd_tip['post_id'] ) ) : ?>
+							<button type="button" class="button-link hgsd-tip-open" data-post="<?php echo (int) $hgsd_tip['post_id']; ?>"><?php esc_html_e( 'Open', 'hg-structured-data' ); ?></button>
+						<?php endif; ?>
 						<button type="button" class="button-link hgsd-tip-dismiss"><?php esc_html_e( 'Ignore', 'hg-structured-data' ); ?></button>
 					</li>
 				<?php endforeach; ?>
@@ -95,6 +99,20 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 				<?php endif; ?>
 			</ul>
 		<?php endif; ?>
+
+		<details class="hgsd-tips-settings">
+			<summary><?php esc_html_e( 'Tips settings', 'hg-structured-data' ); ?></summary>
+			<p>
+				<?php esc_html_e( 'Skip the orphan/archive checks for:', 'hg-structured-data' ); ?>
+				<?php foreach ( $public_types as $hgsd_pt ) : ?>
+					<label class="hgsd-tips-skip-label">
+						<input type="checkbox" class="hgsd-tips-skip" value="<?php echo esc_attr( $hgsd_pt->name ); ?>" <?php checked( in_array( $hgsd_pt->name, $tips_skip_types, true ) ); ?> />
+						<?php echo esc_html( $hgsd_pt->labels->name ); ?>
+					</label>
+				<?php endforeach; ?>
+				<button type="button" class="button button-small hgsd-tips-settings-save"><?php esc_html_e( 'Save', 'hg-structured-data' ); ?></button>
+			</p>
+		</details>
 	</div>
 
 	<?php if ( ! empty( $cluster_options ) ) : ?>
@@ -130,7 +148,8 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 		</select>
 		<select name="flag">
 			<option value=""><?php esc_html_e( 'All pages', 'hg-structured-data' ); ?></option>
-			<option value="orphans" <?php selected( $filter_flag, 'orphans' ); ?>><?php esc_html_e( 'Orphans only', 'hg-structured-data' ); ?></option>
+			<option value="orphans" <?php selected( $filter_flag, 'orphans' ); ?>><?php esc_html_e( 'True orphans only', 'hg-structured-data' ); ?></option>
+			<option value="archiveonly" <?php selected( $filter_flag, 'archiveonly' ); ?>><?php esc_html_e( 'Archive-only (no contextual links)', 'hg-structured-data' ); ?></option>
 			<option value="cornerstones" <?php selected( $filter_flag, 'cornerstones' ); ?>><?php esc_html_e( 'Cornerstones only', 'hg-structured-data' ); ?></option>
 		</select>
 		<input type="search" name="s" value="<?php echo esc_attr( $search ); ?>" placeholder="<?php esc_attr_e( 'Search…', 'hg-structured-data' ); ?>" />
@@ -191,8 +210,10 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 						<?php echo '' !== $hgsd_row['canonical'] ? '<span class="hgsd-badge hgsd-badge-blue">' . esc_html__( 'override', 'hg-structured-data' ) . '</span>' : '<span class="hgsd-muted">' . esc_html__( 'default', 'hg-structured-data' ) . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</td>
 					<td>
-						<?php if ( $hgsd_row['orphan'] ) : ?>
+						<?php if ( 'orphan' === $hgsd_row['link_state'] ) : ?>
 							<span class="hgsd-badge hgsd-badge-red"><?php esc_html_e( 'orphan', 'hg-structured-data' ); ?></span>
+						<?php elseif ( 'archive' === $hgsd_row['link_state'] ) : ?>
+							<span class="hgsd-badge hgsd-badge-blue" title="<?php esc_attr_e( 'Only reachable via archive pages — no contextual links', 'hg-structured-data' ); ?>"><?php esc_html_e( 'archive-only', 'hg-structured-data' ); ?></span>
 						<?php endif; ?>
 						<?php if ( $hgsd_row['missing'] > 0 ) : ?>
 							<span class="hgsd-badge hgsd-badge-yellow" title="<?php esc_attr_e( 'Declared relations without an actual link', 'hg-structured-data' ); ?>">
