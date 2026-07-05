@@ -20,6 +20,7 @@ use HelloGekko\StructuredData\Graph\GraphMetrics;
 use HelloGekko\StructuredData\Graph\Installer;
 use HelloGekko\StructuredData\Graph\LinkIndexer;
 use HelloGekko\StructuredData\Graph\LinkRepository;
+use HelloGekko\StructuredData\Graph\RelationRepository;
 use HelloGekko\StructuredData\Output\FrontendOutput;
 use HelloGekko\StructuredData\Seo\SeoManager;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
@@ -74,8 +75,9 @@ final class Plugin {
 		// Register the post type that stores schema definitions.
 		( new PostType() )->register_hooks();
 
-		// Front-end JSON-LD output.
-		$frontend = new FrontendOutput( $this->registry, $this->reviews );
+		// Front-end JSON-LD output (with curated relations attached as @id refs).
+		$relations = new RelationRepository();
+		$frontend  = new FrontendOutput( $this->registry, $this->reviews, $relations );
 		$frontend->register_hooks();
 
 		// AI-readable output: per-page Markdown (.md) and /llms.txt index.
@@ -100,7 +102,7 @@ final class Plugin {
 			( new AiSettings() )->register_hooks();
 
 			$link_repository = new LinkRepository();
-			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry ) )->register_hooks();
+			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations ) )->register_hooks();
 		}
 	}
 

@@ -10,6 +10,9 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData\Output;
 
 use HelloGekko\StructuredData\Display\DisplayConditions;
+use HelloGekko\StructuredData\Graph\RelationEmitter;
+use HelloGekko\StructuredData\Graph\RelationRepository;
+use HelloGekko\StructuredData\Graph\SchemaMatcher;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
 use HelloGekko\StructuredData\SchemaDefinition;
@@ -25,17 +28,19 @@ final class FrontendOutput {
 	private DisplayConditions $conditions;
 	private PropertyResolver $resolver;
 	private ReviewsManager $reviews;
+	private ?RelationRepository $relations;
 
 	/**
 	 * @var array<int,string>
 	 */
 	private array $emitted_types = [];
 
-	public function __construct( SchemaRegistry $registry, ReviewsManager $reviews ) {
+	public function __construct( SchemaRegistry $registry, ReviewsManager $reviews, ?RelationRepository $relations = null ) {
 		$this->registry   = $registry;
 		$this->conditions = new DisplayConditions();
 		$this->resolver   = new PropertyResolver();
 		$this->reviews    = $reviews;
+		$this->relations  = $relations;
 	}
 
 	public function register_hooks(): void {
@@ -85,6 +90,8 @@ final class FrontendOutput {
 		 * @param array<int,array<string,mixed>> $nodes   The schema nodes.
 		 * @param array<string,mixed>             $context Runtime context.
 		 */
+		$nodes = $this->attach_relations( $nodes, (int) $context['post_id'] );
+
 		$nodes = apply_filters( 'hgsd_output_nodes', $nodes, $context );
 
 		foreach ( $nodes as $node ) {
@@ -140,7 +147,64 @@ final class FrontendOutput {
 			}
 		}
 
-		return $nodes;
+		return $this->attach_relations( $nodes, $post_id );
+	}
+
+	/**
+	 * Attach curated relations to the page's primary node as @id references.
+	 *
+	 * @param array<int,array<string,mixed>> $nodes Built nodes.
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function attach_relations( array $nodes, int $post_id ): array {
+		if ( null === $this->relations || ! $post_id || empty( $nodes ) ) {
+			return $nodes;
+		}
+
+		$relations = $this->relations->for_source( $post_id );
+		if ( empty( $relations ) ) {
+			return $nodes;
+		}
+
+		return RelationEmitter::attach(
+			$nodes,
+			$relations,
+			(string) get_permalink( $post_id ),
+			fn( int $target ): string => $this->target_ref( $target )
+		);
+	}
+
+	/**
+	 * The @id a relation should reference for a target post: the target's own
+	 * primary schema node when one applies there, otherwise its permalink.
+	 */
+	private function target_ref( int $target_id ): string {
+		$permalink = (string) get_permalink( $target_id );
+		if ( '' === $permalink ) {
+			return '';
+		}
+
+		static $matcher = null;
+		if ( null === $matcher ) {
+			$matcher = new SchemaMatcher();
+		}
+
+		$post = get_post( $target_id );
+		if ( ! $post ) {
+			return $permalink;
+		}
+
+		foreach ( $this->definitions() as $def ) {
+			if ( ! $def->enabled() || ! $matcher->matches( $def, $post ) ) {
+				continue;
+			}
+			$type = $this->registry->get( $def->type() );
+			if ( $type ) {
+				return $permalink . '#' . strtolower( $type->type_value() );
+			}
+		}
+
+		return $permalink;
 	}
 
 	/**
@@ -205,6 +269,11 @@ final class FrontendOutput {
 	 * @return array<int,SchemaDefinition>
 	 */
 	private function definitions(): array {
+		static $cache = null;
+		if ( null !== $cache ) {
+			return $cache;
+		}
+
 		$ids = get_posts(
 			[
 				'post_type'              => HGSD_CPT,
@@ -216,6 +285,7 @@ final class FrontendOutput {
 			]
 		);
 
-		return array_map( static fn( $id ) => new SchemaDefinition( (int) $id ), $ids );
+		$cache = array_map( static fn( $id ) => new SchemaDefinition( (int) $id ), $ids );
+		return $cache;
 	}
 }

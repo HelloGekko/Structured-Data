@@ -125,6 +125,17 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 						<?php if ( $hgsd_row['orphan'] ) : ?>
 							<span class="hgsd-badge hgsd-badge-red"><?php esc_html_e( 'orphan', 'hg-structured-data' ); ?></span>
 						<?php endif; ?>
+						<?php if ( $hgsd_row['missing'] > 0 ) : ?>
+							<span class="hgsd-badge hgsd-badge-yellow" title="<?php esc_attr_e( 'Declared relations without an actual link', 'hg-structured-data' ); ?>">
+								<?php
+								printf(
+									/* translators: %d: number of missing links. */
+									esc_html__( '%d link missing', 'hg-structured-data' ),
+									(int) $hgsd_row['missing']
+								);
+								?>
+							</span>
+						<?php endif; ?>
 					</td>
 				</tr>
 			<?php endforeach; ?>
@@ -173,6 +184,25 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 			<button type="button" class="button button-primary hgsd-panel-save"><?php esc_html_e( 'Save', 'hg-structured-data' ); ?></button>
 			<span class="hgsd-panel-status"></span>
 		</p>
+
+		<h3><?php esc_html_e( 'Relations', 'hg-structured-data' ); ?></h3>
+		<ul class="hgsd-panel-relations"></ul>
+		<div class="hgsd-panel-add-relation">
+			<select class="hgsd-rel-type"></select>
+			<span class="hgsd-rel-search">
+				<input type="text" class="hgsd-rel-search-input" autocomplete="off" placeholder="<?php esc_attr_e( 'Search page…', 'hg-structured-data' ); ?>" />
+				<input type="hidden" class="hgsd-rel-target" />
+				<ul class="hgsd-rel-results" hidden></ul>
+			</span>
+			<button type="button" class="button hgsd-rel-add"><?php esc_html_e( 'Add', 'hg-structured-data' ); ?></button>
+		</div>
+		<p class="description"><?php esc_html_e( 'Relations are emitted as schema.org references (isPartOf, about, …) and flag a warning until a real link exists.', 'hg-structured-data' ); ?></p>
+
+		<h3><?php esc_html_e( 'Referenced by', 'hg-structured-data' ); ?></h3>
+		<ul class="hgsd-panel-incoming"></ul>
+
+		<h3><?php esc_html_e( 'Link suggestions', 'hg-structured-data' ); ?></h3>
+		<ul class="hgsd-panel-suggestions"></ul>
 
 		<h3><?php esc_html_e( 'Incoming links', 'hg-structured-data' ); ?></h3>
 		<ul class="hgsd-panel-inlinks"></ul>

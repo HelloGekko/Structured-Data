@@ -28,12 +28,14 @@ final class Cockpit {
 	private GraphMetrics $metrics;
 	private SeoManager $seo;
 	private SchemaRegistry $registry;
+	private RelationRepository $relations;
 
-	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry ) {
+	public function __construct( LinkRepository $repository, GraphMetrics $metrics, SeoManager $seo, SchemaRegistry $registry, RelationRepository $relations ) {
 		$this->repository = $repository;
 		$this->metrics    = $metrics;
 		$this->seo        = $seo;
 		$this->registry   = $registry;
+		$this->relations  = $relations;
 	}
 
 	public function register_hooks(): void {
@@ -42,6 +44,8 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_save', [ $this, 'ajax_save' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_detail', [ $this, 'ajax_detail' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_reindex', [ $this, 'ajax_reindex' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_relation_add', [ $this, 'ajax_relation_add' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_relation_delete', [ $this, 'ajax_relation_delete' ] );
 	}
 
 	private string $hook = '';
@@ -78,6 +82,8 @@ final class Cockpit {
 					'saved'  => __( 'Saved.', 'hg-structured-data' ),
 					'error'  => __( 'Could not save.', 'hg-structured-data' ),
 					'none'   => __( 'None', 'hg-structured-data' ),
+					'noLink' => __( 'no link yet', 'hg-structured-data' ),
+					'linkTo' => __( 'Consider linking to', 'hg-structured-data' ),
 				],
 			]
 		);
@@ -116,6 +122,7 @@ final class Cockpit {
 		$inlinks  = $this->repository->inlink_counts();
 		$outlinks = $this->repository->outlink_counts();
 		$depths   = $this->metrics->depths();
+		$missing  = $this->relations->missing_link_counts();
 		$adapter  = $this->seo->adapter();
 
 		$rows = [];
@@ -128,6 +135,7 @@ final class Cockpit {
 				'outlinks'    => $outlinks[ $post->ID ] ?? 0,
 				'depth'       => $depths[ $post->ID ] ?? null,
 				'orphan'      => $orphan,
+				'missing'     => $missing[ $post->ID ] ?? 0,
 				'cornerstone' => $adapter->get_cornerstone( $post->ID ),
 				'canonical'   => $adapter->get_canonical( $post->ID ),
 				'robots'      => $adapter->get_robots( $post->ID ),
@@ -232,16 +240,127 @@ final class Cockpit {
 
 		wp_send_json_success(
 			[
-				'title'       => get_the_title( $post ),
-				'url'         => get_permalink( $post ),
-				'edit'        => get_edit_post_link( $post->ID, 'raw' ),
-				'cornerstone' => $adapter->get_cornerstone( $post->ID ),
-				'canonical'   => $adapter->get_canonical( $post->ID ),
-				'robots'      => $adapter->get_robots( $post->ID ),
-				'inlinks'     => $this->repository->inlinks_for( $post->ID ),
-				'outlinks'    => $this->repository->outlinks_for( $post->ID ),
+				'title'         => get_the_title( $post ),
+				'url'           => get_permalink( $post ),
+				'edit'          => get_edit_post_link( $post->ID, 'raw' ),
+				'cornerstone'   => $adapter->get_cornerstone( $post->ID ),
+				'canonical'     => $adapter->get_canonical( $post->ID ),
+				'robots'        => $adapter->get_robots( $post->ID ),
+				'inlinks'       => $this->repository->inlinks_for( $post->ID ),
+				'outlinks'      => $this->repository->outlinks_for( $post->ID ),
+				'relations'     => $this->relations_payload( $post->ID ),
+				'incoming'      => $this->relations->for_target( $post->ID ),
+				'relationTypes' => RelationRepository::types(),
+				'suggestions'   => $this->suggestions( $post ),
 			]
 		);
+	}
+
+	/**
+	 * Relations for a post, each flagged with whether the actual link exists.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function relations_payload( int $post_id ): array {
+		$rows = $this->relations->for_source( $post_id );
+		foreach ( $rows as &$row ) {
+			$row['linked'] = $this->relations->link_exists( $post_id, $row['target_id'] );
+			$row['label']  = RelationRepository::types()[ $row['relation'] ] ?? $row['relation'];
+		}
+		unset( $row );
+		return $rows;
+	}
+
+	/**
+	 * Simple link suggestions: cornerstones this page does not link to yet,
+	 * preferring ones that share a category or tag.
+	 *
+	 * @return array<int,array{post_id:int,title:string,url:string}>
+	 */
+	private function suggestions( \WP_Post $post ): array {
+		$cornerstones = $this->seo->adapter()->cornerstone_ids();
+		if ( empty( $cornerstones ) ) {
+			return [];
+		}
+
+		$linked = [];
+		foreach ( $this->repository->outlinks_for( $post->ID, 200 ) as $link ) {
+			$linked[ $link['post_id'] ] = true;
+		}
+
+		$own_terms = array_map(
+			'intval',
+			wp_get_object_terms( $post->ID, [ 'category', 'post_tag' ], [ 'fields' => 'ids' ] ) ?: []
+		);
+
+		$out = [];
+		foreach ( $cornerstones as $candidate ) {
+			if ( $candidate === $post->ID || isset( $linked[ $candidate ] ) ) {
+				continue;
+			}
+
+			// Prefer topical overlap when the post has terms at all.
+			if ( ! empty( $own_terms ) ) {
+				$candidate_terms = array_map(
+					'intval',
+					wp_get_object_terms( $candidate, [ 'category', 'post_tag' ], [ 'fields' => 'ids' ] ) ?: []
+				);
+				if ( ! empty( $candidate_terms ) && empty( array_intersect( $own_terms, $candidate_terms ) ) ) {
+					continue;
+				}
+			}
+
+			$out[] = [
+				'post_id' => $candidate,
+				'title'   => (string) get_the_title( $candidate ),
+				'url'     => (string) get_permalink( $candidate ),
+			];
+			if ( count( $out ) >= 5 ) {
+				break;
+			}
+		}
+
+		return $out;
+	}
+
+	/**
+	 * AJAX: add a relation from the side panel.
+	 */
+	public function ajax_relation_add(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$source   = isset( $_POST['source'] ) ? absint( $_POST['source'] ) : 0;
+		$target   = isset( $_POST['target'] ) ? absint( $_POST['target'] ) : 0;
+		$relation = isset( $_POST['relation'] ) ? sanitize_text_field( wp_unslash( (string) $_POST['relation'] ) ) : '';
+
+		if ( ! $source || ! $target || ! get_post( $source ) || ! get_post( $target ) ) {
+			wp_send_json_error();
+		}
+
+		$this->relations->add( $source, $target, $relation );
+
+		wp_send_json_success( [ 'relations' => $this->relations_payload( $source ) ] );
+	}
+
+	/**
+	 * AJAX: delete a relation from the side panel.
+	 */
+	public function ajax_relation_delete(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$relation_id = isset( $_POST['id'] ) ? absint( $_POST['id'] ) : 0;
+		$source      = isset( $_POST['source'] ) ? absint( $_POST['source'] ) : 0;
+		if ( $relation_id ) {
+			$this->relations->delete( $relation_id );
+		}
+
+		wp_send_json_success( [ 'relations' => $source ? $this->relations_payload( $source ) : [] ] );
 	}
 
 	/**

@@ -55,4 +55,8 @@ final class YoastAdapter extends SeoAdapter {
 	public function set_cornerstone( int $post_id, bool $cornerstone ): void {
 		$this->put_meta( $post_id, '_yoast_wpseo_is_cornerstone', $cornerstone ? '1' : '' );
 	}
+
+	protected function cornerstone_meta(): array {
+		return [ '_yoast_wpseo_is_cornerstone', '1' ];
+	}
 }

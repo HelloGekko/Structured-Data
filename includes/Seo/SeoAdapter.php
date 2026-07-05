@@ -49,6 +49,36 @@ abstract class SeoAdapter {
 	abstract public function set_cornerstone( int $post_id, bool $cornerstone ): void;
 
 	/**
+	 * The meta key/value marking cornerstone content in this plugin.
+	 *
+	 * @return array{0:string,1:string}
+	 */
+	abstract protected function cornerstone_meta(): array;
+
+	/**
+	 * All published cornerstone post IDs.
+	 *
+	 * @return array<int,int>
+	 */
+	public function cornerstone_ids(): array {
+		[ $key, $value ] = $this->cornerstone_meta();
+
+		$ids = get_posts(
+			[
+				'post_type'      => array_keys( get_post_types( [ 'public' => true ] ) ),
+				'post_status'    => 'publish',
+				'numberposts'    => 100,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_key'       => $key, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => $value, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			]
+		);
+
+		return array_map( 'intval', $ids );
+	}
+
+	/**
 	 * Helper: update or delete a meta value ("" deletes).
 	 *
 	 * @param mixed $value Value to store.

@@ -30,6 +30,11 @@ structured data (JSON-LD) to your site through a visual wizard.
   are written **through the active SEO plugin** (Rank Math or Yoast adapters — this plugin never
   emits competing tags); a minimal fallback engages only when no SEO plugin is active. Every
   emitted schema node carries a stable `@id` so entities can reference each other.
+- **Relations (entity linking)**: from the cockpit's side panel you declare semantic relations
+  between pages (*is part of* a cornerstone, *is about*, *mentions*, *cites*). They are emitted
+  as schema.org `@id` references on the page's primary node, and the cockpit flags every
+  relation that has no actual internal link yet ("intended vs. built" delta), plus suggests
+  cornerstones worth linking to.
 - **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
   AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
   structured data. Overrule options: clean per-plugin disable via the plugin's own filter

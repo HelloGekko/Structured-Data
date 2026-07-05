@@ -102,4 +102,8 @@ final class FallbackAdapter extends SeoAdapter {
 	public function set_cornerstone( int $post_id, bool $cornerstone ): void {
 		$this->put_meta( $post_id, self::META_CORNERSTONE, $cornerstone ? '1' : '' );
 	}
+
+	protected function cornerstone_meta(): array {
+		return [ self::META_CORNERSTONE, '1' ];
+	}
 }

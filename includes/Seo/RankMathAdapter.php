@@ -72,4 +72,8 @@ final class RankMathAdapter extends SeoAdapter {
 	public function set_cornerstone( int $post_id, bool $cornerstone ): void {
 		$this->put_meta( $post_id, 'rank_math_pillar_content', $cornerstone ? 'on' : '' );
 	}
+
+	protected function cornerstone_meta(): array {
+		return [ 'rank_math_pillar_content', 'on' ];
+	}
 }

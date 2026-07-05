@@ -62,6 +62,64 @@
 		} );
 	}
 
+	function renderRelations( relations ) {
+		var $list = $panel.find( '.hgsd-panel-relations' );
+		$list.empty();
+		if ( ! relations || ! relations.length ) {
+			$list.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.none ) );
+			return;
+		}
+		$.each( relations, function ( i, r ) {
+			var $li = $( '<li />' );
+			$li.append( $( '<em />' ).text( r.label + ': ' ) );
+			$li.append( $( '<a target="_blank" />' ).attr( 'href', r.url ).text( r.title ) );
+			if ( ! r.linked ) {
+				$li.append( ' ' ).append( $( '<span class="hgsd-badge hgsd-badge-yellow" />' ).text( HGSDCockpit.i18n.noLink ) );
+			}
+			$li.append( ' ' ).append(
+				$( '<button type="button" class="button-link hgsd-rel-delete" />' ).attr( 'data-id', r.id ).text( '✕' )
+			);
+			$list.append( $li );
+		} );
+	}
+
+	function renderIncoming( incoming ) {
+		var $list = $panel.find( '.hgsd-panel-incoming' );
+		$list.empty();
+		if ( ! incoming || ! incoming.length ) {
+			$list.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.none ) );
+			return;
+		}
+		$.each( incoming, function ( i, r ) {
+			$list.append( $( '<li />' ).text( r.title + ' → ' + r.relation ) );
+		} );
+	}
+
+	function renderSuggestions( suggestions ) {
+		var $list = $panel.find( '.hgsd-panel-suggestions' );
+		$list.empty();
+		if ( ! suggestions || ! suggestions.length ) {
+			$list.append( $( '<li class="hgsd-muted" />' ).text( HGSDCockpit.i18n.none ) );
+			return;
+		}
+		$.each( suggestions, function ( i, s ) {
+			var $li = $( '<li />' );
+			$li.append( document.createTextNode( HGSDCockpit.i18n.linkTo + ' ' ) );
+			$li.append( $( '<a target="_blank" />' ).attr( 'href', s.url ).text( s.title ) );
+			$list.append( $li );
+		} );
+	}
+
+	function fillRelationTypes( types ) {
+		var $sel = $panel.find( '.hgsd-rel-type' );
+		if ( $sel.children().length ) {
+			return;
+		}
+		$.each( types, function ( key, label ) {
+			$sel.append( $( '<option />' ).attr( 'value', key ).text( label ) );
+		} );
+	}
+
 	function openPanel( $row ) {
 		currentPost = parseInt( $row.attr( 'data-post' ), 10 );
 		$currentRow = $row;
@@ -85,6 +143,12 @@
 			$panel.find( '.hgsd-panel-status' ).text( '' );
 			linkList( $panel.find( '.hgsd-panel-inlinks' ), d.inlinks );
 			linkList( $panel.find( '.hgsd-panel-outlinks' ), d.outlinks );
+			fillRelationTypes( d.relationTypes || {} );
+			renderRelations( d.relations );
+			renderIncoming( d.incoming );
+			renderSuggestions( d.suggestions );
+			$panel.find( '.hgsd-rel-search-input' ).val( '' );
+			$panel.find( '.hgsd-rel-target' ).val( '' );
 			$panel.removeAttr( 'hidden' );
 		} );
 	}
@@ -125,6 +189,72 @@
 
 	$panel.on( 'click', '.hgsd-panel-close', function () {
 		$panel.attr( 'hidden', true );
+	} );
+
+	// Relation target search (mini combobox against hgsd_search_content).
+	var relTimer = null;
+	$panel.on( 'input focus', '.hgsd-rel-search-input', function () {
+		var term = $( this ).val();
+		clearTimeout( relTimer );
+		relTimer = setTimeout( function () {
+			$.getJSON( HGSDCockpit.ajaxUrl, {
+				action: 'hgsd_search_content',
+				nonce: HGSDCockpit.nonce,
+				object: 'post',
+				arg: 'any',
+				search: term
+			} ).done( function ( res ) {
+				var $list = $panel.find( '.hgsd-rel-results' );
+				$list.empty();
+				if ( res && res.success && res.data.length ) {
+					$.each( res.data, function ( i, item ) {
+						$list.append( $( '<li />' ).attr( 'data-id', item.id ).text( item.text ) );
+					} );
+					$list.removeAttr( 'hidden' );
+				} else {
+					$list.attr( 'hidden', true );
+				}
+			} );
+		}, 250 );
+	} );
+
+	$panel.on( 'click', '.hgsd-rel-results li', function () {
+		$panel.find( '.hgsd-rel-target' ).val( $( this ).attr( 'data-id' ) );
+		$panel.find( '.hgsd-rel-search-input' ).val( $( this ).text() );
+		$panel.find( '.hgsd-rel-results' ).attr( 'hidden', true ).empty();
+	} );
+
+	$panel.on( 'click', '.hgsd-rel-add', function () {
+		var target = parseInt( $panel.find( '.hgsd-rel-target' ).val(), 10 );
+		if ( ! target ) {
+			return;
+		}
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_relation_add',
+			nonce: HGSDCockpit.nonce,
+			source: currentPost,
+			target: target,
+			relation: $panel.find( '.hgsd-rel-type' ).val()
+		} ).done( function ( res ) {
+			if ( res && res.success ) {
+				renderRelations( res.data.relations );
+				$panel.find( '.hgsd-rel-search-input' ).val( '' );
+				$panel.find( '.hgsd-rel-target' ).val( '' );
+			}
+		} );
+	} );
+
+	$panel.on( 'click', '.hgsd-rel-delete', function () {
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_relation_delete',
+			nonce: HGSDCockpit.nonce,
+			id: $( this ).attr( 'data-id' ),
+			source: currentPost
+		} ).done( function ( res ) {
+			if ( res && res.success ) {
+				renderRelations( res.data.relations );
+			}
+		} );
 	} );
 
 	// Reindex.

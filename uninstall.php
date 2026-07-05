@@ -29,6 +29,7 @@ foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settin
 delete_transient( 'hgsd_llms_txt' );
 delete_transient( 'hgsd_graph_metrics' );
 
-// Link-index table.
+// Link-index and relations tables.
 global $wpdb;
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_links" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_relations" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared

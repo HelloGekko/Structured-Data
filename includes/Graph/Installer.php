@@ -17,18 +17,26 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Installer {
 
-	public const DB_VERSION     = '1';
+	public const DB_VERSION     = '2';
 	public const OPTION_VERSION = 'hgsd_db_version';
 	public const OPTION_POINTER = 'hgsd_index_pointer';
 	public const OPTION_INDEXED = 'hgsd_indexed_at';
 	public const CRON_HOOK      = 'hgsd_index_batch';
 
 	/**
-	 * Table name including the WP prefix.
+	 * Link-index table name including the WP prefix.
 	 */
 	public static function table(): string {
 		global $wpdb;
 		return $wpdb->prefix . 'hgsd_links';
+	}
+
+	/**
+	 * Relations table name including the WP prefix.
+	 */
+	public static function relations_table(): string {
+		global $wpdb;
+		return $wpdb->prefix . 'hgsd_relations';
 	}
 
 	/**
@@ -54,6 +62,19 @@ final class Installer {
 				context varchar(20) NOT NULL DEFAULT 'content',
 				PRIMARY KEY  (id),
 				KEY source_id (source_id),
+				KEY target_id (target_id)
+			) {$charset_collate};"
+		);
+
+		$relations = self::relations_table();
+		dbDelta(
+			"CREATE TABLE {$relations} (
+				id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+				source_id bigint(20) unsigned NOT NULL,
+				target_id bigint(20) unsigned NOT NULL,
+				relation varchar(32) NOT NULL DEFAULT 'isPartOf',
+				PRIMARY KEY  (id),
+				UNIQUE KEY rel (source_id,target_id,relation),
 				KEY target_id (target_id)
 			) {$charset_collate};"
 		);

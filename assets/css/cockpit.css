@@ -52,6 +52,63 @@
 	border: 1px solid #c5d9ed;
 }
 
+.hgsd-badge-yellow {
+	background: #fcf9e8;
+	color: #996800;
+	border: 1px solid #f0e3b3;
+}
+
+/* Relation editor */
+.hgsd-panel-add-relation {
+	display: flex;
+	gap: 6px;
+	align-items: flex-start;
+	margin-top: 8px;
+}
+
+.hgsd-rel-search {
+	position: relative;
+	flex: 1;
+}
+
+.hgsd-rel-search-input {
+	width: 100%;
+}
+
+.hgsd-rel-results {
+	position: absolute;
+	z-index: 10000;
+	left: 0;
+	right: 0;
+	margin: 2px 0 0;
+	padding: 0;
+	max-height: 180px;
+	overflow-y: auto;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
+.hgsd-rel-results li {
+	margin: 0;
+	padding: 6px 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.hgsd-rel-results li:hover {
+	background: #f0f6fc;
+	color: #2271b1;
+}
+
+.hgsd-rel-delete {
+	color: #b32d2e;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 .hgsd-cockpit-pagination {
 	display: flex;
 	align-items: center;
