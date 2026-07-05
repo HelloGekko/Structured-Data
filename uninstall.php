@@ -21,3 +21,14 @@ $hgsd_posts = get_posts(
 foreach ( $hgsd_posts as $hgsd_post_id ) {
 	wp_delete_post( (int) $hgsd_post_id, true );
 }
+
+// Options and transients.
+foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at' ] as $hgsd_option ) {
+	delete_option( $hgsd_option );
+}
+delete_transient( 'hgsd_llms_txt' );
+delete_transient( 'hgsd_graph_metrics' );
+
+// Link-index table.
+global $wpdb;
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}hgsd_links" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared

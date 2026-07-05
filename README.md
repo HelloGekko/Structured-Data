@@ -24,6 +24,12 @@ structured data (JSON-LD) to your site through a visual wizard.
   the content as Markdown, and the raw JSON-LD), plus a site index at `/llms.txt`. The Markdown
   mirror is sent with `X-Robots-Tag: noindex` and a canonical `Link` header to the HTML page, so
   it helps LLMs/search without creating duplicate content.
+- **Cockpit**: one overview of all public content with the schemas that apply per page, an
+  internal-link index (Elementor-aware, built in the background), inlink/outlink counts, click
+  depth, orphan detection, and inline control over cornerstone, canonical and robots. Settings
+  are written **through the active SEO plugin** (Rank Math or Yoast adapters — this plugin never
+  emits competing tags); a minimal fallback engages only when no SEO plugin is active. Every
+  emitted schema node carries a stable `@id` so entities can reference each other.
 - **Conflict detection & overrule**: warns when another schema/SEO plugin (Yoast, Rank Math,
   AIOSEO, The SEO Framework, Schema & Structured Data for WP, Schema Pro) also outputs
   structured data. Overrule options: clean per-plugin disable via the plugin's own filter

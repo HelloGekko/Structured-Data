@@ -1,0 +1,259 @@
+<?php
+/**
+ * Builds and maintains the internal-link index.
+ *
+ * @package HelloGekko\StructuredData
+ */
+
+declare( strict_types=1 );
+
+namespace HelloGekko\StructuredData\Graph;
+
+use HelloGekko\StructuredData\Output\ContentRenderer;
+
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Extracts internal links from rendered post content (Elementor-aware) and
+ * from nav menus, and keeps the hgsd_links table current. Menu links are
+ * stored with source_id 0 — the virtual "site/home" node.
+ */
+final class LinkIndexer {
+
+	private const BATCH_SIZE = 25;
+
+	public function register_hooks(): void {
+		add_action( 'save_post', [ $this, 'on_save_post' ], 20, 2 );
+		add_action( 'deleted_post', [ $this, 'on_deleted_post' ] );
+		add_action( 'wp_update_nav_menu', [ $this, 'reindex_menus' ] );
+		add_action( Installer::CRON_HOOK, [ $this, 'run_batch' ] );
+	}
+
+	/**
+	 * Reindex a post when it is saved.
+	 *
+	 * @param int      $post_id Post ID.
+	 * @param \WP_Post $post    Post object.
+	 */
+	public function on_save_post( int $post_id, \WP_Post $post ): void {
+		if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) {
+			return;
+		}
+		$this->index_post( $post );
+		GraphMetrics::flush_cache();
+	}
+
+	/**
+	 * Clean up rows when a post is deleted.
+	 */
+	public function on_deleted_post( int $post_id ): void {
+		global $wpdb;
+		$table = Installer::table();
+		$wpdb->delete( $table, [ 'source_id' => $post_id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		$wpdb->delete( $table, [ 'target_id' => $post_id ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+		GraphMetrics::flush_cache();
+	}
+
+	/**
+	 * Index one post: parse its rendered content for internal links.
+	 */
+	public function index_post( \WP_Post $post ): void {
+		global $wpdb;
+		$table = Installer::table();
+
+		// Always clear the old rows for this source first.
+		$wpdb->delete( $table, [ 'source_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+
+		if ( 'publish' !== $post->post_status ) {
+			return;
+		}
+		$type = get_post_type_object( $post->post_type );
+		if ( ! $type || ! $type->public ) {
+			return;
+		}
+
+		$html  = ContentRenderer::render( $post );
+		$seen  = [];
+		foreach ( self::extract_links( $html ) as $link ) {
+			$target = $this->resolve( $link['href'] );
+			if ( ! $target || $target === $post->ID ) {
+				continue;
+			}
+			$key = $target . '|' . $link['anchor'];
+			if ( isset( $seen[ $key ] ) ) {
+				continue;
+			}
+			$seen[ $key ] = true;
+
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$wpdb->insert(
+				$table,
+				[
+					'source_id' => $post->ID,
+					'target_id' => $target,
+					'anchor'    => $link['anchor'],
+					'context'   => 'content',
+				],
+				[ '%d', '%d', '%s', '%s' ]
+			);
+		}
+	}
+
+	/**
+	 * Rebuild the menu edges (virtual source 0 → menu targets).
+	 */
+	public function reindex_menus(): void {
+		global $wpdb;
+		$table = Installer::table();
+		$wpdb->delete( $table, [ 'context' => 'menu' ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+
+		$seen = [];
+		foreach ( wp_get_nav_menus() as $menu ) {
+			$items = wp_get_nav_menu_items( $menu );
+			if ( ! is_array( $items ) ) {
+				continue;
+			}
+			foreach ( $items as $item ) {
+				$target = 0;
+				if ( 'post_type' === $item->type ) {
+					$target = (int) $item->object_id;
+				} elseif ( ! empty( $item->url ) ) {
+					$target = $this->resolve( (string) $item->url );
+				}
+				if ( ! $target || isset( $seen[ $target ] ) ) {
+					continue;
+				}
+				$seen[ $target ] = true;
+
+				// phpcs:ignore WordPress.DB.DirectDatabaseQuery
+				$wpdb->insert(
+					$table,
+					[
+						'source_id' => 0,
+						'target_id' => $target,
+						'anchor'    => sanitize_text_field( (string) $item->title ),
+						'context'   => 'menu',
+					],
+					[ '%d', '%d', '%s', '%s' ]
+				);
+			}
+		}
+		GraphMetrics::flush_cache();
+	}
+
+	/**
+	 * Background batch: index BATCH_SIZE posts per run until done.
+	 */
+	public function run_batch(): void {
+		$pointer = (int) get_option( Installer::OPTION_POINTER, 0 );
+		$ids     = $this->ids_after( $pointer );
+
+		foreach ( $ids as $id ) {
+			$post = get_post( $id );
+			if ( $post ) {
+				$this->index_post( $post );
+			}
+			$pointer = $id;
+		}
+
+		if ( count( $ids ) === self::BATCH_SIZE ) {
+			update_option( Installer::OPTION_POINTER, $pointer, false );
+			wp_schedule_single_event( time() + 15, Installer::CRON_HOOK );
+			return;
+		}
+
+		// Done: refresh menu edges and stamp completion.
+		delete_option( Installer::OPTION_POINTER );
+		$this->reindex_menus();
+		update_option( Installer::OPTION_INDEXED, time(), false );
+		GraphMetrics::flush_cache();
+	}
+
+	/**
+	 * Published, public post IDs greater than the pointer.
+	 *
+	 * @return array<int,int>
+	 */
+	private function ids_after( int $pointer ): array {
+		global $wpdb;
+		$types = array_keys( get_post_types( [ 'public' => true ] ) );
+		if ( empty( $types ) ) {
+			return [];
+		}
+		$placeholders = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$ids = $wpdb->get_col(
+			$wpdb->prepare(
+				"SELECT ID FROM {$wpdb->posts} WHERE ID > %d AND post_status = 'publish' AND post_type IN ({$placeholders}) ORDER BY ID ASC LIMIT %d",
+				array_merge( [ $pointer ], $types, [ self::BATCH_SIZE ] )
+			)
+		);
+
+		return array_map( 'intval', $ids );
+	}
+
+	/**
+	 * Extract anchor href/text pairs from an HTML fragment.
+	 *
+	 * @return array<int,array{href:string,anchor:string}>
+	 */
+	public static function extract_links( string $html ): array {
+		if ( '' === trim( $html ) || ! class_exists( '\DOMDocument' ) ) {
+			return [];
+		}
+
+		$dom = new \DOMDocument();
+		libxml_use_internal_errors( true );
+		$dom->loadHTML( '<?xml encoding="utf-8"?><div>' . $html . '</div>', LIBXML_NOERROR | LIBXML_NOWARNING );
+		libxml_clear_errors();
+
+		$out = [];
+		foreach ( $dom->getElementsByTagName( 'a' ) as $a ) {
+			$href = trim( (string) $a->getAttribute( 'href' ) );
+			if ( '' === $href || '#' === $href[0] || 0 === stripos( $href, 'mailto:' ) || 0 === stripos( $href, 'tel:' ) || 0 === stripos( $href, 'javascript:' ) ) {
+				continue;
+			}
+			$anchor = trim( preg_replace( '/\s+/', ' ', (string) $a->textContent ) );
+			$out[]  = [
+				'href'   => $href,
+				'anchor' => mb_substr( $anchor, 0, 190 ),
+			];
+		}
+
+		return $out;
+	}
+
+	/**
+	 * Resolve a URL to a local post ID (0 when external or unresolvable).
+	 */
+	private function resolve( string $url ): int {
+		static $cache = [];
+		if ( isset( $cache[ $url ] ) ) {
+			return $cache[ $url ];
+		}
+
+		$home = wp_parse_url( home_url( '/' ) );
+		$link = wp_parse_url( $url );
+		if ( false === $link ) {
+			return $cache[ $url ] = 0; // phpcs:ignore Squiz.PHP.DisallowMultipleAssignments
+		}
+
+		// Relative URLs are local; absolute ones must match the site host.
+		if ( ! empty( $link['host'] ) && strtolower( $link['host'] ) !== strtolower( (string) ( $home['host'] ?? '' ) ) ) {
+			return $cache[ $url ] = 0; // phpcs:ignore Squiz.PHP.DisallowMultipleAssignments
+		}
+
+		$path  = (string) ( $link['path'] ?? '/' );
+		$clean = home_url( $path );
+
+		$post_id = (int) url_to_postid( $clean );
+
+		// Fall back to the static front page for the root path.
+		if ( ! $post_id && untrailingslashit( $clean ) === untrailingslashit( home_url( '/' ) ) ) {
+			$post_id = (int) get_option( 'page_on_front' );
+		}
+
+		return $cache[ $url ] = $post_id; // phpcs:ignore Squiz.PHP.DisallowMultipleAssignments
+	}
+}

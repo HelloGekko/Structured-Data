@@ -83,11 +83,18 @@ class FAQ extends AbstractSchemaType {
 			return null;
 		}
 
-		return [
+		$node = [
 			'@context'   => 'https://schema.org',
 			'@type'      => 'FAQPage',
 			'mainEntity' => $entities,
 		];
+
+		$node_id = $this->node_id( $context );
+		if ( null !== $node_id ) {
+			$node = [ '@context' => $node['@context'], '@id' => $node_id, '@type' => 'FAQPage', 'mainEntity' => $entities ];
+		}
+
+		return $node;
 	}
 
 	/**

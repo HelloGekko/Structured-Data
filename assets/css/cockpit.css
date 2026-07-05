@@ -1,0 +1,130 @@
+/* Structured Data — Cockpit styles */
+
+.hgsd-cockpit-engine {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.hgsd-cockpit-filters {
+	display: flex;
+	gap: 8px;
+	margin: 12px 0;
+	align-items: center;
+}
+
+.hgsd-cockpit-table .hgsd-num {
+	text-align: center;
+	width: 52px;
+}
+
+.hgsd-cockpit-table .hgsd-row-item {
+	cursor: pointer;
+}
+
+.hgsd-muted {
+	color: #8c8f94;
+}
+
+.hgsd-cockpit-table td strong + .hgsd-muted {
+	display: block;
+	font-size: 11px;
+}
+
+.hgsd-badge {
+	display: inline-block;
+	padding: 1px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	line-height: 1.6;
+}
+
+.hgsd-badge-red {
+	background: #fcf0f1;
+	color: #b32d2e;
+	border: 1px solid #f0c2c4;
+}
+
+.hgsd-badge-blue {
+	background: #f0f6fc;
+	color: #2271b1;
+	border: 1px solid #c5d9ed;
+}
+
+.hgsd-cockpit-pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 12px;
+}
+
+/* Side panel */
+.hgsd-panel {
+	position: fixed;
+	top: 32px;
+	right: 0;
+	bottom: 0;
+	width: 380px;
+	padding: 16px 20px;
+	background: #fff;
+	border-left: 1px solid #dcdcde;
+	box-shadow: -4px 0 12px rgba(0, 0, 0, .08);
+	overflow-y: auto;
+	z-index: 9990;
+}
+
+.hgsd-panel-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.hgsd-panel-head h2 {
+	margin: 0;
+	font-size: 16px;
+}
+
+.hgsd-panel-close {
+	color: #b32d2e;
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.hgsd-panel-field {
+	display: block;
+	margin: 12px 0;
+}
+
+.hgsd-panel-field input[type="url"] {
+	margin-top: 4px;
+}
+
+.hgsd-panel fieldset label {
+	margin-right: 14px;
+}
+
+.hgsd-panel h3 {
+	margin: 18px 0 6px;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	color: #646970;
+}
+
+.hgsd-panel ul {
+	margin: 0;
+	font-size: 12px;
+}
+
+.hgsd-panel ul li {
+	padding: 3px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.hgsd-panel-status {
+	margin-left: 8px;
+	color: #16794a;
+}

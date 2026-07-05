@@ -187,7 +187,7 @@ final class MarkdownEndpoint {
 		}
 
 		if ( ! empty( $settings['include_content'] ) ) {
-			$body = MarkdownConverter::convert( $this->rendered_html( $post ) );
+			$body = MarkdownConverter::convert( \HelloGekko\StructuredData\Output\ContentRenderer::render( $post ) );
 			if ( '' !== $body ) {
 				$md .= "## Content\n\n" . $body . "\n\n";
 			}
@@ -206,45 +206,6 @@ final class MarkdownEndpoint {
 		 * @param \WP_Post $post The post.
 		 */
 		return (string) apply_filters( 'hgsd_page_markdown', $md, $post );
-	}
-
-	/**
-	 * Render a post's content to HTML, universally: Elementor via its own API,
-	 * everything else (Gutenberg, classic, other builders) via the_content with
-	 * the loop set up so shortcodes and builders render correctly.
-	 */
-	private function rendered_html( \WP_Post $wp_post ): string {
-		// Elementor stores its content separately and renders via its own engine.
-		if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
-			$elementor = \Elementor\Plugin::$instance;
-			if ( isset( $elementor->documents ) ) {
-				$document = $elementor->documents->get( $wp_post->ID );
-				if ( $document && $document->is_built_with_elementor() ) {
-					$html = $elementor->frontend->get_builder_content_for_display( $wp_post->ID, false );
-					if ( '' !== trim( (string) $html ) ) {
-						return (string) $html;
-					}
-				}
-			}
-		}
-
-		// Default path: render the_content within a proper loop context so that
-		// Gutenberg blocks, shortcodes and other builders render correctly.
-		global $post;
-		$previous = $post;
-		$post     = $wp_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-		setup_postdata( $post );
-
-		$html = apply_filters( 'the_content', $wp_post->post_content );
-
-		$post = $previous; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-		if ( $previous instanceof \WP_Post ) {
-			setup_postdata( $previous );
-		} else {
-			wp_reset_postdata();
-		}
-
-		return (string) $html;
 	}
 
 	/**

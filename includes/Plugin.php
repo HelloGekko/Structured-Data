@@ -15,7 +15,13 @@ use HelloGekko\StructuredData\AI\LlmsTxt;
 use HelloGekko\StructuredData\AI\MarkdownEndpoint;
 use HelloGekko\StructuredData\Compat\ConflictManager;
 use HelloGekko\StructuredData\Compat\ConflictSettings;
+use HelloGekko\StructuredData\Graph\Cockpit;
+use HelloGekko\StructuredData\Graph\GraphMetrics;
+use HelloGekko\StructuredData\Graph\Installer;
+use HelloGekko\StructuredData\Graph\LinkIndexer;
+use HelloGekko\StructuredData\Graph\LinkRepository;
 use HelloGekko\StructuredData\Output\FrontendOutput;
+use HelloGekko\StructuredData\Seo\SeoManager;
 use HelloGekko\StructuredData\Reviews\ReviewsManager;
 use HelloGekko\StructuredData\Reviews\ReviewsSettings;
 use HelloGekko\StructuredData\Schema\SchemaCatalog;
@@ -80,12 +86,21 @@ final class Plugin {
 		$conflicts = new ConflictManager( $frontend );
 		$conflicts->register_hooks();
 
+		// Cockpit: link index, graph metrics and SEO orchestration layer.
+		Installer::maybe_install();
+		( new LinkIndexer() )->register_hooks();
+		$seo = new SeoManager();
+		$seo->register_hooks();
+
 		// Admin UI (wizard, meta boxes, ajax).
 		if ( is_admin() ) {
 			( new Admin( $this->registry, $this->reviews ) )->register_hooks();
 			( new ReviewsSettings( $this->reviews ) )->register_hooks();
 			( new ConflictSettings( $conflicts ) )->register_hooks();
 			( new AiSettings() )->register_hooks();
+
+			$link_repository = new LinkRepository();
+			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry ) )->register_hooks();
 		}
 	}
 
@@ -112,10 +127,11 @@ final class Plugin {
 	}
 
 	/**
-	 * Deactivation: clean up rewrite rules and the reviews cron event.
+	 * Deactivation: clean up rewrite rules and scheduled events.
 	 */
 	public static function deactivate(): void {
 		( new ReviewsManager() )->unschedule();
+		Installer::unschedule();
 		flush_rewrite_rules();
 	}
 

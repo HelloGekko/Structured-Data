@@ -182,6 +182,11 @@ abstract class AbstractSchemaType {
 			'@type'    => $this->type_value(),
 		];
 
+		$node_id = $this->node_id( $context );
+		if ( null !== $node_id ) {
+			$node['@id'] = $node_id;
+		}
+
 		$definitions = $this->properties();
 		$mappings    = isset( $config['properties'] ) && is_array( $config['properties'] ) ? $config['properties'] : [];
 
@@ -221,6 +226,32 @@ abstract class AbstractSchemaType {
 		}
 
 		return $node;
+	}
+
+	/**
+	 * Stable @id for the emitted node, so schemas can reference each other
+	 * (entity linking): page-bound nodes anchor to the permalink, site-wide
+	 * nodes (e.g. an Organization shown globally) to the home URL.
+	 *
+	 * @param array<string,mixed> $context Runtime context.
+	 */
+	protected function node_id( array $context ): ?string {
+		$post_id = (int) ( $context['post_id'] ?? 0 );
+		$base    = $post_id ? (string) get_permalink( $post_id ) : (string) home_url( '/' );
+		if ( '' === $base ) {
+			return null;
+		}
+
+		$id = $base . '#' . strtolower( $this->type_value() );
+
+		/**
+		 * Filter the @id of an emitted schema node.
+		 *
+		 * @param string             $id      The generated @id.
+		 * @param AbstractSchemaType $type    The schema type instance.
+		 * @param array<string,mixed> $context Runtime context.
+		 */
+		return (string) apply_filters( 'hgsd_node_id', $id, $this, $context );
 	}
 
 	/**
