@@ -241,7 +241,8 @@
 
 .hgsd-graph-legend {
 	display: inline-flex;
-	gap: 14px;
+	flex-wrap: wrap;
+	gap: 6px 14px;
 	color: #646970;
 	font-size: 12px;
 }
@@ -257,6 +258,30 @@
 	width: 26px;
 	height: 0;
 	border-top: 2px solid #a7aaad;
+}
+
+.hgsd-legend-node {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #f0f6fc;
+	border: 2px solid #2271b1;
+}
+
+.hgsd-legend-center {
+	background: #2271b1;
+	border-color: #2271b1;
+}
+
+.hgsd-legend-cornerstone {
+	background: #dbeafd;
+	border-color: #2271b1;
+}
+
+.hgsd-legend-orphan {
+	background: #f0f6fc;
+	border-color: #b32d2e;
 }
 
 .hgsd-legend-relation {

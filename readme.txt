@@ -92,6 +92,8 @@ Delivered straight from GitHub Releases: your site shows the standard update not
 = 1.1.0 =
 * New display condition: show a schema based on the value of an ACF field, with a value control that adapts to the field type (text, boolean, number, select/radio/checkbox).
 * Search Console tips now recognise pages you already submitted for indexing: the "not indexed" warning softens to an informational note until Google re-crawls.
+* The cluster graph now includes links injected by Internal Link Builder, so it matches the incoming/outgoing link counts.
+* The cluster graph legend now explains the node colours (this page, cornerstone, orphan).
 
 = 1.0.0 =
 * Initial release.

@@ -127,6 +127,9 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 				</select>
 			</label>
 			<span class="hgsd-graph-legend">
+				<span class="hgsd-legend-item"><span class="hgsd-legend-node hgsd-legend-center"></span> <?php esc_html_e( 'this page', 'hg-structured-data' ); ?></span>
+				<span class="hgsd-legend-item"><span class="hgsd-legend-node hgsd-legend-cornerstone"></span> <?php esc_html_e( 'cornerstone', 'hg-structured-data' ); ?></span>
+				<span class="hgsd-legend-item"><span class="hgsd-legend-node hgsd-legend-orphan"></span> <?php esc_html_e( 'orphan (no incoming links)', 'hg-structured-data' ); ?></span>
 				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-link"></span> <?php esc_html_e( 'link', 'hg-structured-data' ); ?></span>
 				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-relation"></span> <?php esc_html_e( 'relation + link', 'hg-structured-data' ); ?></span>
 				<span class="hgsd-legend-item"><span class="hgsd-legend-line hgsd-legend-missing"></span> <?php esc_html_e( 'relation, link missing', 'hg-structured-data' ); ?></span>

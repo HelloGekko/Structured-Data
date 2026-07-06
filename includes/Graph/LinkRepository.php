@@ -233,7 +233,25 @@ final class LinkRepository {
 			)
 		);
 
-		return array_map( 'intval', $rows );
+		$neighbours = array_map( 'intval', $rows );
+
+		// Include neighbours connected only through Internal Link Builder's
+		// front-end links, so the cluster graph reflects the same links the
+		// incoming/outgoing counts already include.
+		if ( LinkBuilderBridge::active() ) {
+			$extra = [];
+			foreach ( LinkBuilderBridge::edges() as $edge ) {
+				if ( $edge[0] === $post_id ) {
+					$extra[ $edge[1] ] = $edge[1];
+				} elseif ( $edge[1] === $post_id ) {
+					$extra[ $edge[0] ] = $edge[0];
+				}
+			}
+			$neighbours = array_values( array_unique( array_merge( $neighbours, array_values( $extra ) ) ) );
+			$neighbours = array_slice( $neighbours, 0, $limit );
+		}
+
+		return $neighbours;
 	}
 
 	/**
