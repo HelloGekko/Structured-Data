@@ -23,7 +23,7 @@ final class AcfFields {
 	 *
 	 * @param string $mode     "all" | "repeaters" | "subfields".
 	 * @param string $repeater Field key/name when mode is "subfields".
-	 * @return array<int,array{name:string,label:string}>
+	 * @return array<int,array{name:string,label:string,type:string,choices:array<int,array{value:string,label:string}>}>
 	 */
 	public function get( string $mode, string $repeater = '' ): array {
 		if ( ! Plugin::has_acf() || ! function_exists( 'acf_get_field_groups' ) ) {
@@ -50,14 +50,38 @@ final class AcfFields {
 				if ( ! $only_repeaters && in_array( $field['type'] ?? '', [ 'tab', 'message', 'accordion', 'group', 'repeater', 'flexible_content' ], true ) ) {
 					continue;
 				}
-				$results[] = [
-					'name'  => (string) ( $field['name'] ?? '' ),
-					'label' => (string) ( $field['label'] ?? $field['name'] ?? '' ),
-				];
+				$results[] = $this->describe( $field );
 			}
 		}
 
 		return $results;
+	}
+
+	/**
+	 * Normalise a single ACF field to name, label, type and (for choice fields)
+	 * its selectable options — so the display-condition UI can render a matching
+	 * value control.
+	 *
+	 * @param array<string,mixed> $field ACF field definition.
+	 * @return array{name:string,label:string,type:string,choices:array<int,array{value:string,label:string}>}
+	 */
+	private function describe( array $field ): array {
+		$choices = [];
+		if ( isset( $field['choices'] ) && is_array( $field['choices'] ) ) {
+			foreach ( $field['choices'] as $value => $label ) {
+				$choices[] = [
+					'value' => (string) $value,
+					'label' => is_scalar( $label ) ? (string) $label : (string) $value,
+				];
+			}
+		}
+
+		return [
+			'name'    => (string) ( $field['name'] ?? '' ),
+			'label'   => (string) ( $field['label'] ?? $field['name'] ?? '' ),
+			'type'    => (string) ( $field['type'] ?? 'text' ),
+			'choices' => $choices,
+		];
 	}
 
 	/**
@@ -80,10 +104,7 @@ final class AcfFields {
 				if ( 'repeater' === ( $field['type'] ?? '' ) && $matches ) {
 					$results = [];
 					foreach ( (array) ( $field['sub_fields'] ?? [] ) as $sub ) {
-						$results[] = [
-							'name'  => (string) ( $sub['name'] ?? '' ),
-							'label' => (string) ( $sub['label'] ?? $sub['name'] ?? '' ),
-						];
+						$results[] = $this->describe( $sub );
 					}
 					return $results;
 				}

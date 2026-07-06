@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\Display\AcfCondition;
 use HelloGekko\StructuredData\SchemaDefinition;
 
 defined( 'ABSPATH' ) || exit;
@@ -100,6 +101,8 @@ final class SchemaMatcher {
 				$name = get_the_author_meta( 'display_name', (int) $post->post_author );
 				$nice = get_the_author_meta( 'user_nicename', (int) $post->post_author );
 				return in_array( $value, [ $name, $nice ], true );
+			case 'acf_field':
+				return AcfCondition::matches( $value, $value2, $post->ID );
 			default:
 				return false; // Request-bound rules can't be evaluated per post.
 		}

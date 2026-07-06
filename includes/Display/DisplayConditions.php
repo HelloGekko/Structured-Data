@@ -24,7 +24,7 @@ final class DisplayConditions {
 	 * @return array<string,string>
 	 */
 	public static function types(): array {
-		return [
+		$types = [
 			'global'        => __( 'Show Globally', 'hg-structured-data' ),
 			'homepage'      => __( 'Homepage', 'hg-structured-data' ),
 			'post_type'     => __( 'Post type', 'hg-structured-data' ),
@@ -39,6 +39,13 @@ final class DisplayConditions {
 			'url_parameter' => __( 'URL parameter', 'hg-structured-data' ),
 			'date'          => __( 'Date', 'hg-structured-data' ),
 		];
+
+		// Only offer the ACF-field condition when ACF is available.
+		if ( \HelloGekko\StructuredData\Plugin::has_acf() ) {
+			$types['acf_field'] = __( 'ACF field', 'hg-structured-data' );
+		}
+
+		return $types;
 	}
 
 	/**
@@ -175,6 +182,9 @@ final class DisplayConditions {
 				}
 				// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				return sanitize_text_field( wp_unslash( (string) $_GET[ $value ] ) ) === $value2;
+
+			case 'acf_field':
+				return AcfCondition::matches( $value, $value2, $post_id );
 
 			case 'date':
 				if ( '' === $value ) {

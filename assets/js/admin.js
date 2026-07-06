@@ -510,7 +510,93 @@
 					$( '<input type="date" />' ).attr( 'name', nameValue ).val( data.value || '' )
 				);
 				return;
+
+			case 'acf_field':
+				if ( ! HGSD.hasAcf ) {
+					$cell.append( $( '<em class="hgsd-note" />' ).text( HGSD.i18n.noAcf ) );
+					return;
+				}
+				buildAcfCondition( $cell, nameValue, nameValue2, data );
+				return;
 		}
+	}
+
+	/* ACF field condition: pick a field, then a value control that fits it. */
+	function buildAcfCondition( $cell, nameValue, nameValue2, data ) {
+		var $field = $( '<select class="hgsd-half hgsd-acf-cond-field" />' ).attr( 'name', nameValue );
+		var $valueWrap = $( '<span class="hgsd-acf-cond-value" />' );
+		$cell.append( $field, $valueWrap );
+
+		loadAcfAll().done( function ( fields ) {
+			$field.append( opt( '', HGSD.i18n.selectField, ! data.value ) );
+			$.each( fields, function ( i, f ) {
+				$field.append( opt( f.name, f.label || f.name, f.name === data.value ) );
+			} );
+
+			function draw( savedVal ) {
+				renderAcfValueControl( $valueWrap, nameValue2, findAcfField( fields, $field.val() ), savedVal );
+			}
+
+			draw( data.value2 || '' );
+			$field.on( 'change', function () {
+				draw( '' );
+			} );
+		} );
+	}
+
+	function findAcfField( fields, name ) {
+		var found = null;
+		$.each( fields, function ( i, f ) {
+			if ( f.name === name ) {
+				found = f;
+				return false;
+			}
+		} );
+		return found;
+	}
+
+	function renderAcfValueControl( $wrap, name, field, savedVal ) {
+		$wrap.empty();
+		savedVal = savedVal || '';
+
+		if ( ! field ) {
+			$wrap.append( acfTextInput( name, savedVal ) );
+			return;
+		}
+
+		var type = field.type || 'text';
+
+		// Boolean toggle → true / false select.
+		if ( type === 'true_false' ) {
+			$wrap.append( select( name, { '1': HGSD.i18n.acfTrue, '0': HGSD.i18n.acfFalse }, '' === savedVal ? '1' : savedVal ) );
+			return;
+		}
+
+		// Any field with defined choices (select, radio, checkbox, button group).
+		if ( field.choices && field.choices.length ) {
+			var $s = $( '<select />' ).attr( 'name', name );
+			$s.append( opt( '', HGSD.i18n.acfAnyValue, '' === savedVal ) );
+			$.each( field.choices, function ( i, c ) {
+				$s.append( opt( c.value, c.label || c.value, c.value === savedVal ) );
+			} );
+			$wrap.append( $s );
+			return;
+		}
+
+		// Numeric fields.
+		if ( type === 'number' || type === 'range' ) {
+			$wrap.append(
+				$( '<input type="number" />' ).attr( 'name', name ).attr( 'placeholder', HGSD.i18n.acfAnyValue ).val( savedVal )
+			);
+			return;
+		}
+
+		// Everything else compares as text.
+		$wrap.append( acfTextInput( name, savedVal ) );
+	}
+
+	function acfTextInput( name, savedVal ) {
+		return $( '<input type="text" />' ).attr( 'name', name ).attr( 'placeholder', HGSD.i18n.acfAnyValue ).val( savedVal );
 	}
 
 	function select( name, items, selected ) {
