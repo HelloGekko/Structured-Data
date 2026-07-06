@@ -4,7 +4,7 @@ Tags: schema, structured data, json-ld, seo, rich results, acf
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,10 @@ Delivered straight from GitHub Releases: your site shows the standard update not
 3. Go to **Structured Data → Add New Schema** and follow the wizard.
 
 == Changelog ==
+
+= 1.1.0 =
+* New display condition: show a schema based on the value of an ACF field, with a value control that adapts to the field type (text, boolean, number, select/radio/checkbox).
+* Search Console tips now recognise pages you already submitted for indexing: the "not indexed" warning softens to an informational note until Google re-crawls.
 
 = 1.0.0 =
 * Initial release.

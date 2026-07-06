@@ -10,6 +10,7 @@ declare( strict_types=1 );
 namespace HelloGekko\StructuredData\Graph;
 
 use HelloGekko\StructuredData\Gsc\GscClient;
+use HelloGekko\StructuredData\Gsc\IndexingClient;
 use HelloGekko\StructuredData\Seo\SeoManager;
 
 defined( 'ABSPATH' ) || exit;
@@ -307,16 +308,32 @@ final class Advisor {
 			$verdict  = (string) ( $result['verdict'] ?? '' );
 			$coverage = (string) ( $result['coverage'] ?? '' );
 			if ( '' !== $coverage && 'PASS' !== $verdict ) {
+				// If the page was submitted for indexing more recently than this
+				// Search Console snapshot, the "not indexed" state is stale — you
+				// have already acted, so soften the nag to an informational note
+				// until Google re-crawls. If GSC re-checked after the submission
+				// and it is still not indexed, it becomes a real warning again.
+				$submitted = (int) get_post_meta( $post_id, IndexingClient::META_TIME, true );
+				$inspected = (int) get_post_meta( $post_id, GscClient::META_TIME, true );
+				$awaiting  = $submitted > 0 && $submitted >= $inspected;
+
 				$issues[] = [
 					'key'      => 'gscidx:' . $post_id,
-					'severity' => 'warning',
+					'severity' => $awaiting ? 'tip' : 'warning',
 					'post_id'  => $post_id,
-					'message'  => sprintf(
-						/* translators: 1: page title, 2: coverage state. */
-						__( '“%1$s” is not indexed: %2$s.', 'hg-structured-data' ),
-						get_the_title( $post_id ),
-						$coverage
-					),
+					'message'  => $awaiting
+						? sprintf(
+							/* translators: 1: page title, 2: coverage state. */
+							__( '“%1$s” was submitted to Google for indexing — waiting for the next crawl (currently: %2$s).', 'hg-structured-data' ),
+							get_the_title( $post_id ),
+							$coverage
+						)
+						: sprintf(
+							/* translators: 1: page title, 2: coverage state. */
+							__( '“%1$s” is not indexed: %2$s.', 'hg-structured-data' ),
+							get_the_title( $post_id ),
+							$coverage
+						),
 				];
 			}
 		}

@@ -4,7 +4,7 @@
  * Plugin URI:        https://hellogekko.nl/structured-data
  * Update URI:        https://github.com/HelloGekko/Structured-Data
  * Description:       Build perfect, schema.org-compliant structured data (JSON-LD) for your WordPress site through a visual wizard. Supports display conditions and property mapping to WordPress, ACF or custom values.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            HelloGekko
@@ -21,7 +21,7 @@ declare( strict_types=1 );
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'HGSD_VERSION', '1.0.0' );
+define( 'HGSD_VERSION', '1.1.0' );
 define( 'HGSD_FILE', __FILE__ );
 define( 'HGSD_PATH', plugin_dir_path( __FILE__ ) );
 define( 'HGSD_URL', plugin_dir_url( __FILE__ ) );
