@@ -131,6 +131,7 @@ final class Plugin {
 
 			( new GscSettings( $gsc ) )->register_hooks();
 			( new IndexingSettings( $indexing, $gsc ) )->register_hooks();
+			( new \HelloGekko\StructuredData\Output\BreadcrumbSettings() )->register_hooks();
 
 			$link_repository = new LinkRepository();
 			( new Cockpit( $link_repository, new GraphMetrics( $link_repository ), $seo, $this->registry, $relations, $gsc, $indexing ) )->register_hooks();

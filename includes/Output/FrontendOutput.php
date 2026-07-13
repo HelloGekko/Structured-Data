@@ -92,6 +92,13 @@ final class FrontendOutput {
 		 */
 		$nodes = $this->attach_relations( $nodes, (int) $context['post_id'] );
 
+		// Automatic BreadcrumbList, output alongside our other JSON-LD so it is
+		// marked as ours and counts towards emitted_types (dedupe-aware).
+		$breadcrumb = Breadcrumbs::node( (int) $context['post_id'] );
+		if ( null !== $breadcrumb ) {
+			$nodes[] = $breadcrumb;
+		}
+
 		$nodes = apply_filters( 'hgsd_output_nodes', $nodes, $context );
 
 		foreach ( $nodes as $node ) {

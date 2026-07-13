@@ -90,6 +90,7 @@ Delivered straight from GitHub Releases: your site shows the standard update not
 == Changelog ==
 
 = 1.1.0 =
+* Automatic BreadcrumbList: outputs a Home → parent/category → page trail as JSON-LD, so breadcrumb structured data is present even when this plugin is your only source. Toggle, home label and post types under Structured Data → Breadcrumbs.
 * New display condition: show a schema based on the value of an ACF field, with a value control that adapts to the field type (text, boolean, number, select/radio/checkbox).
 * Search Console tips now recognise pages you already submitted for indexing: the "not indexed" warning softens to an informational note until Google re-crawls.
 * The cluster graph now includes links injected by Internal Link Builder, so it matches the incoming/outgoing link counts.

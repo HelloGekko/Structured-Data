@@ -23,7 +23,7 @@ foreach ( $hgsd_posts as $hgsd_post_id ) {
 }
 
 // Options and transients.
-foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at', 'hgsd_gsc_settings', 'hgsd_tips_dismissed', 'hgsd_tips_settings', 'hgsd_indexing_settings', 'hgsd_indexing_state', 'hgsd_indexing_queue' ] as $hgsd_option ) {
+foreach ( [ 'hgsd_reviews_settings', 'hgsd_reviews_cache', 'hgsd_conflict_settings', 'hgsd_ai_settings', 'hgsd_db_version', 'hgsd_index_pointer', 'hgsd_indexed_at', 'hgsd_gsc_settings', 'hgsd_tips_dismissed', 'hgsd_tips_settings', 'hgsd_indexing_settings', 'hgsd_indexing_state', 'hgsd_indexing_queue', 'hgsd_breadcrumbs' ] as $hgsd_option ) {
 	delete_option( $hgsd_option );
 }
 delete_transient( 'hgsd_llms_txt' );
