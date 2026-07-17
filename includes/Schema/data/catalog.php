@@ -5622,6 +5622,255 @@ return array (
         'comment' => 'The value-added Tax ID of the organization or person with national prefix (for example IT123456789). Can also be described as iso6523Code with proper prefix.',
       ),
     ),
+    'JobPosting' => 
+    array (
+      'additionalType' => 
+      array (
+        'label' => 'Additional Type',
+        'type' => 'text',
+        'comment' => 'An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org style guide.',
+      ),
+      'alternateName' => 
+      array (
+        'label' => 'Alternate Name',
+        'type' => 'text',
+        'comment' => 'An alias for the item.',
+      ),
+      'baseSalary' => 
+      array (
+        'label' => 'Base Salary',
+        'type' => 'number',
+        'comment' => 'The base salary of the job or of an employee in an EmployeeRole.',
+      ),
+      'benefits' => 
+      array (
+        'label' => 'Benefits',
+        'type' => 'text',
+        'comment' => 'Description of benefits associated with the job.',
+      ),
+      'datePosted' => 
+      array (
+        'label' => 'Date Posted',
+        'type' => 'date',
+        'comment' => 'Publication date of an online listing.',
+      ),
+      'description' => 
+      array (
+        'label' => 'Description',
+        'type' => 'text',
+        'comment' => 'A description of the item.',
+      ),
+      'directApply' => 
+      array (
+        'label' => 'Direct Apply',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether an url that is associated with a JobPosting enables direct application for the job, via the posting website. A job posting is considered to have directApply of True if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of False is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.',
+      ),
+      'disambiguatingDescription' => 
+      array (
+        'label' => 'Disambiguating Description',
+        'type' => 'text',
+        'comment' => 'A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.',
+      ),
+      'educationRequirements' => 
+      array (
+        'label' => 'Education Requirements',
+        'type' => 'text',
+        'comment' => 'Educational background needed for the position or Occupation.',
+      ),
+      'eligibilityToWorkRequirement' => 
+      array (
+        'label' => 'Eligibility To Work Requirement',
+        'type' => 'text',
+        'comment' => 'The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.',
+      ),
+      'employerOverview' => 
+      array (
+        'label' => 'Employer Overview',
+        'type' => 'text',
+        'comment' => 'A description of the employer, career opportunities and work environment for this position.',
+      ),
+      'employmentType' => 
+      array (
+        'label' => 'Employment Type',
+        'type' => 'text',
+        'comment' => 'Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).',
+      ),
+      'estimatedSalary' => 
+      array (
+        'label' => 'Estimated Salary',
+        'type' => 'number',
+        'comment' => 'An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.',
+      ),
+      'experienceInPlaceOfEducation' => 
+      array (
+        'label' => 'Experience In Place Of Education',
+        'type' => 'boolean',
+        'comment' => 'Indicates whether a JobPosting will accept experience (as indicated by OccupationalExperienceRequirements) in place of its formal educational qualifications (as indicated by educationRequirements). If true, indicates that satisfying one of these requirements is sufficient.',
+      ),
+      'experienceRequirements' => 
+      array (
+        'label' => 'Experience Requirements',
+        'type' => 'text',
+        'comment' => 'Description of skills and experience needed for the position or Occupation.',
+      ),
+      'identifier' => 
+      array (
+        'label' => 'Identifier',
+        'type' => 'text',
+        'comment' => 'The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.',
+      ),
+      'image' => 
+      array (
+        'label' => 'Image',
+        'type' => 'url',
+        'comment' => 'An image of the item. This can be a URL or a fully described ImageObject.',
+      ),
+      'incentiveCompensation' => 
+      array (
+        'label' => 'Incentive Compensation',
+        'type' => 'text',
+        'comment' => 'Description of bonus and commission compensation aspects of the job.',
+      ),
+      'incentives' => 
+      array (
+        'label' => 'Incentives',
+        'type' => 'text',
+        'comment' => 'Description of bonus and commission compensation aspects of the job.',
+      ),
+      'industry' => 
+      array (
+        'label' => 'Industry',
+        'type' => 'text',
+        'comment' => 'The industry associated with the job position.',
+      ),
+      'jobBenefits' => 
+      array (
+        'label' => 'Job Benefits',
+        'type' => 'text',
+        'comment' => 'Description of benefits associated with the job.',
+      ),
+      'jobImmediateStart' => 
+      array (
+        'label' => 'Job Immediate Start',
+        'type' => 'boolean',
+        'comment' => 'An indicator as to whether a position is available for an immediate start.',
+      ),
+      'jobLocationType' => 
+      array (
+        'label' => 'Job Location Type',
+        'type' => 'text',
+        'comment' => 'A description of the job location (e.g. TELECOMMUTE for telecommute jobs).',
+      ),
+      'jobStartDate' => 
+      array (
+        'label' => 'Job Start Date',
+        'type' => 'date',
+        'comment' => 'The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.',
+      ),
+      'mainEntityOfPage' => 
+      array (
+        'label' => 'Main Entity Of Page',
+        'type' => 'url',
+        'comment' => 'Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.',
+      ),
+      'name' => 
+      array (
+        'label' => 'Name',
+        'type' => 'text',
+        'comment' => 'The name of the item.',
+      ),
+      'occupationalCategory' => 
+      array (
+        'label' => 'Occupational Category',
+        'type' => 'text',
+        'comment' => 'A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.\\n Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.',
+      ),
+      'physicalRequirement' => 
+      array (
+        'label' => 'Physical Requirement',
+        'type' => 'text',
+        'comment' => 'A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.',
+      ),
+      'qualifications' => 
+      array (
+        'label' => 'Qualifications',
+        'type' => 'text',
+        'comment' => 'Specific qualifications required for this role or Occupation.',
+      ),
+      'responsibilities' => 
+      array (
+        'label' => 'Responsibilities',
+        'type' => 'text',
+        'comment' => 'Responsibilities associated with this role or Occupation.',
+      ),
+      'salaryCurrency' => 
+      array (
+        'label' => 'Salary Currency',
+        'type' => 'text',
+        'comment' => 'The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217)) used for the main salary information in this job posting or for this employee.',
+      ),
+      'sameAs' => 
+      array (
+        'label' => 'Same As',
+        'type' => 'url',
+        'comment' => 'URL of a reference Web page that unambiguously indicates the item\'s identity. E.g. the URL of the item\'s Wikipedia page, Wikidata entry, or official website.',
+      ),
+      'securityClearanceRequirement' => 
+      array (
+        'label' => 'Security Clearance Requirement',
+        'type' => 'text',
+        'comment' => 'A description of any security clearance requirements of the job.',
+      ),
+      'sensoryRequirement' => 
+      array (
+        'label' => 'Sensory Requirement',
+        'type' => 'text',
+        'comment' => 'A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.',
+      ),
+      'skills' => 
+      array (
+        'label' => 'Skills',
+        'type' => 'text',
+        'comment' => 'A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.',
+      ),
+      'specialCommitments' => 
+      array (
+        'label' => 'Special Commitments',
+        'type' => 'text',
+        'comment' => 'Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.',
+      ),
+      'title' => 
+      array (
+        'label' => 'Title',
+        'type' => 'text',
+        'comment' => 'The title of the job.',
+      ),
+      'totalJobOpenings' => 
+      array (
+        'label' => 'Total Job Openings',
+        'type' => 'number',
+        'comment' => 'The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.',
+      ),
+      'url' => 
+      array (
+        'label' => 'Url',
+        'type' => 'url',
+        'comment' => 'URL of the item.',
+      ),
+      'validThrough' => 
+      array (
+        'label' => 'Valid Through',
+        'type' => 'date',
+        'comment' => 'The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.',
+      ),
+      'workHours' => 
+      array (
+        'label' => 'Work Hours',
+        'type' => 'text',
+        'comment' => 'The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).',
+      ),
+    ),
   ),
   'enums' => 
   array (
@@ -11876,6 +12125,69 @@ return array (
         'label' => 'Sub Organization',
         'class' => 'Organization',
         'comment' => 'A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific \'department\' property.',
+      ),
+      'subjectOf' => 
+      array (
+        'label' => 'Subject Of',
+        'class' => 'CreativeWork',
+        'comment' => 'A CreativeWork or Event about this Thing.',
+      ),
+    ),
+    'JobPosting' => 
+    array (
+      'applicantLocationRequirements' => 
+      array (
+        'label' => 'Applicant Location Requirements',
+        'class' => 'AdministrativeArea',
+        'comment' => 'The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.',
+      ),
+      'applicationContact' => 
+      array (
+        'label' => 'Application Contact',
+        'class' => 'ContactPoint',
+        'comment' => 'Contact details for further information relevant to this job posting.',
+      ),
+      'employmentUnit' => 
+      array (
+        'label' => 'Employment Unit',
+        'class' => 'Organization',
+        'comment' => 'Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.',
+      ),
+      'hiringOrganization' => 
+      array (
+        'label' => 'Hiring Organization',
+        'class' => 'Organization',
+        'comment' => 'Organization or Person offering the job position.',
+      ),
+      'jobDuration' => 
+      array (
+        'label' => 'Job Duration',
+        'class' => 'Duration',
+        'comment' => 'The expected duration of an employment offer as advertised by the employer. Relevant for job postings that have a clearly defined period in mind such as seasonal work, substitutes for maternal leave or any other temporary employment.',
+      ),
+      'jobLocation' => 
+      array (
+        'label' => 'Job Location',
+        'class' => 'Place',
+        'comment' => 'A (typically single) geographic location associated with the job position.',
+      ),
+      'owner' => 
+      array (
+        'label' => 'Owner',
+        'class' => 'Organization',
+        'comment' => 'A person or organization who owns this Thing.',
+      ),
+      'potentialAction' => 
+      array (
+        'label' => 'Potential Action',
+        'class' => 'Action',
+        'comment' => 'Indicates a potential Action, which describes an idealized action in which this thing would play an \'object\' role.',
+      ),
+      'relevantOccupation' => 
+      array (
+        'label' => 'Relevant Occupation',
+        'class' => 'Occupation',
+        'comment' => 'The Occupation for the JobPosting.',
       ),
       'subjectOf' => 
       array (

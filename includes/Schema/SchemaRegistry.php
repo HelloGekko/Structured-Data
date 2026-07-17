@@ -41,6 +41,7 @@ final class SchemaRegistry {
 			new Types\Service(),
 			new Types\Person(),
 			new Types\Organization(),
+			new Types\JobPosting(),
 		];
 
 		foreach ( $defaults as $type ) {

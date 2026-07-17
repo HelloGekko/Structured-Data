@@ -47,6 +47,7 @@ $targets = [
 	'Service'       => 'Service',
 	'Person'        => 'Person',
 	'Organization'  => 'Organization',
+	'JobPosting'    => 'JobPosting',
 ];
 
 $data  = json_decode( (string) file_get_contents( $source ), true );

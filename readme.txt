@@ -35,6 +35,7 @@ Beyond the schema wizard it adds an orchestration layer that lays *over* your ex
 * Service
 * Person
 * Organization
+* Job posting (JobPosting)
 
 = Display conditions =
 
@@ -90,6 +91,7 @@ Delivered straight from GitHub Releases: your site shows the standard update not
 == Changelog ==
 
 = 1.1.0 =
+* New schema type: JobPosting (vacancy), generated from the official schema.org v30.0 vocabulary, with curated fields for hiring organisation, job location, salary range and remote work — pairs with instant indexing (Google's Indexing API officially supports JobPosting).
 * Automatic BreadcrumbList: outputs a Home → parent/category → page trail as JSON-LD, so breadcrumb structured data is present even when this plugin is your only source. Toggle, home label and post types under Structured Data → Breadcrumbs.
 * New display condition: show a schema based on the value of an ACF field, with a value control that adapts to the field type (text, boolean, number, select/radio/checkbox).
 * Search Console tips now recognise pages you already submitted for indexing: the "not indexed" warning softens to an informational note until Google re-crawls.
