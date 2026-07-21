@@ -107,25 +107,30 @@ final class Cockpit {
 			}
 		}
 
-		// Refresh the link/readability index for the flagged pages (local, fast).
+		// Refresh the link/readability index for the flagged pages (local, fast),
+		// bounded by count and wall-clock so the request never times out.
 		$indexer = new LinkIndexer();
-		foreach ( array_slice( array_keys( $post_ids ), 0, 60 ) as $pid ) {
+		$started = microtime( true );
+		$done    = 0;
+		foreach ( array_keys( $post_ids ) as $pid ) {
+			if ( $done >= 40 || ( microtime( true ) - $started ) > 12 ) {
+				break;
+			}
 			$post = get_post( $pid );
 			if ( $post instanceof \WP_Post ) {
 				$indexer->index_post( $post );
+				++$done;
 			}
 		}
 		GraphMetrics::flush_cache();
 
-		// Refresh Search Console snapshots for the flagged pages (bounded — each
-		// is an API call), so a fixed canonical or a now-indexed page clears.
-		if ( null !== $this->gsc && $this->gsc->configured() ) {
-			foreach ( array_slice( array_keys( $gsc_ids ), 0, 10 ) as $pid ) {
-				$this->gsc->inspect_and_store( $pid );
-			}
+		// Search Console re-inspection is slow (one API call per page), so hand
+		// the flagged pages to a background job instead of blocking the request.
+		if ( ! empty( $gsc_ids ) && null !== $this->gsc && $this->gsc->configured() ) {
+			$this->gsc->schedule_recheck( array_keys( $gsc_ids ) );
 		}
 
-		wp_send_json_success( [ 'rescanned' => count( $post_ids ) ] );
+		wp_send_json_success( [ 'rescanned' => $done ] );
 	}
 
 	/**

@@ -27,6 +27,8 @@ final class GscClient {
 	public const TOKEN_CACHE  = 'hgsd_gsc_token';
 	public const CANNIBAL_OPTION = 'hgsd_cannibalization';
 	public const CANNIBAL_HOOK   = 'hgsd_gsc_cannibal';
+	public const RECHECK_HOOK    = 'hgsd_gsc_recheck';
+	public const RECHECK_OPTION  = 'hgsd_gsc_recheck';
 	private const SEARCH_ANALYTICS = 'https://www.googleapis.com/webmasters/v3/sites/';
 	private const TOKEN_URL   = 'https://oauth2.googleapis.com/token';
 	private const INSPECT_URL = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
@@ -63,6 +65,55 @@ final class GscClient {
 	public function register_hooks(): void {
 		add_action( self::CRON_HOOK, [ $this, 'run_batch' ] );
 		add_action( self::CANNIBAL_HOOK, [ $this, 'fetch_cannibalization' ] );
+		add_action( self::RECHECK_HOOK, [ $this, 'run_recheck' ] );
+	}
+
+	/**
+	 * Queue specific posts for a background Search Console re-inspection (used by
+	 * the cockpit "Re-scan" so its API calls never block the request).
+	 *
+	 * @param array<int,int> $ids Post IDs.
+	 */
+	public function schedule_recheck( array $ids ): void {
+		$ids = array_values( array_unique( array_filter( array_map( 'intval', $ids ) ) ) );
+		if ( empty( $ids ) ) {
+			return;
+		}
+		update_option( self::RECHECK_OPTION, array_slice( $ids, 0, 30 ), false );
+		if ( ! wp_next_scheduled( self::RECHECK_HOOK ) ) {
+			wp_schedule_single_event( time() + 5, self::RECHECK_HOOK );
+		}
+	}
+
+	/**
+	 * Background: re-inspect the queued posts, within a wall-clock budget.
+	 */
+	public function run_recheck(): void {
+		$ids = get_option( self::RECHECK_OPTION, [] );
+		if ( ! is_array( $ids ) || empty( $ids ) || ! $this->configured() ) {
+			delete_option( self::RECHECK_OPTION );
+			return;
+		}
+
+		$started = microtime( true );
+		foreach ( $ids as $index => $pid ) {
+			if ( ( microtime( true ) - $started ) > self::RUN_BUDGET ) {
+				break;
+			}
+			unset( $ids[ $index ] );
+			update_option( self::RECHECK_OPTION, $ids, false );
+
+			$result = $this->inspect_and_store( (int) $pid );
+			if ( is_wp_error( $result ) ) {
+				break; // Token/quota trouble — resume next run.
+			}
+		}
+
+		if ( empty( $ids ) ) {
+			delete_option( self::RECHECK_OPTION );
+		} elseif ( ! wp_next_scheduled( self::RECHECK_HOOK ) ) {
+			wp_schedule_single_event( time() + MINUTE_IN_SECONDS, self::RECHECK_HOOK );
+		}
 	}
 
 	/**
@@ -89,7 +140,7 @@ final class GscClient {
 	}
 
 	public static function unschedule(): void {
-		foreach ( [ self::CRON_HOOK, self::CANNIBAL_HOOK ] as $hook ) {
+		foreach ( [ self::CRON_HOOK, self::CANNIBAL_HOOK, self::RECHECK_HOOK ] as $hook ) {
 			$timestamp = wp_next_scheduled( $hook );
 			if ( $timestamp ) {
 				wp_unschedule_event( $timestamp, $hook );
