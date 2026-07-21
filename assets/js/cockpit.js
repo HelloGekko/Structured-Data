@@ -515,6 +515,21 @@
 		}
 	} );
 
+	$( document ).on( 'click', '.hgsd-tips-rescan', function () {
+		var $btn = $( this );
+		$btn.prop( 'disabled', true );
+		$( '.hgsd-tips-rescan-status' ).text( HGSDCockpit.i18n.rescanning );
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_rescan',
+			nonce: HGSDCockpit.nonce
+		} ).done( function () {
+			window.location.reload();
+		} ).fail( function () {
+			$btn.prop( 'disabled', false );
+			$( '.hgsd-tips-rescan-status' ).text( HGSDCockpit.i18n.error );
+		} );
+	} );
+
 	$( document ).on( 'click', '.hgsd-tips-settings-save', function () {
 		var types = [];
 		$( '.hgsd-tips-skip:checked' ).each( function () {

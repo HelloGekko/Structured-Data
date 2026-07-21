@@ -70,6 +70,8 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 					?>
 				</a>
 			<?php endif; ?>
+			<button type="button" class="button button-small hgsd-tips-rescan"><?php esc_html_e( 'Re-scan', 'hg-structured-data' ); ?></button>
+			<span class="hgsd-tips-rescan-status hgsd-muted"></span>
 		</div>
 
 		<?php if ( empty( $tips_active ) && ! $show_ignored ) : ?>

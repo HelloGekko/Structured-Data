@@ -59,6 +59,7 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_index', [ $this, 'ajax_index' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_airecheck', [ $this, 'ajax_airecheck' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_rescan', [ $this, 'ajax_rescan' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip', [ $this, 'ajax_tip' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip_settings', [ $this, 'ajax_tip_settings' ] );
 	}
@@ -77,6 +78,54 @@ final class Cockpit {
 		Advisor::save_settings( array_map( 'sanitize_key', $types ) );
 
 		wp_send_json_success();
+	}
+
+	/**
+	 * AJAX: re-check the currently-flagged pages so resolved issues drop off the
+	 * tip list immediately, instead of waiting for the next background index or
+	 * Search Console refresh. Only the flagged pages are re-scanned, so it stays
+	 * fast.
+	 */
+	public function ajax_rescan(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		[ $active ] = Advisor::split_dismissed( $this->advisor->issues() );
+
+		$post_ids = [];
+		$gsc_ids  = [];
+		foreach ( $active as $tip ) {
+			$pid = (int) ( $tip['post_id'] ?? 0 );
+			if ( $pid < 1 ) {
+				continue;
+			}
+			$post_ids[ $pid ] = true;
+			if ( 0 === strpos( (string) ( $tip['key'] ?? '' ), 'gsc' ) ) {
+				$gsc_ids[ $pid ] = true;
+			}
+		}
+
+		// Refresh the link/readability index for the flagged pages (local, fast).
+		$indexer = new LinkIndexer();
+		foreach ( array_slice( array_keys( $post_ids ), 0, 60 ) as $pid ) {
+			$post = get_post( $pid );
+			if ( $post instanceof \WP_Post ) {
+				$indexer->index_post( $post );
+			}
+		}
+		GraphMetrics::flush_cache();
+
+		// Refresh Search Console snapshots for the flagged pages (bounded — each
+		// is an API call), so a fixed canonical or a now-indexed page clears.
+		if ( null !== $this->gsc && $this->gsc->configured() ) {
+			foreach ( array_slice( array_keys( $gsc_ids ), 0, 10 ) as $pid ) {
+				$this->gsc->inspect_and_store( $pid );
+			}
+		}
+
+		wp_send_json_success( [ 'rescanned' => count( $post_ids ) ] );
 	}
 
 	/**
@@ -195,6 +244,7 @@ final class Cockpit {
 					'indexOn'     => __( 'Last submitted', 'hg-structured-data' ),
 					'aiClean'     => __( 'Content looks machine-readable. Use “Check full page” for headings and H1.', 'hg-structured-data' ),
 					'aiCleanFull' => __( 'The full page is machine-readable — no issues found.', 'hg-structured-data' ),
+					'rescanning'  => __( 'Re-scanning the flagged pages…', 'hg-structured-data' ),
 				],
 			]
 		);
