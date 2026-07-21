@@ -156,6 +156,7 @@
 			renderSuggestions( d.suggestions );
 			renderGsc( d.gsc, d.gscReady );
 			renderIndex( d.indexReady, d.indexStatus );
+			renderReadability( d.readability, HGSDCockpit.i18n.aiClean );
 			$panel.find( '.hgsd-rel-search-input' ).val( '' );
 			$panel.find( '.hgsd-rel-target' ).val( '' );
 			$panel.removeAttr( 'hidden' );
@@ -304,6 +305,42 @@
 		} ).done( function ( res ) {
 			if ( res && res.success ) {
 				renderGsc( res.data, true );
+			} else {
+				$status.text( ( res && res.data && res.data.message ) ? res.data.message : HGSDCockpit.i18n.error );
+			}
+		} );
+	} );
+
+	/* --------------------------------------------------- AI readability */
+
+	function renderReadability( messages, cleanText ) {
+		var $facts = $panel.find( '.hgsd-panel-ai-facts' );
+		$panel.find( '.hgsd-ai-status' ).text( '' );
+		$facts.empty();
+
+		if ( ! messages || ! messages.length ) {
+			$facts.append( $( '<li class="hgsd-ai-ok" />' ).text( cleanText ) );
+			return;
+		}
+		$.each( messages, function ( i, m ) {
+			$facts.append( $( '<li />' ).text( m ) );
+		} );
+	}
+
+	$panel.on( 'click', '.hgsd-ai-recheck', function () {
+		var $btn = $( this );
+		var $status = $panel.find( '.hgsd-ai-status' );
+		$btn.prop( 'disabled', true );
+		$status.text( '…' );
+		$.post( HGSDCockpit.ajaxUrl, {
+			action: 'hgsd_cockpit_airecheck',
+			nonce: HGSDCockpit.nonce,
+			post_id: currentPost
+		} ).done( function ( res ) {
+			$btn.prop( 'disabled', false );
+			if ( res && res.success ) {
+				$status.text( '' );
+				renderReadability( res.data.messages, HGSDCockpit.i18n.aiCleanFull );
 			} else {
 				$status.text( ( res && res.data && res.data.message ) ? res.data.message : HGSDCockpit.i18n.error );
 			}

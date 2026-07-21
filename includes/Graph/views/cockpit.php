@@ -316,6 +316,13 @@ $hgsd_base_url = add_query_arg( [ 'post_type' => HGSD_CPT, 'page' => 'hgsd-cockp
 			<span class="hgsd-index-status hgsd-panel-status"></span>
 		</div>
 
+		<h3><?php esc_html_e( 'AI readability', 'hg-structured-data' ); ?></h3>
+		<div class="hgsd-panel-ai">
+			<ul class="hgsd-panel-ai-facts"></ul>
+			<button type="button" class="button button-small hgsd-ai-recheck"><?php esc_html_e( 'Check full page', 'hg-structured-data' ); ?></button>
+			<span class="hgsd-ai-status hgsd-panel-status"></span>
+		</div>
+
 		<h3><?php esc_html_e( 'Incoming links', 'hg-structured-data' ); ?></h3>
 		<ul class="hgsd-panel-inlinks"></ul>
 

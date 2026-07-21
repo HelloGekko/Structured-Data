@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\AI\ReadabilityAudit;
 use HelloGekko\StructuredData\Gsc\GscClient;
 use HelloGekko\StructuredData\Gsc\IndexingClient;
 use HelloGekko\StructuredData\Seo\SeoManager;
@@ -106,7 +107,8 @@ final class Advisor {
 			$this->gsc_issues(),
 			$this->cornerstone_issues(),
 			$this->deep_pages(),
-			$this->unlinked_mentions()
+			$this->unlinked_mentions(),
+			$this->ai_readability()
 		);
 
 		return self::sort_issues( $issues );
@@ -334,6 +336,47 @@ final class Advisor {
 							get_the_title( $post_id ),
 							$coverage
 						),
+				];
+			}
+		}
+
+		return self::cap( $issues );
+	}
+
+	/**
+	 * Pages whose HTML is hard for AI agents to parse (from the indexed
+	 * content-level readability audit): missing alt text, vague link text or a
+	 * broken heading order.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function ai_readability(): array {
+		$posts = get_posts(
+			[
+				'post_type'     => \HelloGekko\StructuredData\ContentTypes::list(),
+				'post_status'   => 'publish',
+				'numberposts'   => 200,
+				'fields'        => 'ids',
+				'no_found_rows' => true,
+				'meta_key'      => \HelloGekko\StructuredData\Graph\LinkIndexer::META_READABILITY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			]
+		);
+
+		$issues = [];
+		foreach ( $posts as $post_id ) {
+			$post_id = (int) $post_id;
+			$stored  = get_post_meta( $post_id, \HelloGekko\StructuredData\Graph\LinkIndexer::META_READABILITY, true );
+			if ( ! is_array( $stored ) ) {
+				continue;
+			}
+
+			$title = get_the_title( $post_id );
+			foreach ( ReadabilityAudit::messages( $stored ) as $code => $message ) {
+				$issues[] = [
+					'key'      => 'airead:' . $code . ':' . $post_id,
+					'severity' => 'tip',
+					'post_id'  => $post_id,
+					'message'  => sprintf( '“%1$s” — %2$s', $title, $message ),
 				];
 			}
 		}

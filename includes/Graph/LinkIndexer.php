@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\AI\ReadabilityAudit;
 use HelloGekko\StructuredData\ContentTypes;
 use HelloGekko\StructuredData\Output\ContentRenderer;
 
@@ -23,6 +24,9 @@ final class LinkIndexer {
 
 	private const BATCH_SIZE = 25;
 	private const RUN_BUDGET = 15;
+
+	/** Post meta holding the content-level AI-readability issue map. */
+	public const META_READABILITY = '_hgsd_ai_issues';
 
 	public function register_hooks(): void {
 		add_action( 'save_post', [ $this, 'on_save_post' ], 20, 2 );
@@ -69,10 +73,16 @@ final class LinkIndexer {
 
 		if ( 'publish' !== $post->post_status || ! in_array( $post->post_type, ContentTypes::list(), true ) ) {
 			$wpdb->delete( Installer::content_table(), [ 'post_id' => $post->ID ] ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			delete_post_meta( $post->ID, self::META_READABILITY );
 			return;
 		}
 
 		$html = ContentRenderer::render( $post );
+
+		// AI-readability signals from the content (alt text, link text, heading
+		// order). H1 is a whole-page concern (often in the theme), so it is
+		// checked on demand from the cockpit, not here.
+		$this->store_readability( $post->ID, $html );
 
 		// Plain text snapshot, used for mention-based link suggestions.
 		$text = trim( (string) preg_replace( '/\s+/', ' ', wp_strip_all_tags( $html ) ) );
@@ -110,6 +120,27 @@ final class LinkIndexer {
 				[ '%d', '%d', '%s', '%s' ]
 			);
 		}
+	}
+
+	/**
+	 * Compute and store the content-level AI-readability issues for a post.
+	 */
+	private function store_readability( int $post_id, string $html ): void {
+		/**
+		 * Allow disabling the AI-readability audit entirely.
+		 *
+		 * @param bool $enabled Default true.
+		 */
+		if ( ! apply_filters( 'hgsd_ai_readability_enabled', true ) ) {
+			return;
+		}
+
+		$issues = ReadabilityAudit::analyze( $html, false );
+		if ( empty( $issues ) ) {
+			delete_post_meta( $post_id, self::META_READABILITY );
+			return;
+		}
+		update_post_meta( $post_id, self::META_READABILITY, $issues );
 	}
 
 	/**

@@ -9,6 +9,7 @@ declare( strict_types=1 );
 
 namespace HelloGekko\StructuredData\Graph;
 
+use HelloGekko\StructuredData\AI\ReadabilityAudit;
 use HelloGekko\StructuredData\Gsc\GscClient;
 use HelloGekko\StructuredData\Gsc\IndexingClient;
 use HelloGekko\StructuredData\Schema\SchemaRegistry;
@@ -57,6 +58,7 @@ final class Cockpit {
 		add_action( 'wp_ajax_hgsd_cockpit_graph', [ $this, 'ajax_graph' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_gsc', [ $this, 'ajax_gsc' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_index', [ $this, 'ajax_index' ] );
+		add_action( 'wp_ajax_hgsd_cockpit_airecheck', [ $this, 'ajax_airecheck' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip', [ $this, 'ajax_tip' ] );
 		add_action( 'wp_ajax_hgsd_cockpit_tip_settings', [ $this, 'ajax_tip_settings' ] );
 	}
@@ -191,6 +193,8 @@ final class Cockpit {
 					'indexOff'    => __( 'Enable Structured Data → Instant Indexing to submit URLs.', 'hg-structured-data' ),
 					'indexNever'  => __( 'Not submitted yet.', 'hg-structured-data' ),
 					'indexOn'     => __( 'Last submitted', 'hg-structured-data' ),
+					'aiClean'     => __( 'Content looks machine-readable. Use “Check full page” for headings and H1.', 'hg-structured-data' ),
+					'aiCleanFull' => __( 'The full page is machine-readable — no issues found.', 'hg-structured-data' ),
 				],
 			]
 		);
@@ -390,8 +394,54 @@ final class Cockpit {
 				'gscReady'      => null !== $this->gsc && $this->gsc->configured(),
 				'indexReady'    => null !== $this->indexing && $this->indexing->ready(),
 				'indexStatus'   => IndexingClient::status_for( $post->ID ),
+				'readability'   => array_values( ReadabilityAudit::messages( $this->stored_readability( $post->ID ) ) ),
 			]
 		);
+	}
+
+	/**
+	 * Stored content-level readability issue map for a post.
+	 *
+	 * @return array<string,mixed>
+	 */
+	private function stored_readability( int $post_id ): array {
+		$stored = get_post_meta( $post_id, LinkIndexer::META_READABILITY, true );
+		return is_array( $stored ) ? $stored : [];
+	}
+
+	/**
+	 * AJAX: re-audit the full rendered page (not just the content) for AI
+	 * readability — this catches whole-page signals like a missing or duplicate
+	 * H1 that the content-level index cannot see.
+	 */
+	public function ajax_airecheck(): void {
+		check_ajax_referer( 'hgsd_ajax', 'nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
+		$post_id = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
+		$url     = $post_id ? get_permalink( $post_id ) : '';
+		if ( ! $url ) {
+			wp_send_json_error( [ 'message' => __( 'This page has no URL to check.', 'hg-structured-data' ) ] );
+		}
+
+		$response = wp_remote_get(
+			$url,
+			[
+				'timeout'    => 12,
+				'user-agent' => 'StructuredData-Readability/1.0',
+				'headers'    => [ 'Accept' => 'text/html' ],
+			]
+		);
+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+			wp_send_json_error( [ 'message' => __( 'Could not fetch the page to audit it.', 'hg-structured-data' ) ] );
+		}
+
+		$issues   = ReadabilityAudit::analyze( (string) wp_remote_retrieve_body( $response ), true );
+		$messages = array_values( ReadabilityAudit::messages( $issues ) );
+
+		wp_send_json_success( [ 'messages' => $messages ] );
 	}
 
 	/**

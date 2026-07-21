@@ -427,3 +427,11 @@
 	margin-left: 8px;
 	color: #16794a;
 }
+
+.hgsd-panel-ai-facts li {
+	color: #996800;
+}
+
+.hgsd-panel-ai-facts li.hgsd-ai-ok {
+	color: #16794a;
+}

@@ -44,3 +44,6 @@ delete_post_meta_by_key( '_hgsd_gsc_time' );
 // Per-post instant-indexing submission markers.
 delete_post_meta_by_key( '_hgsd_indexed_at' );
 delete_post_meta_by_key( '_hgsd_indexed_status' );
+
+// Per-post AI-readability audit results.
+delete_post_meta_by_key( '_hgsd_ai_issues' );
