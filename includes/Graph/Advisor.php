@@ -108,7 +108,8 @@ final class Advisor {
 			$this->cornerstone_issues(),
 			$this->deep_pages(),
 			$this->unlinked_mentions(),
-			$this->ai_readability()
+			$this->ai_readability(),
+			$this->cannibalization()
 		);
 
 		return self::sort_issues( $issues );
@@ -382,6 +383,121 @@ final class Advisor {
 		}
 
 		return self::cap( $issues );
+	}
+
+	/**
+	 * Keyword cannibalisation: pages competing for the same term. Two signals —
+	 * the focus keywords set in the active SEO plugin (offline, plugin-agnostic
+	 * through the adapter), and the real queries where Search Console shows two
+	 * or more of your pages ranking.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function cannibalization(): array {
+		$issues = array_merge( $this->focus_keyword_collisions(), $this->gsc_query_collisions() );
+		return self::cap( $issues );
+	}
+
+	/**
+	 * Pages in this site that target the same focus keyword.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function focus_keyword_collisions(): array {
+		$key = $this->seo->adapter()->focus_keyword_meta_key();
+		if ( '' === $key ) {
+			return [];
+		}
+
+		$types = \HelloGekko\StructuredData\ContentTypes::list();
+		if ( empty( $types ) ) {
+			return [];
+		}
+
+		global $wpdb;
+		$placeholders = implode( ',', array_fill( 0, count( $types ), '%s' ) );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$rows = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT pm.post_id AS id, pm.meta_value AS kw
+				 FROM {$wpdb->postmeta} pm
+				 JOIN {$wpdb->posts} p ON p.ID = pm.post_id
+				 WHERE pm.meta_key = %s AND pm.meta_value <> '' AND p.post_status = 'publish' AND p.post_type IN ({$placeholders})",
+				array_merge( [ $key ], $types )
+			)
+		);
+
+		$by_keyword = [];
+		foreach ( $rows as $row ) {
+			// Rank Math stores a comma list; the primary keyword is the first.
+			$keyword = trim( mb_strtolower( explode( ',', (string) $row->kw )[0] ) );
+			if ( mb_strlen( $keyword ) < 3 ) {
+				continue;
+			}
+			$by_keyword[ $keyword ][] = (int) $row->id;
+		}
+
+		$issues = [];
+		foreach ( $by_keyword as $keyword => $ids ) {
+			if ( count( $ids ) < 2 ) {
+				continue;
+			}
+			$titles = array_map( static fn( $id ) => '“' . get_the_title( $id ) . '”', array_slice( $ids, 0, 6 ) );
+			$issues[] = [
+				'key'      => 'canibkw:' . md5( $keyword ),
+				'severity' => 'warning',
+				'post_id'  => $ids[0],
+				'message'  => sprintf(
+					/* translators: 1: number of pages, 2: keyword, 3: page titles. */
+					__( '%1$d pages target the same keyword “%2$s” and compete with each other: %3$s. Consolidate them, or set a canonical from the weaker pages to your main one.', 'hg-structured-data' ),
+					count( $ids ),
+					$keyword,
+					implode( ', ', $titles )
+				),
+			];
+		}
+
+		return $issues;
+	}
+
+	/**
+	 * Queries where Search Console shows several of your pages ranking.
+	 *
+	 * @return array<int,array<string,mixed>>
+	 */
+	private function gsc_query_collisions(): array {
+		$issues = [];
+		foreach ( GscClient::cannibalization() as $item ) {
+			$pages = is_array( $item['pages'] ?? null ) ? $item['pages'] : [];
+			if ( count( $pages ) < 2 ) {
+				continue;
+			}
+
+			$labels = [];
+			$anchor = 0;
+			foreach ( $pages as $page ) {
+				$post_id = url_to_postid( (string) ( $page['url'] ?? '' ) );
+				if ( ! $anchor && $post_id ) {
+					$anchor = $post_id;
+				}
+				$name     = $post_id ? get_the_title( $post_id ) : (string) ( $page['url'] ?? '' );
+				$labels[] = sprintf( '%1$s (#%2$s)', $name, $page['position'] ?? '?' );
+			}
+
+			$issues[] = [
+				'key'      => 'canibq:' . md5( (string) $item['query'] ),
+				'severity' => 'warning',
+				'post_id'  => $anchor,
+				'message'  => sprintf(
+					/* translators: 1: search query, 2: competing pages with positions. */
+					__( 'Several pages rank for “%1$s” in Google and cannibalise each other: %2$s. Pick one target page and canonicalise or merge the others.', 'hg-structured-data' ),
+					(string) $item['query'],
+					implode( ', ', $labels )
+				),
+			];
+		}
+
+		return $issues;
 	}
 
 	/**

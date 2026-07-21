@@ -91,6 +91,8 @@ Delivered straight from GitHub Releases: your site shows the standard update not
 == Changelog ==
 
 = 1.1.0 =
+* Keyword cannibalisation detection: the Cockpit flags pages that compete for the same term, from two signals — the focus keywords set in Rank Math or Yoast (read through the SEO adapter, so it works whichever plugin a site uses) and the real queries where Search Console shows several of your pages ranking. Fix it in one place with the canonical field the cockpit already offers.
+* Cockpit "Re-scan" button: re-checks the currently flagged pages on demand so issues you just fixed drop off the tip list immediately.
 * AI readability audit: the Cockpit flags pages that are hard for AI agents to parse (images without alt text, non-descriptive link text, broken heading order) and offers an on-demand full-page check for the H1. Focused on machine parseability, not WCAG compliance.
 * New schema type: JobPosting (vacancy), generated from the official schema.org v30.0 vocabulary, with curated fields for hiring organisation, job location, salary range and remote work — pairs with instant indexing (Google's Indexing API officially supports JobPosting).
 * Automatic BreadcrumbList: outputs a Home → parent/category → page trail as JSON-LD, so breadcrumb structured data is present even when this plugin is your only source. Toggle, home label and post types under Structured Data → Breadcrumbs.

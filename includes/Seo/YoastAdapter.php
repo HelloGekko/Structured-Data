@@ -32,6 +32,14 @@ final class YoastAdapter extends SeoAdapter {
 		return (string) get_post_meta( $post_id, '_yoast_wpseo_canonical', true );
 	}
 
+	public function focus_keyword( int $post_id ): string {
+		return trim( mb_strtolower( (string) get_post_meta( $post_id, '_yoast_wpseo_focuskw', true ) ) );
+	}
+
+	public function focus_keyword_meta_key(): string {
+		return '_yoast_wpseo_focuskw';
+	}
+
 	public function set_canonical( int $post_id, string $url ): void {
 		$this->put_meta( $post_id, '_yoast_wpseo_canonical', esc_url_raw( $url ) );
 	}

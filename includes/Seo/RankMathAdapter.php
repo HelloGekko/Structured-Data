@@ -32,6 +32,17 @@ final class RankMathAdapter extends SeoAdapter {
 		return (string) get_post_meta( $post_id, 'rank_math_canonical_url', true );
 	}
 
+	public function focus_keyword( int $post_id ): string {
+		// Rank Math stores a comma-separated list; the first is the primary.
+		$raw   = (string) get_post_meta( $post_id, 'rank_math_focus_keyword', true );
+		$first = explode( ',', $raw )[0];
+		return trim( mb_strtolower( $first ) );
+	}
+
+	public function focus_keyword_meta_key(): string {
+		return 'rank_math_focus_keyword';
+	}
+
 	public function set_canonical( int $post_id, string $url ): void {
 		$this->put_meta( $post_id, 'rank_math_canonical_url', esc_url_raw( $url ) );
 	}

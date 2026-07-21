@@ -25,6 +25,9 @@ final class GscClient {
 	public const META_TIME    = '_hgsd_gsc_time';
 	public const CRON_HOOK    = 'hgsd_gsc_batch';
 	public const TOKEN_CACHE  = 'hgsd_gsc_token';
+	public const CANNIBAL_OPTION = 'hgsd_cannibalization';
+	public const CANNIBAL_HOOK   = 'hgsd_gsc_cannibal';
+	private const SEARCH_ANALYTICS = 'https://www.googleapis.com/webmasters/v3/sites/';
 	private const TOKEN_URL   = 'https://oauth2.googleapis.com/token';
 	private const INSPECT_URL = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
 	private const BATCH_SIZE  = 10;
@@ -59,10 +62,12 @@ final class GscClient {
 
 	public function register_hooks(): void {
 		add_action( self::CRON_HOOK, [ $this, 'run_batch' ] );
+		add_action( self::CANNIBAL_HOOK, [ $this, 'fetch_cannibalization' ] );
 	}
 
 	/**
-	 * Keep the hourly batch scheduled in line with the settings.
+	 * Keep the hourly batch and daily cannibalisation pull scheduled in line with
+	 * the settings.
 	 */
 	public function sync_schedule(): void {
 		$should = $this->configured() && $this->settings()['batch'];
@@ -73,13 +78,121 @@ final class GscClient {
 		} elseif ( ! $should && $next ) {
 			wp_unschedule_event( $next, self::CRON_HOOK );
 		}
+
+		// Cannibalisation only needs the connection, not the inspection batch.
+		$cannibal_next = wp_next_scheduled( self::CANNIBAL_HOOK );
+		if ( $this->configured() && ! $cannibal_next ) {
+			wp_schedule_event( time() + 120, 'daily', self::CANNIBAL_HOOK );
+		} elseif ( ! $this->configured() && $cannibal_next ) {
+			wp_unschedule_event( $cannibal_next, self::CANNIBAL_HOOK );
+		}
 	}
 
 	public static function unschedule(): void {
-		$timestamp = wp_next_scheduled( self::CRON_HOOK );
-		if ( $timestamp ) {
-			wp_unschedule_event( $timestamp, self::CRON_HOOK );
+		foreach ( [ self::CRON_HOOK, self::CANNIBAL_HOOK ] as $hook ) {
+			$timestamp = wp_next_scheduled( $hook );
+			if ( $timestamp ) {
+				wp_unschedule_event( $timestamp, $hook );
+			}
 		}
+	}
+
+	/**
+	 * Query Search Console for queries where two or more of your own pages rank,
+	 * i.e. keyword cannibalisation, and cache the result. Runs daily via cron and
+	 * can be triggered on demand from the cockpit.
+	 */
+	public function fetch_cannibalization(): void {
+		if ( ! $this->configured() ) {
+			return;
+		}
+
+		$token = $this->access_token();
+		if ( is_wp_error( $token ) ) {
+			return;
+		}
+
+		$end   = (string) wp_date( 'Y-m-d', time() - 3 * DAY_IN_SECONDS ); // GSC data lags a few days.
+		$start = (string) wp_date( 'Y-m-d', time() - 30 * DAY_IN_SECONDS );
+
+		$response = wp_remote_post(
+			self::SEARCH_ANALYTICS . rawurlencode( $this->settings()['property'] ) . '/searchAnalytics/query',
+			[
+				'timeout' => 15,
+				'headers' => [
+					'Authorization' => 'Bearer ' . $token,
+					'Content-Type'  => 'application/json',
+				],
+				'body'    => wp_json_encode(
+					[
+						'startDate'  => $start,
+						'endDate'    => $end,
+						'dimensions' => [ 'query', 'page' ],
+						'rowLimit'   => 5000,
+						'type'       => 'web',
+					]
+				),
+			]
+		);
+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+			return;
+		}
+
+		$body = json_decode( (string) wp_remote_retrieve_body( $response ), true );
+		$rows = is_array( $body['rows'] ?? null ) ? $body['rows'] : [];
+
+		$by_query = [];
+		foreach ( $rows as $row ) {
+			$keys = $row['keys'] ?? [];
+			if ( count( $keys ) < 2 ) {
+				continue;
+			}
+			$impressions = (float) ( $row['impressions'] ?? 0 );
+			$position    = (float) ( $row['position'] ?? 0 );
+			// Only pages that actually surface in results for the query.
+			if ( $impressions < 5 || $position > 20 || $position <= 0 ) {
+				continue;
+			}
+			$by_query[ (string) $keys[0] ][] = [
+				'url'         => (string) $keys[1],
+				'impressions' => $impressions,
+				'position'    => round( $position, 1 ),
+			];
+		}
+
+		$items = [];
+		foreach ( $by_query as $query => $pages ) {
+			if ( count( $pages ) < 2 ) {
+				continue; // Only one ranking page → no cannibalisation.
+			}
+			usort( $pages, static fn( $a, $b ) => $a['position'] <=> $b['position'] );
+			$items[] = [
+				'query'  => $query,
+				'pages'  => array_slice( $pages, 0, 5 ),
+				'weight' => array_sum( array_column( $pages, 'impressions' ) ),
+			];
+		}
+
+		usort( $items, static fn( $a, $b ) => $b['weight'] <=> $a['weight'] );
+
+		update_option(
+			self::CANNIBAL_OPTION,
+			[
+				'time'  => time(),
+				'items' => array_slice( $items, 0, 50 ),
+			],
+			false
+		);
+	}
+
+	/**
+	 * Cached cannibalisation items (query + competing pages), newest pull.
+	 *
+	 * @return array<int,array{query:string,pages:array<int,array<string,mixed>>,weight:float}>
+	 */
+	public static function cannibalization(): array {
+		$stored = get_option( self::CANNIBAL_OPTION, [] );
+		return is_array( $stored['items'] ?? null ) ? $stored['items'] : [];
 	}
 
 	/**

@@ -49,6 +49,23 @@ abstract class SeoAdapter {
 	abstract public function set_cornerstone( int $post_id, bool $cornerstone ): void;
 
 	/**
+	 * The primary focus/target keyword this SEO plugin stored for a post, lower-
+	 * cased and trimmed, or '' when none (or the plugin has no such concept).
+	 * Used to detect keyword cannibalisation across pages.
+	 */
+	public function focus_keyword( int $post_id ): string {
+		return '';
+	}
+
+	/**
+	 * The post-meta key this SEO plugin stores the focus keyword under, or ''
+	 * when it has no such concept. Enables a single grouped query over the site.
+	 */
+	public function focus_keyword_meta_key(): string {
+		return '';
+	}
+
+	/**
 	 * The meta key/value marking cornerstone content in this plugin.
 	 *
 	 * @return array{0:string,1:string}
